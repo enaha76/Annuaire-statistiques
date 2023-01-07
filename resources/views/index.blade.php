@@ -285,10 +285,10 @@
                                 <li class="dropdown notification-list">
                                     <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                         <span class="account-user-avatar"> 
-                                            <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                            <img src="assets/images/users/ahm.jpg" alt="user-image" class="rounded-circle">
                                         </span>
                                         <span>
-                                            <span class="account-user-name">Soeng Souy</span>
+                                            <span class="account-user-name">Ahmedou Enaha</span>
                                             <span class="account-position">Founder</span>
                                         </span>
                                     </a>
@@ -358,7 +358,7 @@
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <i class="uil-life-ring font-16 me-1"></i>
-                                        <span>How can I help you?</span>
+                                        <span>How can I help you ?</span>
                                     </a>
     
                                     <!-- item-->
@@ -410,17 +410,17 @@
                                         <div class="page-title-right">
                                             <form class="d-flex">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control form-control-light" id="dash-daterange">
-                                                    <span class="input-group-text bg-primary border-primary text-white">
-                                                        <i class="mdi mdi-calendar-range font-13"></i>
-                                                    </span>
+                                                    {{-- <input type="text" class="form-control form-control-light" id="dash-daterange"> --}}
+                                                    {{-- <span class="input-group-text bg-primary border-primary text-white"> --}}
+                                                        {{-- <i class="mdi mdi-calendar-range font-13"></i> --}}
+                                                    {{-- </span> --}}
                                                 </div>
-                                                <a href="javascript: void(0);" class="btn btn-primary ms-2">
+                                                {{-- <a href="javascript: void(0);" class="btn btn-primary ms-2">
                                                     <i class="mdi mdi-autorenew"></i>
                                                 </a>
                                                 <a href="javascript: void(0);" class="btn btn-primary ms-1">
                                                     <i class="mdi mdi-filter-variant"></i>
-                                                </a>
+                                                </a> --}}
                                             </form>
                                         </div>
                                         <h4 class="page-title">Dashboard</h4>
@@ -437,7 +437,7 @@
                                             <div class="card widget-flat">
                                                 <div class="card-body">
                                                     <div class="float-end">
-                                                        <i class="mdi mdi-account-multiple widget-icon"></i>
+                                                        {{-- <i class="mdi mdi-account-multiple widget-icon"></i> --}}
                                                     </div>
                                                     <h5 class="text-muted fw-normal mt-0" title="Number of Customers">Etudiants</h5>
                                                     <h3 class="mt-3 mb-3">{{$TOTAL}}</h3>
@@ -501,15 +501,16 @@
                                     </div> <!-- end row -->
     
                                 </div> <!-- end col -->
-    
+                                
                                 <div class="col-xl-7 col-lg-6">
                                     <div class="card card-h-100">
                                         <div class="card-body">
-                                            <div class="dropdown float-end">
-                                                <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                                            {{-- <div class="dropdown float-end"> --}}
+                                                {{-- <div class="dropdown float-end"> --}}
+                                                {{-- <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="mdi mdi-dots-vertical"></i>
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-end">
+                                                </a> --}}
+                                                {{-- <div class="dropdown-menu dropdown-menu-end">
                                                     <!-- item-->
                                                     <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
                                                     <!-- item-->
@@ -518,13 +519,51 @@
                                                     <a href="javascript:void(0);" class="dropdown-item">Profit</a>
                                                     <!-- item-->
                                                     <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                                                </div>
-                                            </div>
-                                            <h4 class="header-title mb-3">Projections Vs Actuals</h4>
+                                                </div> --}}
+                                            {{-- </div> --}}
+                                            <div  data-simplebar="" style="max-height: 300px;">
+                                            <h4 class="header-title mb-3">Effectifs des étudiants par établissement du public</h4>
     
-                                            <div dir="ltr">
-                                                <div id="high-performing-product" class="apex-charts" data-colors="#727cf5,#e3eaef"></div>
-                                            </div>
+                                            {{-- <div dir="ltr"> --}}
+                                                {{-- <div class="row"> --}}
+                                                    {{-- <div class="col-lg-8"> --}}
+                                                        {{-- <div class="card"> --}}
+                                                            {{-- <div class="card-body"> --}}
+                                                                <h4 class="header-title mb-3"></h4>
+                                                                <div class="table-responsive">
+                                                                    <table class="table mb-0">
+                                                                        <thead >
+                                                                        <tr>
+                                                                            <th>Les etablisment</th>
+                                                                            {{-- <th>Quantity</th> --}}
+                                                                            {{-- <th>Price</th> --}}
+                                                                            <th>Total</th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            @foreach ( $lists as $list=>$one )
+                                                                            <tr>
+                                                                                <td>{{ $one['etat'] }}</td>
+                                                                                {{-- <td>{{ $one['Filles'] }}</td> --}}
+                                                                                {{-- <td>{{ $one['total'] - $one['Filles'] }}</td> --}}
+                                                                                <td>{{ $one['total']}}</td>
+                                                                               
+                                                                            </tr> 
+                                                                            <tr>
+                                                                                <td>ahmedou</td>
+                                                                            </tr> 
+                                                                            @endforeach
+                                                                        </tbody>
+                                                                    </table>
+                                                                {{-- </div> --}}
+                                                                <!-- end table-responsive -->
+                                    
+                                                            </div>
+                                                        {{-- </div> --}}
+                                                    {{-- </div> <!-- end col --> --}}
+                                                </div>
+                                                {{-- <div id="high-performing-product" class="apex-charts" data-colors="#727cf5,#e3eaef"></div> --}}
+                                            {{-- </div> --}}
                                                 
                                         </div> <!-- end card-body-->
                                     </div> <!-- end card-->
@@ -905,7 +944,7 @@
                                                         <div class="timeline-item-info">
                                                             <a href="#" class="text-info fw-bold mb-1 d-block">Robert Delaney</a>
                                                             <small>Send you message
-                                                                <span class="fw-bold">"Are you there?"</span>
+                                                                <span class="fw-bold">"Are you there ?"</span>
                                                             </small>
                                                             <p class="mb-0 pb-2">
                                                                 <small class="text-muted">2 days ago</small>
