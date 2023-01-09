@@ -264,7 +264,7 @@
                             <div class="collapse" id="sidebarEmail">
                                 <ul class="side-nav-second-level">
                                     <li>
-                                        <a href="apps-email-inbox.html">Import</a>
+                                        <a href="#">Import</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('layout-sidenav-light') }}">Export</a>

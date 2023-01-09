@@ -379,32 +379,32 @@ function filter(ins ,groups ) {
                             </a>
 
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
-                            </a>
+                            </a> --}}
         
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
-                            </a>
+                            </a> --}}
 
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
-                            </a>
+                            </a> --}}
 
                         </div>
                     </li>
 
                     <li class="dropdown notification-list">
-                        <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        {{-- <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <i class="dripicons-bell noti-icon"></i>
                             <span class="noti-icon-badge"></span>
-                        </a>
+                        </a> --}}
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg">
 
                             <!-- item-->
-                            <div class="dropdown-item noti-title">
+                            {{-- <div class="dropdown-item noti-title">
                                 <h5 class="m-0">
                                     <span class="float-end">
                                         <a href="javascript: void(0);" class="text-dark">
@@ -412,18 +412,18 @@ function filter(ins ,groups ) {
                                         </a>
                                     </span>Notification
                                 </h5>
-                            </div>
+                            </div> --}}
 
                             <div style="max-height: 230px;" data-simplebar="">
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="notify-icon bg-primary">
                                         <i class="mdi mdi-comment-account-outline"></i>
                                     </div>
                                     <p class="notify-details">Caleb Flakelar commented on Admin
                                         <small class="text-muted">1 min ago</small>
                                     </p>
-                                </a>
+                                </a> --}}
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -485,7 +485,7 @@ function filter(ins ,groups ) {
                         </div>
                     </li>
 
-                    <li class="dropdown notification-list d-none d-sm-inline-block">
+                    {{-- <li class="dropdown notification-list d-none d-sm-inline-block">
                         <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <i class="dripicons-view-apps noti-icon"></i>
                         </a>
@@ -536,7 +536,7 @@ function filter(ins ,groups ) {
                             </div>
 
                         </div>
-                    </li>
+                    </li> --}}
 
                     <li class="notification-list">
                         <a class="nav-link end-bar-toggle" href="javascript: void(0);">
@@ -547,10 +547,10 @@ function filter(ins ,groups ) {
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <span class="account-user-avatar"> 
-                                <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                <img src="assets/images/users/ahm.jpg" alt="user-image" class="rounded-circle">
                             </span>
                             <span>
-                                <span class="account-user-name">Soeng Souy</span>
+                                <span class="account-user-name">Ahmedou Enaha</span>
                                 <span class="account-position">Founder</span>
                             </span>
                         </a>
@@ -692,18 +692,20 @@ function filter(ins ,groups ) {
                                 <div class="page-aside-left">
 
                                     <div class="d-grid">
-                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#compose-modal">Compose</button>
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#compose-modal">Les parametres d'export</button>
                                     </div>
 
                                     <div class="email-menu-list mt-3">
-                                        <a href="javascript: void(0);" class="text-danger fw-bold"><i class="dripicons-inbox me-2"></i>Inbox<span class="badge badge-danger-lighten float-end ms-2">7</span></a>
-                                        <a href="javascript: void(0);"><i class="dripicons-star me-2"></i><input type="checkbox"> Gener</a>
-                                        <a href="javascript: void(0);"><i class="dripicons-clock me-2"></i>Snoozed</a>
+                                        {{-- <a href="javascript: void(0);" class="text-danger fw-bold"><i class="dripicons-inbox me-2"></i>Inbox<span class="badge badge-danger-lighten float-end ms-2">7</span></a> --}}
+                                        <a href="javascript: void(0);"><input type="checkbox"> Redoublant </a>
+                                        <a href="javascript: void(0);"><input type="checkbox"> Niveau</a>
+                                        <a href="javascript: void(0);"><input type="checkbox"> Genre</a>
+                                        {{-- <a href="javascript: void(0);"><i class="dripicons-clock me-2"></i>Snoozed</a>
                                         <a href="javascript: void(0);"><i class="dripicons-document me-2"></i>Draft<span class="badge badge-info-lighten float-end ms-2">32</span></a>
                                         <a href="javascript: void(0);"><i class="dripicons-exit me-2"></i>Sent Mail</a>
                                         <a href="javascript: void(0);"><i class="dripicons-trash me-2"></i>Trash</a>
                                         <a href="javascript: void(0);"><i class="dripicons-tag me-2"></i>Important</a>
-                                        <a href="javascript: void(0);"><i class="dripicons-warning me-2"></i>Spam</a>
+                                        <a href="javascript: void(0);"><i class="dripicons-warning me-2"></i>Spam</a> --}}
                                     </div>
 
                                     {{-- <div class="mt-4">
