@@ -574,6 +574,7 @@
     
                   
                 </main>
-              <script>var stat = @json($lists) 
+              <script>
+              var stat = @json($lists) 
               </script>
        @endsection

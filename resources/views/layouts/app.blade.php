@@ -267,7 +267,7 @@
                                         <a href="apps-email-inbox.html">Import</a>
                                     </li>
                                     <li>
-                                        <a href="apps-email-read.html">Export</a>
+                                        <a href="{{ route('layout-sidenav-light') }}">Export</a>
                                     </li>
                                 </ul>
                             </div>
