@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 class all_studentsController extends Controller
 {
     public function index(){
-        $STAT =[ [SUPNUM::where('ANNEE_UNIVERSITAIRE_DE_première_inscription_DANS_LE_CYCLE','=','2021-2022')->count(),
+        $STAT = [ [SUPNUM::where('ANNEE_UNIVERSITAIRE_DE_première_inscription_DANS_LE_CYCLE','=','2021-2022')->count(),
         SUPNUM::where([['ANNEE_UNIVERSITAIRE_DE_première_inscription_DANS_LE_CYCLE','=','2021-2022'],['GENRE','=','F']])->count()
     ],
     [ESP::where('ANNEE_UNIVERSITAIRE_DE_première_inscription_DANS_LE_CYCLE','=','2021-2022')->count(),

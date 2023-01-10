@@ -600,9 +600,18 @@
 
                           
                             
+<<<<<<< HEAD
                             
                      
        
               <script>var stat = @json($lists) 
+=======
+                        </div> <!-- container -->
+    
+                  
+                </main>
+              <script>
+              var stat = @json($lists) 
+>>>>>>> 2a40b1640b6da3c75d0f6cbc54f733e8fda29fda
               </script>
        @endsection
