@@ -138,6 +138,14 @@
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
         <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
 
+       
+
+         <!-- third party css -->
+         <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
+         <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
+         <!-- third party css end -->
+ 
+       
     </head>
 
     <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
@@ -165,7 +173,7 @@
                     </span>
                     <span class="logo-sm">
                         <img src="assets/images/logo.png" alt="" height="16">
-                        <span> ASDES</span>
+                        <span>ASDES</span>
                     </span>
                   
                 </a>
@@ -737,5 +745,19 @@
         <!-- demo app -->
         <script src="assets/js/pages/demo.dashboard.js"></script>
         <!-- end demo js-->
+
+        {{-- -=--- --}}
+         <!-- third party js -->
+         <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+         <script src="assets/js/vendor/dataTables.bootstrap5.js"></script>
+         <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+         <script src="assets/js/vendor/responsive.bootstrap5.min.js"></script>
+         <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+         <!-- third party js ends -->
+ 
+         <!-- demo app -->
+         <script src="assets/js/pages/demo.products.js"></script>
+         <!-- end demo js-->
+ 
     </body>
 </html>
