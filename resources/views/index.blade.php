@@ -439,7 +439,7 @@
                                                     <div class="float-end">
                                                         {{-- <i class="mdi mdi-account-multiple widget-icon"></i> --}}
                                                     </div>
-                                                    <h5 class=" fw-normal mt-0 badge bg-primary text-wrap" style="width: 6rem; heiht:6rem" title="Number of Customers">Etudiants</h5>
+                                                    <h5 class=" fw-normal mt-0 badge bg-primary text-wrap" style="width: 6rem; heiht:14rem" title="Number of Customers">Etudiants</h5>
                                                     <h3 class="mt-3 mb-3">{{$TOTAL}}</h3>
                                                     <p class="mb-0 text-muted">
                                                         {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>
@@ -549,13 +549,7 @@
                                                                                 <td>{{ $one['total']}}</td>
                                                                                
                                                                             </tr> 
-                                                                            <tr>
-                                                                                <td>{{ $one['etat'] }}</td>
-                                                                                {{-- <td>{{ $one['Filles'] }}</td> --}}
-                                                                                {{-- <td>{{ $one['total'] - $one['Filles'] }}</td> --}}
-                                                                                <td>{{ $one['total']}}</td>
-                                                                               
-                                                                            </tr> 
+                                                                            
                                                                             @endforeach
                                                                         </tbody>
                                                                     </table>

@@ -53,7 +53,7 @@
                                     <div class="col-sm-8">
                                         <div class="text-sm-end">
                                             <button type="button" class="btn btn-success mb-2 me-1"><i class="mdi mdi-cog-outline"></i></button>
-                                            {{-- <button type="button" class="btn btn-light mb-2 me-1">Import</button> --}}
+                                            <button type="button" class="btn btn-light mb-2 me-1">Import</button>
                                             <button type="button" class="btn btn-light mb-2">Export</button>
                                         </div>
                                     </div><!-- end col-->
@@ -600,18 +600,18 @@
 
                           
                             
-<<<<<<< HEAD
+{{-- <<<<<<< HEAD --}}
                             
                      
        
               <script>var stat = @json($lists) 
-=======
-                        </div> <!-- container -->
+
+                        // </div> <!-- container -->
     
                   
-                </main>
-              <script>
-              var stat = @json($lists) 
->>>>>>> 2a40b1640b6da3c75d0f6cbc54f733e8fda29fda
+            //     </main>
+            //   <script>
+            //   var stat = @json($lists) 
+
               </script>
        @endsection
