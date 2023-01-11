@@ -602,17 +602,15 @@
 
                           
                             
-<<<<<<< HEAD
-{{-- <<<<<<< HEAD --}}
-=======
 
->>>>>>> 47f143a01114399e9d8e7af04fdbfbaf6c0d2bb9
+
+
                             
                      
        
               <script>var stat = @json($lists) 
 
-<<<<<<< HEAD
+
                         // </div> <!-- container -->
     
                   
@@ -620,13 +618,12 @@
             //   <script>
             //   var stat = @json($lists) 
 
-=======
+
                         </div> <!-- container -->
     
                   
                 </main>
               <script>
-              var stat = @json($lists) 
->>>>>>> 47f143a01114399e9d8e7af04fdbfbaf6c0d2bb9
+              var stat = @json($lists)
               </script>
        @endsection
