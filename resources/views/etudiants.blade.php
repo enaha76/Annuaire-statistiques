@@ -30,13 +30,13 @@
                     <div class="col-12">
                         <div class="page-title-box">
                             <div class="page-title-right">
-                                <!-- <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">eCommerce</a></li>
-                                    <li class="breadcrumb-item active">Products</li>
-                                </ol> -->
+                                 <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire Statistique</a></li>
+                                    <li class="breadcrumb-item active"><a href="javascript: void(0);">Etudiants</a></li>
+                               
+                                </ol> 
                             </div>
-                            <h4 class="page-title">Products</h4>
+                            <h4 class="page-title">Etudiants</h4>
                         </div>
                     </div>
                 </div>     
@@ -48,7 +48,9 @@
                             <div class="card-body">
                                 <div class="row mb-2">
                                     <div class="col-sm-4">
-                                        <a href="javascript:void(0);" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Products</a>
+                                        <a href="javascript:void(0);" class="btn btn-danger mb-2"><span class="material-icons-sharp">
+                                            filter_alt
+                                            </span>Fitre</a>
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="text-sm-end">
@@ -600,12 +602,17 @@
 
                           
                             
+<<<<<<< HEAD
 {{-- <<<<<<< HEAD --}}
+=======
+
+>>>>>>> 47f143a01114399e9d8e7af04fdbfbaf6c0d2bb9
                             
                      
        
               <script>var stat = @json($lists) 
 
+<<<<<<< HEAD
                         // </div> <!-- container -->
     
                   
@@ -613,5 +620,13 @@
             //   <script>
             //   var stat = @json($lists) 
 
+=======
+                        </div> <!-- container -->
+    
+                  
+                </main>
+              <script>
+              var stat = @json($lists) 
+>>>>>>> 47f143a01114399e9d8e7af04fdbfbaf6c0d2bb9
               </script>
        @endsection
