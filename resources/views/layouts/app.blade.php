@@ -126,6 +126,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
         <meta content="Coderthemes" name="author">
+        <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
@@ -138,6 +140,14 @@
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
         <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
 
+       
+
+         <!-- third party css -->
+         <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
+         <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
+         <!-- third party css end -->
+ 
+       
     </head>
 
     <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
@@ -165,7 +175,7 @@
                     </span>
                     <span class="logo-sm">
                         <img src="assets/images/logo.png" alt="" height="16">
-                        <span> ASDES</span>
+                        <span>ASDES</span>
                     </span>
                   
                 </a>
@@ -296,7 +306,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
                                     <form class="p-3">
-                                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                        <input type="text" class="form-control" placeholder="Recherhe ..." aria-label="Recipient's username">
                                     </form>
                                 </div>
                             </li>
@@ -533,9 +543,9 @@
                         <div class="app-search dropdown d-none d-lg-block">
                             <form>
                                 <div class="input-group">
-                                    <input type="text" class="form-control dropdown-toggle" placeholder="Search..." id="top-search">
+                                    <input type="text" class="form-control dropdown-toggle" placeholder="Recherche..." id="top-search">
                                     <span class="mdi mdi-magnify search-icon"></span>
-                                    <button class="input-group-text btn-primary" type="submit">Search</button>
+                                    <button class="input-group-text btn-primary" type="submit">Recherche</button>
                                 </div>
                             </form>
 
@@ -737,5 +747,19 @@
         <!-- demo app -->
         <script src="assets/js/pages/demo.dashboard.js"></script>
         <!-- end demo js-->
+
+        {{-- -=--- --}}
+         <!-- third party js -->
+         <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+         <script src="assets/js/vendor/dataTables.bootstrap5.js"></script>
+         <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+         <script src="assets/js/vendor/responsive.bootstrap5.min.js"></script>
+         <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+         <!-- third party js ends -->
+ 
+         <!-- demo app -->
+         <script src="assets/js/pages/demo.products.js"></script>
+         <!-- end demo js-->
+ 
     </body>
 </html>
