@@ -608,22 +608,13 @@
                             
                      
        
-              <script>var stat = @json($lists) 
+         
 
 
-                        // </div> <!-- container -->
+                      
     
-                  
-            //     </main>
-            //   <script>
-            //   var stat = @json($lists) 
-
-
-                        </div> <!-- container -->
-    
-                  
-                </main>
-              <script>
-              var stat = @json($lists)
-              </script>
+{{--        
+         <script>
+              var stat = @json($lists) 
+</script>      --}}
        @endsection
