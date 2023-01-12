@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-            
+
                 {{-- <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Accueil</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Accueil</li> 
+                            <li class="breadcrumb-item active">Accueil</li>
                         </ol>
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
@@ -56,12 +56,12 @@
                                     <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
                                 </div> --}}
                             {{-- </div>
-                            
+
                         </div>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                            liste des etablisement 
+                            liste des etablisement
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -70,26 +70,26 @@
                                             <th>Les etablisment</th>
                                             <th>Total</th>
                                             <th>Filles</th>
-                                            
+
                                         </tr>
                                     </thead>
                                     <tbody>
-                               
+
                                         @foreach ( $lists as $list=>$one )
                                         <tr>
                                             <td>{{ $one['etat'] }} </td>
                                             <td>{{ $one['total']}}</td>
                                             <td>{{ $one['Filles'] }}</td>
-                                        </tr>  
+                                        </tr>
                                         @endforeach
-                                       
+
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div> --}}
                 {{-- </main> --}}
-          
+
                     <div class="content">
                         <!-- Topbar Start -->
                         <div class="navbar-custom">
@@ -106,41 +106,41 @@
                                 </li>
                                 <li class="dropdown notification-list topbar-dropdown">
                                     <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                        <img src="assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12"> 
+                                        <img src="assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12">
                                         <span class="align-middle d-none d-sm-inline-block">English</span> <i class="mdi mdi-chevron-down d-none d-sm-inline-block align-middle"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu">
-    
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <img src="assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
                                         </a>
-    
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
                                         </a>
-                    
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
                                         </a>
-    
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
                                         </a>
-    
+
                                     </div>
                                 </li>
-    
+
                                 {{-- <li class="dropdown notification-list">
                                     <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                         <i class="dripicons-bell noti-icon"></i>
                                         <span class="noti-icon-badge"></span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg">
-    
+
                                         <!-- item-->
                                         <div class="dropdown-item noti-title">
                                             <h5 class="m-0">
@@ -151,7 +151,7 @@
                                                 </span>Notification
                                             </h5>
                                         </div>
-    
+
                                         <div style="max-height: 230px;" data-simplebar="">
                                             <!-- item-->
                                             <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -162,7 +162,7 @@
                                                     <small class="text-muted">1 min ago</small>
                                                 </p>
                                             </a>
-    
+
                                             <!-- item-->
                                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                                 <div class="notify-icon bg-info">
@@ -172,7 +172,7 @@
                                                     <small class="text-muted">5 hours ago</small>
                                                 </p>
                                             </a>
-    
+
                                             <!-- item-->
                                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                                 <div class="notify-icon">
@@ -182,7 +182,7 @@
                                                     <small>Hi, How are you? What about our next meeting</small>
                                                 </p>
                                             </a>
-    
+
                                             <!-- item-->
                                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                                 <div class="notify-icon bg-primary">
@@ -192,7 +192,7 @@
                                                     <small class="text-muted">4 days ago</small>
                                                 </p>
                                             </a>
-    
+
                                             <!-- item-->
                                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                                 <div class="notify-icon">
@@ -202,7 +202,7 @@
                                                     <small>Wow ! this admin looks good and awesome design</small>
                                                 </p>
                                             </a>
-    
+
                                             <!-- item-->
                                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                                 <div class="notify-icon bg-info">
@@ -214,21 +214,21 @@
                                                 </p>
                                             </a>
                                         </div>
-    
+
                                         <!-- All-->
                                         <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
                                             View All
                                         </a>
-    
+
                                     </div>
                                 </li> --}}
-    
+
                                 {{-- <li class="dropdown notification-list d-none d-sm-inline-block">
                                     <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                         <i class="dripicons-view-apps noti-icon"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg p-0">
-    
+
                                         <div class="p-2">
                                             <div class="row g-0">
                                                 <div class="col">
@@ -250,7 +250,7 @@
                                                     </a>
                                                 </div>
                                             </div>
-    
+
                                             <div class="row g-0">
                                                 <div class="col">
                                                     <a class="dropdown-icon-item" href="#">
@@ -272,7 +272,7 @@
                                                 </div>
                                             </div> <!-- end row-->
                                         </div>
-    
+
                                     </div>
                                 </li>
      --}}
@@ -281,10 +281,10 @@
                                         <i class="dripicons-gear noti-icon"></i>
                                     </a>
                                 </li>
-    
+
                                 <li class="dropdown notification-list">
                                     <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                        <span class="account-user-avatar"> 
+                                        <span class="account-user-avatar">
                                             <img src="assets/images/users/ahm.jpg" alt="user-image" class="rounded-circle">
                                         </span>
                                         <span>
@@ -297,31 +297,31 @@
                                         <div class=" dropdown-header noti-title">
                                             <h6 class="text-overflow m-0">Welcome !</h6>
                                         </div>
-    
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <i class="mdi mdi-account-circle me-1"></i>
                                             <span>My Account</span>
                                         </a>
-    
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <i class="mdi mdi-account-edit me-1"></i>
                                             <span>Settings</span>
                                         </a>
-    
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <i class="mdi mdi-lifebuoy me-1"></i>
                                             <span>Support</span>
                                         </a>
-    
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <i class="mdi mdi-lock-outline me-1"></i>
                                             <span>Lock Screen</span>
                                         </a>
-    
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <i class="mdi mdi-logout me-1"></i>
@@ -329,7 +329,7 @@
                                         </a>
                                     </div>
                                 </li>
-    
+
                             </ul>
                             <button class="button-menu-mobile open-left">
                                 <i class="mdi mdi-menu"></i>
@@ -342,36 +342,36 @@
                                         <button class="input-group-text btn-primary" type="submit">Search</button>
                                     </div>
                                 </form>
-    
+
                                 <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
                                     <!-- item-->
                                     <div class="dropdown-header noti-title">
                                         <h5 class="text-overflow mb-2">Found <span class="text-danger">17</span> results</h5>
                                     </div>
-    
+
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <i class="uil-notes font-16 me-1"></i>
                                         <span>Analytics Report</span>
                                     </a>
-    
+
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <i class="uil-life-ring font-16 me-1"></i>
                                         <span>How can I help you ?</span>
                                     </a>
-    
+
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <i class="uil-cog font-16 me-1"></i>
                                         <span>User profile settings</span>
                                     </a>
-    
+
                                     <!-- item-->
                                     <div class="dropdown-header noti-title">
                                         <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
                                     </div>
-    
+
                                     <div class="notification-list">
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -383,7 +383,7 @@
                                                 </div>
                                             </div>
                                         </a>
-    
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="d-flex">
@@ -399,10 +399,10 @@
                             </div>
                         </div>
                         <!-- end Topbar -->
-                        
+
                         <!-- Start Content-->
                         <div class="container-fluid">
-    
+
                             <!-- start page title -->
                             <div class="row">
                                 <div class="col-12">
@@ -428,10 +428,10 @@
                                 </div>
                             </div>
                             <!-- end page title -->
-    
+
                             <div class="row">
                                 <div class="col-xl-5 col-lg-6">
-    
+
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="card widget-flat">
@@ -439,8 +439,8 @@
                                                     <div class="float-end">
                                                         {{-- <i class="mdi mdi-account-multiple widget-icon"></i> --}}
                                                     </div>
-                                                    <h5 class=" fw-normal mt-0 badge bg-primary text-wrap" style="width: 6rem; heiht:6rem" title="Number of Customers">Etudiants</h5>
-                                                    <h3 class="mt-3 mb-3">{{$TOTAL}}</h3>
+                                                    <h5 class=" fw-normal mt-0 badge bg-primary text-wrap" style="width: 6rem; heiht:14rem" title="Number of Customers">Etudiants</h5>
+                                                    <h3 class="mt-3 mb-3"></h3>
                                                     <p class="mb-0 text-muted">
                                                         {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>
                                                         <span class="text-nowrap">Since last month</span>   --}}
@@ -448,7 +448,7 @@
                                                 </div> <!-- end card-body-->
                                             </div> <!-- end card-->
                                         </div> <!-- end col-->
-    
+
                                         <div class="col-lg-6">
                                             <div class="card widget-flat">
                                                 <div class="card-body">
@@ -465,7 +465,7 @@
                                             </div> <!-- end card-->
                                         </div> <!-- end col-->
                                     </div> <!-- end row -->
-    
+
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="card widget-flat">
@@ -482,7 +482,7 @@
                                                 </div> <!-- end card-body-->
                                             </div> <!-- end card-->
                                         </div> <!-- end col-->
-    
+
                                         <div class="col-lg-6">
                                             <div class="card widget-flat">
                                                 <div class="card-body">
@@ -499,9 +499,9 @@
                                             </div> <!-- end card-->
                                         </div> <!-- end col-->
                                     </div> <!-- end row -->
-    
+
                                 </div> <!-- end col -->
-                                
+
                                 <div class="col-xl-7 col-lg-6">
                                     <div class="card card-h-100">
                                         <div class="card-body">
@@ -523,7 +523,7 @@
                                             {{-- </div> --}}
                                             <div  data-simplebar="" style="max-height: 300px;">
                                             <h4 class="header-title mb-3">Effectifs des étudiants par établissement du public</h4>
-    
+
                                             {{-- <div dir="ltr"> --}}
                                                 {{-- <div class="row"> --}}
                                                     {{-- <div class="col-lg-8"> --}}
@@ -540,42 +540,36 @@
                                                                             <th>Total</th>
                                                                         </tr>
                                                                         </thead>
-                                                                        <tbody>
+                                                                        {{-- <tbody>
                                                                             @foreach ( $lists as $list=>$one )
                                                                             <tr>
                                                                                 <td>{{ $one['etat'] }}</td>
                                                                                 {{-- <td>{{ $one['Filles'] }}</td> --}}
-                                                                                {{-- <td>{{ $one['total'] - $one['Filles'] }}</td> --}}
+                                                                                {{-- <td>{{ $one['total'] - $one['Filles'] }}</td>
                                                                                 <td>{{ $one['total']}}</td>
-                                                                               
-                                                                            </tr> 
-                                                                            <tr>
-                                                                                <td>{{ $one['etat'] }}</td>
-                                                                                {{-- <td>{{ $one['Filles'] }}</td> --}}
-                                                                                {{-- <td>{{ $one['total'] - $one['Filles'] }}</td> --}}
-                                                                                <td>{{ $one['total']}}</td>
-                                                                               
-                                                                            </tr> 
+
+                                                                            </tr>
+
                                                                             @endforeach
-                                                                        </tbody>
+                                                                        </tbody> --}}
                                                                     </table>
                                                                 {{-- </div> --}}
                                                                 <!-- end table-responsive -->
-                                    
+
                                                             </div>
                                                         {{-- </div> --}}
                                                     {{-- </div> <!-- end col --> --}}
                                                 </div>
                                                 {{-- <div id="high-performing-product" class="apex-charts" data-colors="#727cf5,#e3eaef"></div> --}}
                                             {{-- </div> --}}
-                                                
+
                                         </div> <!-- end card-body-->
                                     </div> <!-- end card-->
-    
+
                                 </div> <!-- end col -->
                             </div>
                             <!-- end row -->
-    
+
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="card">
@@ -597,10 +591,10 @@
                                                     </div>
                                                 </div>
                                                 <h4 class="header-title">Repartution des etudiants par etablissement</h4>
-        
+
                                                 <div id="average-sales" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
-                                               
-        
+
+
                                                 <div class="chart-widget-list">
                                                     <p>
                                                         <i class="mdi mdi-square text-primary"></i> SUPNUM
@@ -611,7 +605,7 @@
                                                         <span class="float-end"></span>
                                                     </p>
                                                     <p>
-                                                        <i class="mdi mdi-square text-success"></i> ESP 
+                                                        <i class="mdi mdi-square text-success"></i> ESP
                                                         <span class="float-end"></span>
                                                     </p>
                                                     <p class="mb-0">
@@ -635,7 +629,7 @@
                                                 </div>
                                             </div>
                                             <h4 class="header-title mb-3">Revenue</h4>
-    
+
                                             <div class="chart-content-bg">
                                                 <div class="row text-center">
                                                     <div class="col-md-6">
@@ -654,7 +648,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-    
+
                                             <div class="dash-item-overlay d-none d-md-block" dir="ltr">
                                                 <h5>Today's Earning: $2,562.30</h5>
                                                 <p class="text-muted font-13 mb-3 mt-2">Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
@@ -672,7 +666,7 @@
                                         </div> <!-- end card-body-->
                                     </div> <!-- end card-->
                                 </div> <!-- end col-->
-    
+
                                  <div class="col-lg-4">
                                     <div class="card">
                                         <div class="card-body">
@@ -695,45 +689,45 @@
                                             <div class="mb-4 mt-4">
                                                 <div id="world-map-markers" style="height: 224px"></div>
                                             </div>
-                                          
+
                                             <h5 class="mb-1 mt-0 fw-normal"></h5>
                                             <div class="progress-w-percent">
-                                                <span class="progress-value fw-bold"></span> 
+                                                <span class="progress-value fw-bold"></span>
                                                 {{-- <div class="progress progress-sm">
-                                                    <div class="progress-bar" role="progressbar" style="width: 72%;" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div> 
+                                                    <div class="progress-bar" role="progressbar" style="width: 72%;" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div> --}}
                                              </div>
-    
+
                                             <h5 class="mb-1 mt-0 fw-normal"></h5>
                                             <div class="progress-w-percent">
                                                 <span class="progress-value fw-bold"> </span>
-                                                 {{-- <div class="progress progress-sm"> 
-                                                 <div class="progress-bar" role="progressbar" style="width: 39%;" aria-valuenow="39" aria-valuemin="0" aria-valuemax="100"></div> 
+                                                 {{-- <div class="progress progress-sm">
+                                                 <div class="progress-bar" role="progressbar" style="width: 39%;" aria-valuenow="39" aria-valuemin="0" aria-valuemax="100"></div>
                                                  </div> --}}
                                              </div>
-    
+
                                             <h5 class="mb-1 mt-0 fw-normal"></h5>
                                             <div class="progress-w-percent">
-                                                <span class="progress-value fw-bold"></span> 
+                                                <span class="progress-value fw-bold"></span>
                                                 {{-- <div class="progress progress-sm">
                                                     <div class="progress-bar" role="progressbar" style="width: 39%;" aria-valuenow="39" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>  --}}
                                             </div>
-    
+
                                             <h5 class="mb-1 mt-0 fw-normal"></h5>
                                             <div class="progress-w-percent mb-0">
                                                 <span class="progress-value fw-bold"></span>
                                                 {{-- <div class="progress progress-sm">
                                                     <div class="progress-bar" role="progressbar" style="width: 61%;" aria-valuenow="61" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div> --}}
-                                            </div> 
+                                            </div>
                                         </div> <!-- end card-body-->
                                     </div> <!-- end card-->
                                 </div> <!-- end col-->
                             </div>
                             <!-- end row -->
-    
-{{--     
+
+{{--
                             <div class="row">
                                 <div class="col-xl-6 col-lg-12 order-lg-2 order-xl-1">
                                     <div class="card">
@@ -742,7 +736,7 @@
                                                 <i class="mdi mdi-download ms-1"></i>
                                             </a>
                                             <h4 class="header-title mt-2 mb-3">Top Selling Products</h4>
-    
+
                                             <div class="table-responsive">
                                                 <table class="table table-centered table-nowrap table-hover mb-0">
                                                     <tbody>
@@ -836,14 +830,14 @@
                                                                 <span class="text-muted font-13">Amount</span>
                                                             </td>
                                                         </tr>
-    
+
                                                     </tbody>
                                                 </table>
                                             </div> <!-- end table-responsive-->
                                         </div> <!-- end card-body-->
                                     </div> <!-- end card-->
                                 </div> <!-- end col--> --}}
-    
+
                                 {{-- <div class="col-xl-3 col-lg-6 order-lg-1">
                                     <div class="card">
                                         <div class="card-body">
@@ -863,10 +857,10 @@
                                                 </div>
                                             </div>
                                             <h4 class="header-title">Total Sales</h4>
-    
+
                                             {{-- <div id="myBarChart" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div> --}}
-                                           
-{{--     
+
+{{--
                                             <div class="chart-widget-list">
                                                 <p>
                                                     <i class="mdi mdi-square text-primary"></i> Direct
@@ -888,7 +882,7 @@
                                         </div> <!-- end card-body-->
                                     </div> <!-- end card-->
                                 </div> <!-- end col--> --}}
-{{-- 
+{{--
                                 <div class="col-xl-3 col-lg-6 order-lg-1">
                                     <div class="card">
                                         <div class="card-body">
@@ -908,8 +902,8 @@
                                                 </div>
                                             </div>
                                             <h4 class="header-title mb-2">Recent Activity</h4> --}}
-    
-                                            {{-- <div data-simplebar="" style="max-height: 419px;"> 
+
+                                            {{-- <div data-simplebar="" style="max-height: 419px;">
                                                 <div class="timeline-alt pb-0">
                                                     <div class="timeline-item">
                                                         <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
@@ -921,7 +915,7 @@
                                                             </p>
                                                         </div>
                                                     </div>
-    
+
                                                     <div class="timeline-item">
                                                         <i class="mdi mdi-airplane bg-primary-lighten text-primary timeline-icon"></i>
                                                         <div class="timeline-item-info">
@@ -934,7 +928,7 @@
                                                             </p>
                                                         </div>
                                                     </div>
-    
+
                                                     <div class="timeline-item">
                                                         <i class="mdi mdi-microphone bg-info-lighten text-info timeline-icon"></i>
                                                         <div class="timeline-item-info">
@@ -947,7 +941,7 @@
                                                             </p>
                                                         </div>
                                                     </div>
-    
+
                                                     <div class="timeline-item">
                                                         <i class="mdi mdi-upload bg-primary-lighten text-primary timeline-icon"></i>
                                                         <div class="timeline-item-info">
@@ -960,7 +954,7 @@
                                                             </p>
                                                         </div>
                                                     </div>
-    
+
                                                     <div class="timeline-item">
                                                         <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
                                                         <div class="timeline-item-info">
@@ -971,7 +965,7 @@
                                                             </p>
                                                         </div>
                                                     </div> --}}
-    
+
                                                     {{-- <div class="timeline-item">
                                                         <i class="mdi mdi-airplane bg-primary-lighten text-primary timeline-icon"></i>
                                                         <div class="timeline-item-info">
@@ -984,7 +978,7 @@
                                                             </p>
                                                         </div>
                                                     </div> --}}
-{{--     
+{{--
                                                     <div class="timeline-item">
                                                         <i class="mdi mdi-microphone bg-info-lighten text-info timeline-icon"></i>
                                                         <div class="timeline-item-info">
@@ -1006,14 +1000,14 @@
                                     <!-- end card-->
                                 </div>
                                 <!-- end col -->
-    
+
                             </div>
                             <!-- end row -->
-    
+
                         </div>
                         <!-- container -->
-    
-                        <script>
-                            var stat = @json($lists) 
-                        </script>  
+
+                        {{-- <script>
+                            //var stat = @json($lists)
+                        </script> --}}
 @endsection
