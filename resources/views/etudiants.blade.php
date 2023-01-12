@@ -3,26 +3,7 @@
 @section('content')
             
              
-{{--                     
-                            <!-- start page title -->
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="page-title-box">
-                                         <div class="page-title-right">
-                                            <ol class="breadcrumb m-0">
-                                                <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
-                                                <li class="breadcrumb-item"><a href="javascript: void(0);">eCommerce</a></li>
-                                                <li class="breadcrumb-item active">Order Details</li>
-                                            </ol>
-                                        </div>
-                                        <h4 class="page-title">Order Details</h4>
-                                    </div>
-                                </div>
-                            </div>      
-                            <!-- end page title --> 
-     --}}
- 
-         
+
             <div class="container-fluid">
                 
                 <!-- start page title -->
@@ -594,32 +575,10 @@
                     </div> <!-- end col -->
                 </div>
                 <!-- end row -->        
-<<<<<<< HEAD
-                
+
             </div> <!-- container -->
 
-      
-
-
-                          
-                            
-
-
-
-                            
-                     
-       
-         
-
-
-                      
-    
-{{--        
-         <script>
-              var stat = @json($lists) 
-</script>      --}}
-=======
               <script>var stat = @json($lists) 
               </script>
->>>>>>> a04afaa95e0d2eebcc19e5210c64af6f6bb3ebbd
+
        @endsection
