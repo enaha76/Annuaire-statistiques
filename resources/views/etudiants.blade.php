@@ -594,8 +594,6 @@
                     </div> <!-- end col -->
                 </div>
                 <!-- end row -->        
-                
-            </div> <!-- container -->                        
-       
-              <script>var stat = @json($lists)  </script>
+              <script>var stat = @json($lists) 
+              </script>
        @endsection
