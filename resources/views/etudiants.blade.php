@@ -594,6 +594,32 @@
                     </div> <!-- end col -->
                 </div>
                 <!-- end row -->        
+<<<<<<< HEAD
+                
+            </div> <!-- container -->
+
+      
+
+
+                          
+                            
+
+
+
+                            
+                     
+       
+         
+
+
+                      
+    
+{{--        
+         <script>
+              var stat = @json($lists) 
+</script>      --}}
+=======
               <script>var stat = @json($lists) 
               </script>
+>>>>>>> a04afaa95e0d2eebcc19e5210c64af6f6bb3ebbd
        @endsection
