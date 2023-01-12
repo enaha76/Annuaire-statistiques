@@ -126,6 +126,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
         <meta content="Coderthemes" name="author">
+        <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
@@ -272,10 +274,10 @@
                             <div class="collapse" id="sidebarEmail">
                                 <ul class="side-nav-second-level">
                                     <li>
-                                        <a href="apps-email-inbox.html">Import</a>
+                                        <a href="#">Import</a>
                                     </li>
                                     <li>
-                                        <a href="apps-email-read.html">Export</a>
+                                        <a href="{{ route('layout-sidenav-light') }}">Export</a>
                                     </li>
                                 </ul>
                             </div>
@@ -304,7 +306,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
                                     <form class="p-3">
-                                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                        <input type="text" class="form-control" placeholder="Recherhe ..." aria-label="Recipient's username">
                                     </form>
                                 </div>
                             </li>
@@ -541,9 +543,9 @@
                         <div class="app-search dropdown d-none d-lg-block">
                             <form>
                                 <div class="input-group">
-                                    <input type="text" class="form-control dropdown-toggle" placeholder="Search..." id="top-search">
+                                    <input type="text" class="form-control dropdown-toggle" placeholder="Recherche..." id="top-search">
                                     <span class="mdi mdi-magnify search-icon"></span>
-                                    <button class="input-group-text btn-primary" type="submit">Search</button>
+                                    <button class="input-group-text btn-primary" type="submit">Recherche</button>
                                 </div>
                             </form>
 

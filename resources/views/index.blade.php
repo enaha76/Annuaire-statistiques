@@ -134,7 +134,7 @@
                                     </div>
                                 </li>
     
-                                <li class="dropdown notification-list">
+                                {{-- <li class="dropdown notification-list">
                                     <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                         <i class="dripicons-bell noti-icon"></i>
                                         <span class="noti-icon-badge"></span>
@@ -221,9 +221,9 @@
                                         </a>
     
                                     </div>
-                                </li>
+                                </li> --}}
     
-                                <li class="dropdown notification-list d-none d-sm-inline-block">
+                                {{-- <li class="dropdown notification-list d-none d-sm-inline-block">
                                     <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                         <i class="dripicons-view-apps noti-icon"></i>
                                     </a>
@@ -275,7 +275,7 @@
     
                                     </div>
                                 </li>
-    
+     --}}
                                 <li class="notification-list">
                                     <a class="nav-link end-bar-toggle" href="javascript: void(0);">
                                         <i class="dripicons-gear noti-icon"></i>
@@ -439,11 +439,11 @@
                                                     <div class="float-end">
                                                         {{-- <i class="mdi mdi-account-multiple widget-icon"></i> --}}
                                                     </div>
-                                                    <h5 class="text-muted fw-normal mt-0" title="Number of Customers">Etudiants</h5>
+                                                    <h5 class=" fw-normal mt-0 badge bg-primary text-wrap" style="width: 6rem; heiht:14rem" title="Number of Customers">Etudiants</h5>
                                                     <h3 class="mt-3 mb-3">{{$TOTAL}}</h3>
                                                     <p class="mb-0 text-muted">
-                                                        <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>
-                                                        <span class="text-nowrap">Since last month</span>  
+                                                        {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>
+                                                        <span class="text-nowrap">Since last month</span>   --}}
                                                     </p>
                                                 </div> <!-- end card-body-->
                                             </div> <!-- end card-->
@@ -455,11 +455,11 @@
                                                     <div class="float-end">
                                                         <i class="mdi mdi-cart-plus widget-icon"></i>
                                                     </div>
-                                                    <h5 class="text-muted fw-normal mt-0" title="Number of Orders">Professeur</h5>
+                                                    <h5 class=" fw-normal mt-0 badge bg-primary text-wrap" style="width: 6rem; heiht:6rem" title="Number of Orders">Professeur</h5>
                                                     <h3 class="mt-3 mb-3">585</h3>
                                                     <p class="mb-0 text-muted">
-                                                        <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> 1.08%</span>
-                                                        <span class="text-nowrap">Since last month</span>
+                                                        {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 1.08%</span>
+                                                        <span class="text-nowrap">Since last month</span> --}}
                                                     </p>
                                                 </div> <!-- end card-body-->
                                             </div> <!-- end card-->
@@ -473,11 +473,11 @@
                                                     <div class="float-end">
                                                         <i class="mdi mdi-currency-usd widget-icon"></i>
                                                     </div>
-                                                    <h5 class="text-muted fw-normal mt-0" title="Average Revenue">Candidats admis</h5>
+                                                    <h5 class=" fw-normal mt-0 badge bg-primary text-wrap" style="width: 6rem; heiht:6rem" title="Average Revenue">Candidats admis</h5>
                                                     <h3 class="mt-3 mb-3">7254</h3>
                                                     <p class="mb-0 text-muted">
-                                                        <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> 7.00%</span>
-                                                        <span class="text-nowrap">Since last month</span>
+                                                        {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 7.00%</span>
+                                                        <span class="text-nowrap">Since last month</span> --}}
                                                     </p>
                                                 </div> <!-- end card-body-->
                                             </div> <!-- end card-->
@@ -489,11 +489,11 @@
                                                     <div class="float-end">
                                                         <i class="mdi mdi-pulse widget-icon"></i>
                                                     </div>
-                                                    <h5 class="text-muted fw-normal mt-0" title="Growth">Growth</h5>
+                                                    <h5 class=" fw-normal mt-0 badge bg-primary text-wrap" style="width: 6rem; heiht:6rem" title="Growth">Candidats </h5>
                                                     <h3 class="mt-3 mb-3">0</h3>
                                                     <p class="mb-0 text-muted">
-                                                        <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 4.87%</span>
-                                                        <span class="text-nowrap">Since last month</span>
+                                                        {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 4.87%</span>
+                                                        <span class="text-nowrap">Since last month</span> --}}
                                                     </p>
                                                 </div> <!-- end card-body-->
                                             </div> <!-- end card-->
@@ -549,9 +549,7 @@
                                                                                 <td>{{ $one['total']}}</td>
                                                                                
                                                                             </tr> 
-                                                                            <tr>
-                                                                                <td>ahmedou</td>
-                                                                            </tr> 
+                                                                            
                                                                             @endforeach
                                                                         </tbody>
                                                                     </table>
@@ -575,8 +573,47 @@
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="card">
-                                        <div class="card-body">
-                                            <div class="dropdown float-end">
+                                        {{-- <div class="card-body"> --}}
+                                            <div class="card-body">
+                                                <div class="dropdown float-end">
+                                                    <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="mdi mdi-dots-vertical"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <!-- item-->
+                                                        <a href="javascript:void(0);" class="dropdown-item"></a>
+                                                        <!-- item-->
+                                                        <a href="javascript:void(0);" class="dropdown-item"></a>
+                                                        <!-- item-->
+                                                        <a href="javascript:void(0);" class="dropdown-item"></a>
+                                                        <!-- item-->
+                                                        <a href="javascript:void(0);" class="dropdown-item"></a>
+                                                    </div>
+                                                </div>
+                                                <h4 class="header-title">Repartution des etudiants par etablissement</h4>
+        
+                                                <div id="average-sales" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
+                                               
+        
+                                                <div class="chart-widget-list">
+                                                    <p>
+                                                        <i class="mdi mdi-square text-primary"></i> SUPNUM
+                                                        <span class="float-end"></span>
+                                                    </p>
+                                                    <p>
+                                                        <i class="mdi mdi-square text-danger"></i>ISCAE
+                                                        <span class="float-end"></span>
+                                                    </p>
+                                                    <p>
+                                                        <i class="mdi mdi-square text-success"></i> ESP 
+                                                        <span class="float-end"></span>
+                                                    </p>
+                                                    <p class="mb-0">
+                                                        <i class="mdi mdi-square text-warning"></i> FST
+                                                        <span class="float-end"></span>
+                                                    </p>
+                                                </div>
+                                            {{-- <div class="dropdown float-end">
                                                 <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="mdi mdi-dots-vertical"></i>
                                                 </a>
@@ -622,12 +659,15 @@
                                             </div>
                                             <div dir="ltr">
                                                 <div id="revenue-chart" class="apex-charts mt-3" data-colors="#727cf5,#0acf97"></div>
-                                            </div>
+                                            </div> --}}
+
+
+
                                         </div> <!-- end card-body-->
                                     </div> <!-- end card-->
                                 </div> <!-- end col-->
     
-                                <div class="col-lg-4">
+                                 <div class="col-lg-4">
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="dropdown float-end">
@@ -649,45 +689,45 @@
                                             <div class="mb-4 mt-4">
                                                 <div id="world-map-markers" style="height: 224px"></div>
                                             </div>
-    
-                                            <h5 class="mb-1 mt-0 fw-normal">New York</h5>
+                                          
+                                            <h5 class="mb-1 mt-0 fw-normal"></h5>
                                             <div class="progress-w-percent">
-                                                <span class="progress-value fw-bold">72k </span>
-                                                <div class="progress progress-sm">
-                                                    <div class="progress-bar" role="progressbar" style="width: 72%;" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
+                                                <span class="progress-value fw-bold"></span> 
+                                                {{-- <div class="progress progress-sm">
+                                                    <div class="progress-bar" role="progressbar" style="width: 72%;" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div> 
+                                                </div> --}}
+                                             </div>
     
-                                            <h5 class="mb-1 mt-0 fw-normal">San Francisco</h5>
+                                            <h5 class="mb-1 mt-0 fw-normal"></h5>
                                             <div class="progress-w-percent">
-                                                <span class="progress-value fw-bold">39k </span>
-                                                <div class="progress progress-sm">
+                                                <span class="progress-value fw-bold"> </span>
+                                                 {{-- <div class="progress progress-sm"> 
+                                                 <div class="progress-bar" role="progressbar" style="width: 39%;" aria-valuenow="39" aria-valuemin="0" aria-valuemax="100"></div> 
+                                                 </div> --}}
+                                             </div>
+    
+                                            <h5 class="mb-1 mt-0 fw-normal"></h5>
+                                            <div class="progress-w-percent">
+                                                <span class="progress-value fw-bold"></span> 
+                                                {{-- <div class="progress progress-sm">
                                                     <div class="progress-bar" role="progressbar" style="width: 39%;" aria-valuenow="39" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
+                                                </div>  --}}
                                             </div>
     
-                                            <h5 class="mb-1 mt-0 fw-normal">Sydney</h5>
-                                            <div class="progress-w-percent">
-                                                <span class="progress-value fw-bold">25k </span>
-                                                <div class="progress progress-sm">
-                                                    <div class="progress-bar" role="progressbar" style="width: 39%;" aria-valuenow="39" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-    
-                                            <h5 class="mb-1 mt-0 fw-normal">Singapore</h5>
+                                            <h5 class="mb-1 mt-0 fw-normal"></h5>
                                             <div class="progress-w-percent mb-0">
-                                                <span class="progress-value fw-bold">61k </span>
-                                                <div class="progress progress-sm">
+                                                <span class="progress-value fw-bold"></span>
+                                                {{-- <div class="progress progress-sm">
                                                     <div class="progress-bar" role="progressbar" style="width: 61%;" aria-valuenow="61" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
+                                                </div> --}}
+                                            </div> 
                                         </div> <!-- end card-body-->
                                     </div> <!-- end card-->
                                 </div> <!-- end col-->
                             </div>
                             <!-- end row -->
     
-    
+{{--     
                             <div class="row">
                                 <div class="col-xl-6 col-lg-12 order-lg-2 order-xl-1">
                                     <div class="card">
@@ -796,9 +836,9 @@
                                             </div> <!-- end table-responsive-->
                                         </div> <!-- end card-body-->
                                     </div> <!-- end card-->
-                                </div> <!-- end col-->
+                                </div> <!-- end col--> --}}
     
-                                <div class="col-xl-3 col-lg-6 order-lg-1">
+                                {{-- <div class="col-xl-3 col-lg-6 order-lg-1">
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="dropdown float-end">
@@ -818,9 +858,9 @@
                                             </div>
                                             <h4 class="header-title">Total Sales</h4>
     
-                                            <div id="average-sales" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
+                                            {{-- <div id="myBarChart" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div> --}}
                                            
-    
+{{--     
                                             <div class="chart-widget-list">
                                                 <p>
                                                     <i class="mdi mdi-square text-primary"></i> Direct
@@ -841,8 +881,8 @@
                                             </div>
                                         </div> <!-- end card-body-->
                                     </div> <!-- end card-->
-                                </div> <!-- end col-->
-    
+                                </div> <!-- end col--> --}}
+{{-- 
                                 <div class="col-xl-3 col-lg-6 order-lg-1">
                                     <div class="card">
                                         <div class="card-body">
@@ -861,9 +901,9 @@
                                                     <a href="javascript:void(0);" class="dropdown-item">Action</a>
                                                 </div>
                                             </div>
-                                            <h4 class="header-title mb-2">Recent Activity</h4>
+                                            <h4 class="header-title mb-2">Recent Activity</h4> --}}
     
-                                            <div data-simplebar="" style="max-height: 419px;"> 
+                                            {{-- <div data-simplebar="" style="max-height: 419px;"> 
                                                 <div class="timeline-alt pb-0">
                                                     <div class="timeline-item">
                                                         <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
@@ -924,9 +964,9 @@
                                                                 <small class="text-muted">16 hours ago</small>
                                                             </p>
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
     
-                                                    <div class="timeline-item">
+                                                    {{-- <div class="timeline-item">
                                                         <i class="mdi mdi-airplane bg-primary-lighten text-primary timeline-icon"></i>
                                                         <div class="timeline-item-info">
                                                             <a href="#" class="text-primary fw-bold mb-1 d-block">Product on the Bootstrap Market</a>
@@ -937,8 +977,8 @@
                                                                 <small class="text-muted">22 hours ago</small>
                                                             </p>
                                                         </div>
-                                                    </div>
-    
+                                                    </div> --}}
+{{--     
                                                     <div class="timeline-item">
                                                         <i class="mdi mdi-microphone bg-info-lighten text-info timeline-icon"></i>
                                                         <div class="timeline-item-info">
@@ -950,7 +990,7 @@
                                                                 <small class="text-muted">2 days ago</small>
                                                             </p>
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                                 <!-- end timeline -->
                                             </div> <!-- end slimscroll -->
@@ -967,5 +1007,7 @@
                         </div>
                         <!-- container -->
     
-                   
+                        <script>
+                            var stat = @json($lists) 
+                        </script>  
 @endsection
