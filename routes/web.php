@@ -17,18 +17,20 @@ use App\Http\Controllers\ESPController;
 
 
 Route::controller(all_studentsController::class)->group(function(){
-    Route::get('/', 'h')->name('index'); 
+    Route::get('/', 'index')->name('index'); 
     Route::get('/etudiants', 'index')->name('etudiants'); 
 
     Route::get('/tables', 'tables')->name('tables');
 
-   
    
 });
 
 
     Route::get('/layout-static', function () {
     return view('layout-static'); })->name('layout-static');
+
+    Route::get('/layout-static', function () {
+        return view('layout-static'); })->name('layout-static');
 
 
     Route::get('/charts', function () {
@@ -38,9 +40,9 @@ Route::controller(all_studentsController::class)->group(function(){
 
 
 
-Route::controller(ESPController::class)->group(function(){
-    Route::get('ESP', 'index');
-    Route::get('layout-sidenav-light',  'tables_ex')->name('layout-sidenav-light');
-    Route::post('ESP-import', 'import')->name('ESP.import');
-});
+// Route::controller(ESPController::class)->group(function(){
+//     Route::get('ESP', 'index');
+//     Route::get('layout-sidenav-light',  'tables_ex')->name('layout-sidenav-light');
+//     Route::post('ESP-import', 'import')->name('ESP.import');
+// });
 
