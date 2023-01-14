@@ -23,11 +23,24 @@ Route::controller(all_studentsController::class)->group(function(){
     
 
    
-   
 });
 
 
+// <<<<<<< HEAD
+    Route::get('/layout-static', function () {
+    return view('layout-static'); })->name('layout-static');
+
+    Route::get('/layout-static', function () {
+        return view('layout-static'); })->name('layout-static');
+
+
+    Route::get('/charts', function () {
+    return view('charts');
+})->name('charts');
+
+// =======
    
+// >>>>>>> e13674984d1dc9bafca457e6cd4c18c5f39d98cb
 
 
 
