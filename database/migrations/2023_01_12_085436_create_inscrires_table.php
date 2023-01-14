@@ -24,6 +24,17 @@ return new class extends Migration
                   ->constrained('etablissements')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');
+            $table->string('ANNEE_UNIVERSITAIRE_DE_première_inscription_DANS_LE_CYCLE');
+            $table->string('Niveau');
+            $table->string('ANNEE_UNIVERSITAIRE_DE_première_inscription_DANS_ce_niveau');
+            $table->string('NOM_DU_(TRONC/FILIRERE)');
+            $table->string('FORMATION');
+            $table->string('Redoublant' );
+            $table->string('BOURSIER_OU_BENEFICIANTS_D\'AIDE');
+            $table->string('TRANSFERE');
+            $table->string('année_universitaire_de_la_première_inscription_à_l\'établissement')->nullable(true);
+            $table->string('etablissement_de_provenance')->nullbale(true);
+            $table->string('LANGUE_DE_FORMATION');
             $table->timestamps();
         });
     }
