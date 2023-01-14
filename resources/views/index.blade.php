@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Etudiants Customers : {{$TOTAL}} </div>
+                                    <div class="card-body">Etudiants Customers : </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="{{ route('etudiants') }}">voir les details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -440,11 +440,11 @@
                                                         {{-- <i class="mdi mdi-account-multiple widget-icon"></i> --}}
                                                     </div>
                                                     <h5 class=" fw-normal mt-0 badge bg-primary text-wrap" style="width: 6rem; heiht:14rem" title="Number of Customers">Etudiants</h5>
-{{-- <<<<<<< HEAD --}}
+<<<<<<< HEAD
                                                     <h3 class="mt-3 mb-3"></h3>
-{{-- ======= --}}
-                                                    <h3 class="mt-3 mb-3">345</h3>
-{{-- >>>>>>> 9160e10c3a52d738e53b5263f92ada480ae23569 --}}
+=======
+                                                    <h3 class="mt-3 mb-3">{{$TOTAL}}</h3>
+>>>>>>> 9160e10c3a52d738e53b5263f92ada480ae23569
                                                     <p class="mb-0 text-muted">
                                                         {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>
                                                         <span class="text-nowrap">Since last month</span>   --}}

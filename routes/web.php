@@ -20,12 +20,13 @@ Route::controller(all_studentsController::class)->group(function(){
     Route::get('/', 'index')->name('index'); 
     Route::get('/etudiants', 'index')->name('etudiants'); 
 
-    Route::get('/tables', 'tables')->name('tables');
+    
 
    
 });
 
 
+// <<<<<<< HEAD
     Route::get('/layout-static', function () {
     return view('layout-static'); })->name('layout-static');
 
@@ -37,6 +38,9 @@ Route::controller(all_studentsController::class)->group(function(){
     return view('charts');
 })->name('charts');
 
+// =======
+   
+// >>>>>>> e13674984d1dc9bafca457e6cd4c18c5f39d98cb
 
 
 

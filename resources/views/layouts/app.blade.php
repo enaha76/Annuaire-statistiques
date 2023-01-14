@@ -277,7 +277,8 @@
                                         <a href="#">Import</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('layout-sidenav-light') }}">Export</a>
+                                        {{-- {{ route('layout-sidenav-light') }} --}}
+                                        <a href="#">Export</a>
                                     </li>
                                 </ul>
                             </div>
