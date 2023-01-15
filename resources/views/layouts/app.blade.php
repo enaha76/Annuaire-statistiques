@@ -278,7 +278,7 @@
                                     </li>
                                     <li>
                                         {{-- {{ route('layout-sidenav-light') }} --}}
-                                        <a href="#">Export</a>
+                                        <a href="{{ route('Export') }}">Export</a>
                                     </li>
                                 </ul>
                             </div>
