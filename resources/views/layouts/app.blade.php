@@ -191,7 +191,7 @@
                             <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                                 <i class="uil-home-alt"></i>
                                 <span class="badge bg-success float-end">4</span>
-                                <span> Dashboards </span>
+                                <span> Tableaux de bord</span>
                             </a>
                             <div class="collapse" id="sidebarDashboards">
                                 <ul class="side-nav-second-level">
@@ -273,12 +273,30 @@
                             </a>
                             <div class="collapse" id="sidebarEmail">
                                 <ul class="side-nav-second-level">
-                                    <li>
-                                        <a href="#">Import</a>
+                                    <li class="side-nav-item">
+                                        <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false" aria-controls="sidebarPagesAuth">
+                                            <span> Import </span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <div class="collapse" id="sidebarPagesAuth">
+                                            <ul class="side-nav-third-level">
+                                                <li>
+                                                    <a href="{{ route('tables') }}">Etudiants</a>
+                                                </li>
+                                                <li>
+                                                    <a href="pages-login-2.html">Professeurs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="pages-register.html">Etablissements</a>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
                                     </li>
                                     <li>
-                                        {{-- {{ route('layout-sidenav-light') }} --}}
+                                        
                                         <a href="#">Export</a>
+
                                     </li>
                                 </ul>
                             </div>

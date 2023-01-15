@@ -18,7 +18,8 @@ use App\Http\Controllers\ESPController;
 
 Route::controller(all_studentsController::class)->group(function(){
     Route::get('/', 'index')->name('index'); 
-    Route::get('/etudiants', 'index')->name('etudiants'); 
+    Route::get('/etudiants', 'etu')->name('etudiants'); 
+
 
     
 
@@ -30,8 +31,8 @@ Route::controller(all_studentsController::class)->group(function(){
     Route::get('/layout-static', function () {
     return view('layout-static'); })->name('layout-static');
 
-    Route::get('/layout-static', function () {
-        return view('layout-static'); })->name('layout-static');
+    Route::get('/tables', function () {
+        return view('tables'); })->name('tables');
 
 
     Route::get('/charts', function () {
