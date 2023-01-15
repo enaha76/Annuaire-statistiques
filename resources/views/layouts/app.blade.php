@@ -294,9 +294,14 @@
                                         </div>
                                     </li>
                                     <li>
+<<<<<<< HEAD
                                         
                                         <a href="#">Export</a>
 
+=======
+                                        {{-- {{ route('layout-sidenav-light') }} --}}
+                                        <a href="{{ route('Export') }}">Export</a>
+>>>>>>> 6907f391dd426189701d726f479410748ed76137
                                     </li>
                                 </ul>
                             </div>

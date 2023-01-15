@@ -8,9 +8,9 @@ use App\Models\FST;
 use App\Models\ISCAE;
 
 use App\Models\ISN;
-use App\Models\SUPNUM;
+use App\Models\User;
 use App\Models\tables;
-use App\Models\_i_s_n;
+use App\Models\Inscrire;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
 
-        // FST::factory(1243)->create();
+        Inscrire::factory(1243)->create();
         // ESP::factory(343)->create();
         // ISCAE::factory(843)->create();
         // SUPNUM::factory(143)->create();

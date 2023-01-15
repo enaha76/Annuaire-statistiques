@@ -27,9 +27,11 @@ Route::controller(all_studentsController::class)->group(function(){
 });
 
 
-// <<<<<<< HEAD
+
     Route::get('/layout-static', function () {
     return view('layout-static'); })->name('layout-static');
+    Route::get('/layout-sidenav-light', function () {
+        return view('layout-sidenav-light'); })->name('Export');
 
     Route::get('/tables', function () {
         return view('tables'); })->name('tables');
@@ -38,11 +40,6 @@ Route::controller(all_studentsController::class)->group(function(){
     Route::get('/charts', function () {
     return view('charts');
 })->name('charts');
-
-// =======
-   
-// >>>>>>> e13674984d1dc9bafca457e6cd4c18c5f39d98cb
-
 
 
 // Route::controller(ESPController::class)->group(function(){
