@@ -441,16 +441,9 @@
                                                         {{-- <i class="mdi mdi-account-multiple widget-icon"></i> --}}
                                                     </div>
                                                     <h5 class=" fw-normal mt-0 badge bg-primary text-wrap" style="width: 6rem; heiht:14rem" title="Number of Customers">Etudiants</h5>
-<<<<<<< HEAD
-                                                    <h3 class="mt-3 mb-3"></h3>
-                                                    <h3 class="mt-3 mb-3">70</h3>
-=======
-{{-- <<<<<<< HEAD --}}
-                                                    <h3 class="mt-3 mb-3"></h3>
-{{-- ======= --}}
+
                                                     <h3 class="mt-3 mb-3">1234</h3>
-{{-- >>>>>>> 9160e10c3a52d738e53b5263f92ada480ae23569 --}}
->>>>>>> 6907f391dd426189701d726f479410748ed76137
+
                                                     <p class="mb-0 text-muted">
                                                         {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>
                                                         <span class="text-nowrap">Since last month</span>   --}}
@@ -629,6 +622,7 @@
                                                         <span class="float-end"></span>
                                                     </p>
                                                 </div>
+                                            </div>
                                             {{-- <div class="dropdown float-end">
                                                 <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="mdi mdi-dots-vertical"></i>
@@ -679,7 +673,7 @@
 
 
 
-                                        </div> <!-- end card-body-->
+                                         <!-- end card-body-->
                                     </div> <!-- end card-->
                                 </div> <!-- end col-->
 

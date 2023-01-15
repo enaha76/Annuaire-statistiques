@@ -2,6 +2,7 @@
 
 @section('content')
   <!-- start page title -->
+ 
   <div class="row">
     <div class="col-12">
         <div class="page-title-box">
@@ -19,7 +20,8 @@
     </div>
 </div>     
 <!-- end page title --> 
-        
+<section class="d-flex">
+  
 <div class="col-xxl-3 col-lg-4 p-2">
     <div class="pe-xl-3">
         <!-- start search box -->
@@ -96,8 +98,52 @@ data-upload-preview-template="#uploadPreviewTemplate">
     </div>
 </div>
 </div>
+</div>
+    </div>
+</div>
+<div class="card-body">
+    <div class="dropdown float-end">
+        <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="mdi mdi-dots-vertical"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-end">
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item"></a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item"></a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item"></a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item"></a>
+        </div>
+    </div>
+    <h4 class="header-title">Repartution des etudiants par etablissement</h4>
+
+    <div id="average-sales" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
 
 
+    <div class="chart-widget-list">
+        <p>
+            <i class="mdi mdi-square text-primary"></i> SUPNUM
+            <span class="float-end"></span>
+        </p>
+        <p>
+            <i class="mdi mdi-square text-danger"></i>ISCAE
+            <span class="float-end"></span>
+        </p>
+        <p>
+            <i class="mdi mdi-square text-success"></i> ESP
+            <span class="float-end"></span>
+        </p>
+        <p class="mb-0">
+            <i class="mdi mdi-square text-warning"></i> FST
+            <span class="float-end"></span>
+        </p>
+    </div>
+</div>
+
+   
+</section>
 <!-- end demo js-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script >
