@@ -4,7 +4,6 @@
 use App\Models\Etudiant;
 use App\Models\Inscrire;
 use Illuminate\Routing\Controller;
-
 use Illuminate\Http\Request;
 
 
@@ -33,7 +32,7 @@ class ExcelImportController extends Controller
             if (confirm("Les inscriptions pour l'année scolaire " . $year . " dans l'établissement " . $establishment . " ont déjà été importées. Voulez-vous remplacer les données existantes?")) {
                 //proceed with import
                 $data = json_encode($request->input('file'),true);
-          
+
 
                 if ($data) {
                     foreach ($data as $key => $value) {
@@ -69,10 +68,10 @@ class ExcelImportController extends Controller
             } else {
                 return redirect()->back();
             }
-        } 
+        }
          else {
             //proceed with import
-            
+
             $data = json_encode($request->input('file'),true);
 
             if ($data) {
@@ -102,7 +101,7 @@ class ExcelImportController extends Controller
                     'année_universitaire_de_la_première_inscription_à_l\'établissement' => $value['année_universitaire_de_la_première_inscription_à_l\'établissement'],
                     'etablissement_de_provenance' => $value->etablissement_de_provenance,
                     'LANGUE_DE_FORMATION' => $value->LANGUE_DE_FORMATION
-                    
+
                     ]);
                 }
             }

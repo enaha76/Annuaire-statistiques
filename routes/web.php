@@ -17,24 +17,23 @@ use App\Http\Controllers\EtablissementsController;
 
 
 Route::controller(all_studentsController::class)->group(function(){
-    Route::get('/', 'index')->name('index'); 
-    Route::get('/etudiants', 'etu')->name('etudiants'); 
+    Route::get('/', 'index')->name('index');
+    Route::get('/etudiants', 'etu')->name('etudiants');
 
 
-    
 
-   
+
+
 });
 Route::controller(EtablissementsController::class)->group(function(){
     Route::post('/insert_etablissements', 'store')->name('etablissements.store');
     Route::get('/etablissements', 'index')->name('etablissements');
     Route::get('/import/etudiants', 'import')->name('import_etudiant');
-    
 
-   
+
+
 });
-
-Route::post('/excel/import', [ExcelImportController::class, 'import'])->name('import');
+Route::post('import', 'ExcelImportController@import')->name('import');
 
 
 

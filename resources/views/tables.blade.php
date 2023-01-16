@@ -2,8 +2,8 @@
 
 @section('content')
   <!-- start page title -->
-  
-  
+
+
   <div class="row">
     <div class="col-12">
         <div class="page-title-box">
@@ -13,16 +13,16 @@
                     <li class="breadcrumb-item active"><a href="javascript: void(0);">Getion</a></li>
                     <li class="breadcrumb-item active"><a href="javascript: void(0);">import</a></li>
                     <li class="breadcrumb-item active"><a href="javascript: void(0);">Etudiants</a></li>
-               
-                </ol> 
+
+                </ol>
             </div>
             <h4 class="page-title">Etudiants</h4>
         </div>
     </div>
-</div>     
-<!-- end page title --> 
+</div>
+<!-- end page title -->
 <section class="d-flex">
-  
+
 <div class="col-xxl-3 col-lg-4 p-2">
     <div class="pe-xl-3">
         <!-- start search box -->
@@ -50,16 +50,16 @@
                                     <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="customRadiocolor1" class="form-check-input ml-2 " checked>ISCAE</li>
                                     <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="customRadiocolor1" class="form-check-input ml-2 " checked>AN</li>
                                 </ul>
-                       
+
                             </div>
-                          
-                        
+
+
                         </div> <!-- end row-->
  </div>
  </div>
 
                   </div>
-                  
+
 <!-- end projects -->
 <form action="">
 <div class="fallback">
@@ -129,7 +129,7 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
     <h4 class="header-title">Traitement du fichier avant l'import</h4>
     <div id="tableContainer"></div>
     <div id="average-sales1" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
-     
+
 
     <div class="chart-widget-list " id="labelse">
     </div>
@@ -157,7 +157,7 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
             $(this).show();
         }
         else{
-           $(this).hide(); 
+           $(this).hide();
         }
       })
     });
@@ -166,9 +166,9 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
 <!-- init js -->
 <script src="assets/js/ui/component.fileupload.js"></script>
 <script>
- 
+
 </script>
 <script src="assets/js/pages/rens.js">
 
 </script>
-       @endsection   
+       @endsection
