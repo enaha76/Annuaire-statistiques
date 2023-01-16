@@ -440,11 +440,11 @@
                                                     <div class="float-end">
                                                         {{-- <i class="mdi mdi-account-multiple widget-icon"></i> --}}
                                                     </div>
-                                                    <h5 class=" fw-normal mt-0 badge bg-primary text-wrap" style="width: 6rem; heiht:14rem" title="Number of Customers">Etudiants</h5>
+                                                    <h5 class="bold mt-0  text-primary font-weight-b" title="Number of Customers"> <i class="uil-users-alt ">Etudiants</i></h5>
 
-                                                    <h3 class="mt-3 mb-3">1234</h3>
+                                                    <h3 class="mt-3 mb-3 text-muted">1234</h3>
 
-                                                    <p class="mb-0 text-muted">
+                                                    <p class="mb-0 ">
                                                         {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>
                                                         <span class="text-nowrap">Since last month</span>   --}}
                                                     </p>
@@ -459,7 +459,7 @@
                                                         <i class="mdi mdi-cart-plus widget-icon"></i>
                                                     </div>
                                                     <h5 class=" fw-normal mt-0 badge bg-primary text-wrap" style="width: 6rem; heiht:6rem" title="Number of Orders">Professeur</h5>
-                                                    <h3 class="mt-3 mb-3">585</h3>
+                                                    <h3 class="mt-3 mb-3">0</h3>
                                                     <p class="mb-0 text-muted">
                                                         {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 1.08%</span>
                                                         <span class="text-nowrap">Since last month</span> --}}
@@ -477,7 +477,7 @@
                                                         <i class="mdi mdi-currency-usd widget-icon"></i>
                                                     </div>
                                                     <h5 class=" fw-normal mt-0 badge bg-primary text-wrap" style="width: 6rem; heiht:6rem" title="Average Revenue">Candidats admis</h5>
-                                                    <h3 class="mt-3 mb-3">7254</h3>
+                                                    <h3 class="mt-3 mb-3">0</h3>
                                                     <p class="mb-0 text-muted">
                                                         {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 7.00%</span>
                                                         <span class="text-nowrap">Since last month</span> --}}
@@ -1020,4 +1020,7 @@
                         {{-- <script>
                             //var stat = @json($lists)
                         </script> --}}
+                        <script>
+                            console.log(dataJSON);
+                        </script>
 @endsection

@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">  
+<div class="container">
     <style>
         .shadow {
    box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.75);
 }
-        </style> 
-        
-        
+        </style>
+
+
 
         @if ($Etablissements)
         <div id="Etablissements-section">
@@ -18,9 +18,9 @@
                         <th class="text-center">id</th>
                         <th class="text-center">Nom</th>
                         <th class="text-center">Abreviation</th>
-                        <th class="text-center">Type</th>
                         <th class="text-center">tutelle</th>
                         <th class="text-center">cotutelle</th>
+                        <th class="text-center">Type</th>
                         <th class="text-center">origine</th>
                         <th class="text-center">id_cycle</th>
                     </tr>
@@ -31,25 +31,29 @@
                         <td class="text-dark">{{ $establishment->id }}</td>
                         <td class="text-dark">{{ $establishment->nom }}</td>
                         <td class="text-dark">{{ $establishment->abrev }}</td>
-                        <td class="text-dark">{{ $establishment->type }}</td>
+                        @if ($establishment->tutelle)
                         <td class="text-dark">{{ $establishment->tutelle }}</td>
-                        @if ($establishment->cotutelle)
-                        <td class="text-dark">{{ $establishment->cotutelle }}</td>            
                         @else
-                        <td class="text-dark">non-cotutle</td>   
+                        <td class="text-dark">non-tutele</td>
                         @endif
-                        @if ($establishment->identifiant)
-                        <td class="text-dark">{{$establishment->identifiant }}</td>            
+                        @if ($establishment->cotutelle)
+                        <td class="text-dark">{{ $establishment->cotutelle }}</td>
                         @else
-                        <td class="text-dark">autonome</td>   
+                        <td class="text-dark">non-cotutelle</td>
+                        @endif
+                        <td class="text-dark">{{ $establishment->type }}</td>
+                        @if ($establishment->identifiant)
+                        <td class="text-dark">{{$establishment->identifiant }}</td>
+                        @else
+                        <td class="text-dark">autonome</td>
                         @endif
                         <td class="text-dark">{{ $establishment->id_cycle }}</td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-            
-            
+
+
         </div>
         @endif
 
@@ -66,7 +70,7 @@
     <div class="col-sm-6">
 
         <input class="form-control w-50 mx-auto m-2" type="text" name="abrev" id="abrev">
-    </div></div> 
+    </div></div>
     <div class="form-group row">
         <label for="abrev"class="col-sm-1 col-form-label">Type:</label>
     <div class="col-sm-6">
