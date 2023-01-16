@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::controller(all_studentsController::class)->group(function(){
-    Route::get('/', 'index')->name('index'); 
-    Route::get('/etudiants', 'etu')->name('etudiants'); 
+    Route::get('/', 'index')->name('index');
+    Route::get('/etudiants', 'etu')->name('etudiants');
 
     Route::post('/excel','import')->name('test');
     
@@ -29,10 +29,10 @@ Route::controller(all_studentsController::class)->group(function(){
 Route::controller(EtablissementsController::class)->group(function(){
     Route::post('/insert_etablissements', 'store')->name('etablissements.store');
     Route::get('/etablissements', 'index')->name('etablissements');
-    Route::get('/import/etablissements', 'import')->name('import_etudiant');
+    Route::get('/import/etudiants', 'import')->name('import_etudiant');
     
 
-   
+
 });
 
 
