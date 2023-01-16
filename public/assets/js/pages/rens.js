@@ -85,7 +85,7 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
 
 var sub = `
     
-    <input type="hidden" name="file" value="${dataJSON}">
+    <input type="hidden" name="file" value='${ JSON.stringify(dataJSON)}'>
 
     <button type="submit" class="btn btn-primary float-end">Importer Quand même</button>
     
