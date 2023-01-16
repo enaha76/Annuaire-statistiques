@@ -23,7 +23,7 @@ class all_studentsController extends Controller
       etablissements.abrev,
       etablissements.nom
     ');
-    $List = (array) $List; 
+    $List = (array) $List;
 return view('index',compact($List));
      }
    public function etu()
@@ -41,5 +41,9 @@ return view('index',compact($List));
 
 //         return  view('layout-sidenav-light',['etats'=>$etats]);
 }
+
+
+
+
 }
 
