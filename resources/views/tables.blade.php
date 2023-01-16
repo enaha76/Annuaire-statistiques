@@ -2,7 +2,8 @@
 
 @section('content')
   <!-- start page title -->
- 
+  
+  
   <div class="row">
     <div class="col-12">
         <div class="page-title-box">
@@ -58,20 +59,26 @@
  </div>
 
                   </div>
+                  
 <!-- end projects -->
-<form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
-data-upload-preview-template="#uploadPreviewTemplate">
 <div class="fallback">
-    <input name="file" type="file" multiple />
+    {{-- <input name="file" type="file" id="fileInput" multiple /> --}}
+    <input type="file" id="fileInput"/>
 </div>
+{{-- <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
+data-upload-preview-template="#uploadPreviewTemplate"> --}}
+{{-- <div class="fallback"> --}}
+    {{-- <input name="file" type="file" id="fileInput" multiple /> --}}
+    {{-- <input type="file" id="fileInput"/> --}}
+{{-- </div> --}}
 
-<div class="dz-message needsclick">
+{{-- <div class="dz-message needsclick">
     <i class="h1 text-muted dripicons-cloud-upload"></i>
-    <h3 class="text-muted font-13">Déposez les fichiers ici ou cliquez pour télécharger.</h3>
+    <h3 class="text-muted font-13">Déposez les fichiers ici ou cliquez pour télécharger.</h3> --}}
     {{-- <span class="text-muted font-13">(This is just a demo dropzone. Selected files are
         <strong>not</strong> actually uploaded.)</span> --}}
-</div>
-</form>
+{{-- </div> --}}
+{{-- </form> --}}
 
 <!-- Preview -->
 <div class="dropzone-previews mt-3" id="file-previews"></div>
@@ -117,33 +124,19 @@ data-upload-preview-template="#uploadPreviewTemplate">
             <a href="javascript:void(0);" class="dropdown-item"></a>
         </div>
     </div>
-    <h4 class="header-title">Repartution des etudiants par etablissement</h4>
+    <h4 class="header-title">Traitement du fichier avant l'import</h4>
+    <div id="tableContainer"></div>
+    <div id="average-sales1" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
+     
 
-    <div id="average-sales" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
-
-
-    <div class="chart-widget-list">
-        <p>
-            <i class="mdi mdi-square text-primary"></i> SUPNUM
-            <span class="float-end"></span>
-        </p>
-        <p>
-            <i class="mdi mdi-square text-danger"></i>ISCAE
-            <span class="float-end"></span>
-        </p>
-        <p>
-            <i class="mdi mdi-square text-success"></i> ESP
-            <span class="float-end"></span>
-        </p>
-        <p class="mb-0">
-            <i class="mdi mdi-square text-warning"></i> FST
-            <span class="float-end"></span>
-        </p>
+    <div class="chart-widget-list" id="labelse">
+        
     </div>
 </div>
 
    
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.core.min.js"></script>
 <!-- end demo js-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script >
@@ -163,6 +156,10 @@ data-upload-preview-template="#uploadPreviewTemplate">
 <script src="assets/js/vendor/dropzone.min.js"></script>
 <!-- init js -->
 <script src="assets/js/ui/component.fileupload.js"></script>
+<script>
+ 
+</script>
+<script src="assets/js/pages/rens.js">
 
-
+</script>
        @endsection   

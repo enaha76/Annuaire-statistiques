@@ -642,7 +642,8 @@
          <script src="assets/js/vendor/responsive.bootstrap5.min.js"></script>
          <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
          <!-- third party js ends -->
- 
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.core.min.js"></script>
+
          <!-- demo app -->
          <script src="assets/js/pages/demo.products.js"></script>
          <!-- end demo js-->
