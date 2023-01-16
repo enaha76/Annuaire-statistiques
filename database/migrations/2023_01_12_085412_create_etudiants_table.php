@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('NNI');
             $table->string('N°_de_BAC');
             $table->string('Nom_et_prenom');
-            $table->string('GENRE',);
+            $table->string('GENRE');
             $table->date('date_DE_NAISSANCE');
             $table->string('NATIONALITE');
             $table->timestamps();

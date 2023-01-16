@@ -15,7 +15,7 @@ class EtablissementsController extends Controller
     }
     public function store(Request $request)
     {
-        $data = $request->validate([
+        $d = $request->validate([
             'nom' => 'required',
             'abrev' => 'required',
             'type' => 'required',
@@ -24,7 +24,7 @@ class EtablissementsController extends Controller
             'identifiant' => 'nullable',
             'id_cycle' => 'nullable',
         ]);
-    
+        $data = $request->all();
         Etablissement::create([
             'nom' => $data['nom'],
             'abrev' => $data['abrev'],

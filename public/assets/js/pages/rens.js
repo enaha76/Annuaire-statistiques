@@ -82,10 +82,14 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
              
               ` 
   document.getElementById("labelse").innerHTML = x;
-
+ 
+ ;
 var sub = `
-    
-    <input type="hidden" name="file" value="${dataJSON}">
+
+
+    <input type="hidden" name="file" value=${JSON.stringify(dataJSON)}>
+    <input type="hidden" name="establishment" value="1">
+    <input type="hidden" name="year" value="2022-2023">
 
     <button type="submit" class="btn btn-primary float-end">Importer Quand même</button>
     

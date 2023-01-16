@@ -33,7 +33,8 @@ Route::controller(EtablissementsController::class)->group(function(){
 
    
 });
-Route::post('import', 'ExcelImportController@import')->name('import');
+
+Route::post('/excel/import', [ExcelImportController::class, 'import'])->name('import');
 
 
 
