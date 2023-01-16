@@ -134,8 +134,11 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
     <div class="chart-widget-list" id="labelse">
         
     </div>
+    <form action="{{ route('import') }}" method="POST">
     <div id="sub">
+
     </div>
+</form>
 </div>
 
 

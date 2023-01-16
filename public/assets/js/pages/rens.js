@@ -19,16 +19,19 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
       var sheet = workbook.Sheets[workbook.SheetNames[0]];
       dataJSON = XLSX.utils.sheet_to_json(sheet);
       
-      
+    //   console.log(dataJSON)
       for (var i = 0; i < dataJSON.length; i++) {
       
        if (dataJSON[i].sex==null) {
           null_count++;
+          dataJSON[i].sex="NR";
+
        }
        else if (dataJSON[i].sex=="F" || dataJSON[i].sex=="M") {
              cor_count++;
        } else {
           err_count++;
+          dataJSON[i].sex="MR";
        }
       }
       console.log(dataJSON)
@@ -81,7 +84,11 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
   document.getElementById("labelse").innerHTML = x;
 
 var sub = `
-<button type="submit" class="btn btn-primary float-end">Importer Quand même</button>
+    
+    <input type="hidden" name="file" value="${dataJSON}">
+
+    <button type="submit" class="btn btn-primary float-end">Importer Quand même</button>
+    
 `
 document.getElementById("sub").innerHTML = sub;
               }
