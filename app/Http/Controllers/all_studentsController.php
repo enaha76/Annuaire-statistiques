@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
-
-
+use Spatie\FlareClient\View;
 
 class all_studentsController extends Controller
 {
@@ -26,7 +25,10 @@ class all_studentsController extends Controller
     $List = (array) $List;
 return view('index',compact($List));
      }
-   
+   public function etu()
+   {
+ return View('etudiants');
+   }
      public function tables(){
 //         $etats = DB::select('select abrev from tables');
 

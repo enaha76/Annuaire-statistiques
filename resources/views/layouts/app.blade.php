@@ -191,7 +191,7 @@
                             <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                                 <i class="uil-home-alt"></i>
                                 <span class="badge bg-success float-end">4</span>
-                                <span> Dashboards </span>
+                                <span> Tableaux de bord</span>
                             </a>
                             <div class="collapse" id="sidebarDashboards">
                                 <ul class="side-nav-second-level">
@@ -273,12 +273,35 @@
                             </a>
                             <div class="collapse" id="sidebarEmail">
                                 <ul class="side-nav-second-level">
-                                    <li>
-                                        <a href="#">Import</a>
+                                    <li class="side-nav-item">
+                                        <a data-bs-toggle="collapse" href="#sidebarPagesAuth" aria-expanded="false" aria-controls="sidebarPagesAuth">
+                                            <span> Import </span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <div class="collapse" id="sidebarPagesAuth">
+                                            <ul class="side-nav-third-level">
+                                                <li>
+                                                    <a href="{{ route('tables') }}">Etudiants</a>
+                                                </li>
+                                                <li>
+                                                    <a href="pages-login-2.html">Professeurs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="pages-register.html">Etablissements</a>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
                                     </li>
                                     <li>
+{{-- <<<<<<< HEAD --}}
+                                        
+                                        {{-- <a href="#">Export</a> --}}
+
+{{-- ======= --}}
                                         {{-- {{ route('layout-sidenav-light') }} --}}
-                                        <a href="#">Export</a>
+                                        <a href="{{ route('Export') }}">Export</a>
+{{-- >>>>>>> 6907f391dd426189701d726f479410748ed76137 --}}
                                     </li>
                                 </ul>
                             </div>
@@ -619,7 +642,8 @@
          <script src="assets/js/vendor/responsive.bootstrap5.min.js"></script>
          <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
          <!-- third party js ends -->
- 
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.core.min.js"></script>
+
          <!-- demo app -->
          <script src="assets/js/pages/demo.products.js"></script>
          <!-- end demo js-->
