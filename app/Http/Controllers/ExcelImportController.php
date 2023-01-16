@@ -5,13 +5,16 @@ use App\Models\Etudiant;
 use App\Models\Inscrire;
 use Illuminate\Routing\Controller;
 use Maatwebsite\Excel\Excel;
-
+use Illuminate\Http\Request;
 
 
 class ExcelImportController extends Controller
 {
     public function import(Request $request)
     {
+        
+     
+        
         //validate the form data
         $request->validate([
             'year' => 'required',

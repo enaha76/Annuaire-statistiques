@@ -1020,4 +1020,7 @@
                         {{-- <script>
                             //var stat = @json($lists)
                         </script> --}}
+                        <script>
+                            console.log(dataJSON);
+                        </script>
 @endsection

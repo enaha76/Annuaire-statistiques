@@ -21,41 +21,23 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
       dataJSON = XLSX.utils.sheet_to_json(sheet);
       // let people = [dataJSON];
       
-      for (let ii = 0; ii < dataJSON.length; ii++) {
-        let person = dataJSON[ii];
-        if ("GENRE" in person) {
-           is_cor=true;
-        // } else {
-        //   console.log(`The person ${person.nom} has no sex`);
-        // }
-        }
-      }
-     
-      console.log(is_cor);
-      if (is_cor) {
-        
-        for (var i = 0; i < dataJSON.length; i++) {
       
-          if (dataJSON[i].GENRE==null) {
-             null_count++;
-          }
-          else if (dataJSON[i].GENRE=="F" || dataJSON[i].GENRE=="M") {
-                cor_count++;
-          } else {
-             err_count++;
-          }
-         }
-         console.log(dataJSON)
-         // let t=null_count+err_count+cor_count;
-         // cars=[null_count,err_count,cor_count,t]
-         displayTable(null_count,err_count,cor_count);
-         av(null_count,err_count,cor_count);
-      }
-
-      else{
-        error();
-      }
+      for (var i = 0; i < dataJSON.length; i++) {
       
+       if (dataJSON[i].sex==null) {
+          null_count++;
+       }
+       else if (dataJSON[i].sex=="F" || dataJSON[i].sex=="M") {
+             cor_count++;
+       } else {
+          err_count++;
+       }
+      }
+      console.log(dataJSON)
+      // let t=null_count+err_count+cor_count;
+      // cars=[null_count,err_count,cor_count,t]
+      displayTable(null_count,err_count,cor_count);
+      av(null_count,err_count,cor_count);
     };      
     reader.readAsArrayBuffer(file);
   });
@@ -101,7 +83,7 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
   document.getElementById("labelse").innerHTML = x;
 
 var sub = `
-<button type="submit" class="btn btn-primary float-end ">Importer Quand même</button>
+<button type="submit" class="btn btn-primary float-end">Importer Quand même</button>
 `
 document.getElementById("sub").innerHTML = sub;
 
