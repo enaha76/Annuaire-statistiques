@@ -80,6 +80,10 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
               ` 
   document.getElementById("labelse").innerHTML = x;
 
+var sub = `
+<button type="submit" class="btn btn-primary float-end">Importer Quand même</button>
+`
+document.getElementById("sub").innerHTML = sub;
               }
 
 

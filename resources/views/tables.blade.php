@@ -61,10 +61,12 @@
                   </div>
                   
 <!-- end projects -->
+<form action="">
 <div class="fallback">
     {{-- <input name="file" type="file" id="fileInput" multiple /> --}}
     <input type="file" id="fileInput"/>
 </div>
+</form>
 {{-- <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
 data-upload-preview-template="#uploadPreviewTemplate"> --}}
 {{-- <div class="fallback"> --}}
@@ -132,10 +134,13 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
     <div class="chart-widget-list" id="labelse">
         
     </div>
+    <div id="sub">
+    </div>
 </div>
 
-   
+
 </section>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.core.min.js"></script>
 <!-- end demo js-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
