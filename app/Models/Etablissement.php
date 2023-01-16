@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Etablissement extends Model
 {
+
+
+    protected $fillable = ['nom','abrev','tutelle','cotutelle','identifiant','id_cycle'];
     public function Etudiants()
 {
     return $this->belongsToMany(Etudiant::class)->using(Inscrire::class);

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('etudiants', function (Blueprint $table) {
             $table->id();
-            $table->string('N°_inscription',10);
+           
             $table->string('NNI');
             $table->string('N°_de_BAC');
             $table->string('Nom_et_prenom');

@@ -205,7 +205,7 @@
                                         <a href="#">Professeurs</a>
                                     </li>
                                     <li>
-                                        <a href="#">Etablissement</a>
+                                        <a href="{{route('etablissements')}}">Etablissement</a>
                                     </li>
                                    
                                    

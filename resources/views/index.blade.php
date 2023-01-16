@@ -443,7 +443,7 @@
 <<<<<<< HEAD
                                                     <h3 class="mt-3 mb-3"></h3>
 =======
-                                                    <h3 class="mt-3 mb-3">{{$TOTAL}}</h3>
+                                                    <h3 class="mt-3 mb-3"></h3>
 >>>>>>> 9160e10c3a52d738e53b5263f92ada480ae23569
                                                     <p class="mb-0 text-muted">
                                                         {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>
