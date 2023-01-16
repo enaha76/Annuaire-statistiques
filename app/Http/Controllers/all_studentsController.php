@@ -16,11 +16,11 @@ class all_studentsController extends Controller
       etablissements.nom,
       count(`id_etudiant`) AS total
     FROM
-      inscrires,
+      inscrire,
       etablissements
     WHERE
-      inscrires.id_etablissement = etablissements.id
-      AND inscrires.année_scolaire = "2021-2022"
+      inscrire.id_etablissement = etablissements.id
+      AND inscrire.année_scolaire = "2021-2022"
     GROUP BY
       etablissements.abrev,
       etablissements.nom
@@ -66,11 +66,11 @@ public function import(Request $request)
         //ask for permission to overwrite the data
         if (confirm("Les inscriptions pour l'année scolaire " . $year . " dans l'établissement " . $establishment . " ont déjà été importées. Voulez-vous remplacer les données existantes?")) {
             //proceed with import
-            $data = json_encode($request->input('file'));
+            $data = json_decode($request->input('file'));
 
-        dd($data);
+        // dd($data);
             if ($data) {
-                foreach ($data as $key => $value) {
+                foreach ($data as $value) {
                     $student = Etudiant::firstOrCreate([
                         'NNI' => $value['NNI'],
                         'N°_de_BAC' => $value['N°_de_BAC'],
