@@ -5,13 +5,16 @@ use App\Models\Etudiant;
 use App\Models\Inscrire;
 use Illuminate\Routing\Controller;
 use Maatwebsite\Excel\Excel;
-
+use Illuminate\Http\Request;
 
 
 class ExcelImportController extends Controller
 {
     public function import(Request $request)
     {
+        
+     
+        
         //validate the form data
         $request->validate([
             'year' => 'required',
@@ -42,7 +45,13 @@ class ExcelImportController extends Controller
                             'GENRE' => $value->GENRE,
                         ]);
 
+<<<<<<< HEAD
                         $inscries = Inscrire::firstOrCreate([
+||||||| 49459bc
+                        $inscries = Inscries::firstOrCreate([
+=======
+                        $Inscrire = Inscrire::firstOrCreate([
+>>>>>>> 7102d672de3b8b0454949b0f9dd4e4bb84416171
                             'id_etudiant' => $student->id,
                             'id_etablissement' => $establishment,
                             'année_scolaire' => $year,
@@ -68,7 +77,7 @@ class ExcelImportController extends Controller
                         'GENRE' => $value->GENRE,
                     ]);
 
-                    $inscries = Inscries::firstOrCreate([
+                    $Inscrire = Inscrire::firstOrCreate([
                         'id_etudiant' => $student->id,
                         'id_etablissement' => $establishment,
                         'année_scolaire' => $year,

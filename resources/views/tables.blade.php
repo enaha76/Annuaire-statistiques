@@ -61,10 +61,12 @@
                   </div>
                   
 <!-- end projects -->
+<form action="">
 <div class="fallback">
     {{-- <input name="file" type="file" id="fileInput" multiple /> --}}
-    <input type="file" id="fileInput"/>
+<input type="file"  id="fileInput"/>
 </div>
+</form>
 {{-- <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
 data-upload-preview-template="#uploadPreviewTemplate"> --}}
 {{-- <div class="fallback"> --}}
@@ -129,13 +131,20 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
     <div id="average-sales1" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
      
 
-    <div class="chart-widget-list" id="labelse">
-        
+    <div class="chart-widget-list " id="labelse">
     </div>
+    <div id="aler" ></div>
+    <form action="{{ route('import') }}" method="POST">
+    
+    <div id="sub">
+
+    </div>
+</form>
 </div>
 
-   
+
 </section>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.core.min.js"></script>
 <!-- end demo js-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
