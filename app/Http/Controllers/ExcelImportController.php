@@ -42,7 +42,7 @@ class ExcelImportController extends Controller
                             'GENRE' => $value->GENRE,
                         ]);
 
-                        $inscries = Inscries::firstOrCreate([
+                        $Inscrire = Inscrire::firstOrCreate([
                             'id_etudiant' => $student->id,
                             'id_etablissement' => $establishment,
                             'année_scolaire' => $year,
@@ -68,7 +68,7 @@ class ExcelImportController extends Controller
                         'GENRE' => $value->GENRE,
                     ]);
 
-                    $inscries = Inscries::firstOrCreate([
+                    $Inscrire = Inscrire::firstOrCreate([
                         'id_etudiant' => $student->id,
                         'id_etablissement' => $establishment,
                         'année_scolaire' => $year,
