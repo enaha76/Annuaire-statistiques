@@ -32,7 +32,7 @@ class ExcelImportController extends Controller
             //ask for permission to overwrite the data
             if (confirm("Les inscriptions pour l'année scolaire " . $year . " dans l'établissement " . $establishment . " ont déjà été importées. Voulez-vous remplacer les données existantes?")) {
                 //proceed with import
-                $data = json_encode($request->input('file'),true);
+                $data = json_encode($request->input('file'));
           
 
                 if ($data) {

@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\all_studentsController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtablissementsController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,7 @@ Route::controller(all_studentsController::class)->group(function(){
     Route::get('/', 'index')->name('index'); 
     Route::get('/etudiants', 'etu')->name('etudiants'); 
 
-
+    Route::post('/excel','import')->name('test');
     
 
    
@@ -28,13 +29,13 @@ Route::controller(all_studentsController::class)->group(function(){
 Route::controller(EtablissementsController::class)->group(function(){
     Route::post('/insert_etablissements', 'store')->name('etablissements.store');
     Route::get('/etablissements', 'index')->name('etablissements');
-    Route::get('/import/etudiants', 'import')->name('import_etudiant');
+    Route::get('/import/etablissements', 'import')->name('import_etudiant');
     
 
    
 });
 
-Route::post('/excel/import', [ExcelImportController::class, 'import'])->name('import');
+
 
 
 

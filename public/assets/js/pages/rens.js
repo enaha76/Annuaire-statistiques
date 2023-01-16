@@ -105,7 +105,7 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
 var sub = `
 
 
-    <input type="hidden" name="file" value=${JSON.stringify(dataJSON)}>
+<textarea name="file" id="" cols="30" rows="10" style="display:none">${JSON.stringify(dataJSON)}</textarea>
     <input type="hidden" name="establishment" value="1">
     <input type="hidden" name="year" value="2022-2023">
 
