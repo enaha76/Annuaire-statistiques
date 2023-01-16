@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\all_studentsController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ESPController;
+use App\Http\Controllers\EtablissementsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +25,16 @@ Route::controller(all_studentsController::class)->group(function(){
 
    
 });
+Route::controller(EtablissementsController::class)->group(function(){
+    Route::post('/insert_etablissements', 'store')->name('etablissements.store');
+    Route::get('/etablissements', 'index')->name('etablissements');
+    Route::get('/import/etudiants', 'import')->name('import_etudiant');
+    
+
+   
+});
+Route::post('import', 'ExcelImportController@import')->name('import');
+
 
 
 

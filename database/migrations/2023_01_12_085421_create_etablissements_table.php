@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('nom');
             $table->string('abrev');
             $table->string('tutelle');
-            $table->string('cotutelle');
-            $table->foreignId('identifiant')
+            $table->string('cotutelle')->nullable(true);
+            $table->string('type');
+            $table->foreignId('identifiant')->nullable(true)
                   ->constrained('etablissements')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');

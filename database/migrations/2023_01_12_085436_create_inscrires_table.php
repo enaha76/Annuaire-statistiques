@@ -24,6 +24,7 @@ return new class extends Migration
                   ->constrained('etablissements')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');
+            $table->string('N°_inscription');
             $table->string('ANNEE_UNIVERSITAIRE_DE_première_inscription_DANS_LE_CYCLE');
             $table->string('Niveau');
             $table->string('ANNEE_UNIVERSITAIRE_DE_première_inscription_DANS_ce_niveau');
