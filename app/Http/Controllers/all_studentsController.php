@@ -41,8 +41,9 @@ class all_studentsController extends Controller
   }
   public function tables()
   {
-    $etats = Etablissement::select('abrev', 'id')->get();
-    return view('tables', [compact((array) $etats)]);
+    $etats = Etablissement::all();
+ 
+    return view('tables', compact( 'etats'));
   }
   public function import(Request $request)
   {

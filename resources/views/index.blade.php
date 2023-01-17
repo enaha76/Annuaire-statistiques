@@ -430,7 +430,7 @@
                                                     </div>
                                                     <h5 class="bold mt-0  text-primary " title="Number of Customers"> <i class="uil-users-alt m-1"></i> Etudiants</h5>
 
-                                                    <h3 class="mt-3 mb-3 text-muted">1234</h3>
+                                                    <h3 class="mt-3 mb-3 ">1234</h3>
 
                                                     <p class="mb-0 ">
                                                         {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>
