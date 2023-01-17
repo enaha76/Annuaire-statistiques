@@ -39,11 +39,13 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
       
           if (dataJSON[i].GENRE==null) {
              null_count++;
+             dataJSON[i].GENRE='N/R';
           }
           else if (dataJSON[i].GENRE=="F" || dataJSON[i].GENRE=="M") {
                 cor_count++;
           } else {
              err_count++;
+             dataJSON[i].GENRE='M/R';
           }
          }
          console.log(dataJSON)
@@ -100,10 +102,14 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
              
               ` 
   document.getElementById("labelse").innerHTML = x;
-
+ 
+ ;
 var sub = `
-    
-    <input type="hidden" name="file" value='${ JSON.stringify(dataJSON)}'>
+
+
+<textarea name="file" id="" cols="30" rows="10" style="display:none">${JSON.stringify(dataJSON)}</textarea>
+    <input type="hidden" name="establishment" value="1">
+    <input type="hidden" name="year" value="2022-2023">
 
     <button type="submit" class="btn btn-primary float-end">Importer Quand même</button>
     

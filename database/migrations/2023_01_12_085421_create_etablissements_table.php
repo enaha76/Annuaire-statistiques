@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('abrev');
-            $table->string('tutelle');
+            $table->string('tutelle')->nullable(true);
             $table->string('cotutelle')->nullable(true);
             $table->string('type');
             $table->foreignId('identifiant')->nullable(true)

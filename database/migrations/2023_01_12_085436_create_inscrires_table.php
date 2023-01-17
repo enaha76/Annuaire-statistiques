@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('inscrires', function (Blueprint $table) {
+        Schema::create('inscrire', function (Blueprint $table) {
             $table->id();
             $table->string('année_scolaire');
             $table->foreignId('id_etudiant')
@@ -31,9 +31,9 @@ return new class extends Migration
             $table->string('NOM_DU_(TRONC/FILIRERE)');
             $table->string('FORMATION');
             $table->string('Redoublant' );
-            $table->string('BOURSIER_OU_BENEFICIANTS_D_AIDE');
+            $table->string('BOURSIER_OU_BENEFICIANTS_D\'AIDE');
             $table->string('TRANSFERE');
-            $table->string('année_universitaire_de_la_première_inscription_à_l_établissement')->nullable(true);
+            $table->string('année_universitaire_de_la_première_inscription_à_l\'établissement')->nullable(true);
             $table->string('etablissement_de_provenance')->nullbale(true);
             $table->string('LANGUE_DE_FORMATION');
             $table->timestamps();
@@ -47,6 +47,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inscrires');
+        Schema::dropIfExists('inscrire');
     }
 };
