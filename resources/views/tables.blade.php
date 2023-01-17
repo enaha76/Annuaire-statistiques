@@ -3,7 +3,14 @@
 @section('content')
   <!-- start page title -->
 
-
+  @if (session('success'))
+  <div class="alert alert-success" role="alert">
+    <div style="display: flex; align-items: center;">
+      <i class="fas fa-check-circle"></i>
+      <span class="ml-2">{{ session('success') }}</span>
+    </div>
+  </div>
+  @endif
   <div class="row">
     <div class="col-12">
         <div class="page-title-box">
