@@ -27,16 +27,7 @@
                 <div class="col-xxl-3 col-lg-4">
                     <div class="pe-xl-3">
                         <h5 class="mt-0 mb-3"></h5>
-                        <!-- start search box -->
-                        {{-- <div class="app-search">
-                            <form>
-                                <div class="mb-2 position-relative">
-                                    <input type="text" class="form-control" placeholder="search by name...">
-                                    <span class="mdi mdi-magnify search-icon"></span>
-                                </div>
-                            </form>
-                        </div> --}}
-                        <!-- end search box -->
+                        
 
                         <div class="row">
                             <div class="col">
