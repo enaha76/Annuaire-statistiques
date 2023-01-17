@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Etablissement;
 use App\Models\Inscrire;
 use App\Models\Etudiant;
 use Illuminate\Http\Request;
@@ -40,15 +41,8 @@ class all_studentsController extends Controller
   }
   public function tables()
   {
-    //         $etats = DB::select('select abrev from tables');
-
-    //         return  view('tables',['etats'=>$etats]);
-
-    //     }
-//  public function tables_ex(){
-//         $etats =DB::select('select abrev from tables ');
-
-    //         return  view('layout-sidenav-light',['etats'=>$etats]);
+    $etats = Etablissement::select('abrev', 'id')->get();
+    return view('tables', [compact((array) $etats)]);
   }
   public function import(Request $request)
   {

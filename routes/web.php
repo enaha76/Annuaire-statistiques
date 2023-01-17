@@ -23,7 +23,7 @@ Route::controller(all_studentsController::class)->group(function(){
 
     Route::post('/excel','import')->name('test');
     Route::post('/excel2', 'redr')->name('insert');
-    
+    Route::get('/tables', 'tables')->name('tables');
 
    
 });
@@ -46,8 +46,7 @@ Route::controller(EtablissementsController::class)->group(function(){
     Route::get('/layout-sidenav-light', function () {
         return view('layout-sidenav-light'); })->name('Export');
 
-    Route::get('/tables', function () {
-        return view('tables'); })->name('tables');
+  
 
 
     Route::get('/charts', function () {
