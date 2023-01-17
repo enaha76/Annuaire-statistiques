@@ -88,7 +88,7 @@ class all_studentsController extends Controller
   public function insert( $data, $establishment, $year)
   {
 
-    dd($data);
+   
       foreach ($data as $value) {
         $student = Etudiant::firstOrCreate([
           'NNI' => $value['NNI'],
