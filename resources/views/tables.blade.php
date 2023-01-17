@@ -50,12 +50,14 @@
                         <div class="row " >
                             <div class="col bt-3 ">
                                 <ul  class="list-unstyled " id="list">
+                                    @foreach($etats as $e)
                                     <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="customRadiocolor1" class="form-check-input ml-2  " checked value="1" > SupNum</li>
                                     <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="customRadiocolor1" class="form-check-input ml-2 " checked>FM</li>
                                     <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="customRadiocolor1" class="form-check-input ml-2 " checked>FST</li>
                                     <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="customRadiocolor1" class="form-check-input ml-2 " checked>FSH</li>
                                     <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="customRadiocolor1" class="form-check-input ml-2 " checked>ISCAE</li>
                                     <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="customRadiocolor1" class="form-check-input ml-2 " checked>AN</li>
+                                    @endforeach
                                 </ul>
 
                             </div>
