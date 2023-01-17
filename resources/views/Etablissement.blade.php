@@ -41,7 +41,7 @@
 
                         <div class="row">
                             <div class="col">
-                                <div data-simplebar="" style="max-height: 535px;">
+                                <div data-simplebar="" >
                         
                                     <form class="needs-validation" form action="{{ route('etablissements.store') }}" method="POST" novalidate>
                                         <div class="mb-3">
@@ -237,8 +237,8 @@
                 <!-- end projects -->
 
                 <!-- gantt view -->
-                <div class="col-xxl-9 mt-4 mt-xl-0 col-lg-8">
-                    <div class="ps-xl-3">
+                {{-- <div class="col-xxl-9 mt-4 mt-xl-0 col-lg-8">
+                    <div class="ps-xl-3"> --}}
                         {{-- <div class="row"> --}}
                             {{-- <div class="col-auto">
                                 <a href="javascript: void(0);" class="btn btn-success btn-sm mb-2">Add New Task</a>
@@ -262,14 +262,14 @@
                                     </label> --}}
                                 {{-- </div> --}}
                             {{-- </div> --}}
-                        </div>
-                        @if ($Etablissements)
+                        {{-- </div> --}}
+                        {{-- @if ($Etablissements)
                         <div class="row">
                             <div class="col mt-3">
                                 <table id="alternative-page-datatable" class="table dt-responsive nowrap">
                                     <thead class="bg-primary text-light">
                                         <tr>
-                                            {{-- <th class="text-center">id</th> --}}
+                                            <th class="text-center">id</th>
                                         <th class="text-center">Nom</th>
                                         <th class="text-center">Abreviation</th>
                                         <th class="text-center">Type</th>
@@ -283,7 +283,7 @@
                                     <tbody>
                                         @foreach($Etablissements as $establishment)
                                         <tr>
-                                            {{-- <td class="text-dark">{{ $establishment->id }}</td> --}}
+                                            <td class="text-dark">{{ $establishment->id }}</td>
                                             <td class="text-dark">{{ $establishment->nom }}</td>
                                             <td class="text-dark">{{ $establishment->abrev }}</td>
                                             <td class="text-dark">{{ $establishment->type }}</td>
@@ -305,9 +305,9 @@
                                 </table>
                             </div>
                         </div>
-                        @endif
-                    </div>
-                </div>
+                        @endif --}}
+                    {{-- </div>
+                </div> --}}
                 <!-- end gantt view -->
             </div>
         </div>

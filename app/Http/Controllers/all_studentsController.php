@@ -21,11 +21,11 @@ class all_studentsController extends Controller
       etablissements.nom,
       count(`id_etudiant`) AS total
     FROM
-      inscrires,
+      inscrire,
       etablissements
     WHERE
-      inscrires.id_etablissement = etablissements.id
-      AND inscrires.année_scolaire = "2021-2022"
+      inscrire.id_etablissement = etablissements.id
+      AND inscrire.année_scolaire = "2021-2022"
     GROUP BY
       etablissements.abrev,
       etablissements.nom
