@@ -19,7 +19,7 @@
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire Statistique</a></li>
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Getion</a></li>
                     <li class="breadcrumb-item "><a href="javascript: void(0);">import</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript: void(0);">Etudiants</a></li>
+                    <li class="breadcrumb-item active">Etudiants</a></li>
 
                 </ol>
             </div>

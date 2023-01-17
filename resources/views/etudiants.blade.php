@@ -13,7 +13,7 @@
                             <div class="page-title-right">
                                  <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire Statistique</a></li>
-                                    <li class="breadcrumb-item active"><a href="javascript: void(0);">Etudiants</a></li>
+                                    <li class="breadcrumb-item active">Etudiants</a></li>
                                
                                 </ol> 
                             </div>

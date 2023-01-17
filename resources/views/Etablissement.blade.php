@@ -4,18 +4,17 @@
 <!-- Start Content-->
 <div class="container-fluid">
 
-    <!-- start page title -->
+<!-- start page title -->
     <div class="row">
         <div class="col-12">
             <div class="page-title-box">
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
-                        <li class="breadcrumb-item"><a href="javascript: void(0);">Projects</a></li>
-                        <li class="breadcrumb-item active">Gantt</li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire statistique</a></li>
+                        <li class="breadcrumb-item active">Etablissements</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Projects Calendar</h4>
+                <h4 class="page-title">Etablissements</h4>
             </div>
         </div>
     </div>
