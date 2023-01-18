@@ -73,9 +73,9 @@ class all_studentsController extends Controller
       $data = json_decode($request->input('file'), true);
 
       if ($data) {
-        $this->insert( $data, $establishment, $year);
+        return $this->insert( $data, $establishment, $year);
       }
-
+      return redirect()->route('tables')->with('danger', 'Les données non été pas importées ');
 
 
     }
