@@ -45,18 +45,13 @@
 
         <div class="row">
             <div class="col">
-                <div data-simplebar="" style="max-height: 535px;">
+                <div data-simplebar="" style="max-height: 350px;">
                     <div class="p-2">
                         <div class="row " >
                             <div class="col bt-3 ">
                                 <ul  class="list-unstyled " id="list">
                                     @foreach($etats as $e)
-                                    <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="customRadiocolor1" class="form-check-input ml-2  " checked value="1" > SupNum</li>
-                                    <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="customRadiocolor1" class="form-check-input ml-2 " checked>FM</li>
-                                    <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="customRadiocolor1" class="form-check-input ml-2 " checked>FST</li>
-                                    <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="customRadiocolor1" class="form-check-input ml-2 " checked>FSH</li>
-                                    <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="customRadiocolor1" class="form-check-input ml-2 " checked>ISCAE</li>
-                                    <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="customRadiocolor1" class="form-check-input ml-2 " checked>AN</li>
+                                     <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="myCheckboxes" value="{{ $e['id'] }}" class="form-check-input ml-2  "  > {{ $e['abrev']  }}</li> 
                                     @endforeach
                                 </ul>
 
@@ -73,7 +68,15 @@
 <form action="">
 <div class="fallback">
     {{-- <input name="file" type="file" id="fileInput" multiple /> --}}
-<input type="file"  id="fileInput"/>
+{{-- <input type="file"  id="fileInput"/> --}}
+
+</div>
+{{-- </form> --}}
+<br>
+<div class='file-input '>
+    <input type='file' id="fileInput">
+    <span class='button '>Choose</span>
+    <span class='label' data-js-label>No file selected</label>
 </div>
 </form>
 {{-- <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
@@ -179,5 +182,26 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
 </script>
 <script src="assets/js/pages/rens.js">
 
+</script>
+<script>
+   var inputs = document.querySelectorAll('.file-input')
+
+for (var i = 0, len = inputs.length; i < len; i++) {
+  customInput(inputs[i])
+}
+
+function customInput (el) {
+  const fileInput = el.querySelector('[type="file"]')
+  const label = el.querySelector('[data-js-label]')
+  
+  fileInput.onchange =
+  fileInput.onmouseout = function () {
+    if (!fileInput.value) return
+    
+    var value = fileInput.value.replace(/^.*[\\\/]/, '')
+    el.className += ' -chosen'
+    label.innerText = value
+  }
+}
 </script>
        @endsection
