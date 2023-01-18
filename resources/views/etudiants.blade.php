@@ -124,7 +124,7 @@
                                     <li class="breadcrumb-item active">Etudiants</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Data Tables</h4>
+                            <h4 class="page-title">Tableau</h4>
                         </div>
                     </div>
                 </div>     
