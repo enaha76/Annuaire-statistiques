@@ -3,24 +3,100 @@
 @section('content')
 <!-- Start Content-->
 <div class="container-fluid">
-
-<!-- start page title -->
-    <div class="row">
-        <div class="col-12">
-            <div class="page-title-box">
-                <div class="page-title-right">
-                    <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire statistique</a></li>
-                        <li class="breadcrumb-item active">Etablissements</li>
-                    </ol>
+    <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire statistique</a></li>
+                            <li class="breadcrumb-item active">Etablissements</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Etablissements</h4>
                 </div>
-                <h4 class="page-title">Etablissements</h4>
             </div>
         </div>
-    </div>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#add-new-task-modal" class="btn btn-success btn-sm ms-3"><i class=" dripicons-plus"> </i></a>
+            <!--  Add new task modal -->
+            <div class="modal fade task-modal-content" id="add-new-task-modal" tabindex="-1" role="dialog" aria-labelledby="NewTaskModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="NewTaskModalLabel">Ajouter un Etablissement</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="p-2">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="mb-3">
+                                            <label for="task-title" class="form-label">Nom</label>
+                                            <input type="text" class="form-control form-control-light" id="task-title" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label for="task-priority2" class="form-label">Cycle</label>
+                                            <input type="text" class="form-control form-control-light" id="task-title" >
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="mb-3">
+                                            <label for="task-title" class="form-label">Type</label>
+                                            <input type="text" class="form-control form-control-light" id="task-title" >
+                                        </div>
+                                    </div>
+    
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label for="task-priority2" class="form-label">Tutelle</label>
+                                            <input type="text" class="form-control form-control-light" id="task-title" >
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="mb-3">
+                                            <label for="task-title" class="form-label">Cotutelle</label>
+                                            <input type="text" class="form-control form-control-light" id="task-title">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label for="task-priority2" class="form-label">Abreviation</label>
+                                            <input type="text" class="form-control form-control-light" id="task-title">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="task-title" class="form-label">Identifiant</label>
+                                            <input type="text" class="form-control form-control-light" id="task-title">
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-end">
+                                    <button type="button" class="btn btn-light" data-dismiss="modal">Annuler</button>
+                                    <button type="button" class="btn btn-primary">Enregistrer</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
     <!-- end page title -->
 
-    <div class="card">
+    {{-- <div class="card">
         <div class="card-body">
             <div class="row">
                 <!-- start projects-->
@@ -84,7 +160,7 @@
                                             </div>
                                         </div>
                                         <button class="btn btn-primary" type="submit">Enregistrer</button>
-                                    </form>
+                                    </form> --}}
                                     {{-- <a href="javascript:void(0);" class="text-body">
                                         <div class="d-flex mt-2 p-2">
                                             <div class="avatar-sm d-table">
@@ -219,11 +295,11 @@
                                             </div>
                                         </div>
                                     </a> --}}
-                                </div>
+                                {{-- </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- end projects -->
 
                 <!-- gantt view -->
@@ -299,13 +375,13 @@
                     {{-- </div>
                 </div> --}}
                 <!-- end gantt view -->
-            </div>
+            {{-- </div>
         </div>
     </div>
 
-</div> <!-- container -->
+</div> <!-- container --> --}}
 
-</div> <!-- content -->
+{{-- </div> <!-- content --> --}}
 {{-- <div class="container">  
     <style>
         .shadow {
