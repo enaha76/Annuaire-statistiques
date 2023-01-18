@@ -1,4 +1,18 @@
-  // const v=[];
+var id_rtablisment=0;
+var checkboxes = document.getElementsByName("myCheckboxes");
+for (var i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].addEventListener("click", function() {
+        handleCheckboxClick(this);
+    });
+}
+
+function handleCheckboxClick(checkbox) {
+    if (checkbox.checked) {
+       id_rtablisment = checkbox.value;
+    } 
+}
+ 
+ // const v=[];
   var fileInput = document.getElementById('fileInput');
   var dataJSON;
   let null_count=0;
@@ -108,7 +122,7 @@ var sub = `
 
 
 <textarea name="file" id="" cols="30" rows="10" style="display:none">${JSON.stringify(dataJSON)}</textarea>
-    <input type="hidden" name="establishment" value="1">
+    <input type="hidden" name="establishment" value="${id_rtablisment}">
     <input type="hidden" name="year" value="2022-2023">
 
     <button type="submit" class="btn btn-primary float-end">Importer Quand même</button>
