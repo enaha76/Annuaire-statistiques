@@ -13,7 +13,7 @@
                             <div class="page-title-right">
                                  <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire Statistique</a></li>
-                                    <li class="breadcrumb-item active"><a href="javascript: void(0);">Etudiants</a></li>
+                                    <li class="breadcrumb-item active">Etudiants</a></li>
                                
                                 </ol> 
                             </div>
@@ -119,12 +119,12 @@
                         <div class="page-title-box">
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                    <li class="breadcrumb-item active">Data Tables</li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire statistique</a></li>
+                                
+                                    <li class="breadcrumb-item active">Etudiants</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Data Tables</h4>
+                            <h4 class="page-title">Tableau</h4>
                         </div>
                     </div>
                 </div>     
@@ -134,7 +134,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h4 class="header-title">Buttons example</h4>
+                                <a href="javascript:void(0);" class="btn btn-danger mb-2"><i class=" uil-filter m-1"></i>Fitre</a>
                                 {{-- <p class="text-muted font-14">
                                     The Buttons extension for DataTables provides a common set of options, API methods and styling to display buttons on a page
                                     that will interact with a DataTable. The core library provides the based framework upon which plug-ins can built.

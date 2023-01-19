@@ -116,8 +116,11 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
              
               ` 
   document.getElementById("labelse").innerHTML = x;
- 
- ;
+ var button="Quand même";
+ if(err_count==0 && null_count==0){
+     button="";
+ }
+
 var sub = `
 
 
@@ -125,7 +128,7 @@ var sub = `
     <input type="hidden" name="establishment" value="${id_rtablisment}">
     <input type="hidden" name="year" value="2022-2023">
 
-    <button type="submit" class="btn btn-primary float-end">Importer Quand même</button>
+    <button type="submit" class="btn btn-primary float-end">Importer ${button}</button>
     
 `
 document.getElementById("sub").innerHTML = sub;

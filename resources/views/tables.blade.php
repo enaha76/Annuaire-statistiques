@@ -19,7 +19,7 @@
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire Statistique</a></li>
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Getion</a></li>
                     <li class="breadcrumb-item "><a href="javascript: void(0);">import</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript: void(0);">Etudiants</a></li>
+                    <li class="breadcrumb-item active">Etudiants</a></li>
 
                 </ol>
             </div>
@@ -129,16 +129,16 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
         </a>
         <div class="dropdown-menu dropdown-menu-end">
             <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item"></a>
+            <a href="javascript:void(0);" class="dropdown-item">Export</a>
+            <!-- item-->
+            {{-- <a href="javascript:void(0);" class="dropdown-item"></a>
             <!-- item-->
             <a href="javascript:void(0);" class="dropdown-item"></a>
             <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item"></a>
-            <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item"></a>
+            <a href="javascript:void(0);" class="dropdown-item"></a> --}}
         </div>
     </div>
-    <h4 class="header-title">Traitement du fichier avant l'import</h4>
+    <h4 class="header-title m-3">Traitement du fichier avant l'import</h4>
     <div id="tableContainer"></div>
     <div id="average-sales1" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
 
