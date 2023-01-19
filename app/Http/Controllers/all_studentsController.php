@@ -18,21 +18,21 @@ class all_studentsController extends Controller
   public function index()
   {
     $List = DB::select('SELECT
-      etablissements.abrev,
-      etablissements.nom,
-      count(`id_etudiant`) AS total
-    FROM
-      inscrire,
-      etablissements
-    WHERE
-      inscrire.id_etablissement = etablissements.id
-      AND inscrire.année_scolaire = "2021-2022"
+     abrev,
+     etablissements.nom,
+     COUNT(id_etablissement) as total 
+     FROM
+      inscrire 
+      RIGHT JOIN
+       etablissements
+       on 
+       etablissements.id=inscrire.id_etablissement 
     GROUP BY
-      etablissements.abrev,
-      etablissements.nom
+     abrev,
+     etablissements.nom;
     ');
     $List = (array) $List;
-    return view('index', compact($List));
+    return view('index', compact('List'));
   }
   public function etu()
   {
