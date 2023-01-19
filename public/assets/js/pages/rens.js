@@ -53,13 +53,13 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
       
           if (dataJSON[i].GENRE==null) {
              null_count++;
-             dataJSON[i].GENRE='N/R';
+             dataJSON[i].GENRE='NR';
           }
           else if (dataJSON[i].GENRE=="F" || dataJSON[i].GENRE=="M") {
                 cor_count++;
           } else {
              err_count++;
-             dataJSON[i].GENRE='M/R';
+             dataJSON[i].GENRE='MR';
           }
          }
          console.log(dataJSON)
