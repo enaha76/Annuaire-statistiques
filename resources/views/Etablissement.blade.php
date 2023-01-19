@@ -377,9 +377,9 @@
                 <!-- end gantt view -->
             {{-- </div>
         </div>
-    </div>
+    </div>--}}
 
-</div> <!-- container --> --}}
+</div> <!-- container --> 
 
 {{-- </div> <!-- content --> --}}
 {{-- <div class="container">  

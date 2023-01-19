@@ -2,7 +2,7 @@
 
 @section('content')
   <!-- start page title -->
-
+  <div class="container-fluid">
   @if (session('success'))
   <div class="alert alert-success" role="alert">
     <div style="display: flex; align-items: center;">
@@ -156,6 +156,7 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
 
 
 </section>
+  </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.core.min.js"></script>
 <!-- end demo js-->
