@@ -18,21 +18,21 @@ class all_studentsController extends Controller
   public function index()
   {
     $List = DB::select('SELECT
-      etablissements.abrev,
-      etablissements.nom,
-      count(`id_etudiant`) AS total
-    FROM
-      inscrire,
-      etablissements
-    WHERE
-      inscrire.id_etablissement = etablissements.id
-      AND inscrire.année_scolaire = "2021-2022"
+     abrev,
+     etablissements.nom,
+     COUNT(id_etablissement) as total 
+     FROM
+      inscrire 
+      RIGHT JOIN
+       etablissements
+       on 
+       etablissements.id=inscrire.id_etablissement 
     GROUP BY
-      etablissements.abrev,
-      etablissements.nom
+     abrev,
+     etablissements.nom;
     ');
     $List = (array) $List;
-    return view('index', compact($List));
+    return view('index', compact('List'));
   }
   public function etu()
   {
@@ -41,8 +41,9 @@ class all_studentsController extends Controller
   }
   public function tables()
   {
-    $etats = Etablissement::select('abrev', 'id')->get();
-    return view('tables', [compact((array) $etats)]);
+    $etats = Etablissement::all();
+ 
+    return view('tables', compact( 'etats'));
   }
   public function import(Request $request)
   {
@@ -72,9 +73,9 @@ class all_studentsController extends Controller
       $data = json_decode($request->input('file'), true);
 
       if ($data) {
-        $this->insert( $data, $establishment, $year);
+        return $this->insert( $data, $establishment, $year);
       }
-
+      return redirect()->route('tables')->with('danger', 'Les données non été pas importées ');
 
 
     }

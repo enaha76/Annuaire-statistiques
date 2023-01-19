@@ -1,4 +1,18 @@
-  // const v=[];
+var id_rtablisment=0;
+var checkboxes = document.getElementsByName("myCheckboxes");
+for (var i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].addEventListener("click", function() {
+        handleCheckboxClick(this);
+    });
+}
+
+function handleCheckboxClick(checkbox) {
+    if (checkbox.checked) {
+       id_rtablisment = checkbox.value;
+    } 
+}
+ 
+ // const v=[];
   var fileInput = document.getElementById('fileInput');
   var dataJSON;
   let null_count=0;
@@ -39,13 +53,13 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
       
           if (dataJSON[i].GENRE==null) {
              null_count++;
-             dataJSON[i].GENRE='N/R';
+             dataJSON[i].GENRE='NR';
           }
           else if (dataJSON[i].GENRE=="F" || dataJSON[i].GENRE=="M") {
                 cor_count++;
           } else {
              err_count++;
-             dataJSON[i].GENRE='M/R';
+             dataJSON[i].GENRE='MR';
           }
          }
          console.log(dataJSON)
@@ -102,16 +116,19 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
              
               ` 
   document.getElementById("labelse").innerHTML = x;
- 
- ;
+ var button="Quand même";
+ if(err_count==0 && null_count==0){
+     button="";
+ }
+
 var sub = `
 
 
 <textarea name="file" id="" cols="30" rows="10" style="display:none">${JSON.stringify(dataJSON)}</textarea>
-    <input type="hidden" name="establishment" value="1">
+    <input type="hidden" name="establishment" value="${id_rtablisment}">
     <input type="hidden" name="year" value="2022-2023">
 
-    <button type="submit" class="btn btn-primary float-end">Importer Quand même</button>
+    <button type="submit" class="btn btn-primary float-end">Importer ${button}</button>
     
 `
 document.getElementById("sub").innerHTML = sub;
