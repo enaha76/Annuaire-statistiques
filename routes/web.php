@@ -60,3 +60,6 @@ Route::controller(EtablissementsController::class)->group(function(){
 //     Route::post('ESP-import', 'import')->name('ESP.import');
 // });
 
+Route::get('/conf',function(){
+    return view('confirm_import');
+});

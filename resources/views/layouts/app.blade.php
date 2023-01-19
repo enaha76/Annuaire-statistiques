@@ -188,6 +188,7 @@
 .file-input.-chosen > .label {
   opacity: 1;
 }
+
 </style>
        
 
