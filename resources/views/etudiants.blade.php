@@ -694,13 +694,63 @@
                         </div> <!-- end card -->
                     </div><!-- end col-->
                 </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="mb-4">Les Graphes</h4>
+                    </div> <!-- end col -->
+                </div>
 
-
-
-
-
-
-
+                <!-- end row -->
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title">Effectifs par institution et par genre, mauritaniens et étrangers</h4>
+                                <div dir="ltr">
+                                    <div id="grouped-bar" class="apex-charts" data-colors="#fa5c7c,#6c757d"></div>
+                                </div>
+                            </div>
+                            <!-- end card body-->
+                        </div>
+                        <!-- end card -->
+                    </div> 
+                    <!-- end col-->
+                   
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title"> Effectifs des étudiants par domaine d'étude et par genre</h4>
+                                <div dir="ltr">
+                                    <div id="basic-column" class="apex-charts" data-colors="#727cf5,#0acf97,#fa5c7c"></div>
+                                </div>
+                            </div>
+                            <!-- end card body-->
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    <!-- end col-->
+                </div>
+                <!-- end row-->
+              
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title">Répartition des Boursiers et Bénéficiaires d'aides par Institution</h4>
+                                <div dir="ltr">
+                                    <div id="simple-pie" class="apex-charts" data-colors="#727cf5,#6c757d,#0acf97,#fa5c7c,#e3eaef"></div>
+                                </div>
+                            </div>
+                            <!-- end card body-->
+                        </div>
+                        <!-- end card -->
+                    </div>
+                   
+                    <!-- end col-->
+                </div>
+                <!-- end row-->
+        
             </div> <!-- container -->
 
         <script src="assets/js/vendor/dropzone.min.js"></script>
@@ -730,4 +780,21 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         {{-- <script src="assets/js/pages/demo.datatable-init.js"></script> --}}
         <!-- end demo js-->
+         <!-- bundle -->
+ <script src="assets/js/vendor.min.js"></script>
+ <script src="assets/js/app.min.js"></script>
+
+ <!-- third party:js -->
+ <script src="assets/js/vendor/apexcharts.min.js"></script>
+ <!-- third party end -->
+
+ <!-- demo:js -->
+ <script src="assets/js/pages/demo.apex-pie.js"></script>
+ <!-- demo end -->
+<!-- demo:js -->
+<script src="assets/js/pages/demo.apex-bar.js"></script>
+<!-- demo end -->
+ <!-- demo:js -->
+ <script src="assets/js/pages/demo.apex-column.js"></script>
+ <!-- demo end -->
        @endsection
