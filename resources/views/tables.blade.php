@@ -50,8 +50,8 @@
                         <div class="row " >
                             <div class="col bt-3 ">
                                 <ul  class="list-unstyled " id="list">
-                                    @foreach($etats as $e)
-                                     <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="myCheckboxes" value="{{ $e['id'] }}" class="form-check-input ml-2  "  > {{ $e['abrev']  }}</li> 
+                                    @foreach($List3 as $e)
+                                     <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="myCheckboxes" value="{{ $e->id }}" class="form-check-input ml-2  "  > {{ $e->abrev  }}</li> 
                                     @endforeach
                                 </ul>
 
@@ -73,7 +73,7 @@
 </div>
 {{-- </form> --}}
 <br>
-<div class='file-input '>
+<div class='file-input ' id='cache_file'>
     <input type='file' id="fileInput">
     <span class='button '>Choose</span>
     <span class='label' data-js-label>No file selected</label>
@@ -146,15 +146,44 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
     <div class="chart-widget-list " id="labelse">
     </div>
     <div id="aler" ></div>
-    <form action="{{ route('test') }}" method="POST">
-    @csrf
+    <form action="{{ route('test') }}" method="POST" id="formId">
+      @csrf
         <div id="sub">
-
     </div>
 </form>
+<div id="sub2">
+</div>
 </div>
 
 
+                                                <!-- Danger Header Modal -->
+                                                <div id="danger-header-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="danger-header-modalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header modal-colored-header bg-danger">
+                                                                <h4 class="modal-title" id="danger-header-modalLabel">Modal Heading</h4>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <h5 class="mt-0">error of eteblisment</h5>
+                                                                {{-- <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                                                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p> --}}
+                                                                <p> you haven't chosen any eteblissment so please use one </p>
+                                                            </div>
+                                                            {{-- <div class="modal-footer">
+                                                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-danger">Save changes</button>
+                                                            </div> --}}
+                                                        </div><!-- /.modal-content -->
+                                                    </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+        
+                                                <div class="button-list">
+                                                   
+                                                    {{-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#danger-header-modal">Danger Header</button> --}}
+                                                   
+                                                </div>
+   
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.core.min.js"></script>
