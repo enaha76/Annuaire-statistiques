@@ -139,6 +139,14 @@
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
         <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
+        <!-- third party css -->
+        <link href="assets/css/vendor/buttons.bootstrap5.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/vendor/select.bootstrap5.css" rel="stylesheet" type="text/css">
+        <!-- third party css end -->
+         <!-- third party css -->
+      <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
+      <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
+      <!-- third party css end -->
 <style>
    
 
@@ -231,10 +239,11 @@
                 <a href="{{route('index')}}" class="logo text-center logo-light">
                     <span class="logo-lg">
                         <img src="assets/images/logo.png" alt="" height="20">
+                        <span class="text-light">Annuaire Statistique</span>
                     </span>
                     <span class="logo-sm">
                         <img src="assets/images/logo.png" alt="" height="16">
-                        <span> ASDES</span>
+                        <span class="text-light">Annuaire Statistique</span>
                     </span>
                     
                 </a>
@@ -243,10 +252,11 @@
                 <a href="index.html" class="logo text-center logo-dark">
                     <span class="logo-lg">
                         <img src="assets/images/logo.png" alt="" height="20">
+                        <span class="text-dark">Annuaire Statistique</span>
                     </span>
                     <span class="logo-sm">
                         <img src="assets/images/logo.png" alt="" height="16">
-                        <span>ASDES</span>
+
                     </span>
                   
                 </a>
@@ -452,7 +462,7 @@
                                     </span>
                                     <span>
                                         <span class="account-user-name">Ahmedou Enaha</span>
-                                        <span class="account-position">Founder</span>
+                                        <span class="account-position">Admin</span>
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
