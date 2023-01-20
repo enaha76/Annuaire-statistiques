@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Etablissement;
-use App\Models\Inscrire;
 use App\Models\Etudiant;
+use App\Models\Inscrire;
 use Illuminate\Http\Request;
+use App\Models\Etablissement;
 use Illuminate\Support\Facades\DB;
 
 
@@ -20,6 +20,8 @@ class all_studentsController extends Controller
     $List = DB::select('SELECT
      abrev,
      etablissements.nom,
+     etablissements.id,
+     etablissements.identifiant,
      COUNT(id_etablissement) as total 
      FROM
       inscrire 
@@ -29,21 +31,73 @@ class all_studentsController extends Controller
        etablissements.id=inscrire.id_etablissement 
     GROUP BY
      abrev,
-     etablissements.nom;
+     etablissements.nom,id,identifiant;
+     
     ');
     $List = (array) $List;
-    return view('index', compact('List'));
+
+    $List2=DB::select('SELECT etablissements.id,
+    etablissements.nom,
+    etablissements.type,
+    etablissements.abrev, 
+    COUNT(inscrire.id_etablissement) as total
+    FROM etablissements
+    LEFT JOIN etablissements 
+    as identifiantEtablissement
+     ON identifiantEtablissement.id = etablissements.identifiant
+    LEFT JOIN
+     inscrire 
+     ON inscrire.id_etablissement = etablissements.id
+    WHERE 
+    identifiantEtablissement.identifiant 
+    IS NULL AND 
+    etablissements.identifiant IS NULL
+    GROUP BY etablissements.id,
+        nom,
+        abrev,
+        type
+    ;');
+    // $List = get_object_vars($List);
+    $List2 = (array) $List2;
+
+    $List3=DB::select('SELECT
+     etablissements.id,
+     etablissements.nom,
+     etablissements.abrev,
+     etablissements.identifiant 
+     FROM 
+     etablissements 
+     WHERE (identifiant is not null) 
+     or
+      (identifiant is null AND type=\'institut\');');
+      $List3 = (array) $List3;
+    return view('index', compact('List','List2','List3'));
   }
   public function etu()
   {
 
     return View('etudiants');
   }
+
+
   public function tables()
   {
     $etats = Etablissement::all();
  
-    return view('tables', compact( 'etats'));
+    $List3=DB::select('SELECT
+    etablissements.id,
+    etablissements.nom,
+    etablissements.abrev,
+    etablissements.identifiant 
+    FROM 
+    etablissements 
+    WHERE (identifiant is not null) 
+    or
+     (identifiant is null AND type=\'institut\');');
+     $List3 = (array) $List3;
+
+
+    return view('tables', compact( 'etats','List3'));
   }
   public function import(Request $request)
   {
@@ -122,5 +176,10 @@ class all_studentsController extends Controller
       $establishment = $request->input('establishment');
      return $this->insert( $data, $establishment, $year);
   }
+  
 }
+
+
+
+
 
