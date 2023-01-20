@@ -1,9 +1,29 @@
 var id_rtablisment=0;
+
+// document.getElementById("formId").action="tables";
+// document.getElementById("formId").method = "";
+// console.log(document.getElementById("formId").action);
+// console.log(routes.test);
 var checkboxes = document.getElementsByName("myCheckboxes");
+
+var h="#danger-header-modal";
+
 for (var i = 0; i < checkboxes.length; i++) {
     checkboxes[i].addEventListener("click", function() {
         handleCheckboxClick(this);
     });
+}
+
+
+
+function display_inpute(){
+    var y=`
+    <input type='file' id="fileInput">
+    <span class='button '>Choose</span>
+    <span class='label' data-js-label>No file selected</label>
+    
+    `
+    document.getElementById("cache_file").innerHTML = y;
 }
 
 function handleCheckboxClick(checkbox) {
@@ -121,19 +141,38 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
      button="";
  }
 
+ var tar="";
+ if(id_rtablisment==0){
+      tar="modal";
+ }
+ console.log(id_rtablisment);
 var sub = `
-
-
 <textarea name="file" id="" cols="30" rows="10" style="display:none">${JSON.stringify(dataJSON)}</textarea>
     <input type="hidden" name="establishment" value="${id_rtablisment}">
     <input type="hidden" name="year" value="2022-2023">
 
-    <button type="submit" class="btn btn-primary float-end">Importer ${button}</button>
-    
+    <button type="submit" class="btn btn-primary float-end"  data-bs-target="#danger-header-modal">Importer ${button}</button>  
 `
-document.getElementById("sub").innerHTML = sub;
-
+var sub2=`
+    <button type="submit" class="btn btn-primary float-end" id="hh">Importer ${button}</button>  
+`
+if(id_rtablisment==0){
+document.getElementById("sub2").innerHTML = sub2;
+$("#hh").click(function(){
+    $("#danger-header-modal").modal("show");
+    setTimeout(function(){
+        window.location.href = '/tables';
+    },3000);
+  });
+}
+else{
+    document.getElementById("sub").innerHTML = sub; 
+}
               }
+
+             
+
+
 function error(){
   var alert=`
   <div class="alert alert-danger" id="aler" role="alert">
