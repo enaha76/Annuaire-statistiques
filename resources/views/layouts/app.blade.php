@@ -146,58 +146,7 @@
          <!-- third party css -->
       <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
       <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
-      <!-- third party css end -->
-<style>
-   
 
-.file-input {
-  display: inline-block;
-  text-align: left;
-  background: #fff;
-  padding: 16px;
-  width: 450px;
-  position: relative;
-  border-radius: 3px;
-  margin-left: 30px;
-}
-
-.file-input > [type='file'] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 10;
-  cursor: pointer;
-}
-
-.file-input > .button {
-  display: inline-block;
-  cursor: pointer;
-  background: #eee;
-  padding: 8px 16px;
-  border-radius: 2px;
-  margin-right: 8px;
-}
-
-.file-input:hover > .button {
-  color: #fff;
-  background-color: #0b5ed7;
-  border-color: #0a58ca;
-}
-
-.file-input > .label {
-  color: #333;
-  white-space: nowrap;
-  opacity: .3;
-}
-
-.file-input.-chosen > .label {
-  opacity: 1;
-}
-
-</style>
        
 
          <!-- third party css -->
@@ -277,7 +226,7 @@
                             <div class="collapse" id="sidebarDashboards">
                                 <ul class="side-nav-second-level">
                                     <li>
-                                        <a href="{{route('index')}}">Acceuil</a>
+                                        <a href="{{route('index')}}" onClick="location.replace(location.href);">Acceuil</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('etudiants') }}">Etudiants</a>
@@ -399,9 +348,11 @@
             <!-- ============================================================== -->
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
-
+           
+              
             <div class="content-page">
                 <div class="content">
+                     
                     <!-- Topbar Start -->
                     <div class="navbar-custom">
                         <ul class="list-unstyled topbar-menu float-end mb-0">
@@ -579,7 +530,9 @@
                 <!-- content -->
 
                 @yield('content')
-
+                <div class="spinner-container text-center d-none" id="spinner">
+                    <div class="spinner-border text-primary text-center" role="status"></div>
+                  </div>  
                 <!-- Footer Start -->
                 <footer class="footer">
                     <div class="container-fluid">
@@ -600,7 +553,7 @@
                 <!-- end Footer -->
 
             </div>
-
+                
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
@@ -701,6 +654,9 @@
         <div class="rightbar-overlay"></div>
         <!-- /End-bar -->
 
+          
+    </body>
+    
         <!-- bundle -->
         <script src="assets/js/vendor.min.js"></script>
         <script src="assets/js/app.min.js"></script>
@@ -729,6 +685,9 @@
          <script src="assets/js/pages/demo.products.js"></script>
          <script src="assets/js/pages/demo.datatable-init.js"></script>
          <!-- end demo js-->
- 
-    </body>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+     
+
+</script>
 </html>
