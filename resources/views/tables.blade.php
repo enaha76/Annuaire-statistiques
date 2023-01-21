@@ -5,6 +5,9 @@
     print_r($List4);
 @endphp --}}
   <!-- start page title -->
+  <div class="text-center" style="background-color: #7e94ac94;" >
+    <div class="spinner-border avatar-lg text-primary" role="status" style="position: absolute; top: 50%; left: 50%; margin: -1.5rem 0 0 -1.5rem;  display: none;"aria-labelledby="danger-header-modalLabel" ></div>
+</div>
   <div class="container-fluid">
   @if (session('success'))
  
@@ -248,6 +251,19 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.core.min.js"></script>
 <!-- end demo js-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+          $(document).ready(function(){
+  $('#loading-spinner').fadeIn();
+});
+
+$(window).on('load', function(){
+  $('#loading-spinner').fadeOut(5000);
+});
+
+           
+        </script>
 <script >
     $('#search').keyup(function(){
       var value= $(this).val().toLowerCase();
