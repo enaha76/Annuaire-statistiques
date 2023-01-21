@@ -165,10 +165,10 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <h5 class="mt-0">Attention </h5>
+                                                                <h5 class="mt-0">error of eteblisment</h5>
                                                                 {{-- <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
                                                                 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p> --}}
-                                                                <p> vous n'avez pas choisit l'institut correspondante </p>
+                                                                <p> you haven't chosen any eteblissment so please use one </p>
                                                             </div>
                                                             {{-- <div class="modal-footer">
                                                                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
