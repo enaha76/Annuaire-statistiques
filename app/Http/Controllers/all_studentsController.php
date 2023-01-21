@@ -72,6 +72,7 @@ class all_studentsController extends Controller
       (identifiant is null AND type=\'institut\');');
       $List3 = (array) $List3;
     return view('index', compact('List','List2','List3'));
+    
   }
   public function etu()
   {
@@ -95,9 +96,21 @@ class all_studentsController extends Controller
     or
      (identifiant is null AND type=\'institut\');');
      $List3 = (array) $List3;
-
-
-    return view('tables', compact( 'etats','List3'));
+    
+     $List4=DB::select('SELECT 
+     DISTINCT
+     (id_etudiant) as idc,
+     id_etablissement,
+     année_scolaire 
+     FROM 
+     inscrire;');
+     $List4 = (array) $List4;
+    // return view('tables', compact( 'etats','List3','List4'));
+    return view('tables', [
+      'etats' => $etats,
+      'List3' => $List3,
+      'data' => $List4,
+  ]);
   }
   public function import(Request $request)
   {
@@ -114,14 +127,11 @@ class all_studentsController extends Controller
     $establishment = $request->input('establishment');
 
     //check if the file has already been imported
-    $existingInscrire = Inscrire::where('année_scolaire', $year)
-      ->where('id_etablissement', $establishment)
-      ->first();
-    if ($existingInscrire) {
+    
+    
 
       //ask for permission to overwrite the data
-      return view('confirm_import', ['request' => $request->all()]);
-    } else {
+     
       //proceed with import
 
       $data = json_decode($request->input('file'), true);
@@ -132,7 +142,7 @@ class all_studentsController extends Controller
       return redirect()->route('tables')->with('danger', 'Les données non été pas importées ');
 
 
-    }
+    
   }
   public function insert( $data, $establishment, $year)
   {
