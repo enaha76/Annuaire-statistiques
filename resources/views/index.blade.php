@@ -285,7 +285,7 @@
                                             <div class="card widget-flat">
                                                 <div class="card-body">
                                                     <div class="float-end">
-                                                        {{-- <i class="mdi mdi-account-multiple widget-icon"></i> --}}
+                                                        <i class=" dripicons-graph-pie widget-icon"></i>
                                                     </div>
                                                     <h5 class="bold mt-0  text-primary " title="Number of Customers"> <i class="uil-users-alt m-1"></i> Etudiants</h5>
                                                     @php
@@ -301,8 +301,8 @@
                                                     <h3 class="mt-3 mb-3 ">{{ $s }}</h3>
 
                                                     <p class="mb-0 ">
-                                                        {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>
-                                                        <span class="text-nowrap">Since last month</span>   --}}
+                                                        {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>--}}
+                                                        <span class="text-nowrap">Since last month</span>   
                                                     </p>
                                                 </div> <!-- end card-body-->
                                             </div> <!-- end card-->
@@ -312,10 +312,10 @@
                                             <div class="card widget-flat">
                                                 <div class="card-body">
                                                     <div class="float-end">
-                                                        <i class="mdi mdi-cart-plus widget-icon"></i>
+                                                        <i class=" dripicons-graph-bar widget-icon"></i>
                                                     </div>
                                                     <h5 class=" bold mt-0  text-primary  " title="Number of Orders"><i class="mdi mdi-teach m-1"></i>Professeurs</h5>
-                                                    <h3 class="mt-3 mb-3">123</h3>
+                                                    <h3 class="mt-3 mb-3">0</h3>
                                                     <p class="mb-0 text-muted">
                                                         {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 1.08%</span>
                                                         <span class="text-nowrap">Since last month</span> --}}
@@ -330,10 +330,10 @@
                                             <div class="card widget-flat">
                                                 <div class="card-body">
                                                     <div class="float-end">
-                                                        <i class="mdi mdi-currency-usd widget-icon"></i>
+                                                        <i class=" dripicons-graph-line widget-icon"></i>
                                                     </div>
                                                     <h5 class=" bold mt-0  text-primary " title="Average Revenue"><i class="mdi mdi-school-outline m-1  "></i>Candidats Bac</h5>
-                                                    <h3 class="mt-3 mb-3">123</h3>
+                                                    <h3 class="mt-3 mb-3">0</h3>
                                                     <p class="mb-0 text-muted">
                                                         {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 7.00%</span>
                                                         <span class="text-nowrap">Since last month</span> --}}
@@ -346,7 +346,7 @@
                                             <div class="card widget-flat">
                                                 <div class="card-body">
                                                     <div class="float-end">
-                                                        <i class="mdi mdi-pulse widget-icon"></i>
+                                                        <i class="mdi mdi-chart-scatter-plot widget-icon"></i>
                                                     </div>
                                                     <h5 class=" bold mt-0  text-primary " title="Growth"><i class="mdi mdi-domain m-1 rounded-circle"></i>Etablissements</h5>
                                                     <h3 class="mt-3 mb-3" id="etab"> </h3>
@@ -367,6 +367,39 @@
                                            
                                             <div  data-simplebar="" style="max-height: 300px;">
                                             <h4 class="header-title mb-3">Effectifs des étudiants par établissement du public</h4>
+<<<<<<< HEAD
+                                                                <div class="tab-content">
+                                                                    <div class="tab-pane show active" id="state-saving-preview">
+                                                                        <table id="state-saving-datatable" class="table activate-select dt-responsive nowrap ">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>Etablissements</th>
+                                                                                    <th>Total</th>
+                                                                                    <!-- <th>Office</th> -->
+                                                                                  
+                                                                                </tr>
+                                                                            </thead>
+                                                                        
+                                                                            <tbody>
+                                                                                @foreach ( $List as $list=>$one )
+                                                                                <tr>
+                                                                                    <td> {{ $one->abrev }}</td>
+                                                                                    <td> {{ $one->total}}</td>
+                                                                            
+                                                                                    
+                                                                                </tr>
+                                                                                @endforeach
+                                                                            </tbody>
+                                                                        </table>                                          
+                                                                    </div> <!-- end preview-->
+                                                                
+                                                                    {{-- <div class="tab-pane" id="state-saving-code">
+                                                                        <pre class="mb-0">
+                                                                            
+                                                                        </pre> <!-- end highlight-->
+                                                                    </div> <!-- end preview code--> --}}
+                                                                </div>
+=======
                                                  @php
 
                                                  $array_eteblissment=[];                       
@@ -415,6 +448,7 @@
                                                                     </table>
                                                                
                                                             </div>
+>>>>>>> 64c173be34d0bc0d56327bf1a841b7c9fadda640
                                                       </div>
                                                 </div> <!-- end card-body-->
                                            </div> <!-- end card-->
@@ -555,9 +589,9 @@
                         </div>
                         <!-- container -->
 
-                        <script>
+                        {{-- <script>
                             console.log(dataJSON);
-                        </script>
+                        </script> --}}
                         <script>
                           const box = document.getElementById('tab');
 
@@ -568,5 +602,25 @@
                             // console.log("ha4e hwe r9m",directChildren); 
                             document.getElementById("etab").innerHTML = directChildren;
                         </script>
-                      
+                <!-- bundle -->
+         <script src="assets/js/vendor.min.js"></script>
+         <script src="assets/js/app.min.js"></script>
+ 
+         <!-- third party js -->
+         <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+         <script src="assets/js/vendor/dataTables.bootstrap5.js"></script>
+         <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+         <script src="assets/js/vendor/responsive.bootstrap5.min.js"></script>
+         <script src="assets/js/vendor/dataTables.buttons.min.js"></script>
+         <script src="assets/js/vendor/buttons.bootstrap5.min.js"></script>
+         <script src="assets/js/vendor/buttons.html5.min.js"></script>
+         <script src="assets/js/vendor/buttons.flash.min.js"></script>
+         <script src="assets/js/vendor/buttons.print.min.js"></script>
+         <script src="assets/js/vendor/dataTables.keyTable.min.js"></script>
+         <script src="assets/js/vendor/dataTables.select.min.js"></script>
+         <!-- third party js ends -->
+ 
+         <!-- demo app -->
+         <script src="assets/js/pages/demo.datatable-init.js"></script>
+         <!-- end demo js-->       
 @endsection
