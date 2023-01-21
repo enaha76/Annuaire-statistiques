@@ -1,9 +1,8 @@
+
+// console.log(List4[0]);
+// console.log(data);
 var id_rtablisment=0;
 
-// document.getElementById("formId").action="tables";
-// document.getElementById("formId").method = "";
-// console.log(document.getElementById("formId").action);
-// console.log(routes.test);
 var checkboxes = document.getElementsByName("myCheckboxes");
 
 var h="#danger-header-modal";
@@ -30,6 +29,8 @@ function handleCheckboxClick(checkbox) {
     if (checkbox.checked) {
        id_rtablisment = checkbox.value;
     } 
+
+    window.id_chk=id_rtablisment;
 }
  
  // const v=[];
@@ -39,10 +40,9 @@ function handleCheckboxClick(checkbox) {
   let err_count=0;
   let cor_count=0;
   let is_cor=false;
-  // let vv=[];
   window.onload = function() {
 
-  // your code here
+ 
 
 
 document.getElementById("fileInput").addEventListener('change', function(event) {
@@ -82,11 +82,16 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
              dataJSON[i].GENRE='MR';
           }
          }
-         console.log(dataJSON)
+        //  console.log(dataJSON)
+        //  console.log(window.jsonData)
          // let t=null_count+err_count+cor_count;
          // cars=[null_count,err_count,cor_count,t]
+         
          displayTable(null_count,err_count,cor_count);
+         f(dataJSON);
          av(null_count,err_count,cor_count);
+         
+         
       }
 
       else{
@@ -145,29 +150,27 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
  if(id_rtablisment==0){
       tar="modal";
  }
- console.log(id_rtablisment);
+ if(id_rtablisment==0){
+    
+  
+        $("#warning-alert-modal").modal("show");
+        $("#kk").click(function(){
+        window.location.href = '/tables';
+      });
+    }
+    window.dataJSON = dataJSON;
+    
 var sub = `
 <textarea name="file" id="" cols="30" rows="10" style="display:none">${JSON.stringify(dataJSON)}</textarea>
     <input type="hidden" name="establishment" value="${id_rtablisment}">
     <input type="hidden" name="year" value="2022-2023">
 
-    <button type="submit" class="btn btn-primary float-end"  data-bs-target="#danger-header-modal">Importer ${button}</button>  
+    <button type="submit" class="btn btn-primary float-end" >Importer ${button}</button>  
 `
-var sub2=`
-    <button type="submit" class="btn btn-primary float-end" id="hh">Importer ${button}</button>  
-`
-if(id_rtablisment==0){
-document.getElementById("sub2").innerHTML = sub2;
-$("#hh").click(function(){
-    $("#danger-header-modal").modal("show");
-    setTimeout(function(){
-        window.location.href = '/tables';
-    },3000);
-  });
-}
-else{
+
+
     document.getElementById("sub").innerHTML = sub; 
-}
+
               }
 
              
@@ -179,8 +182,46 @@ function error(){
           <i class="dripicons-wrong me-2"></i> Ce fichier ne correspond pas <strong>aux format valide</strong> - verifier le !
     </div>
   `
-  document.getElementById("aler").innerHTML = alert;
+//   document.getElementById("aler").innerHTML = alert;
+
+$("#danger-alert-modal").modal("show");
+$("#jj").click(function(){
+    window.location.href = '/tables';  
+});
 }
+
+
+function f(dataJSON){
+        let to=false;
+        // console.log(dataJSON)
+        // console.log(window.jsonData)
+        var array=window.jsonData;
+        var ab=[];
+        console.log(dataJSON[0].etablissement_de_provenance);
+        for (let index = 0; index < array.length; index++) {
+
+             const element = array[index];
+       if(ab.indexOf(element.id_etablissement) === -1){
+         ab.push(element.id_etablissement)
+    }
+ }
+ 
+//  console.log(typeof ab[0])
+ var number = Number(window.id_chk)
+//  console.log(typeof number);
+ if(ab.indexOf(number) !== -1){
+    to=true;
+    
+}
+
+if (to) {
+    $("#info-header-modal").modal("show");
+    // $("#jj").click(function(){
+    //     window.location.href = '/tables';  
+    // }); 
+}
+
+     }   
 
 
 function av(null_count,err_count,cor_count){
