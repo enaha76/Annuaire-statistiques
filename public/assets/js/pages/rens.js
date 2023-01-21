@@ -1,3 +1,6 @@
+
+// console.log(List4[0]);
+// console.log(data);
 var id_rtablisment=0;
 
 var checkboxes = document.getElementsByName("myCheckboxes");
