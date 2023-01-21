@@ -226,13 +226,13 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header modal-colored-header bg-info">
-                <h4 class="modal-title" id="info-header-modalLabel">Modal Heading</h4>
+                <h4 class="modal-title" id="info-header-modalLabel">Information dupliquer</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h5 class="mt-0">Info Background</h5>
-                <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                <h5 class="mt-0">Info</h5>
+                <p>Les Etudiants de ce Etablissement sont deja enregistrer</p>
+                {{-- <p>Seul </p> --}}
             </div>
             {{-- <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>

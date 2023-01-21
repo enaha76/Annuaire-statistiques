@@ -208,14 +208,12 @@ function f(dataJSON){
 //  console.log(typeof number);
  if(ab.indexOf(number) !== -1){
     to=true;
-    
 }
-
 if (to) {
     $("#info-header-modal").modal("show");
-    // $("#jj").click(function(){
-    //     window.location.href = '/tables';  
-    // }); 
+   setTimeout(function(){
+    window.location.href = '/tables';
+   },3000)
 }
 
      }   
