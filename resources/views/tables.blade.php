@@ -1,16 +1,11 @@
 @extends('layouts.app')
-
 @section('content')
 {{-- @php
     print_r($List4);
 @endphp --}}
   <!-- start page title -->
-  <div class="text-center" style="background-color: #7e94ac94;" >
-    <div class="spinner-border avatar-lg text-primary" role="status" style="position: absolute; top: 50%; left: 50%; margin: -1.5rem 0 0 -1.5rem;  display: none;"aria-labelledby="danger-header-modalLabel" ></div>
-</div>
   <div class="container-fluid">
   @if (session('success'))
- 
   <div >
     <div  id="success-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-sm">
@@ -18,15 +13,14 @@
                 <div class="modal-body p-4">
                     <div class="text-center">
                         <i class="dripicons-checkmark h1"></i>
-                        <h4 class="mt-2">Well Done!</h4>
-                        <p class="mt-3">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                        <h4 class="mt-2">Importé avec succès</h4>
+                        <p class="mt-3">les Etudiants ont été enregistrer </p>
                         <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Continue</button>
                     </div>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-    
   </div>
   @endif
   <div class="row">
@@ -183,10 +177,10 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h5 class="mt-0">error of eteblisment</h5>
+                <h5 class="mt-0">Fichier non-valide ??</h5>
                 {{-- <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
                 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p> --}}
-                <p> you haven't chosen any eteblissment so please use one </p>
+                <p>  Ce fichier ne correspond au format valide</p>
             </div>
             {{-- <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
@@ -202,8 +196,8 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
             <div class="modal-body p-4">
                 <div class="text-center">
                     <i class="dripicons-warning h1 text-warning"></i>
-                    <h4 class="mt-2">Incorrect Information</h4>
-                    <p class="mt-3">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                    <h4 class="mt-2">Etablissement ??</h4>
+                    <p class="mt-3">vous n'avez pas selectionner l'etablissement correspondante</p>
                     <button type="button"  id="kk" class="btn btn-warning my-2" data-bs-dismiss="modal">Continue</button>
                 </div>
             </div>
@@ -216,8 +210,8 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
             <div class="modal-body p-4">
                 <div class="text-center">
                     <i class="dripicons-wrong h1"></i>
-                    <h4 class="mt-2">Oh snap!</h4>
-                    <p class="mt-3">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                    <h4 class="mt-2">Fichier non-valide ??</h4>
+                    <p class="mt-3">Ce fichier ne correspond au format valide</p>
                     <button type="button" id="jj" class="btn btn-light my-2" data-bs-dismiss="modal">Continue</button>
                 </div>
             </div>
@@ -251,19 +245,6 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.core.min.js"></script>
 <!-- end demo js-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-        <script>
-          $(document).ready(function(){
-  $('#loading-spinner').fadeIn();
-});
-
-$(window).on('load', function(){
-  $('#loading-spinner').fadeOut(5000);
-});
-
-           
-        </script>
 <script >
     $('#search').keyup(function(){
       var value= $(this).val().toLowerCase();

@@ -1,4 +1,6 @@
 
+// console.log(List4[0]);
+// console.log(data);
 var id_rtablisment=0;
 
 var checkboxes = document.getElementsByName("myCheckboxes");
@@ -105,8 +107,8 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
   
       var table = ` <table class=\"table table-hover table-centered mb-0\">
                     <thead>
-                    <tr>
-                    <th>Non renseigné</th>
+                    <tr>
+<th>Non renseigné</th>
                     <th>Mal renseigné</th>
                     <th>Correcte</th>
                     <th>Totale</th>
@@ -252,5 +254,5 @@ e.prototype.initMaps=function(){0<o("#world-map-markers").length&&o("#world-map-
 e.prototype.init=function(){o("#dash-daterange").daterangepicker({singleDatePicker:!0}),this.initCharts(),this.initMaps()},o.Dashboard=new e,o.Dashboard.Constructor=e}(window.jQuery),function(t){"use strict";
 t(document).ready(function(e){t.Dashboard.init()})}(window.jQuery);
 // console.log(chartOptions);
-e.prototype.initMaps = function() { 0<o("#world-map-markers").vectorMap({map: "mr_mill_en",normalizeFunction: "polynomial",hoverOpacity: 0.7,hoverColor: false,regionStyle: {initial: {fill: "#e3eaef" }},markerStyle: {initial: {r: 9,fill: "#727cf5","fill-opacity": 0.9,stroke: "#fff","stroke-width": 7,"stroke-opacity": 0.4},hover: {stroke: "#fff","fill-opacity": 1, "stroke-width": 1.5}},backgroundColor: "transparent",markers: [{latLng:[18.0973,-15.9785], name: "Nouakchott"},{latLng:[20.9292,-17.0326], name: "Nouadhibou"},{latLng:[15.5951,-0.1462], name: "Ayoun el Atrous"} ],zoomOnScroll: false});};
+e.prototype.initMaps = function() { 0<o("#world-map-markers").vectorMap({map: "mr_mill_en",normalizeFunction: "polynomial",hoverOpacity: 0.7,hoverColor: false,regionStyle: {initial: {fill: "#e3eaef" }},markerStyle: {initial: {r: 9,fill: "#727cf5","fill-opacity": 0.9,stroke: "#fff","stroke-width": 7,"stroke-opacity": 0.4},hover: {stroke: "#fff","fill-opacity": 1, "stroke-width": 1.5}},backgroundColor: "transparent",markers: [{latLng:[18.0973,-15.9785], name: "Nouakchott"},{latLng:[20.9292,-17.0326], name: "Nouadhibou"},{latLng:[15.5951,-0.1462], name: "Ayoun el Atrous"} ],zoomOnScroll: false});};
 }
