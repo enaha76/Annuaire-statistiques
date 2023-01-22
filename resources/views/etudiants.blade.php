@@ -5,7 +5,7 @@
 <script src={{asset('js/filter.js')}} defer>
   </script>          
 
-            <div class="container-fluid">
+            <div class="container-fluid" onload="fill()">
 <h3>L'Annee scolaire Actuel est : {{$year}}</h3>
                 <select id="year-select" aria-placeholder="Change it">
                     
@@ -14,7 +14,7 @@
                    @endforeach
                   </select>
                   <script>
-                    fill()
+                    
                     document.getElementById("year-select").addEventListener("change", function() {
   let selectedYear = this.value;
   // Update the route with the selected year as the optional variable
