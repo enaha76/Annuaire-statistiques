@@ -238,7 +238,11 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->                                             
-                                             
+{{-- <div class="spinner-wrapper">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+  </div>                                         --}}
 </section>                     
   </div>
 
@@ -263,7 +267,13 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
 <!-- init js -->
 <script src="assets/js/ui/component.fileupload.js"></script>
 <script>
-
+  const spinner=document.querySelector('.spinner-wrapper')
+window.addEventListener('load',() => {
+    spinner.style.opacity='0';
+    setTimeout(()=>{
+spinner.style.display='none';
+    })
+});
 </script>
 <script>
     jsonData = @json($data);

@@ -29,7 +29,7 @@ Route::controller(all_studentsController::class)->group(function(){
    
 });
 Route::controller(EtablissementsController::class)->group(function(){
-    Route::post('/insert_etablissements', 'store')->name('etablissements.store');
+    Route::post('/etablissements', 'store')->name('store');
     Route::get('/etablissements', 'index')->name('etablissements');
     Route::get('/import/etudiants', 'import')->name('import_etudiant');
     
