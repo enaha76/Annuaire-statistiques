@@ -197,6 +197,27 @@
   opacity: 1;
 }
 
+
+
+
+.spinner-wrapper{
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:all 0.4s ; 
+}
+   
+.spinner-border{
+    height: 60px;
+    width: 60px;
+}
 </style>
        
 
@@ -229,7 +250,7 @@
        
     </head>
 
-    <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+    <body data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
         <!-- Begin page -->
         <div class="wrapper">
             <!-- ========== Left Sidebar Start ========== -->
@@ -293,7 +314,11 @@
                                 </ul>
                             </div>
                         </li>
-
+                        <div class="spinner-wrapper">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                              </div>
+                          </div>
                         <!-- <li class="side-nav-title side-nav-item">Apps</li>
 
                         <li class="side-nav-item">
@@ -700,7 +725,16 @@
 
         <div class="rightbar-overlay"></div>
         <!-- /End-bar -->
-
+        <script>
+            const spinner=document.querySelector('.spinner-wrapper')
+            window.addEventListener('load',() => {
+                  spinner.style.opacity='0';
+              setTimeout(()=>{
+              spinner.style.display='none';
+                  })
+              });
+        </script>
+   
         <!-- bundle -->
         <script src="assets/js/vendor.min.js"></script>
         <script src="assets/js/app.min.js"></script>
