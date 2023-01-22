@@ -19,24 +19,23 @@
 <script src={{asset('js/filter.js')}} defer>
   </script>          
 
-            <div class="container-fluid">
+<div class="container-fluid">
              
-                  <div class="dropdown" id="year-select" aria-placeholder="Change it">
-                    <button type="button" class="btn btn-light mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                        <i class="uil-calender"></i>Change the year
-                    </button>
-                  
-                    <div class="dropdown-menu dropdown-menu-end">
-                        @foreach ($years as $y )
-                        <a class="dropdown-item " href="#" value={{$y}}>{{$y}}</a>
-                        @endforeach
-                    </div>
-            
-                </div>
-                <h5>Année scolaire <span class="badge rounded-pill p-1 px-2 badge-secondary-lighten">{{$year}}</span></h5>
+    <div class="dropdown" id="year-select" aria-placeholder="Change it">
+      <button type="button" class="btn btn-light mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+          <i class="uil-calender"></i>Change the year
+      </button>
+    
+      <div class="dropdown-menu dropdown-menu-end">
+          @foreach ($years as $y )
+          <a class="dropdown-item " href="#" value={{$y}}>{{$y}}</a>
+          @endforeach
+      </div>
 
+  </div>
+  <h5>Année scolaire <span class="badge rounded-pill p-1 px-2 badge-secondary-lighten">{{$year}}</span></h5>
                   <script>
-                    fill()
+                    
                     document.getElementById("year-select").addEventListener("change", function() {
   let selectedYear = this.value;
   // Update the route with the selected year as the optional variable
