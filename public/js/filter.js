@@ -1,6 +1,7 @@
 function fill() {
-    document.getElementById("buttons-table-preview 1").appendChild(createtbody(etats,data,2));
-    document.getElementById("buttons-table-preview 2").appendChild(createtbody(etats,data,3));
+    document.getElementById("buttons-table-preview 2").appendChild(createtbody(etats,data,5));
+    document.getElementById("buttons-table-preview 2").appendChild(createtbody(etats,data,6));
+    // document.getElementById("buttons-table-preview 2").appendChild(createtbody(etats,data,7));
 }
 
 function chrt(table) {
@@ -41,6 +42,317 @@ function createtbody(etablissements, data,j) {
 
 
 switch (j) {
+    case 7:
+                
+        var instituts = etablissements.filter(
+            (e) => e.identifiant === null && e.type === "Institut" 
+          );
+        var subEtablissments = etablissements.filter(
+            (e) => e.identifiant !== null 
+          );
+          subEtablissments = subEtablissments.concat(instituts);
+          
+        var allCombinations = getAllCombinations({
+            
+           age:['< 19',19,20,21,22,23,24,25,26,27,28,29,30,'> 30','NR'],
+            GENRE: ['T','F'],
+            
+        });
+        thead = createhead(allCombinations,2);
+        thead.style.textAlign = "center";
+        var table = document.createElement("table");
+        table.id="datatable-buttons "+j
+        table.className="table table-striped dt-responsive nowrap w-100"
+        table.appendChild(thead);
+        var tbody = document.createElement("tbody");
+        tbody.style.textAlign = "center";
+        var Totale = document.createElement("tr");
+        t_cell = document.createElement("td");
+        t_cell.innerHTML="TOTAL";
+        t_cell.setAttribute("colspan", 2);
+        t_cell.style = "background-color : lightblue";
+        Totale.appendChild(t_cell)
+        var t={};
+        var m=0,f=0;
+       
+        for (let i = 0; i < subEtablissments.length; i++) {
+            students=data.filter(e => e.id_etablissement==subEtablissments[i].id)
+         
+            count = countByCombination(allCombinations, students)
+            let row = document.createElement("tr");
+            cell = document.createElement("td");
+                    cell.innerHTML = subEtablissments[i].abrev;
+                    if (getAbrev( subEtablissments[i].identifiant,etablissements)) {
+                    cell1 = document.createElement("td");
+                    cell1.innerHTML = getAbrev( subEtablissments[i].identifiant,etablissements);
+                    row.appendChild(cell1); 
+                    row.appendChild(cell); 
+                    } else {
+                        cell.setAttribute("colspan", 2);
+                        row.appendChild(cell);
+                    }
+                    
+                   
+                    var first=true
+            Object.keys(count).forEach(key => {
+                
+                cell = document.createElement("td");
+                    cell.innerHTML = count[key];
+                    if (t[key]) {
+                        t[key]+=count[key]
+                    }else{
+                        t[key]=count[key]
+                    }
+                    if (first) {
+                        m+=count[key]
+                    }
+                    else{
+                        f+=count[key]
+                    }
+                    first=!first
+                    row.appendChild(cell);
+            });
+                
+            cell = document.createElement("td");
+                    cell.innerHTML = m; 
+                    row.appendChild(cell)
+                    cell = document.createElement("td");
+                    cell.innerHTML = f;
+                    row.appendChild(cell)
+ if(t['m']) {                  
+t['m']+=m;
+t['f']+=f;
+ }else{
+    t['m']=m;
+t['f']=f;
+ }
+            
+            tbody.appendChild(row);
+        }
+
+            
+           
+   
+        Object.keys(t).forEach((key) => {
+            cell = document.createElement("td");
+            cell.innerHTML=t[key];
+            cell.style = "background-color : lightblue";
+            Totale.appendChild(cell)
+        })
+        sortTbody(tbody);
+        mergetbody(tbody);
+        tbody.appendChild(Totale)
+        table.appendChild(tbody);
+       
+        return table;
+   
+    case 6:
+                
+        var instituts = etablissements.filter(
+            (e) => e.identifiant === null && e.type === "Institut" && e.id_cycle == 2
+          );
+        var subEtablissments = etablissements.filter(
+            (e) => e.identifiant !== null &&  e.id_cycle == 2
+          );
+          subEtablissments = subEtablissments.concat(instituts);
+          
+        var allCombinations = getAllCombinations({
+            
+            'NOM_DU_(TRONC/FILIRERE)' : ['Classe Préparatoire/Licence'	,'Cycle ingénieur'],
+            Niveau: ['1A','2A','3A','T'],
+            GENRE: ['T','F'],
+            
+        });
+        thead = createhead(allCombinations,2);
+        thead.style.textAlign = "center";
+        var table = document.createElement("table");
+        table.id="datatable-buttons "+j
+        table.className="table table-striped dt-responsive nowrap w-100"
+        table.appendChild(thead);
+        var tbody = document.createElement("tbody");
+        tbody.style.textAlign = "center";
+        var Totale = document.createElement("tr");
+        t_cell = document.createElement("td");
+        t_cell.innerHTML="TOTAL";
+        t_cell.setAttribute("colspan", 2);
+        t_cell.style = "background-color : lightblue";
+        Totale.appendChild(t_cell)
+        var t={};
+        var m=0,f=0;
+       
+        for (let i = 0; i < subEtablissments.length; i++) {
+            students=data.filter(e => e.id_etablissement==subEtablissments[i].id)
+         
+            count = countByCombination(allCombinations, students)
+            let row = document.createElement("tr");
+            cell = document.createElement("td");
+                    cell.innerHTML = subEtablissments[i].abrev;
+                    if (getAbrev( subEtablissments[i].identifiant,etablissements)) {
+                    cell1 = document.createElement("td");
+                    cell1.innerHTML = getAbrev( subEtablissments[i].identifiant,etablissements);
+                    row.appendChild(cell1); 
+                    row.appendChild(cell); 
+                    } else {
+                        cell.setAttribute("colspan", 2);
+                        row.appendChild(cell);
+                    }
+                    
+                   
+                    var first=true
+            Object.keys(count).forEach(key => {
+                
+                cell = document.createElement("td");
+                    cell.innerHTML = count[key];
+                    if (t[key]) {
+                        t[key]+=count[key]
+                    }else{
+                        t[key]=count[key]
+                    }
+                    if (first) {
+                        m+=count[key]
+                    }
+                    else{
+                        f+=count[key]
+                    }
+                    first=!first
+                    row.appendChild(cell);
+            });
+                
+            cell = document.createElement("td");
+                    cell.innerHTML = m; 
+                    row.appendChild(cell)
+                    cell = document.createElement("td");
+                    cell.innerHTML = f;
+                    row.appendChild(cell)
+ if(t['m']) {                  
+t['m']+=m;
+t['f']+=f;
+ }else{
+    t['m']=m;
+t['f']=f;
+ }
+            
+            tbody.appendChild(row);
+        }
+
+            
+           
+   
+        Object.keys(t).forEach((key) => {
+            cell = document.createElement("td");
+            cell.innerHTML=t[key];
+            cell.style = "background-color : lightblue";
+            Totale.appendChild(cell)
+        })
+        sortTbody(tbody);
+        mergetbody(tbody);
+        tbody.appendChild(Totale)
+        table.appendChild(tbody);
+       
+        return table;
+    case 5:
+                
+        var instituts = etablissements.filter(
+            (e) => e.identifiant === null && e.type === "Institut" && e.id_cycle == 1
+          );
+        var subEtablissments = etablissements.filter(
+            (e) => e.identifiant !== null &&  e.id_cycle == 1
+          );
+          subEtablissments = subEtablissments.concat(instituts);
+          
+        var allCombinations = getAllCombinations({
+            Niveau: ['L1','L2','L3','M1','M2','D1','D2','D3','D4','D5'],
+            GENRE: ['T','F'],
+            
+        });
+        thead = createhead(allCombinations,2);
+        thead.style.textAlign = "center";
+        var table = document.createElement("table");
+        table.id="datatable-buttons "+j
+        table.className="table table-striped dt-responsive nowrap w-100"
+        table.appendChild(thead);
+        var tbody = document.createElement("tbody");
+        tbody.style.textAlign = "center";
+        var Totale = document.createElement("tr");
+        t_cell = document.createElement("td");
+        t_cell.innerHTML="TOTAL";
+        t_cell.setAttribute("colspan", 2);
+        t_cell.style = "background-color : lightblue";
+        Totale.appendChild(t_cell)
+        var t={};
+        var m=0,f=0;
+       
+        for (let i = 0; i < subEtablissments.length; i++) {
+            students=data.filter(e => e.id_etablissement==subEtablissments[i].id)
+         
+            count = countByCombination(allCombinations, students)
+            let row = document.createElement("tr");
+            cell = document.createElement("td");
+                    cell.innerHTML = subEtablissments[i].abrev;
+                    if (getAbrev( subEtablissments[i].identifiant,etablissements)) {
+                    cell1 = document.createElement("td");
+                    cell1.innerHTML = getAbrev( subEtablissments[i].identifiant,etablissements);
+                    row.appendChild(cell1); 
+                    row.appendChild(cell); 
+                    } else {
+                        cell.setAttribute("colspan", 2);
+                        row.appendChild(cell);
+                    }
+                    
+                   
+                    var first=true
+            Object.keys(count).forEach(key => {
+                
+                cell = document.createElement("td");
+                    cell.innerHTML = count[key];
+                    if (t[key]) {
+                        t[key]+=count[key]
+                    }else{
+                        t[key]=count[key]
+                    }
+                    if (first) {
+                        m+=count[key]
+                    }
+                    else{
+                        f+=count[key]
+                    }
+                    first=!first
+                    row.appendChild(cell);
+            });
+                
+            cell = document.createElement("td");
+                    cell.innerHTML = m; 
+                    row.appendChild(cell)
+                    cell = document.createElement("td");
+                    cell.innerHTML = f;
+                    row.appendChild(cell)
+ if(t['m']) {                  
+t['m']+=m;
+t['f']+=f;
+ }else{
+    t['m']=m;
+t['f']=f;
+ }
+            
+            tbody.appendChild(row);
+        }
+
+            
+           
+   
+        Object.keys(t).forEach((key) => {
+            cell = document.createElement("td");
+            cell.innerHTML=t[key];
+            cell.style = "background-color : lightblue";
+            Totale.appendChild(cell)
+        })
+        sortTbody(tbody);
+        mergetbody(tbody);
+        tbody.appendChild(Totale)
+        table.appendChild(tbody);
+       
+        return table;
+
     case 2:
         
         document.getElementById("buttons-table-preview 2").innerHTML="";
@@ -267,10 +579,7 @@ t['f']=f;
        
         return table;
 
-
-
-
-    case 3:
+    case 4:
         document.getElementById("buttons-table-preview 1").innerHTML="";
         var instituts = etablissements.filter(
             (e) => e.identifiant === null && e.type === "Institut" && e.privee == 0
@@ -587,6 +896,24 @@ function countByCombination(combinations, data) {
             let match = true;
             i = 1;
             for (let criteria in combination) {
+                if(criteria=='age'){
+                   if(combination[criteria] =="< 19" && getAge( student.date_DE_NAISSANCE) &&getAge( student.date_DE_NAISSANCE)<19){
+                    continue
+                   }
+                   else if(combination[criteria] =="> 30" && getAge( student.date_DE_NAISSANCE) &&getAge( student.date_DE_NAISSANCE)>30){
+                    continue
+                   }
+                  else if(combination[criteria] =="NR" && !getAge( student.date_DE_NAISSANCE)){
+                    continue
+                   }
+                   else if(combination[criteria]==student[criteria]){
+                     continue
+                   }
+                   else {
+                    match = false;
+                    break;
+                }
+                }
                 if (student[criteria] != combination[criteria]) {
                     if (
                         combination[criteria] == "etranges" &&
@@ -597,6 +924,12 @@ function countByCombination(combinations, data) {
                     if (
                         (combination[criteria] === "T" || combination[criteria] === "EFFECTIFS" )&&
                         student[criteria] != "F"
+                    ) {
+                        continue;
+                    }
+                    if (
+                        (criteria === "Niveau" && combination[criteria] === "T" )
+                        
                     ) {
                         continue;
                     } else {
@@ -645,6 +978,7 @@ function mergeCells(thead,t=0) {
         td = document.createElement("th");
         td.innerHTML = "TOTAL";
         td.style = "background-color : lightblue";
+        td.style.textAlign="center"
         td.setAttribute("colspan", t);
                 td.setAttribute("rowspan", thead.rows.length);
                 thead.rows[0].appendChild(td)}
@@ -704,6 +1038,19 @@ function sortTbody(tbody) {
         tbody.appendChild(rowsArray[i]);
     }
 }
+
+function getAge(dateOfBirth) {
+    if (!dateOfBirth) return false; // return false if date is non-renseigner
+    var today = new Date();
+    var birthDate = new Date(dateOfBirth);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
+
 let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 function generateRandomLetter() {

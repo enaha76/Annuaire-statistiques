@@ -55,8 +55,7 @@ class all_studentsController extends Controller
     GROUP BY etablissements.id,
         nom,
         abrev,
-        type
-    ;');
+        type;');
     // $List = get_object_vars($List);
     $List2 = (array) $List2;
 
@@ -74,18 +73,24 @@ class all_studentsController extends Controller
     return view('index', compact('List','List2','List3'));
     
   }
-  public function etu()
-  {
+  public function etu($year = null) {
+    if (!$year) {
+        $currentYear = date('Y');
+        $lastYear = $currentYear -1;
+        $year = $lastYear . '-' . $currentYear;
+    }
     
     $enrollments = DB::table('inscrire')
-    ->selectRaw('inscrire.*, etudiants.*, inscrire.année_scolaire as inscrire_year, inscrire.id as inscrire_id')
+    ->selectRaw('inscrire.*, etudiants.*, inscrire.année_scolaire , inscrire.id ')
+    ->where('année_scolaire','=',$year)
     ->join('etudiants', 'inscrire.id_etudiant', '=', 'etudiants.id')
     ->get();
+$years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
 
     $Etablissements = Etablissement::all();
     $Etablissements=$Etablissements->toArray();
     $enrollments=$enrollments->toArray();
-    return View('etudiants',compact('Etablissements','enrollments'));
+    return View('etudiants',compact('Etablissements','enrollments','years','year'));
   }
 
 

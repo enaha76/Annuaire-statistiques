@@ -6,7 +6,22 @@
   </script>          
 
             <div class="container-fluid">
-                
+<h3>L'Annee scolaire Actuel est : {{$year}}</h3>
+                <select id="year-select" aria-placeholder="Change it">
+                    
+                   @foreach ($years as $y )
+                   <option value={{$y}}>{{$y}}</option>
+                   @endforeach
+                  </select>
+                  <script>
+                    fill()
+                    document.getElementById("year-select").addEventListener("change", function() {
+  let selectedYear = this.value;
+  // Update the route with the selected year as the optional variable
+  window.location.href = `/etudiants/${selectedYear}`;
+});
+
+                  </script>
                 <!-- start page title -->
                 {{-- <div class="row">
                     <div class="col-12">

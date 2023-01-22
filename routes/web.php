@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(all_studentsController::class)->group(function(){
     Route::get('/', 'index')->name('index');
-    Route::get('/etudiants', 'etu')->name('etudiants');
+    Route::get('/etudiants/{year?}', 'etu')->name('etudiants');
 
     Route::post('/excel','import')->name('test');
     Route::post('/excel2', 'redr')->name('insert');
