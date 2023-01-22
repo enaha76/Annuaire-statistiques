@@ -20,6 +20,7 @@
         "@emotion/react": "^11.10.5",
         "@emotion/styled": "^11.10.5",
         "@mui/material": "^5.11.3",
+        "chart.js": "^4.2.0",
         "xlsx": "^0.18.5"
     }
 }

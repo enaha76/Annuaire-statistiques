@@ -9,7 +9,7 @@ class Etablissement extends Model
 {
 
 
-    protected $fillable = ['nom','abrev','tutelle','cotutelle','type','identifiant','id_cycle'];
+    protected $fillable = ['nom','abrev','tutelle','cotutelle','type','privee','identifiant','id_cycle'];
     public function Etudiants()
 {
     return $this->belongsToMany(Etudiant::class)->using(Inscrire::class);

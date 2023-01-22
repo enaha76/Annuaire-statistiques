@@ -36,8 +36,16 @@ class all_studentsController extends Controller
   }
   public function etu()
   {
+    
+    $enrollments = DB::table('inscrire')
+    ->selectRaw('inscrire.*, etudiants.*, inscrire.année_scolaire as inscrire_year, inscrire.id as inscrire_id')
+    ->join('etudiants', 'inscrire.id_etudiant', '=', 'etudiants.id')
+    ->get();
 
-    return View('etudiants');
+    $Etablissements = Etablissement::all();
+    $Etablissements=$Etablissements->toArray();
+    $enrollments=$enrollments->toArray();
+    return View('etudiants',compact('Etablissements','enrollments'));
   }
   public function tables()
   {

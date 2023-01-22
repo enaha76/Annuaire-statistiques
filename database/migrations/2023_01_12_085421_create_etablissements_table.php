@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('tutelle')->nullable(true);
             $table->string('cotutelle')->nullable(true);
             $table->string('type');
+            $table->boolean('privee');
             $table->foreignId('identifiant')->nullable(true)
                   ->constrained('etablissements')
                   ->onUpdate('cascade')
