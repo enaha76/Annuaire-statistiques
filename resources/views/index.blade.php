@@ -92,6 +92,7 @@
                 
 
                  {{-- ----start page title-- --}}
+                 
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box">
@@ -387,9 +388,7 @@
                         </div>
                         <!-- container -->
 
-                        {{-- <script>
-                            console.log(dataJSON);
-                        </script> --}}
+                       
                         <script>
                           const box = document.getElementById('tab');
 
