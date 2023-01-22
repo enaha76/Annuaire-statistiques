@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\all_studentsController;
 use App\Http\Controllers\EtablissementsController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,3 +64,12 @@ Route::controller(EtablissementsController::class)->group(function(){
 Route::get('/conf',function(){
     return view('confirm_import');
 });
+
+
+
+Route::controller(EtablissementController::class)->group(function(){
+    // Route::get('/', 'index')->name('index');
+    Route::get('/index', 'getEtablissements');
+   
+});
+
