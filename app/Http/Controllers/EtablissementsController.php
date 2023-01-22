@@ -22,7 +22,7 @@ class EtablissementsController extends Controller
             'tutelle' => 'required',
             'cotutelle' => 'nullable',
             'identifiant' => 'nullable',
-            'id_cycle' => 'nullable',
+            'id_cycle' => 'required',
         ]);
         $data = $request->all();
         Etablissement::create([
