@@ -145,7 +145,7 @@
                                     <table class="table table-striped dt-responsive nowrap w-100" >
                                         
                                         <thead>
-                                            <tr>
+                                            <tr style="font-weight:bold">
                                             {{-- <td>id</td> --}}
                                             <td colspan="2">NOM</td>
                                             <td>TUTELLE</td>
@@ -160,7 +160,7 @@
                                         
                                         <tr>
 
-                                        <td>  {{$eta->id }} </td>
+                                        {{-- <td>  {{$eta->id }} </td> --}}
                                        <td><a href="{{url('etablissements/'.$eta->id)}}"> {{$eta->abrev }} </a></td> 
                                        <td><a href="{{url('etablissements/'.$eta->id)}}"> {{$eta->nom }} </a></td>
                                         <td>  {{$eta->tutelle }} </td>

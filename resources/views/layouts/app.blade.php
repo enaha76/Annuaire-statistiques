@@ -140,7 +140,7 @@
                 <!-- LOGO -->
                 <a href="{{route('index')}}" class="logo text-center logo-light">
                     <span class="logo-lg">
-                        <img src="assets/images/logo.png" alt="" height="20">
+                        <img src="assets/images/logo.png" alt="" height="16">
                         <span class="text-light">Annuaire Statistique</span>
                     </span>
                     <span class="logo-sm">
@@ -406,11 +406,11 @@
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
                                     <!-- item-->
                                     <div class=" dropdown-header noti-title">
-<<<<<<< HEAD
+{{-- <<<<<<< HEAD --}}
                                         <h6 class="text-overflow m-0">bonjour</h6>
-=======
+{{-- ======= --}}
                                         <h6 class="text-overflow m-0">Bienvenue !</h6>
->>>>>>> a9fbf9eb8c558f0548e212e70e4d2ee11a10a49f
+{{-- >>>>>>> a9fbf9eb8c558f0548e212e70e4d2ee11a10a49f --}}
                                     </div>
 
                                     <!-- item-->
@@ -672,6 +672,6 @@
          <script src="assets/js/pages/demo.products.js"></script>
          <script src="assets/js/pages/demo.datatable-init.js"></script>
          <!-- end demo js-->
- 
+         <script src="assets/js/pages/indexchars.js"></script>
     </body>
 </html>

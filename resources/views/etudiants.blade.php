@@ -20,12 +20,12 @@
   </script>          
   <div class="row mb-2">
     <div class="col-sm-4">
-    <h5>Année scolaire <span class="badge rounded-pill p-1 px-2 badge-secondary-lighten">{{$year}}</span></h5>
+    <h5>Année scolaire <span class="badge rounded-pill p-1 px-2 badge-success-lighten">{{$year}}</span></h5>
     </div>
     <div class="col-sm-8">
         <div class="text-sm-end">
             <div class="dropdown" id="year-select" aria-placeholder="Change it">
-                <button type="button" class="btn btn-light mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <button type="button" class="btn btn-info mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                     <i class="uil-calender"></i>changer  l'année 
                 </button>
               
@@ -132,7 +132,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h2> Effectifs par institution et par genre, mauritaniens et étrangers</h2>
+                                <h4> Effectifs par institution et par genre, mauritaniens et étrangers</h4>
                                
                                 
                                 <div class="tab-content">
@@ -153,7 +153,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                                <h2> Effectifs par institution et par genre </h2>
+                                <h4> Effectifs par institution et par genre </h4>
                                
                                 
                                 <div class="row tab-content">
@@ -181,10 +181,10 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h2> 
+                                <h4> 
 
                                      Universités : effectifs des étudiants mauritaniens par institution, par genre et par niveau
-                                    </h2>
+                                    </h4>
                                
                                 
                                 <div class="tab-content">

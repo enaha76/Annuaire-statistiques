@@ -70,7 +70,17 @@ class all_studentsController extends Controller
      or
       (identifiant is null AND type=\'institut\');');
       $List3 = (array) $List3;
-    return view('index', compact('List','List2','List3'));
+
+      $List4=DB::select('SELECT 
+      SUM(CASE WHEN type=\'Université\' THEN 1 ELSE 0 END) as \'Université\', 
+      SUM(CASE WHEN type=\'Ecole\' THEN 1 ELSE 0 END) as \'Ecole\',
+      SUM(CASE WHEN type=\'Academie\' THEN 1 ELSE 0 END) as \'Academie\',
+      SUM(CASE WHEN type=\'institut\' THEN 1 ELSE 0 END) as \'institut\',
+      SUM(CASE WHEN type=\'Faculté\' THEN 1 ELSE 0 END) as \'Faculté\'
+      
+  FROM etablissements;');
+  $List4 = (array) $List4;
+    return view('index', compact('List','List2','List3','List4'));
     
   }
   public function etu($year = null) {
@@ -94,37 +104,47 @@ $years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
   }
 
 
-  public function tables()
+  public function tables($year = null)
   {
-    $etats = Etablissement::all();
- 
-    $List3=DB::select('SELECT
-    etablissements.id,
-    etablissements.nom,
-    etablissements.abrev,
-    etablissements.identifiant 
-    FROM 
-    etablissements 
-    WHERE (identifiant is not null) 
-    or
-     (identifiant is null AND type=\'institut\');');
-     $List3 = (array) $List3;
+      $etats = Etablissement::all();
+   
+      $List3=DB::select('SELECT
+      etablissements.id,
+      etablissements.nom,
+      etablissements.abrev,
+      etablissements.identifiant 
+      FROM 
+      etablissements 
+      WHERE (identifiant is not null) 
+      or
+       (identifiant is null AND type=\'institut\');');
+       $List3 = (array) $List3;
+      
+       $List4=DB::select('SELECT 
+       DISTINCT
+       (id_etudiant) as idc,
+       id_etablissement,
+       année_scolaire 
+       FROM 
+       inscrire;');
+       $List4 = (array) $List4;
     
-     $List4=DB::select('SELECT 
-     DISTINCT
-     (id_etudiant) as idc,
-     id_etablissement,
-     année_scolaire 
-     FROM 
-     inscrire;');
-     $List4 = (array) $List4;
-    // return view('tables', compact( 'etats','List3','List4'));
-    return view('tables', [
-      'etats' => $etats,
-      'List3' => $List3,
-      'data' => $List4,
-  ]);
+      if (!$year) {
+          $currentYear = date('Y');
+          $lastYear = $currentYear -1;
+          $year = $lastYear . '-' . $currentYear;
+      }
+      $years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
+     
+      return view('tables', [
+        'etats' => $etats,
+        'List3' => $List3,
+        'data' => $List4,
+        'year' => $year,
+        'years' => $years
+    ]);
   }
+  
   public function import(Request $request)
   {
 
