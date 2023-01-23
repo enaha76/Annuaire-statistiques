@@ -1,3 +1,7 @@
+
+
+  
+  
 function fill(data,etats) {
     $('div[id*="div"]').hide();
     document.getElementById("buttons-table-preview 1").appendChild(createtbody(etats,data,1));
@@ -11,39 +15,126 @@ function fill(data,etats) {
    
     
 }
-
-function chrt(table) {
-   
-    var data = {
-      labels: [],
-      datasets: [{
-        label: "My Data",
-        data: []
-      }]
-    };
+function generateRandomColor( ) {
+   let usedColors=[]
+    let letters = '0123456789ABCDEF';
     
-    for (var i = 1; i < table.rows.length; i++) {
-      data.labels.push(table.rows[i].cells[0].innerHTML);
-      data.datasets[0].data.push(table.rows[i].cells[1].innerHTML);
-    }
-    
-    var ctx = document.createElement("canvas");
-     
-    new Chart(ctx, {
-      type: "bar",
-      data: data,
-      options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
+    j=0;
+    while (j<20) {
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
         }
-      }
-    });
-    return ctx;
+        usedColors.push(color)
+        j++;
     }
+    
+     return usedColors
+
+}
+function chrt(table) {
+    var labels = [];
+
+//Select the header cells
+var headers = table.getElementsByTagName("th");
+
+//Extract the text content of each cell and add it to the labels array
+for (var i = 0; i < headers.length; i++) {
+    labels.push(headers[i].textContent);
+}
+   let colorin=generateRandomColor()
+    console.log(colorin,"fffff");
+    var data = {
+        labels: [],
+        datasets: []
+    };
+
+    var numDatasets = table.rows[0].cells.length - 1; // number of datasets is the number of columns - 1 (for the labels column)
+
+    // create empty datasets
+    for (var i = 0; i < numDatasets; i++) {
+        data.datasets.push({
+            label: "",
+            data: [],
+             backgroundColor:[],
+            borderWidth: 1,
+            barThickness: 30,
+            maxBarThickness: 30
+        });
+    }
+
+    // add labels and data to the datasets
+    for (var i = 1; i < table.rows.length; i++) {
+        data.labels.push(table.rows[i].cells[0].innerHTML);
+        
+            for (var j = 1; j <= numDatasets; j++) {
+                data.datasets[j-1].data.push(table.rows[i].cells[j].innerHTML);
+                
+                if (numDatasets>1) { data.datasets[j-1].backgroundColor.push(colorin[j-1]);
+                    data.datasets[j-1].label=labels[j];}
+                
+            } 
+            if (numDatasets==1) {
+               
+                    data.datasets[0].backgroundColor.push(colorin[i])
+                    
+             
+            }
+        
+        
+    }
+
+    var ctx = document.createElement("canvas");
+
+    new Chart(ctx, {
+        type: 'bar',
+  data: data,
+  options: {
+    "hover": {
+      "animationDuration": 0
+    },
+    "animation": {
+      "duration": 1,
+      "onComplete": function() {
+        var chartInstance = this.chart,
+          ctx = chartInstance.ctx;
+
+        ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+
+        this.data.datasets.forEach(function(dataset, i) {
+          var meta = chartInstance.controller.getDatasetMeta(i);
+          meta.data.forEach(function(bar, index) {
+            var data = dataset.data[index];
+            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+          });
+        });
+      }
+    },
+    scales: {
+      yAxes: [{
+   
+       
+        ticks: {
+          max: Math.max(...data.datasets[0].data) + 10,
+          
+          beginAtZero: true
+        }
+      }],
+      xAxes: [{
+       
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+});
+  
+    return ctx;
+}
+
     
 
 function createtbody(etablissements, data,j) {

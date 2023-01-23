@@ -3,8 +3,9 @@
 @section('content')
 
 @php
-                                        $cycle= ['LMD','CYCLE/CLASS pre','PCME'];
-                                        $prive= ['PUBLIC','PRIVE'];
+                                        $n= ['LMD','PCME','ANNEE'];
+                                        
+                                        $prive=['prive','public'];         
 
                                         @endphp
 
@@ -35,7 +36,8 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body" >
-                            <form class="p-2" action="{{ route('store') }}" method="post">
+                            <form class="p-2" action="{{ route('store') }}" method="POST">
+                                @csrf
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="mb-3">
@@ -46,7 +48,14 @@
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label for="task-priority2" class="form-label">Cycle</label>
-                                            <input type="text" class="form-control form-control-light" id="task-title" name="id_cycle">
+                                            <select name="id_cycle" class="form-control form-control-light" id="task-title">
+                                                @foreach ($cycles as $one )
+                                                    <option value={{$one->id}}>{{$one->nom}}</option>
+                                                @endforeach
+                                             
+                                               
+                                            </select>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -84,11 +93,24 @@
                                 </div>
     
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-8">
                                         <div class="mb-3">
-                                            <label for="task-title" class="form-label">Identifiant</label>
-                                            <input type="text" class="form-control form-control-light" id="task-title" name="identifiant">
-    
+                                            <label for="task-title" class="form-label">Origin</label>
+                                            <select name="identifiant" class="form-control form-control-light" id="task-title">
+                                                <option value="" selected>Autonome</option>
+                                                @foreach ($origin as $one )
+                                                    <option value={{$one->id }}>{{$one->abrev}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label for="task-priority2" class="form-label">Enseignment</label>
+                                            <select name="privee" class="form-control form-control-light" id="task-title">
+                                                <option value="0">Public</option>
+                                                <option value="1">Privé</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -102,6 +124,17 @@
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
+
+            @if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+<br> <br>
             @if ($Etablissements)
             <div class="row">
                 <div class="col-12">
@@ -142,7 +175,7 @@
                                             @endif
                                         @endforeach 
                                         </td>
-                                        <td>  {{$cycle[$eta->id_cycle-1]}} </td>
+                                        <td>  {{$n[$eta->id_cycle-1]}} </td>
                                     </tr>
                                         
                                 

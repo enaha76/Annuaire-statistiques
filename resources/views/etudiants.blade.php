@@ -98,22 +98,24 @@
        
     </div>
 </div>
-                <div class="row"   >
-                    <div class="col-12">
+                <div class="row" >
+                    
                         <div class="card">
                             <div class="card-body">
 
                                 <h4>  Effectifs des étudiants par établissement du public</h4>
                                
                                 
-                                <div class="tab-content">
-                                    <div class="table-responsive table-responsive" id="buttons-table-preview 1">
+                                <div class="row tab-content">
+                                    <div class="col-md-5 table-responsive table-responsive" id="buttons-table-preview 1">
                                                                                   
                                     </div> <!-- end preview-->
                                    <br>
                                    <br>
+                                   <div class="col-sm-1"></div>
+                                            <div  class="col-md-6 " id="ltr">
                                             <h4 class="header-title"> Repartution des étudiants par établissement du public</h4>
-                                            <div dir="ltr">
+
                                                 <div id="myChart 1" ></div>
                                             </div>
                                         
@@ -122,7 +124,7 @@
                                
                             </div> <!-- end card body-->
                         </div> <!-- end card -->
-                    </div><!-- end col-->
+                   
                 </div>
                 
                 <div class="row" id="div 2">
@@ -147,20 +149,23 @@
                 </div>
                
                 <div class="row" id="div 3">
-                   <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
+                  
+                    <div class="card">
+                        <div class="card-body">
 
                                 <h4> Effectifs par institution et par genre </h4>
                                
                                 
-                                <div class="tab-content">
-                                    <div class="table-responsive" id="buttons-table-preview 3">
+                                <div class="row tab-content">
+                                    <div class="col-md-5 table-responsive" id="buttons-table-preview 3">
                                                                                   
                                     </div> <!-- end preview-->
-                                   
-                                            <h4 class="header-title"> Repartution des étudiants par institution et par genre </h4>
-                                            <div dir="ltr">
+                                   <br>
+                                    <br>
+                                    <div class="col-sm-1"></div>
+                                            <div class="col-md-6 "  dir="ltr">
+                                   <h4 class="header-title"> Repartution des étudiants par institution et par genre </h4>
+
                                                 <div id="myChart 3" ></div>
                                             </div>
                                         
@@ -169,7 +174,7 @@
                                
                             </div> <!-- end card body-->
                         </div> <!-- end card -->
-                    </div><!-- end col-->
+                   
                 </div>
                 <div class="row" id="div 4">
                    <div class="col-12">
@@ -262,7 +267,7 @@
  <!-- demo:js -->
  <script src="assets/js/pages/demo.apex-column.js"></script>
  <!-- demo end -->
- <script src="cdn/Chart.min.js"></script>
+ <script src={{asset('cdn/Chart.min.js')}}></script>
 
 <script defer>
     let data = @json($enrollments);

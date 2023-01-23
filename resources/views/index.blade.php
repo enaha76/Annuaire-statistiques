@@ -565,7 +565,7 @@
                                             <div class="mb-4 mt-4">
                                                 <div id="world-map-markers" style="height: 224px"></div>
                                             </div> --}}
-                                            <h4 class="header-title">Total Sales</h4>
+                                            <h4 class="header-title">Etablissements</h4>
                                             {{-- "Université","Instit","Ecole","Academie","Faculté" --}}
 
 
