@@ -113,7 +113,7 @@
                                     <table class="table table-striped dt-responsive nowrap w-100" >
                                         
                                         <thead>
-                                            <tr>
+                                            <tr style="font-weight:bold">
                                             {{-- <td>id</td> --}}
                                             <td colspan="2">NOM</td>
                                             <td>TUTELLE</td>
