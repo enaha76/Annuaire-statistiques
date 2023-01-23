@@ -33,6 +33,15 @@ function generateRandomColor( ) {
 
 }
 function chrt(table) {
+    var labels = [];
+
+//Select the header cells
+var headers = table.getElementsByTagName("th");
+
+//Extract the text content of each cell and add it to the labels array
+for (var i = 0; i < headers.length; i++) {
+    labels.push(headers[i].textContent);
+}
    let colorin=generateRandomColor()
     console.log(colorin,"fffff");
     var data = {
@@ -60,7 +69,9 @@ function chrt(table) {
         
             for (var j = 1; j <= numDatasets; j++) {
                 data.datasets[j-1].data.push(table.rows[i].cells[j].innerHTML);
-                if (numDatasets>1) { data.datasets[j-1].backgroundColor.push(colorin[j-1]);}
+                
+                if (numDatasets>1) { data.datasets[j-1].backgroundColor.push(colorin[j-1]);
+                    data.datasets[j-1].label=labels[j];}
                 
             } 
             if (numDatasets==1) {
