@@ -1,122 +1,3 @@
-{{-- 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
-        <link href="{{ asset('cdn/PI_workspace.css')}}" rel="stylesheet" />
-        <link href="{{ asset('css/styles.css')}}" rel="stylesheet" />
-        <link href="{{ asset('bootstrap.min.css')}}" rel="stylesheet" />
-        <script src="{{ asset('cdn/all.js')}}" crossorigin="anonymous"></script>
-        {{-- <script src="{{ asset('bootstrap.min.js')}}"></script>
-        <script src="{{ asset('jquery-3.2.1.slim.min.js')}}"></script>
-        <script src="{{ asset('popper.min.js')}}"></script> --}}
-        
-    {{-- </head>
-    <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3 font-weight-bold" href="{{route('index')}}">DPSE</a>
-            <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-            <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-                </div>
-            </form>
-            <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading">catagorie</div>
-                            <a class="nav-link" href="{{ route('etudiants') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Etudiants
-                            </a>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Export
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ route('layout-sidenav-light') }}">etudiant</a>
-                                </nav>
-                            </div>
-                           
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Import
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link" href="{{ route('tables') }}">etudiant</a>
-                                    
-                                </nav>
-                            </div>
-                         
-                        </div>
-                    </div>
-                    <div class="sb-sidenav-footer">
-                      
-                        DPSE
-                    </div>
-                </nav>
-            </div>
-            <div id="layoutSidenav_content">
-           
-@yield('content')
-
-
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        
-        <script src="{{ asset('cdn/bootstrap.bundle.min.js')}}" crossorigin="anonymous"></script>
-        <script src="{{ asset('js/scripts.js')}}"></script>
-        <script src="{{ asset('cdn/Chart.min.js')}}" crossorigin="anonymous"></script>
-         <script src="{{asset('assets/demo/chart-area-demo.js')}}"></script> 
-         <script src="{{asset('assets/demo/chart-bar-demo.js')}}"></script> 
-         <script src="{{asset('assets/demo/chart-pie-demo.js')}}"></script> 
-        <script src="{{ asset('cdn/simple-datatables@latest.js')}}" crossorigin="anonymous"></script>
-        <script src="{{ asset('js/datatables-simple-demo.js')}}"></script>
-    
-    
-    
-    </body> --}}
-{{-- </html>  --}}
-
 <!DOCTYPE html>
     <html lang="en">
 
@@ -319,57 +200,7 @@
                                 <span class="visually-hidden">Loading...</span>
                               </div>
                           </div>
-                        <!-- <li class="side-nav-title side-nav-item">Apps</li>
-
-                        <li class="side-nav-item">
-                            <a href="apps-calendar.html" class="side-nav-link">
-                                <i class="uil-calender"></i>
-                                <span> Calendar </span>
-                            </a>
-                        </li>
-
-                        <li class="side-nav-item">
-                            <a href="apps-chat.html" class="side-nav-link">
-                                <i class="uil-comments-alt"></i>
-                                <span> Chat </span>
-                            </a>
-                        </li>
-
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
-                                <i class="uil-store"></i>
-                                <span> Ecommerce </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarEcommerce">
-                                <ul class="side-nav-second-level">
-                                    <li>
-                                        <a href="apps-ecommerce-products.html">Products</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-ecommerce-products-details.html">Products Details</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-ecommerce-orders.html">Orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-ecommerce-orders-details.html">Order Details</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-ecommerce-customers.html">Customers</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-ecommerce-shopping-cart.html">Shopping Cart</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-ecommerce-checkout.html">Checkout</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-ecommerce-sellers.html">Sellers</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li> -->
+                       
 
                         <li class="side-nav-item">
                             <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
@@ -400,14 +231,9 @@
                                         </div>
                                     </li>
                                     <li>
-{{-- <<<<<<< HEAD --}}
-                                        
-                                        {{-- <a href="#">Export</a> --}}
 
-{{-- ======= --}}
-                                        {{-- {{ route('layout-sidenav-light') }} --}}
                                         <a href="{{ route('Export') }}">Export</a>
-{{-- >>>>>>> 6907f391dd426189701d726f479410748ed76137 --}}
+
                                     </li>
                                 </ul>
                             </div>
@@ -469,8 +295,95 @@
 
                                 </div>
                             </li>
+{{-- 
+                            <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <i class="dripicons-bell noti-icon"></i>
+                                    <span class="noti-icon-badge"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg">
 
-                           
+                                    <!-- item-->
+                                    <div class="dropdown-item noti-title">
+                                        <h5 class="m-0">
+                                            <span class="float-end">
+                                                <a href="javascript: void(0);" class="text-dark">
+                                                    <small>Clear All</small>
+                                                </a>
+                                            </span>Notification
+                                        </h5>
+                                    </div>
+
+                                    <div style="max-height: 230px;" data-simplebar="">
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon bg-primary">
+                                                <i class="mdi mdi-comment-account-outline"></i>
+                                            </div>
+                                            <p class="notify-details">Caleb Flakelar commented on Admin
+                                                <small class="text-muted">1 min ago</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon bg-info">
+                                                <i class="mdi mdi-account-plus"></i>
+                                            </div>
+                                            <p class="notify-details">New user registered.
+                                                <small class="text-muted">5 hours ago</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon">
+                                                <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt=""> </div>
+                                            <p class="notify-details">Cristina Pride</p>
+                                            <p class="text-muted mb-0 user-msg">
+                                                <small>Hi, How are you? What about our next meeting</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon bg-primary">
+                                                <i class="mdi mdi-comment-account-outline"></i>
+                                            </div>
+                                            <p class="notify-details">Caleb Flakelar commented on Admin
+                                                <small class="text-muted">4 days ago</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon">
+                                                <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt=""> </div>
+                                            <p class="notify-details">Karen Robinson</p>
+                                            <p class="text-muted mb-0 user-msg">
+                                                <small>Wow ! this admin looks good and awesome design</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon bg-info">
+                                                <i class="mdi mdi-heart"></i>
+                                            </div>
+                                            <p class="notify-details">Carlos Crouch liked
+                                                <b>Admin</b>
+                                                <small class="text-muted">13 days ago</small>
+                                            </p>
+                                        </a>
+                                    </div>
+
+                                    <!-- All-->
+                                    <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
+                                        View All
+                                    </a>
+
+                                </div>
+                            </li> --}}
 
                            
 
@@ -493,13 +406,13 @@
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
                                     <!-- item-->
                                     <div class=" dropdown-header noti-title">
-                                        <h6 class="text-overflow m-0">Welcome !</h6>
+                                        <h6 class="text-overflow m-0">bonjour</h6>
                                     </div>
 
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <i class="mdi mdi-account-circle me-1"></i>
-                                        <span>My Account</span>
+                                        <span>Mon count</span>
                                     </a>
 
                                     <!-- item-->
@@ -583,15 +496,7 @@
                                     </a>
 
                                     <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="d-flex">
-                                            <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg" alt="Generic placeholder image" height="32">
-                                            <div class="w-100">
-                                                <h5 class="m-0 font-14">Jacob Deo</h5>
-                                                <span class="font-12 mb-0">Developer</span>
-                                            </div>
-                                        </div>
-                                    </a>
+                                    
                                 </div>
                             </div>
                         </div>

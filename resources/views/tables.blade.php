@@ -1,8 +1,7 @@
 @extends('layouts.app')
+
 @section('content')
-{{-- @php
-    print_r($List4);
-@endphp --}}
+
   <!-- start page title -->
   <div class="container-fluid">
   @if (session('success'))
@@ -23,6 +22,7 @@
     </div><!-- /.modal -->
   </div>
   @endif
+  
   <div class="row">
     <div class="col-12">
         <div class="page-title-box">
