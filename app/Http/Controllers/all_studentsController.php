@@ -80,8 +80,9 @@ class all_studentsController extends Controller
       
   FROM etablissements;');
   $List4 = (array) $List4;
-  
-    return view('index', compact('List','List2','List3','List4'));
+  $List4=DB::select('SELECT COUNT(*) as nbr from etudiants');
+  $nbr_etudient = (array) $List4;
+    return view('index', compact('List','List2','List3','List4','nbr_etudient'));
     
   }
   public function etu($year = null) {
