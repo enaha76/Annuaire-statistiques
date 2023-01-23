@@ -24,7 +24,8 @@
                 </div>
             </div>
         </div>
-        <a href="#" data-bs-toggle="modal" data-bs-target="#add-new-task-modal" class="btn btn-success btn-sm ms-3"><i class=" dripicons-plus"> </i></a>
+        
+        <a href="#" data-bs-toggle="modal" data-bs-target="#add-new-task-modal" class="btn btn-success btn-sm ms-3 m-2"><i class=" dripicons-plus">Ajouter un Etablissement </i></a>
             <!--  Add new task modal -->
             <div class="modal fade task-modal-content" id="add-new-task-modal" tabindex="-1" role="dialog" aria-labelledby="NewTaskModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -113,13 +114,13 @@
                                         
                                         <thead>
                                             <tr>
-                                            <td>id</td>
-                                            <td colspan="2">nom</td>
-                                            <td>tutelle</td>
-                                            <td>co_tutelle</td>
-                                            <td>etat</td>
-                                            <td>origin</td>
-                                            <td>cycle</td>
+                                            {{-- <td>id</td> --}}
+                                            <td colspan="2">NOM</td>
+                                            <td>TUTELLE</td>
+                                            <td>COTUTELLE</td>
+                                            <td>ETAT</td>
+                                            <td>ORIGIN</td>
+                                            <td>CYCLE</td>
                                             </tr>
                                         </thead>
                                         <tbody>
