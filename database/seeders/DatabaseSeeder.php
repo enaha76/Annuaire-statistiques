@@ -87,7 +87,7 @@ class DatabaseSeeder extends Seeder
             'abrev' => 'ISA',
             'cotutelle' => 'Ministère de l’Enseignement Supérieur, de la Recherche Scientifique et des des Technologies de l\'Information et de la Communication et Ministère de la Défense Nationale',
             'privee'=>0,
-            'type' => 'institut',
+            'type' => 'Institut',
             'id_cycle' =>1
         ]);
         Etablissement::create([

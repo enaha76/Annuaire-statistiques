@@ -125,11 +125,12 @@
                                         </thead>
                                         <tbody>
                                         @foreach ($Etablissements as $eta) 
+                                        
                                         <tr>
 
-                                        {{-- <td>  {{$eta->id }} </td> --}}
-                                        <td>  {{$eta->abrev }} </td>
-                                        <td>  {{$eta->nom }} </td>
+                                        <td>  {{$eta->id }} </td>
+                                       <td><a href="{{url('etablissements/'.$eta->id)}}"> {{$eta->abrev }} </a></td> 
+                                       <td><a href="{{url('etablissements/'.$eta->id)}}"> {{$eta->nom }} </a></td>
                                         <td>  {{$eta->tutelle }} </td>
                                         <td>  {{$eta['co-tutelle'] }} </td>
                                         <td>  {{$prive[$eta->privee]}} </td>
