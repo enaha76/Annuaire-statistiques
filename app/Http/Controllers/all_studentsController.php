@@ -70,7 +70,17 @@ class all_studentsController extends Controller
      or
       (identifiant is null AND type=\'institut\');');
       $List3 = (array) $List3;
-    return view('index', compact('List','List2','List3'));
+
+      $List4=DB::select('SELECT 
+      SUM(CASE WHEN type=\'Université\' THEN 1 ELSE 0 END) as \'Université\', 
+      SUM(CASE WHEN type=\'Ecole\' THEN 1 ELSE 0 END) as \'Ecole\',
+      SUM(CASE WHEN type=\'Academie\' THEN 1 ELSE 0 END) as \'Academie\',
+      SUM(CASE WHEN type=\'institut\' THEN 1 ELSE 0 END) as \'institut\',
+      SUM(CASE WHEN type=\'Faculté\' THEN 1 ELSE 0 END) as \'Faculté\'
+      
+  FROM etablissements;');
+  $List4 = (array) $List4;
+    return view('index', compact('List','List2','List3','List4'));
     
   }
   public function etu($year = null) {
