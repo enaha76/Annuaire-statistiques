@@ -103,7 +103,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h4>  Effectifs des étudiants par établissement du public</h4>
+                                <h2>  Effectifs des étudiants par établissement du public</h2>
                                
                                 
                                 <div class="tab-content">
