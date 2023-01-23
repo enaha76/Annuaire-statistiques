@@ -17,6 +17,7 @@
                 </div>
             </div>
         </div>
+        
         <a href="#" data-bs-toggle="modal" data-bs-target="#add-new-task-modal" class="btn btn-success btn-sm ms-3"><i class=" dripicons-plus"> </i></a>
             <!--  Add new task modal -->
             <div class="modal fade task-modal-content" id="add-new-task-modal" tabindex="-1" role="dialog" aria-labelledby="NewTaskModalLabel" aria-hidden="true">
