@@ -97,6 +97,7 @@
                                         <div class="mb-3">
                                             <label for="task-title" class="form-label">Origin</label>
                                             <select name="identifiant" class="form-control form-control-light" id="task-title">
+                                                <option value="" selected>Autonome</option>
                                                 @foreach ($origin as $one )
                                                     <option value={{$one->id }}>{{$one->abrev}}</option>
                                                 @endforeach
@@ -108,7 +109,7 @@
                                             <label for="task-priority2" class="form-label">Enseignment</label>
                                             <select name="privee" class="form-control form-control-light" id="task-title">
                                                 <option value="0">Public</option>
-                                                <option value="1">Prive</option>
+                                                <option value="1">Privé</option>
                                             </select>
                                         </div>
                                     </div>
