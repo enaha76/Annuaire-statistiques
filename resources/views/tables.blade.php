@@ -109,8 +109,8 @@
 <br>
 <div class='file-input ' id='cache_file'>
     <input type='file' id="fileInput">
-    <span class='button '>Choose</span>
-    <span class='label' data-js-label>No file selected</label>
+  <span class=' btn btn-primary'> <i class="mdi mdi-file-import"></i></span>
+    <span class='label' data-js-label>Aucun fichier sélectionné</label>
 </div>
 </form>
 {{-- <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
