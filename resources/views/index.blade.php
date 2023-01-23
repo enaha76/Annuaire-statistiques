@@ -2,7 +2,7 @@
 
 @section('content')
             
-     
+    
           
                     <div class="content">
                         <!-- Topbar Start -->
@@ -440,7 +440,10 @@
                                                        $m[]=$v;
                                                        }
                                                         $array_eteblissment[$v]=$m;  
-                                                   }                                                  
+                                                   } 
+                                                   
+                                                   
+                                                //    print_r($array_eteblissment);
                                                 @endphp
                                         
                                                                <h4 class="header-title mb-3"></h4>
@@ -503,28 +506,33 @@
                                                     <a href="javascript:void(0);" class="dropdown-item"></a>
                                                 </div>
                                             </div>
-                                            <h4 class="header-title">Repartution des etudiants par etablissement</h4>
+                                            <h4 class="header-title mb-4">Bar Chart</h4>
 
-                                            <div id="average-sales" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
+                                            <div dir="ltr">
+                                                <div id="high-performing-product" class="apex-charts" data-colors="#727cf5,#e3eaef"></div>
+                                            </div>
+                                            {{-- <h4 class="header-title">Repartution des etudiants par etablissement</h4>
+
+                                            <div id="average-sales" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div> --}}
 
 
                                             <div class="chart-widget-list">
-                                                <p>
-                                                    <i class="mdi mdi-square text-primary"></i> SUPNUM
+                                                {{-- <p>
+                                                    <i class="mdi mdi-square text-primary"></i> 
                                                     <span class="float-end"></span>
-                                                </p>
-                                                <p>
-                                                    <i class="mdi mdi-square text-danger"></i>ISCAE
+                                                </p> --}}
+                                                {{-- <p>
+                                                    <i class="mdi mdi-square text-danger"></i>
                                                     <span class="float-end"></span>
-                                                </p>
-                                                <p>
-                                                    <i class="mdi mdi-square text-success"></i> ESP
+                                                </p> --}}
+                                                {{-- <p>
+                                                    <i class="mdi mdi-square text-success"></i> 
                                                     <span class="float-end"></span>
-                                                </p>
-                                                <p class="mb-0">
-                                                    <i class="mdi mdi-square text-warning"></i> FST
+                                                </p> --}}
+                                                {{-- <p class="mb-0">
+                                                    <i class="mdi mdi-square text-warning"></i>
                                                     <span class="float-end"></span>
-                                                </p>
+                                                </p> --}}
                                             </div>
                                         </div> <!-- end card-body-->
                                     </div> <!-- end card-->
@@ -552,29 +560,32 @@
                                                     <a href="javascript:void(0);" class="dropdown-item">Action</a>
                                                 </div>
                                             </div>
-                                            <h4 class="header-title">Revenue By Location</h4>
+                                            {{-- <h4 class="header-title">Revenue By Location</h4>
                                             <div class="mb-4 mt-4">
                                                 <div id="world-map-markers" style="height: 224px"></div>
+                                            </div> --}}
+                                            <h4 class="header-title">Total Sales</h4>
+                                            {{-- "Université","Instit","Ecole","Academie","Faculté" --}}
+
+
+
+                                            <div id="average-sales" class="apex-charts mb-4 mt-4" data-colors="#292b2c,#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
+                                            <div class="chart-widget-list">
+                                                
+                                                <p>  <i class="mdi mdi-square text-black"></i> Université 
+                                                    <i class="mdi mdi-square text-primary"></i> Institut</p>
+                                                  <p>  <i class="mdi mdi-square text-danger"></i> Academie
+                                                    <i class="mdi mdi-square text-success"></i> Ecole</p>
+                                                    <i class="mdi mdi-square text-warning"></i> Faculté
+                                                </p>
+                                                
                                             </div>
-    
+                                           
+     
                                             
     
-                                            <h5 class="mb-1 mt-0 fw-normal"></h5>
-                                            <div class="progress-w-percent">
-                                                <span class="progress-value fw-bold"></span>
-                                                
-                                            </div>
     
-                                            <h5 class="mb-1 mt-0 fw-normal"></h5>
-                                            <div class="progress-w-percent">
-                                                <span class="progress-value fw-bold"></span>
-                                                
-                                            </div>
-                                            <h5 class="mb-1 mt-0 fw-normal"></h5>
-                                            <div class="progress-w-percent">
-                                                <span class="progress-value fw-bold"></span>
-                                                
-                                            </div>
+                                            
     
                                            
                                         </div> <!-- end card-body-->
@@ -587,7 +598,12 @@
 
                             </div>
                             <!-- end row -->
-    
+    <script>
+        j = @json($List4);
+        window.j=j;
+       
+        // console.log(j);
+    </script>
     
     
                             <script>
@@ -611,6 +627,8 @@
     
                         </div>
                         <!-- container -->
-    
+                        
+                        {{-- <script src="assets/js/vendor/Chart.bundle.min.js"></script> --}}
+
                    
 @endsection
