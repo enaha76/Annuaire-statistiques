@@ -1,45 +1,57 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Cycle;
 use App\Models\Etablissement;
 use App\Http\Controllers\Controller;
 use App\Models\Inscrire;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class EtablissementsController extends Controller
 {
     public function index()
     {
         $Etablissements = Etablissement::all();
+        $cycles = Cycle::all();
+        $origin = Etablissement::whereNull('identifiant')->get();
+     
         
-        return view('Etablissement', compact('Etablissements'));
+        return view('Etablissement', compact('Etablissements','cycles','origin'));
     }
     public function store(Request $request)
-    {
-        $d = $request->validate([
-            'nom' => 'required',
-            'abrev' => 'required',
-            'type' => 'required',
-            'tutelle' => 'required',
-            'privee' => 'required',
-            'cotutelle' => 'nullable',
-            'identifiant' => 'nullable',
-            'id_cycle' => 'required',
-        ]);
-        $data = $request->all();
-        Etablissement::create([
-            'nom' => $data['nom'],
-            'abrev' => $data['abrev'],
-            'type' => $data['type'],
-            'tutelle' => $data['tutelle'],
-            'privee' => $data['privee'],
-            'cotutelle' => $data['cotutelle'],
-            'identifiant' => $data['identifiant'],
-            'id_cycle' => $data['id_cycle'],
-        ]);
+{
+    $validator = Validator::make($request->all(), [
+        'nom' => 'required',
+        'abrev' => 'required',
+        'type' => 'required',
+        'tutelle' => 'required',
+        'privee' => 'required',
+        'cotutelle' => 'nullable',
+        'identifiant' => 'nullable',
+        'id_cycle' => 'required',
+    ]);
 
-        return redirect()->back()->with('etat_success', 'Etablissement inserted successfully');
+    if ($validator->fails()) {
+        return redirect()->back()
+            ->withErrors($validator)
+            ->withInput();
     }
+
+    Etablissement::create([
+        'nom' => $request->nom,
+        'abrev' => $request->abrev,
+        'type' => $request->type,
+        'tutelle' => $request->tutelle,
+        'privee' => $request->privee,
+        'cotutelle' => $request->cotutelle,
+        'identifiant' => $request->identifiant,
+        'id_cycle' => $request->id_cycle,
+    ]);
+
+    return redirect()->back()->with('etat_success', 'Etablissement inserted successfully');
+}
+
     public function import()
     {
         $Etablissements = Etablissement::all();
