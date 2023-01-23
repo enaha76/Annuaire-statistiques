@@ -1,4 +1,5 @@
 function fill(data,etats) {
+    $('div[id*="div"]').hide();
     document.getElementById("buttons-table-preview 1").appendChild(createtbody(etats,data,1));
     document.getElementById("myChart 1").appendChild(chrt(createtbody(etats,data,1)));
     document.getElementById("buttons-table-preview 2").appendChild(createtbody(etats,data,2));
@@ -9,7 +10,7 @@ function fill(data,etats) {
     document.getElementById("buttons-table-preview 4").appendChild(createtbody(etats,data,6));
     document.getElementById("buttons-table-preview 5").appendChild(createtbody(etats,data,7));
    
-    $('div[id*="div"]').hide();
+    
 }
 
 function chrt(table) {
@@ -361,7 +362,7 @@ t['f']=f;
         return table;
     case 3:
         
-        document.getElementById("buttons-table-preview 2").innerHTML="";
+        
         var instituts = etablissements.filter(
             (e) => e.identifiant === null && e.type === "Institut" && e.privee == 0
           );

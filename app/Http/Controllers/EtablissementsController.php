@@ -47,9 +47,29 @@ class EtablissementsController extends Controller
     }
     public function show($id)
     {
-        $etablissement = Etablissement::find($id);
         $data = Inscrire::where('id_etablissement', '=', $id)->get();
-        return view('single', compact('etablissement','data'));
+        $etablissement = Etablissement::find($id);
+        if ($etablissement->identifiant == null && $etablissement->type != "Institut") {
+            // Case 1: Origin
+            $subEtablissements = Etablissement::where('identifiant', $id)->get();
+            $subEtablissementNames = array();
+            foreach ($subEtablissements as $subEtablissement) {
+                array_push($subEtablissementNames, $subEtablissement->nom);
+            }
+             return view('single', compact('etablissement','data','subEtablissementNames'));
+        } else if ($etablissement->identifiant != null) {
+            // Case 2: Sub-etablissement
+            $origin = Etablissement::find($etablissement->identifiant);
+            $nom= $origin->nom;
+          return view('single', compact('etablissement','data','nom'));
+        } else {
+            $its = false;
+            return view('single', compact('etablissement','data','its'));
+        }
+        
+        
+       
+       
     }
 
 }

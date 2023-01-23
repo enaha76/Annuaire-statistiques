@@ -32,7 +32,7 @@ Route::controller(EtablissementsController::class)->group(function(){
     Route::post('/etablissements', 'store')->name('store');
     Route::get('/etablissements', 'index')->name('etablissements');
     Route::get('/import/etudiants', 'import')->name('import_etudiant');
-    Route::get('/etablissements/{id}', 'show');
+    Route::get('/etablissements/{id}', 'show')->name('one');
 
 
 });
