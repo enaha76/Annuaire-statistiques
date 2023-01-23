@@ -39,7 +39,29 @@
         </div>
     </div>
 </div>
+
 <!-- end page title -->
+<div class="row mb-2">
+    <div class="col-sm-4">
+    <h5>Année scolaire <span class="badge rounded-pill p-1 px-2 badge-success-lighten">{{$year}}</span></h5>
+    </div>
+    <div class="col-sm-8">
+        <div class="text-sm-end">
+            <div class="dropdown" id="year-select" aria-placeholder="Change it">
+                <button type="button" class="btn btn-info mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                    <i class="uil-calender"></i>changer  l'année 
+                </button>
+              
+                <div class="dropdown-menu dropdown-menu-end">
+                    @foreach ($years as $y )
+                    <a class="dropdown-item " href="#" value={{$y}}>{{$y}}</a>
+                    @endforeach
+                </div>
+          
+            </div>
+        </div>
+    </div><!-- end col-->
+</div> 
 <section class="d-flex">
 
 <div class="col-xxl-3 col-lg-4 p-2">
@@ -87,8 +109,8 @@
 <br>
 <div class='file-input ' id='cache_file'>
     <input type='file' id="fileInput">
-    <span class='button '>Choose</span>
-    <span class='label' data-js-label>No file selected</label>
+  <span class=' btn btn-primary'> <i class="mdi mdi-file-import"></i></span>
+    <span class='label' data-js-label>Aucun fichier sélectionné</label>
 </div>
 </form>
 {{-- <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"

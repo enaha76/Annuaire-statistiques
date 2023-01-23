@@ -104,37 +104,47 @@ $years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
   }
 
 
-  public function tables()
+  public function tables($year = null)
   {
-    $etats = Etablissement::all();
- 
-    $List3=DB::select('SELECT
-    etablissements.id,
-    etablissements.nom,
-    etablissements.abrev,
-    etablissements.identifiant 
-    FROM 
-    etablissements 
-    WHERE (identifiant is not null) 
-    or
-     (identifiant is null AND type=\'institut\');');
-     $List3 = (array) $List3;
+      $etats = Etablissement::all();
+   
+      $List3=DB::select('SELECT
+      etablissements.id,
+      etablissements.nom,
+      etablissements.abrev,
+      etablissements.identifiant 
+      FROM 
+      etablissements 
+      WHERE (identifiant is not null) 
+      or
+       (identifiant is null AND type=\'institut\');');
+       $List3 = (array) $List3;
+      
+       $List4=DB::select('SELECT 
+       DISTINCT
+       (id_etudiant) as idc,
+       id_etablissement,
+       année_scolaire 
+       FROM 
+       inscrire;');
+       $List4 = (array) $List4;
     
-     $List4=DB::select('SELECT 
-     DISTINCT
-     (id_etudiant) as idc,
-     id_etablissement,
-     année_scolaire 
-     FROM 
-     inscrire;');
-     $List4 = (array) $List4;
-    // return view('tables', compact( 'etats','List3','List4'));
-    return view('tables', [
-      'etats' => $etats,
-      'List3' => $List3,
-      'data' => $List4,
-  ]);
+      if (!$year) {
+          $currentYear = date('Y');
+          $lastYear = $currentYear -1;
+          $year = $lastYear . '-' . $currentYear;
+      }
+      $years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
+     
+      return view('tables', [
+        'etats' => $etats,
+        'List3' => $List3,
+        'data' => $List4,
+        'year' => $year,
+        'years' => $years
+    ]);
   }
+  
   public function import(Request $request)
   {
 

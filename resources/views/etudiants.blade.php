@@ -18,22 +18,31 @@
 
 <script src={{asset('js/filter.js')}} defer>
   </script>          
-
+  <div class="row mb-2">
+    <div class="col-sm-4">
+    <h5>Année scolaire <span class="badge rounded-pill p-1 px-2 badge-success-lighten">{{$year}}</span></h5>
+    </div>
+    <div class="col-sm-8">
+        <div class="text-sm-end">
+            <div class="dropdown" id="year-select" aria-placeholder="Change it">
+                <button type="button" class="btn btn-info mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                    <i class="uil-calender"></i>changer  l'année 
+                </button>
+              
+                <div class="dropdown-menu dropdown-menu-end">
+                    @foreach ($years as $y )
+                    <a class="dropdown-item " href="#" value={{$y}}>{{$y}}</a>
+                    @endforeach
+                </div>
+          
+            </div>
+        </div>
+    </div><!-- end col-->
+</div> 
 <div class="container-fluid">
              
-    <div class="dropdown" id="year-select" aria-placeholder="Change it">
-      <button type="button" class="btn btn-light mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-          <i class="uil-calender"></i>Change the year
-      </button>
     
-      <div class="dropdown-menu dropdown-menu-end">
-          @foreach ($years as $y )
-          <a class="dropdown-item " href="#" value={{$y}}>{{$y}}</a>
-          @endforeach
-      </div>
-
-  </div>
-  <h5>Année scolaire <span class="badge rounded-pill p-1 px-2 badge-secondary-lighten">{{$year}}</span></h5>
+  
                   <script>
                     
                     document.getElementById("year-select").addEventListener("change", function() {
@@ -43,38 +52,69 @@
 });
 
                   </script>
-                <div class="row" >
-                    <div class="col-12">
-                        <div class="page-title-box">
-                            <div class="page-title-right">
-                                <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire statistique</a></li>
-                                
-                                    <li class="breadcrumb-item active">Etudiants</li>
-                                </ol>
-                            </div>
-                            <h4 class="page-title">Tableau</h4>
-                        </div>
-                    </div>
-                </div>     
-                <a href="javascript:void(0);" class="btn btn-danger mb-2"><i class=" uil-filter m-1"></i>Fitre</a>
-
+              
+              
+                  
+<div class="dropdown m-4" >
+    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class=" uil-graph-bar m-1"></i>Les repartitions
+    </button>
+    <div class="dropdown-menu  ">
+    
+            <div class="m-3 ">
+                {{-- <div class="form-check border-bottom  m-2 p-2">
+                    <input type="checkbox" class="form-check-input" id="dropdownCheck" name="filter" data-id="">
+                    <label class="form-check-label" for="dropdownCheck">
+                         par établissement du public
+                    </label>
+                </div> --}}
+                <div class="form-check border-bottom  m-2 p-2">
+                    <input type="checkbox" class="form-check-input" id="dropdownCheck" name="filter" data-id="div 2">
+                    <label class="form-check-label" for="dropdownCheck">
+                         par institution et par genre, mauritaniens et étrangers
+                    </label>
+                </div>
+                <div class="form-check border-bottom  m-2 p-2">
+                    <input type="checkbox" class="form-check-input" id="dropdownCheck" name="filter" data-id="div 3">
+                    <label class="form-check-label" for="dropdownCheck">
+                        étudiants mauritaniens par institution, par genre et par niveau
+                    </label>
+                </div>
+                <div class="form-check border-bottom  m-2 p-2">
+                    <input type="checkbox" class="form-check-input" id="dropdownCheck" name="filter" data-id="div 4">
+                    <label class="form-check-label" for="dropdownCheck">
+                        étudiants par domaine d'étude et par genre
+                    </label>
+                </div>
+                <div class="form-check border-bottom  m-2 p-2">
+                    <input type="checkbox" class="form-check-input" id="dropdownCheck" name="filter" data-id="div 5">
+                    <label class="form-check-label" for="dropdownCheck">
+                        Boursiers et Bénéficiaires d'aides par Institution
+                    </label>
+                </div>
+            </div>
+       
+        
+       
+    </div>
+</div>
                 <div class="row"   >
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
 
-                                <h2>  Effectifs des étudiants par établissement du public</h2>
+                                <h4>  Effectifs des étudiants par établissement du public</h4>
                                
                                 
                                 <div class="tab-content">
                                     <div class="table-responsive table-responsive" id="buttons-table-preview 1">
                                                                                   
                                     </div> <!-- end preview-->
-                                   
+                                   <br>
+                                   <br>
                                             <h4 class="header-title"> Repartution des étudiants par établissement du public</h4>
                                             <div dir="ltr">
-                                                <div id="myChart 3" ></div>
+                                                <div id="myChart 1" ></div>
                                             </div>
                                         
                                    
@@ -90,7 +130,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h2> Effectifs par institution et par genre, mauritaniens et étrangers</h2>
+                                <h4> Effectifs par institution et par genre, mauritaniens et étrangers</h4>
                                
                                 
                                 <div class="tab-content">
@@ -111,7 +151,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h2> Effectifs par institution et par genre </h2>
+                                <h4> Effectifs par institution et par genre </h4>
                                
                                 
                                 <div class="tab-content">
@@ -136,10 +176,10 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h2> 
+                                <h4> 
 
                                      Universités : effectifs des étudiants mauritaniens par institution, par genre et par niveau
-                                    </h2>
+                                    </h4>
                                
                                 
                                 <div class="tab-content">
@@ -233,16 +273,16 @@
         
 });
 
-    $(document).ready(function(){
-    $('input[name="filter"]').change(function(){
+    
+    $('input[name="filter"]').on('change',function(){
         var divId = $(this).attr('data-id');
         if($(this).is(':checked')) {
-            $('#' + divId).show();
+            $('div[id="'+divId+'"]').show();
         } else {
-            $('#' + divId).hide();
+            $('div[id="'+divId+'"]').hide();
         }
     });
-}); 
+
 
 </script>
        @endsection

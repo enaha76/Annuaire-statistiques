@@ -140,7 +140,7 @@
                 <!-- LOGO -->
                 <a href="{{route('index')}}" class="logo text-center logo-light">
                     <span class="logo-lg">
-                        <img src="assets/images/logo.png" alt="" height="20">
+                        <img src="assets/images/logo.png" alt="" height="16">
                         <span class="text-light">Annuaire Statistique</span>
                     </span>
                     <span class="logo-sm">

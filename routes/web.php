@@ -24,7 +24,8 @@ Route::controller(all_studentsController::class)->group(function(){
 
     Route::post('/excel','import')->name('test');
     Route::post('/excel2', 'redr')->name('insert');
-    Route::get('/tables', 'tables')->name('tables');
+    Route::get('/tables/{year?}/{years?}', 'tables')->name('tables');
+
 
    
 });
@@ -32,7 +33,7 @@ Route::controller(EtablissementsController::class)->group(function(){
     Route::post('/etablissements', 'store')->name('store');
     Route::get('/etablissements', 'index')->name('etablissements');
     Route::get('/import/etudiants', 'import')->name('import_etudiant');
-    Route::get('/etablissements/{id}', 'show');
+    Route::get('/etablissements/{id?}', 'show')->name('one');
 
 
 });
@@ -67,8 +68,5 @@ Route::get('/conf',function(){
 
 
 
-Route::controller(EtablissementController::class)->group(function(){
-    Route::get('/index', 'getEtablissements');
-   
-});
+
 
