@@ -128,7 +128,7 @@
                                         
                                         <tr>
 
-                                        <td>  {{$eta->id }} </td>
+                                        {{-- <td>  {{$eta->id }} </td> --}}
                                        <td><a href="{{url('etablissements/'.$eta->id)}}"> {{$eta->abrev }} </a></td> 
                                        <td><a href="{{url('etablissements/'.$eta->id)}}"> {{$eta->nom }} </a></td>
                                         <td>  {{$eta->tutelle }} </td>
