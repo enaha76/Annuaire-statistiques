@@ -3,7 +3,6 @@ function fill(data,etats) {
     document.getElementById("buttons-table-preview 1").appendChild(createtbody(etats,data,1));
     document.getElementById("myChart 1").appendChild(chrt(createtbody(etats,data,1)));
     document.getElementById("buttons-table-preview 2").appendChild(createtbody(etats,data,2));
-    document.getElementById("buttons-table-preview 2").appendChild(createtbody(etats,data,2));
     document.getElementById("buttons-table-preview 3").appendChild(createtbody(etats,data,3));
     document.getElementById("myChart 3").appendChild(chrt(createtbody(etats,data,3)));
     document.getElementById("buttons-table-preview 4").appendChild(createtbody(etats,data,5));
@@ -71,7 +70,7 @@ switch (j) {
         thead.style.textAlign = "center";
         var table = document.createElement("table");
         table.id="datatable-buttons "+j
-        table.className="table table-striped dt-responsive nowrap w-100"
+        table.className="table table-centered mb-0"
         table.appendChild(thead);
         var tbody = document.createElement("tbody");
         tbody.style.textAlign = "center";
@@ -79,8 +78,10 @@ switch (j) {
         t_cell = document.createElement("td");
         t_cell.innerHTML="TOTAL";
         t_cell.setAttribute("colspan", 2);
-        t_cell.style = "background-color : lightblue";
+        t_cell.className="bg-dark"
         Totale.appendChild(t_cell)
+        Totale.className="text-light"
+        
         var t={};
         var m=0,f=0;
        
@@ -145,7 +146,7 @@ t['f']=f;
         Object.keys(t).forEach((key) => {
             cell = document.createElement("td");
             cell.innerHTML=t[key];
-            cell.style = "background-color : lightblue";
+            cell.className="bg-dark"
             Totale.appendChild(cell)
         })
         sortTbody(tbody);
@@ -175,7 +176,7 @@ t['f']=f;
         thead.style.textAlign = "center";
         var table = document.createElement("table");
         table.id="datatable-buttons "+j
-        table.className="table table-striped dt-responsive nowrap w-100"
+        table.className="table table-centered mb-0"
         table.appendChild(thead);
         var tbody = document.createElement("tbody");
         tbody.style.textAlign = "center";
@@ -183,8 +184,9 @@ t['f']=f;
         t_cell = document.createElement("td");
         t_cell.innerHTML="TOTAL";
         t_cell.setAttribute("colspan", 2);
-        t_cell.style = "background-color : lightblue";
+        t_cell.className="bg-dark"
         Totale.appendChild(t_cell)
+        Totale.className="text-light"
         var t={};
         var m=0,f=0;
        
@@ -249,7 +251,7 @@ t['f']=f;
         Object.keys(t).forEach((key) => {
             cell = document.createElement("td");
             cell.innerHTML=t[key];
-            cell.style = "background-color : lightblue";
+            cell.className="bg-dark"
             Totale.appendChild(cell)
         })
         sortTbody(tbody);
@@ -277,7 +279,7 @@ t['f']=f;
         thead.style.textAlign = "center";
         var table = document.createElement("table");
         table.id="datatable-buttons "+j
-        table.className="table table-striped dt-responsive nowrap w-100"
+        table.className="table table-centered mb-0"
         table.appendChild(thead);
         var tbody = document.createElement("tbody");
         tbody.style.textAlign = "center";
@@ -285,8 +287,9 @@ t['f']=f;
         t_cell = document.createElement("td");
         t_cell.innerHTML="TOTAL";
         t_cell.setAttribute("colspan", 2);
-        t_cell.style = "background-color : lightblue";
+        t_cell.className="bg-dark"
         Totale.appendChild(t_cell)
+        Totale.className="text-light"
         var t={};
         var m=0,f=0;
        
@@ -351,7 +354,7 @@ t['f']=f;
         Object.keys(t).forEach((key) => {
             cell = document.createElement("td");
             cell.innerHTML=t[key];
-            cell.style = "background-color : lightblue";
+            cell.className="bg-dark"
             Totale.appendChild(cell)
         })
         sortTbody(tbody);
@@ -379,7 +382,7 @@ t['f']=f;
         thead.style.textAlign = "center";
         var table = document.createElement("table");
         table.id="datatable-buttons "+j
-        table.className="table table-striped dt-responsive nowrap w-100"
+        table.className="table table-centered mb-0"
         table.appendChild(thead);
         var tbody = document.createElement("tbody");
         tbody.style.textAlign = "center";
@@ -387,8 +390,9 @@ t['f']=f;
         t_cell = document.createElement("td");
         t_cell.innerHTML="TOTAL";
         t_cell.setAttribute("colspan", 2);
-        t_cell.style = "background-color : lightblue";
+        t_cell.className="bg-dark"
         Totale.appendChild(t_cell)
+        Totale.className="text-light"
         var t={};
         var bigEtablissmentsCounts = {};
 for (var i = 0; i < subEtablissments.length; i++) {
@@ -472,7 +476,7 @@ for (var i = 0; i < instituts.length; i++) {
         Object.keys(t).forEach((key) => {
             cell = document.createElement("td");
             cell.innerHTML=t[key];
-            cell.style = "background-color : lightblue";
+            cell.className="bg-dark"
             Totale.appendChild(cell)
         })
         sortTbody(tbody);
@@ -500,7 +504,7 @@ for (var i = 0; i < instituts.length; i++) {
         thead.style.textAlign = "center";
         var table = document.createElement("table");
         table.id="datatable-buttons "+j
-        table.className="table table-striped dt-responsive nowrap w-100"
+        table.className="table table-centered mb-0"
         table.appendChild(thead);
         var tbody = document.createElement("tbody");
         tbody.style.textAlign = "center";
@@ -508,8 +512,9 @@ for (var i = 0; i < instituts.length; i++) {
         t_cell = document.createElement("td");
         t_cell.innerHTML="TOTAL";
         t_cell.setAttribute("colspan", 2);
-        t_cell.style = "background-color : lightblue";
+        t_cell.className="bg-dark"
         Totale.appendChild(t_cell)
+        Totale.className="text-light"
         var t={};
         var m=0,f=0;
        
@@ -574,7 +579,7 @@ t['f']=f;
         Object.keys(t).forEach((key) => {
             cell = document.createElement("td");
             cell.innerHTML=t[key];
-            cell.style = "background-color : lightblue";
+            cell.className="bg-dark"
             Totale.appendChild(cell)
         })
         sortTbody(tbody);
@@ -601,7 +606,7 @@ t['f']=f;
         thead.style.textAlign = "center";
         var table = document.createElement("table");
         table.id="datatable-buttons "+j
-        table.className="table table-striped dt-responsive nowrap w-100"
+        table.className="table table-centered mb-0"
         table.appendChild(thead);
         var tbody = document.createElement("tbody");
         tbody.style.textAlign = "center";
@@ -609,8 +614,12 @@ t['f']=f;
         t_cell = document.createElement("td");
         t_cell.innerHTML="TOTAL";
         t_cell.setAttribute("colspan", 2);
-        t_cell.style = "background-color : lightblue";
+        t_cell.className="bg-dark"
+        t_cell.className="bg-dark"
         Totale.appendChild(t_cell)
+        Totale.className="text-light"
+        Totale.className="text-light"
+        
         var t={};
         var bigEtablissmentsCounts = {};
 for (var i = 0; i < subEtablissments.length; i++) {
@@ -694,7 +703,7 @@ for (var i = 0; i < instituts.length; i++) {
         Object.keys(t).forEach((key) => {
             cell = document.createElement("td");
             cell.innerHTML=t[key];
-            cell.style = "background-color : lightblue";
+            cell.className="bg-dark"
             Totale.appendChild(cell)
         })
         sortTbody(tbody);
@@ -728,7 +737,7 @@ for (var i = 0; i < instituts.length; i++) {
     
 //     let table = document.createElement("table");
 //     table.id="datatable-buttons"
-//     table.className="table table-striped dt-responsive nowrap w-100"
+//     table.className="table table-centered mb-0"
 //     table.appendChild(thead);
 //     let tbody = document.createElement("tbody");
 //     tbody.style.textAlign = "center";
@@ -803,15 +812,13 @@ function createhead(objArray ,t=0) {
         td = document.createElement("th");
         tr = document.createElement("tr");
         td.innerHTML = "INSTITUTIONS";
-        td.style = "background-color : yellow";
+        td.className="bg-dark text-light"
         td.setAttribute("colspan", 2);
         tr.appendChild(td);
         td = document.createElement("th");
-        console.log(
-            objArray
-        );
+        
         td.innerHTML = objArray[0][keys[0]];
-        td.style = "background-color : lightblue";
+        td.className="bg-dark text-light"
         
         tr.appendChild(td);
         let thead = document.createElement("thead");
@@ -826,7 +833,7 @@ function createhead(objArray ,t=0) {
         td = document.createElement('th');
         tr = document.createElement('tr');
         td.innerHTML = key;
-        td.style = 'background-color : yellow';
+        td.className="bg-dark text-light"
         td.setAttribute("colspan", 2);
 
         tr.appendChild(td);
@@ -839,7 +846,7 @@ function createhead(objArray ,t=0) {
         for (let j = 0; j < objArray.length; j++) {
             td = document.createElement('th');
             td.innerHTML = objArray[j][objKeys[i]]
-            td.style = 'background-color : lightblue'
+            td.className="bg-dark text-light"
             td.id = j
             console.log(td);
             trs[i].appendChild(td)
@@ -981,7 +988,7 @@ function mergeCells(thead,t=0) {
     if(t){
         td = document.createElement("th");
         td.innerHTML = "TOTAL";
-        td.style = "background-color : lightblue";
+        td.className="bg-dark text-light"
         td.style.textAlign="center"
         td.setAttribute("colspan", t);
                 td.setAttribute("rowspan", thead.rows.length);
