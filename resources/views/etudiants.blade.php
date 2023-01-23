@@ -1,22 +1,39 @@
 @extends('layouts.app')
 
 @section('content')
-            <style>
-                #div{
-                    display: none
-                }
-            </style>
+            
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire statistique</a></li>
+                    <li class="breadcrumb-item active">Etudiants</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Tableau</h4>
+        </div>
+    </div>
+</div>    
+
 <script src={{asset('js/filter.js')}} defer>
   </script>          
 
-            <div class="container-fluid" >
-<h3>L'Annee scolaire Actuel est : {{$year}}</h3>
-                <select id="year-select" aria-placeholder="Change it">
-                    
-                   @foreach ($years as $y )
-                   <option value={{$y}}>{{$y}}</option>
-                   @endforeach
-                  </select>
+<div class="container-fluid">
+             
+    <div class="dropdown" id="year-select" aria-placeholder="Change it">
+      <button type="button" class="btn btn-light mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+          <i class="uil-calender"></i>Change the year
+      </button>
+    
+      <div class="dropdown-menu dropdown-menu-end">
+          @foreach ($years as $y )
+          <a class="dropdown-item " href="#" value={{$y}}>{{$y}}</a>
+          @endforeach
+      </div>
+
+  </div>
+  <h5>Année scolaire <span class="badge rounded-pill p-1 px-2 badge-secondary-lighten">{{$year}}</span></h5>
                   <script>
                     
                     document.getElementById("year-select").addEventListener("change", function() {
@@ -57,7 +74,7 @@
                                    
                                             <h4 class="header-title"> Repartution des étudiants par établissement du public</h4>
                                             <div dir="ltr">
-                                                <div id="myChart 1" ></div>
+                                                <div id="myChart 3" ></div>
                                             </div>
                                         
                                    

@@ -2,106 +2,26 @@
 
 @section('content')
 
-                {{-- <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Accueil</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Accueil</li>
-                        </ol>
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Etudiants Customers : </div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{ route('etudiants') }}">voir les details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-dark text-white mb-4">
-                                    <div class="card-body">Professeur : 304</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">voir les details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Candidats admis : 7890 </div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">voir les details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Candidats ajournées : 7890 </div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">voir les details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-6">
-                                {{-- <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area me-1"></i>
-                                        Area Chart Example
-                                    </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                                </div> --}}
-                            {{-- </div>
-
-                        </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                            liste des etablisement
-                            </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>Les etablisment</th>
-                                            <th>Total</th>
-                                            <th>Filles</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                        @foreach ( $lists as $list=>$one )
-                                        <tr>
-                                            <td>{{ $one['etat'] }} </td>
-                                            <td>{{ $one['total']}}</td>
-                                            <td>{{ $one['Filles'] }}</td>
-                                        </tr>
-                                        @endforeach
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div> --}}
-                {{-- </main> --}}
-                
-
-                 {{-- ----start page title-- --}}
-                 
+{{-- ----start page title-- --}}
+                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box">
                                 <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire Statistique</a></li>
-                                       
-                                
-                                    </ol> 
+                                    <form class="d-flex">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-light" id="dash-daterange">
+                                            <span class="input-group-text bg-primary border-primary text-white">
+                                                <i class="mdi mdi-calendar-range font-13"></i>
+                                            </span>
+                                        </div>
+                                        <a href="javascript: void(0);" class="btn btn-primary ms-2">
+                                            <i class="mdi mdi-autorenew"></i>
+                                        </a>
+                                        {{-- <a href="javascript: void(0);" class="btn btn-primary ms-1">
+                                            <i class="mdi mdi-filter-variant"></i>
+                                        </a> --}}
+                                    </form>
                                 </div>
                                 <h4 class="page-title">Accueil</h4>
                             </div>
@@ -134,7 +54,7 @@
 
                                                     <p class="mb-0 ">
                                                         {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>--}}
-                                                        <span class="text-nowrap">Since last month</span>   
+                                                        {{-- <span class="text-nowrap">Since last month</span>    --}}
                                                     </p>
                                                 </div> <!-- end card-body-->
                                             </div> <!-- end card-->
@@ -197,7 +117,7 @@
                                     <div class="card card-h-100">
                                         <div class="card-body">
                                             <h4 class="header-title mb-3">Effectifs des étudiants par établissement du public</h4>
-                                            <div  data-simplebar="" style="max-height: 300px;">
+                                            <div  data-simplebar="" style="max-height: 200px;">
                                             
                                                     
                                                  @php
@@ -248,7 +168,7 @@
                                                                     </table>
                                                                
                                                             </div>
-                                                      </div>
+                                            </div>
                                                 </div> <!-- end card-body-->
                                            </div> <!-- end card-->
                                       </div> <!-- end col -->
@@ -370,23 +290,11 @@
                                 </div> <!-- end col-->
                             </div>
                             <!-- end row -->
-
-
-                                                </div>
-                                                <!-- end timeline -->
-                                            </div> <!-- end slimscroll -->
-                                        </div>
-                                        <!-- end card-body -->
-                                    </div>
-                                    <!-- end card-->
-                                </div>
-                                <!-- end col -->
-
                             </div>
-                            <!-- end row -->
 
-                        </div>
-                        <!-- container -->
+    </div>
+
+
 
                        
                         <script>
