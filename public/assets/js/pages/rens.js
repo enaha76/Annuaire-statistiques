@@ -219,9 +219,56 @@ if (to) {
    },3000)
 }
 
+let list_nni=[];
+let data_nni=[];
+
+for(let j = 0; j < chek_list.length; j++){
+  list_nni.push(String(chek_list[j].NNI));
+}
+
+
+for (let index12 = 0; index12 <window.dataJSON.length; index12++) {
+  data_nni.push(String(window.dataJSON[index12].NNI));
+}
+console.log(data_nni);
+console.log(list_nni);
+
+function compareLists(list1, list2) {
+  var count = 0;
+
+  if(list1>list2){
+    for (var i = 0; i < list1.length; i++) {
+      if (list2.includes(list1[i])) {
+          count++;
+      }
+  }
+  }
+  else{
+    for (var i = 0; i < list2.length; i++) {
+      if (list1.includes(list2[i])) {
+          count++;
+      }
+  }
+  }
+ 
+  return count;
+}
+
+document.getElementById('ahmedou').innerHTML=compareLists(data_nni,list_nni);
+if(compareLists(data_nni,list_nni)!=0 ){
+  $("#fill-warning-modal").modal("show");
+  setTimeout(function(){
+   window.location.href = '/tables';
+  },5000)
+  $("#exist_student").click(function(){
+    window.location.href = '/tables';  
+});
+
+}
+
      }   
 
-
+    
 function av(null_count,err_count,cor_count){
 const cars = [err_count,cor_count,null_count];
 !function(o){"use strict";function e(){this.$body=o("body"),this.charts=[]}e.prototype.initCharts=function(){window.Apex={chart:{parentHeightOffset:0,toolbar:{show:!1}},grid:{padding:{left:0,right:0}},colors:["#727cf5","#0acf97","#fa5c7c","#ffbc00"]};
