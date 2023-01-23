@@ -24,7 +24,8 @@ Route::controller(all_studentsController::class)->group(function(){
 
     Route::post('/excel','import')->name('test');
     Route::post('/excel2', 'redr')->name('insert');
-    Route::get('/tables', 'tables')->name('tables');
+    Route::get('/tables/{year?}/{years?}', 'tables')->name('tables');
+
 
    
 });
