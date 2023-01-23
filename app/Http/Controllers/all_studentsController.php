@@ -80,6 +80,7 @@ class all_studentsController extends Controller
       
   FROM etablissements;');
   $List4 = (array) $List4;
+  
     return view('index', compact('List','List2','List3','List4'));
     
   }
@@ -135,13 +136,15 @@ $years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
           $year = $lastYear . '-' . $currentYear;
       }
       $years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
-     
+      $chek=DB::select('SELECT NNI from etudiants;');
+        $chek = (array) $chek;
       return view('tables', [
         'etats' => $etats,
         'List3' => $List3,
         'data' => $List4,
         'year' => $year,
-        'years' => $years
+        'years' => $years,
+        'chek'=>$chek
     ]);
   }
   
