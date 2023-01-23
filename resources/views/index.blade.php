@@ -351,9 +351,13 @@
                                                        $s = $s + intval($one->total) ;
                                                       
                                                     }
-                                                    
+                                                    // print_r($nbr_etudient);
+                                                    $nbr=0;
+                                                    foreach ($nbr_etudient as  $value) {
+                                                       $nbr=$value->nbr;
+                                                    }
                                                     @endphp
-                                                    <h3 class="mt-3 mb-3 ">{{ $s }}</h3>
+                                                    <h3 class="mt-3 mb-3 ">{{  $nbr }}</h3>
 
                                                     <p class="mb-0 ">
                                                         {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>--}}
