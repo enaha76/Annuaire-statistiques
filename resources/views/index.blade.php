@@ -485,7 +485,8 @@
                                 </div> <!-- end col -->
                             </div>
                             <!-- end row -->
-    
+                            {{-- <button  type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#fill-warning-modal">Warning Filled</button> --}}
+                            
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="card">
@@ -599,10 +600,11 @@
                             </div>
                             <!-- end row -->
     <script>
+     
         j = @json($List4);
         window.j=j;
-       
-        // console.log(j);
+      
+        // console.log(k);
     </script>
     
     
