@@ -29,10 +29,10 @@ Route::controller(all_studentsController::class)->group(function(){
    
 });
 Route::controller(EtablissementsController::class)->group(function(){
-    Route::post('/insert_etablissements', 'store')->name('etablissements.store');
+    Route::post('/etablissements', 'store')->name('store');
     Route::get('/etablissements', 'index')->name('etablissements');
     Route::get('/import/etudiants', 'import')->name('import_etudiant');
-    
+    Route::get('/etablissements/{id}', 'show');
 
 
 });
@@ -68,7 +68,6 @@ Route::get('/conf',function(){
 
 
 Route::controller(EtablissementController::class)->group(function(){
-    // Route::get('/', 'index')->name('index');
     Route::get('/index', 'getEtablissements');
    
 });

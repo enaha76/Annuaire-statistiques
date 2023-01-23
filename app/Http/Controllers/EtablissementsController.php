@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Etablissement;
 use App\Http\Controllers\Controller;
+use App\Models\Inscrire;
 use Illuminate\Http\Request;
 
 class EtablissementsController extends Controller
@@ -23,7 +24,7 @@ class EtablissementsController extends Controller
             'privee' => 'required',
             'cotutelle' => 'nullable',
             'identifiant' => 'nullable',
-            'id_cycle' => 'nullable',
+            'id_cycle' => 'required',
         ]);
         $data = $request->all();
         Etablissement::create([
@@ -44,4 +45,11 @@ class EtablissementsController extends Controller
         $Etablissements = Etablissement::all();
         return view('Etablissement', compact('Etablissements'));
     }
+    public function show($id)
+    {
+        $etablissement = Etablissement::find($id);
+        $data = Inscrire::where('id_etablissement', '=', $id)->get();
+        return view('single', compact('etablissement','data'));
+    }
+
 }
