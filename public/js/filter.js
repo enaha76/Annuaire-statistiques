@@ -1,7 +1,15 @@
-function fill() {
-    document.getElementById("buttons-table-preview 2").appendChild(createtbody(etats,data,5));
-    document.getElementById("buttons-table-preview 2").appendChild(createtbody(etats,data,6));
-    // document.getElementById("buttons-table-preview 2").appendChild(createtbody(etats,data,7));
+function fill(data,etats) {
+    document.getElementById("buttons-table-preview 1").appendChild(createtbody(etats,data,1));
+    document.getElementById("myChart 1").appendChild(chrt(createtbody(etats,data,1)));
+    document.getElementById("buttons-table-preview 2").appendChild(createtbody(etats,data,2));
+    document.getElementById("buttons-table-preview 2").appendChild(createtbody(etats,data,2));
+    document.getElementById("buttons-table-preview 3").appendChild(createtbody(etats,data,3));
+    document.getElementById("myChart 3").appendChild(chrt(createtbody(etats,data,3)));
+    document.getElementById("buttons-table-preview 4").appendChild(createtbody(etats,data,5));
+    document.getElementById("buttons-table-preview 4").appendChild(createtbody(etats,data,6));
+    document.getElementById("buttons-table-preview 5").appendChild(createtbody(etats,data,7));
+   
+    $('div[id*="div"]').hide();
 }
 
 function chrt(table) {
@@ -144,8 +152,7 @@ t['f']=f;
         tbody.appendChild(Totale)
         table.appendChild(tbody);
        
-        return table;
-   
+        return table;  
     case 6:
                 
         var instituts = etablissements.filter(
@@ -352,8 +359,7 @@ t['f']=f;
         table.appendChild(tbody);
        
         return table;
-
-    case 2:
+    case 3:
         
         document.getElementById("buttons-table-preview 2").innerHTML="";
         var instituts = etablissements.filter(
@@ -473,12 +479,10 @@ for (var i = 0; i < instituts.length; i++) {
         tbody.appendChild(Totale)
         table.appendChild(tbody);
         console.log(chrt(table));
-        document.getElementById("myChart 1").appendChild(chrt(table));
         return table;
 
 
-    case 3:
-        document.getElementById("buttons-table-preview 2").innerHTML="";
+    case 2:
         var instituts = etablissements.filter(
             (e) => e.identifiant === null && e.type === "Institut" 
           );
@@ -579,8 +583,7 @@ t['f']=f;
        
         return table;
 
-    case 4:
-        document.getElementById("buttons-table-preview 1").innerHTML="";
+    case 1:
         var instituts = etablissements.filter(
             (e) => e.identifiant === null && e.type === "Institut" && e.privee == 0
           );
@@ -697,7 +700,7 @@ for (var i = 0; i < instituts.length; i++) {
         mergetbody(tbody);
         tbody.appendChild(Totale)
         table.appendChild(tbody);
-        document.getElementById("myChart 1").appendChild(chrt(table));
+      
         return table;
 
         

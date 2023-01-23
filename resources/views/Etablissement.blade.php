@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
+@php
+                                        $cycle= ['LMD','CYCLE/CLASS pre','PCME'];
+                                        $prive= ['PUBLIC','PRIVE'];
+
+                                        @endphp
+
 <!-- Start Content-->
 <div class="container-fluid">
     <!-- start page title -->
@@ -94,5 +101,66 @@
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
+            @if ($Etablissements)
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="tab-content">
+                                <div class="tab-pane show active" id="buttons-table-preview 1">
+                                    <table class="table table-striped dt-responsive nowrap w-100" >
+                                        
+                                        <thead>
+                                            <tr>
+                                            <td>id</td>
+                                            <td colspan="2">nom</td>
+                                            <td>tutelle</td>
+                                            <td>co_tutelle</td>
+                                            <td>etat</td>
+                                            <td>origin</td>
+                                            <td>cycle</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach ($Etablissements as $eta) 
+                                        <tr>
+
+                                        <td>  {{$eta->id }} </td>
+                                        <td>  {{$eta->abrev }} </td>
+                                        <td>  {{$eta->nom }} </td>
+                                        <td>  {{$eta->tutelle }} </td>
+                                        <td>  {{$eta['co-tutelle'] }} </td>
+                                        <td>  {{$prive[$eta->privee]}} </td>
+                                        <td> 
+                                         @foreach($Etablissements as $institution)
+                                            @if($institution['id'] == $eta->id)
+                                                {{ $institution['nom'] }}
+                                                @break
+                                            @endif
+                                        @endforeach 
+                                        </td>
+                                        <td>  {{$cycle[$eta->id_cycle-1]}} </td>
+                                    </tr>
+                                        
+                                
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+
+                                    
+
+                                </div> <!-- end preview-->
+                             
+                               
+                            </div> <!-- end tab-content-->
+                            
+                        </div> <!-- end card body-->
+                    </div> <!-- end card -->
+                </div><!-- end col-->
+            </div>
+                
+            @endif
+</div>
 
 @endsection
