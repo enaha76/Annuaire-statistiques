@@ -43,12 +43,12 @@
 <!-- end page title -->
 <div class="row mb-2">
     <div class="col-sm-4">
-    <h5>Année scolaire <span class="badge rounded-pill p-1 px-2 badge-secondary-lighten">{{$year}}</span></h5>
+    <h5>Année scolaire <span class="badge rounded-pill p-1 px-2 badge-success-lighten">{{$year}}</span></h5>
     </div>
     <div class="col-sm-8">
         <div class="text-sm-end">
             <div class="dropdown" id="year-select" aria-placeholder="Change it">
-                <button type="button" class="btn btn-light mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <button type="button" class="btn btn-info mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                     <i class="uil-calender"></i>changer  l'année 
                 </button>
               
