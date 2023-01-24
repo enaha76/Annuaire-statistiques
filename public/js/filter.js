@@ -10,6 +10,7 @@ function fill(data,etats) {
     document.getElementById("buttons-table-preview 3").appendChild(createtbody(etats,data,3));
     document.getElementById("myChart 3").appendChild(chrt(createtbody(etats,data,3)));
     document.getElementById("buttons-table-preview 4").appendChild(createtbody(etats,data,5));
+    document.getElementById("buttons-table-preview 4").innerHTML+="<br><br><br>"
     document.getElementById("buttons-table-preview 4").appendChild(createtbody(etats,data,6));
     document.getElementById("buttons-table-preview 5").appendChild(createtbody(etats,data,7));
    
@@ -223,9 +224,13 @@ switch (j) {
  if(t['m']) {                  
 t['m']+=m;
 t['f']+=f;
+m=0;
+f=0;
  }else{
     t['m']=m;
 t['f']=f;
+m=0;
+f=0;
  }
             
             tbody.appendChild(row);
@@ -328,9 +333,13 @@ t['f']=f;
  if(t['m']) {                  
 t['m']+=m;
 t['f']+=f;
+m=0;
+f=0;
  }else{
     t['m']=m;
 t['f']=f;
+m=0;
+f=0;
  }
             
             tbody.appendChild(row);
@@ -431,9 +440,13 @@ t['f']=f;
  if(t['m']) {                  
 t['m']+=m;
 t['f']+=f;
+m=0;
+f=0;
  }else{
     t['m']=m;
 t['f']=f;
+m=0;
+f=0;
  }
             
             tbody.appendChild(row);
@@ -656,9 +669,13 @@ for (var i = 0; i < instituts.length; i++) {
  if(t['m']) {                  
 t['m']+=m;
 t['f']+=f;
+m=0;
+f=0;
  }else{
     t['m']=m;
 t['f']=f;
+m=0;
+f=0;
  }
             
             tbody.appendChild(row);
@@ -1024,8 +1041,7 @@ function countByCombination(combinations, data) {
                         continue;
                     }
                     if (
-                        (combination[criteria] === "T" || combination[criteria] === "EFFECTIFS" )&&
-                        student[criteria] != "F"
+                        (combination[criteria] === "T" || combination[criteria] === "EFFECTIFS" )
                     ) {
                         continue;
                     }

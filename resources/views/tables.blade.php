@@ -43,25 +43,31 @@
 <!-- end page title -->
 <div class="row mb-2">
     <div class="col-sm-4">
-    <h5>Année scolaire <span class="badge rounded-pill p-1 px-2 badge-success-lighten">{{$year}}</span></h5>
+    <h5>Année scolaire <span id="selected" class="badge rounded-pill p-1 px-2 badge-success-lighten" >2021-2022</span></h5>
     </div>
     <div class="col-sm-8">
         <div class="text-sm-end">
-            <div class="dropdown" id="year-select" aria-placeholder="Change it">
+            <div class="dropdown"  aria-placeholder="Change it">
                 <button type="button" class="btn btn-info mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                     <i class="uil-calender"></i>changer  l'année 
                 </button>
               
                 <div class="dropdown-menu dropdown-menu-end">
-                    @foreach ($years as $y )
-                    <a class="dropdown-item " href="#" value={{$y}}>{{$y}}</a>
-                    @endforeach
+                  
+                    <a class="dropdown-item " id="year" href="#" value="2021-2022">2021-2022</a>
+                    <a class="dropdown-item " id="year" href="#" value="2020-2021">2020-2021</a>
+                    <a class="dropdown-item " id="year" href="#" value="2019-2020">2019-2020</a>
+                    <a class="dropdown-item " id="year" href="#" value="2018-2019">2018-2019</a>
+               
                 </div>
           
             </div>
         </div>
     </div><!-- end col-->
 </div> 
+<script>
+   
+</script>
 <section class="d-flex">
 
 <div class="col-xxl-3 col-lg-4 p-2">
@@ -338,6 +344,17 @@ spinner.style.display='none';
         $("#success-alert-modal").modal("show");
     }, 100);
 });
+
+
+
+
+    $("a#year-select").on("click", function() {
+    console.log("Anchor clicked!");
+    let selectedYear = $(this).val();
+    console.log("Selected year: " + selectedYear);
+    $("#selected").text(selectedYear);
+  });
+
 
 
 </script>

@@ -83,13 +83,13 @@
                 <div class="form-check border-bottom  m-2 p-2">
                     <input type="checkbox" class="form-check-input" id="dropdownCheck" name="filter" data-id="div 4">
                     <label class="form-check-label" for="dropdownCheck">
-                        étudiants par domaine d'étude et par genre
+                        par institution et par genre
                     </label>
                 </div>
                 <div class="form-check border-bottom  m-2 p-2">
                     <input type="checkbox" class="form-check-input" id="dropdownCheck" name="filter" data-id="div 5">
                     <label class="form-check-label" for="dropdownCheck">
-                        Boursiers et Bénéficiaires d'aides par Institution
+                        par institution, par âge et par genre
                     </label>
                 </div>
             </div>
@@ -182,7 +182,6 @@
                             <div class="card-body">
 
                                 <h4> 
-
                                      Universités : effectifs des étudiants mauritaniens par institution, par genre et par niveau
                                     </h4>
                                
