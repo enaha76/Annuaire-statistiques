@@ -15,7 +15,7 @@ var r={chart:{height:364,type:"line",dropShadow:{enabled:!0,opacity:.2,blur:7,le
 new ApexCharts(document.querySelector("#revenue-chart"),r).render();e=["#727cf5","#e3eaef"];
 
 (t=o("#high-performing-product").data("colors"))&&(e=t.split(","));
-r={chart:{height:257,type:"bar",stacked:!0},plotOptions:{bar:{horizontal:!1,columnWidth:"20%"}},dataLabels:{enabled:!1},stroke:{show:!0,width:2,colors:["transparent"]},series:[{name:"Actual",data:nombr},{name:"Projection",data:[0,0,0,0,0,0,0,0,0,0,0,0]}],zoom:{enabled:!1},legend:{show:!1},colors:e,xaxis:{categories:ar,axisBorder:{show:!1}},yaxis:{labels:{formatter:function(e){return e+" E"},offsetX:-15}},fill:{opacity:1},tooltip:{y:{formatter:function(e){return"$"+e+"k"}}}};
+r={chart:{height:257,type:"bar",stacked:!0},plotOptions:{bar:{horizontal:!1,columnWidth:"20%"}},dataLabels:{enabled:!1},stroke:{show:!0,width:2,colors:["transparent"]},series:[{name:"Effectif",data:nombr},{name:"Projection",data:[0,0,0,0,0,0,0,0,0,0,0,0]}],zoom:{enabled:!1},legend:{show:!1},colors:e,xaxis:{categories:ar,axisBorder:{show:!1}},yaxis:{labels:{formatter:function(e){return e+" E"},offsetX:-15}},fill:{opacity:1},tooltip:{y:{formatter:function(e){return""+e+" Etudient"}}}};
 new ApexCharts(document.querySelector("#high-performing-product"),r).render();
 e=["#a2a3a0","#727cf5","#0acf97","#fa5c7c","#ffbc00"];
 //pie

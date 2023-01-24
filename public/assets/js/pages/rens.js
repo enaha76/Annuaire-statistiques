@@ -13,7 +13,16 @@ for (var i = 0; i < checkboxes.length; i++) {
     });
 }
 
+let year_d=String(new Date().getFullYear()-1)+ "-" +String(new Date().getFullYear());
+$("input#year").on("click", function() {
+  console.log("Anchor clicked!");
+  let selectedYear = $(this).val();
+  year_d=selectedYear;
+  console.log("Selected year: " + selectedYear);
+  $("#selected").text(selectedYear);
+});
 
+// console.log(selectedYear);
 
 function display_inpute(){
     var y=`
@@ -102,13 +111,15 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
     reader.readAsArrayBuffer(file);
   });
 };
+
+console.log(year_d);
   function displayTable(null_count,err_count,cor_count) {
      
   
       var table = ` <table class=\"table table-hover table-centered mb-0\">
                     <thead>
                     <tr>
-<th>Non renseigné</th>
+                    <th>Non renseigné</th>
                     <th>Mal renseigné</th>
                     <th>Correcte</th>
                     <th>Totale</th>
@@ -163,7 +174,7 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
 var sub = `
 <textarea name="file" id="" cols="30" rows="10" style="display:none">${JSON.stringify(dataJSON)}</textarea>
     <input type="hidden" name="establishment" value="${id_rtablisment}">
-    <input type="hidden" name="year" value="2022-2023">
+    <input type="hidden" name="year" value="${year_d}">
 
     <button type="submit" class="btn btn-primary float-end" >Importer ${button}</button>  
 `
@@ -196,10 +207,18 @@ function f(dataJSON){
         // console.log(dataJSON)
         // console.log(window.jsonData)
         var array=window.jsonData;
+        var number = Number(window.id_chk)
         var ab=[];
+        let date_ins=[];
+        for (let index5 = 0; index5 < dataJSON.length; index5++) {
+          const elemen = dataJSON[index5];
+          if (elemen.id_etablissement==id_chk) {
+            date_ins.push(elemen.année_scolaire)
+          }
+        }
         console.log(dataJSON[0].etablissement_de_provenance);
         for (let index = 0; index < array.length; index++) {
-
+        
              const element = array[index];
        if(ab.indexOf(element.id_etablissement) === -1){
          ab.push(element.id_etablissement)
@@ -207,23 +226,24 @@ function f(dataJSON){
  }
  
 //  console.log(typeof ab[0])
- var number = Number(window.id_chk)
+ 
 //  console.log(typeof number);
  if(ab.indexOf(number) !== -1){
     to=true;
 }
-if (to) {
+if (to && date_ins.indexOf(year_d) != -1) {
     $("#info-header-modal").modal("show");
    setTimeout(function(){
     window.location.href = '/tables';
    },3000)
 }
-
+// chek the list of student that exist in the year
 let list_nni=[];
 let data_nni=[];
-
+let list_date_nni=[];
 for(let j = 0; j < chek_list.length; j++){
   list_nni.push(String(chek_list[j].NNI));
+  list_date_nni.push(String(chek_list[j].année_scolaire))
 }
 
 
@@ -255,7 +275,8 @@ function compareLists(list1, list2) {
 }
 
 document.getElementById('ahmedou').innerHTML=compareLists(data_nni,list_nni);
-if(compareLists(data_nni,list_nni)!=0 ){
+document.getElementById('anne').innerHTML=year_d;
+if(compareLists(data_nni,list_nni)!=0 && list_date_nni.indexOf(year_d) != -1){
   $("#fill-warning-modal").modal("show");
   setTimeout(function(){
    window.location.href = '/tables';
