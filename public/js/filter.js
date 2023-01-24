@@ -10,22 +10,22 @@ for (let index = 1; index <=7; index++) {
 }
     $('div[id*="div"]').hide();
 
-    document.getElementById("buttons-table-preview 1").innerHTML+= '<a href="javascript:ExportToExcel("'+tables[0].id+'","xlsx")" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
+    document.getElementById("buttons-table-preview 1").innerHTML+= '<a herf="#" onclick="javascript:ExportToExcel(`'+tables[0].id+'`,`xlsx`)" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
     
     document.getElementById("buttons-table-preview 1").appendChild(tables[0]);
     document.getElementById("myChart 1").appendChild(chrt(tables[0]));
 
-    document.getElementById("buttons-table-preview 2").innerHTML+= '<a href="javascript:ExportToExcel("'+tables[1].id+'","xlsx")" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
+    document.getElementById("buttons-table-preview 2").innerHTML+= '<a herf="#" onclick="javascript:ExportToExcel(`'+tables[1].id+'`,`xlsx`)" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
     document.getElementById("buttons-table-preview 2").appendChild(tables[1]);
-    document.getElementById("buttons-table-preview 3").innerHTML+= '<a href="javascript:ExportToExcel("'+tables[2].id+'","xlsx")" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
+    document.getElementById("buttons-table-preview 3").innerHTML+= '<a herf="#" onclick="javascript:ExportToExcel(`'+tables[2].id+'`,`xlsx`)" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
     document.getElementById("buttons-table-preview 3").appendChild(tables[2]);
     document.getElementById("myChart 3").appendChild(chrt(tables[2]));
-    document.getElementById("buttons-table-preview 4").innerHTML+= '<a href="javascript:ExportToExcel("'+tables[4].id+'","xlsx")" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
+    document.getElementById("buttons-table-preview 4").innerHTML+= '<a herf="#" onclick="javascript:ExportToExcel(`'+tables[4].id+'`,`xlsx`)" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
     document.getElementById("buttons-table-preview 4").appendChild(tables[4]);
     document.getElementById("buttons-table-preview 4").innerHTML+="<br><br><br>"
-    document.getElementById("buttons-table-preview 4").innerHTML+= '<a href="javascript:ExportToExcel("'+tables[5].id+'","xlsx")" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
+    document.getElementById("buttons-table-preview 4").innerHTML+= '<a herf="#" onclick="javascript:ExportToExcel(`'+tables[5].id+'`,`xlsx`)" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
     document.getElementById("buttons-table-preview 4").appendChild(tables[5]);
-    document.getElementById("buttons-table-preview 5").innerHTML+= '<a href="javascript:ExportToExcel("'+tables[6].id+'","xlsx")" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
+    document.getElementById("buttons-table-preview 5").innerHTML+= '<a herf="#" onclick="javascript:ExportToExcel(`'+tables[6].id+'`,`xlsx`)" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
     document.getElementById("buttons-table-preview 5").appendChild(tables[6]);
    
     
