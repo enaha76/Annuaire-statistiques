@@ -348,7 +348,7 @@ spinner.style.display='none';
 
 
 
-    $("a#year-select").on("click", function() {
+    $("a#year").on("click", function() {
     console.log("Anchor clicked!");
     let selectedYear = $(this).val();
     console.log("Selected year: " + selectedYear);
