@@ -207,10 +207,18 @@ function f(dataJSON){
         // console.log(dataJSON)
         // console.log(window.jsonData)
         var array=window.jsonData;
+        var number = Number(window.id_chk)
         var ab=[];
+        let date_ins=[];
+        for (let index5 = 0; index5 < dataJSON.length; index5++) {
+          const elemen = dataJSON[index5];
+          if (elemen.id_etablissement==id_chk) {
+            date_ins.push(elemen.année_scolaire)
+          }
+        }
         console.log(dataJSON[0].etablissement_de_provenance);
         for (let index = 0; index < array.length; index++) {
-
+        
              const element = array[index];
        if(ab.indexOf(element.id_etablissement) === -1){
          ab.push(element.id_etablissement)
@@ -218,12 +226,12 @@ function f(dataJSON){
  }
  
 //  console.log(typeof ab[0])
- var number = Number(window.id_chk)
+ 
 //  console.log(typeof number);
  if(ab.indexOf(number) !== -1){
     to=true;
 }
-if (to) {
+if (to && date_ins.indexOf(year_d) != -1) {
     $("#info-header-modal").modal("show");
    setTimeout(function(){
     window.location.href = '/tables';
