@@ -221,10 +221,10 @@
                                                     <a href="{{ route('tables') }}">Etudiants</a>
                                                 </li>
                                                 <li>
-                                                    <a href="pages-login-2.html">Professeurs</a>
+                                                    <a href="#">Professeurs</a>
                                                 </li>
                                                 <li>
-                                                    <a href="pages-register.html">Etablissements</a>
+                                                    <a href="#">Etablissements</a>
                                                 </li>
                                                 
                                             </ul>
@@ -232,7 +232,7 @@
                                     </li>
                                     <li>
 
-                                        <a href="{{ route('Export') }}">Export</a>
+                                        {{-- <a href="{{ route('Export') }}">Export</a> --}}
 
                                     </li>
                                 </ul>
