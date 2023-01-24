@@ -18,21 +18,37 @@
 
 <script src={{asset('js/filter.js')}} defer>
   </script>          
-  <div class="row mb-2">
+ <div class="row mb-2">
     <div class="col-sm-4">
-    <h5>Année scolaire <span class="badge rounded-pill p-1 px-2 badge-success-lighten">{{$year}}</span></h5>
+    <h5>Année scolaire <span id="selected" class="badge rounded-pill p-1 px-2 badge-success-lighten" >{{ date('Y')-1 }}-{{ date('Y') }}</span></h5>
     </div>
     <div class="col-sm-8">
         <div class="text-sm-end">
-            <div class="dropdown" id="year-select" aria-placeholder="Change it">
+            <div class="dropdown"  aria-placeholder="Change it">
                 <button type="button" class="btn btn-info mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                     <i class="uil-calender"></i>changer  l'année 
                 </button>
               
                 <div class="dropdown-menu dropdown-menu-end">
-                    @foreach ($years as $y )
-                    <a class="dropdown-item " href="#" value={{$y}}>{{$y}}</a>
-                    @endforeach
+                    
+                    <p><input type="radio" class="form-check-input  m-1" id="year" name="filter" data-id="div 2" value="2021-2022">
+                    <label class="form-check-label " for="dropdownCheck">
+                    2021-2022
+                    </label></p>
+                    <p><input type="radio" class="form-check-input    m-1" id="year" name="filter" value="2020-2021" data-id="div 3" value="2022-2023">
+                    <label class="form-check-label" for="dropdownCheck">
+                    2020-2021
+                    </label></p>
+                    <p><input type="radio" class="form-check-input    m-1" id="year" name="filter" value="2019-2020"data-id="div 4" value="2022-2023">
+                    <label class="form-check-label" for="dropdownCheck">
+                    2019-2020
+                    </label></p>
+                    <p><input type="radio" class="form-check-input   m-1" id="year" name="filter" value="2018-2019" data-id="div 4" value="2022-2023">
+                    <label class="form-check-label" for="dropdownCheck">
+                    2018-2019
+                    </label></p>
+                    
+               
                 </div>
           
             </div>
@@ -277,6 +293,7 @@
         
 });
 
+
     
     $('input[name="filter"]').on('change',function(){
         var divId = $(this).attr('data-id');
@@ -286,6 +303,18 @@
             $('div[id="'+divId+'"]').hide();
         }
     });
+
+
+</script>
+<script>
+//    
+    $("input#year").on("click", function() {
+    console.log("Anchor clicked!");
+    let selectedYear = $(this).val();
+    console.log("Selected year: " + selectedYear);
+    $("#selected").text(selectedYear);
+  });
+
 
 
 </script>
