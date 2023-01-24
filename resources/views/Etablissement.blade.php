@@ -152,7 +152,7 @@
                                             <td>TUTELLE</td>
                                             <td>COTUTELLE</td>
                                             <td>ETAT</td>
-                                            <td>ORIGIN</td>
+                                            <td>ORIGINE</td>
                                             <td>CYCLE</td>
                                             </tr>
                                         </thead>
@@ -165,14 +165,18 @@
                                        <td><a href="{{url('etablissements/'.$eta->id)}}"> {{$eta->abrev }} </a></td> 
                                        <td><a href="{{url('etablissements/'.$eta->id)}}"> {{$eta->nom }} </a></td>
                                         <td>  {{$eta->tutelle }} </td>
-                                        <td>  {{$eta['co-tutelle'] }} </td>
+                                        <td>  {{$eta->cotutelle }} </td>
                                         <td>  {{$prive[$eta->privee]}} </td>
                                         <td> 
                                          @foreach($Etablissements as $institution)
-                                            @if($institution['id'] == $eta->id)
+                                            @if($institution['id'] == $eta->identifiant)
                                                 {{ $institution['nom'] }}
-                                                @break
+                                                
+                                          
+                                            @else  <p>Autonome</p>
+                                            @break
                                             @endif
+                                         
                                         @endforeach 
                                         </td>
                                         <td>  {{$n[$eta->id_cycle-1]}} </td>
