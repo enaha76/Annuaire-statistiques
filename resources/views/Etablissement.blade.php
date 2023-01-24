@@ -5,7 +5,7 @@
 @php
                                         $n= ['LMD','PCME','ANNEE'];
                                         
-                                        $prive=['prive','public'];         
+                                        $prive=['public','prive'];         
 
                                         @endphp
 
