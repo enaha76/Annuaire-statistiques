@@ -78,10 +78,12 @@ class all_studentsController extends Controller
       SUM(CASE WHEN type=\'institut\' THEN 1 ELSE 0 END) as \'institut\',
       SUM(CASE WHEN type=\'Faculté\' THEN 1 ELSE 0 END) as \'Faculté\'
       
-  FROM etablissements;');
-  $List4 = (array) $List4;
-  $List4=DB::select('SELECT COUNT(*) as nbr from etudiants');
-  $nbr_etudient = (array) $List4;
+        FROM etablissements;');
+
+        $List4 = (array) $List4;
+
+        $List5=DB::select('SELECT COUNT(*) as nbr from etudiants');
+        $nbr_etudient = (array) $List5;
     return view('index', compact('List','List2','List3','List4','nbr_etudient'));
     
   }
