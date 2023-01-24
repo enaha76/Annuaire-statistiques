@@ -604,11 +604,11 @@
                             </div>
                             <!-- end row -->
     <script>
-     
-        j = @json($List4);
+      let  list_et=@json($List2);
+      let  j = @json($List4);
         window.j=j;
       
-        // console.log(k);
+        // console.log(list_et);
     </script>
     
     
