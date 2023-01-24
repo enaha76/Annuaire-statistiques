@@ -1,4 +1,4 @@
-@extends('layouts.app')
+ @extends('layouts.app')
 
 @section('content')
 
@@ -295,7 +295,7 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                <h4 class="text-dark">in this file u have <span class="text-light" id="ahmedou"></span> students that alredy existe </h4>
+                <h4 class="text-dark">Dans ce fichier vous avez <span class="text-light" id="ahmedou"></span> Etudiants  deja inscrit en <span id="anne"></span> </h4>
             </div>
             <div class="modal-footer">
                 <!-- <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button> -->
@@ -358,13 +358,7 @@ spinner.style.display='none';
     }, 100);
 });
 
-    $("input#year").on("click", function() {
-    console.log("Anchor clicked!");
-    let selectedYear = $(this).val();
-    console.log("Selected year: " + selectedYear);
-    $("#selected").text(selectedYear);
-  });
-
+   
 
 
 </script>
