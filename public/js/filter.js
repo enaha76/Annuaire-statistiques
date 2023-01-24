@@ -3,16 +3,30 @@
   
   
 function fill(data,etats) {
+tables=[];
+for (let index = 1; index <=7; index++) {
+    tables.push(createtbody(etats,data,index));
+    
+}
     $('div[id*="div"]').hide();
-    document.getElementById("buttons-table-preview 1").appendChild(createtbody(etats,data,1));
-    document.getElementById("myChart 1").appendChild(chrt(createtbody(etats,data,1)));
-    document.getElementById("buttons-table-preview 2").appendChild(createtbody(etats,data,2));
-    document.getElementById("buttons-table-preview 3").appendChild(createtbody(etats,data,3));
-    document.getElementById("myChart 3").appendChild(chrt(createtbody(etats,data,3)));
-    document.getElementById("buttons-table-preview 4").appendChild(createtbody(etats,data,5));
+
+    document.getElementById("buttons-table-preview 1").innerHTML+= '<a href="javascript:ExportToExcel("'+tables[0].id+'","xlsx")" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
+    
+    document.getElementById("buttons-table-preview 1").appendChild(tables[0]);
+    document.getElementById("myChart 1").appendChild(chrt(tables[0]));
+
+    document.getElementById("buttons-table-preview 2").innerHTML+= '<a href="javascript:ExportToExcel("'+tables[1].id+'","xlsx")" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
+    document.getElementById("buttons-table-preview 2").appendChild(tables[1]);
+    document.getElementById("buttons-table-preview 3").innerHTML+= '<a href="javascript:ExportToExcel("'+tables[2].id+'","xlsx")" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
+    document.getElementById("buttons-table-preview 3").appendChild(tables[2]);
+    document.getElementById("myChart 3").appendChild(chrt(tables[2]));
+    document.getElementById("buttons-table-preview 4").innerHTML+= '<a href="javascript:ExportToExcel("'+tables[4].id+'","xlsx")" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
+    document.getElementById("buttons-table-preview 4").appendChild(tables[4]);
     document.getElementById("buttons-table-preview 4").innerHTML+="<br><br><br>"
-    document.getElementById("buttons-table-preview 4").appendChild(createtbody(etats,data,6));
-    document.getElementById("buttons-table-preview 5").appendChild(createtbody(etats,data,7));
+    document.getElementById("buttons-table-preview 4").innerHTML+= '<a href="javascript:ExportToExcel("'+tables[5].id+'","xlsx")" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
+    document.getElementById("buttons-table-preview 4").appendChild(tables[5]);
+    document.getElementById("buttons-table-preview 5").innerHTML+= '<a href="javascript:ExportToExcel("'+tables[6].id+'","xlsx")" class="btn btn-sm btn-link float-end">Export<i class="mdi mdi-download ms-1"></i></a>'
+    document.getElementById("buttons-table-preview 5").appendChild(tables[6]);
    
     
 }
@@ -589,8 +603,6 @@ for (var i = 0; i < instituts.length; i++) {
         table.appendChild(tbody);
         console.log(chrt(table));
         return table;
-
-
     case 2:
         var instituts = etablissements.filter(
             (e) => e.identifiant === null && e.type === "Institut" 
@@ -601,7 +613,7 @@ for (var i = 0; i < instituts.length; i++) {
           subEtablissments = subEtablissments.concat(instituts);
           
         var allCombinations = getAllCombinations({
-            NATIONALITE: [ 'MAURITANIE', 'etranges'],
+            NATIONALITE: [ 'MAURITANIE', 'ETRANGES'],
             GENRE: ['T', 'F']
         });
         thead = createhead(allCombinations,2);
@@ -696,7 +708,6 @@ f=0;
         table.appendChild(tbody);
        
         return table;
-
     case 1:
         var instituts = etablissements.filter(
             (e) => e.identifiant === null && e.type === "Institut" && e.privee == 0
@@ -820,9 +831,6 @@ for (var i = 0; i < instituts.length; i++) {
         table.appendChild(tbody);
       
         return table;
-
-        
-
     default:
         break;
 }
@@ -836,7 +844,7 @@ for (var i = 0; i < instituts.length; i++) {
 //             (e.identifiant === null && e.type === "Institut")
 //     );
 //     let allCombinations = getAllCombinations({
-//         NATIONALITE: ["etranges", "MAURITANIE"],
+//         NATIONALITE: ["ETRANGES", "MAURITANIE"],
 //         Niveau: ["L1", "L2", "L3"],
 //         GENRE: ["T", "F"],
 //     });
@@ -1035,7 +1043,7 @@ function countByCombination(combinations, data) {
                 }
                 if (student[criteria] != combination[criteria]) {
                     if (
-                        combination[criteria] == "etranges" &&
+                        combination[criteria] == "ETRANGES" &&
                         student[criteria] != "MAURITANIE"
                     ) {
                         continue;
@@ -1177,3 +1185,16 @@ function generateRandomLetter() {
   letters.splice(randomIndex, 1);
   return randomLetter;
 }
+ function ExportToExcel(id, type, fn, dl ) {
+            var elt = document.getElementById(id);
+            var wb = XLSX.utils.table_to_book(elt, {
+                sheet: "sheet1"
+            });
+            return dl ?
+                XLSX.write(wb, {
+                    bookType: type,
+                    bookSST: true,
+                    type: 'base64'
+                }) :
+                XLSX.writeFile(wb, fn || ('one.' + (type || 'xlsx')));
+        }
