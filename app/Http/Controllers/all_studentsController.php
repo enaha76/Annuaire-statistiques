@@ -99,7 +99,7 @@ class all_studentsController extends Controller
     ->where('année_scolaire','=',$year)
     ->join('etudiants', 'inscrire.id_etudiant', '=', 'etudiants.id')
     ->get();
-$years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
+     $years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
 
     $Etablissements = Etablissement::all();
     $Etablissements=$Etablissements->toArray();
@@ -139,7 +139,7 @@ $years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
           $year = $lastYear . '-' . $currentYear;
       }
       $years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
-      $chek=DB::select('SELECT NNI from etudiants;');
+      $chek=DB::select('SELECT NNI,année_scolaire from inscrire JOIN etudiants on inscrire.id_etudiant=etudiants.id;');
         $chek = (array) $chek;
       return view('tables', [
         'etats' => $etats,
