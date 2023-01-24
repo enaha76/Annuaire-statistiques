@@ -307,6 +307,7 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
 
 </section>                     
   </div>
+<script type="text/javascript" src="{{ asset('js/xlsx.full.min.js')}}"></script>
 <script>
    chek_list=@json($chek);
 

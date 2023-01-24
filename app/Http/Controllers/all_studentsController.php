@@ -17,6 +17,12 @@ class all_studentsController extends Controller
 
   public function index()
   {
+    $currentYear = date('Y');
+    $lastYear = $currentYear -1;
+    $year = $lastYear . '-' . $currentYear;
+
+
+    
     $List = DB::select('SELECT
      abrev,
      etablissements.nom,
