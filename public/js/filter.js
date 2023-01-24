@@ -249,10 +249,10 @@ t['f']=f;
     case 6:
                 
         var instituts = etablissements.filter(
-            (e) => e.identifiant === null && e.type === "Institut" && e.id_cycle == 2
+            (e) => e.identifiant === null && e.type === "Institut" && e.id_cycle == 3
           );
         var subEtablissments = etablissements.filter(
-            (e) => e.identifiant !== null &&  e.id_cycle == 2
+            (e) => e.identifiant !== null &&  e.id_cycle == 3
           );
           subEtablissments = subEtablissments.concat(instituts);
           
