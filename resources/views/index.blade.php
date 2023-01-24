@@ -580,7 +580,7 @@
                                                 <p>  <i class="mdi mdi-square text-black"></i> Université 
                                                     <i class="mdi mdi-square text-primary"></i> Institut</p>
                                                   <p>  <i class="mdi mdi-square text-danger"></i> Academie
-                                                    <i class="mdi mdi-square text-success"></i> Ecole</p>
+                                                    <i class="mdi mdi-square text-success"></i> Ecole
                                                     <i class="mdi mdi-square text-warning"></i> Faculté
                                                 </p>
                                                 

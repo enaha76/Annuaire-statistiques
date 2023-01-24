@@ -13,7 +13,16 @@ for (var i = 0; i < checkboxes.length; i++) {
     });
 }
 
+let year_d=String(new Date().getFullYear()-1)+ "-" +String(new Date().getFullYear());
+$("input#year").on("click", function() {
+  console.log("Anchor clicked!");
+  let selectedYear = $(this).val();
+  year_d=selectedYear;
+  console.log("Selected year: " + selectedYear);
+  $("#selected").text(selectedYear);
+});
 
+// console.log(selectedYear);
 
 function display_inpute(){
     var y=`
@@ -102,13 +111,15 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
     reader.readAsArrayBuffer(file);
   });
 };
+
+console.log(year_d);
   function displayTable(null_count,err_count,cor_count) {
      
   
       var table = ` <table class=\"table table-hover table-centered mb-0\">
                     <thead>
                     <tr>
-<th>Non renseigné</th>
+                    <th>Non renseigné</th>
                     <th>Mal renseigné</th>
                     <th>Correcte</th>
                     <th>Totale</th>
@@ -163,7 +174,7 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
 var sub = `
 <textarea name="file" id="" cols="30" rows="10" style="display:none">${JSON.stringify(dataJSON)}</textarea>
     <input type="hidden" name="establishment" value="${id_rtablisment}">
-    <input type="hidden" name="year" value="2022-2023">
+    <input type="hidden" name="year" value="${year_d}">
 
     <button type="submit" class="btn btn-primary float-end" >Importer ${button}</button>  
 `
@@ -218,12 +229,13 @@ if (to) {
     window.location.href = '/tables';
    },3000)
 }
-
+// chek the list of student that exist in the year
 let list_nni=[];
 let data_nni=[];
-
+let list_date_nni=[];
 for(let j = 0; j < chek_list.length; j++){
   list_nni.push(String(chek_list[j].NNI));
+  list_date_nni.push(String(chek_list[j].année_scolaire))
 }
 
 
@@ -255,7 +267,8 @@ function compareLists(list1, list2) {
 }
 
 document.getElementById('ahmedou').innerHTML=compareLists(data_nni,list_nni);
-if(compareLists(data_nni,list_nni)!=0 ){
+document.getElementById('anne').innerHTML=year_d;
+if(compareLists(data_nni,list_nni)!=0 && list_date_nni.indexOf(year_d) != -1){
   $("#fill-warning-modal").modal("show");
   setTimeout(function(){
    window.location.href = '/tables';
