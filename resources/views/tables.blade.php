@@ -53,11 +53,24 @@
                 </button>
               
                 <div class="dropdown-menu dropdown-menu-end">
-                  
-                    <a class="dropdown-item " id="year" href="#" value="2021-2022">2021-2022</a>
-                    <a class="dropdown-item " id="year" href="#" value="2020-2021">2020-2021</a>
-                    <a class="dropdown-item " id="year" href="#" value="2019-2020">2019-2020</a>
-                    <a class="dropdown-item " id="year" href="#" value="2018-2019">2018-2019</a>
+                    
+                    <p><input type="radio" class="form-check-input  m-1" id="year" name="filter" data-id="div 2" value="2021-2022">
+                    <label class="form-check-label " for="dropdownCheck">
+                    2021-2022
+                    </label></p>
+                    <p><input type="radio" class="form-check-input    m-1" id="year" name="filter" value="2020-2021" data-id="div 3" value="2022-2023">
+                    <label class="form-check-label" for="dropdownCheck">
+                    2020-2021
+                    </label></p>
+                    <p><input type="radio" class="form-check-input    m-1" id="year" name="filter" value="2019-2020"data-id="div 4" value="2022-2023">
+                    <label class="form-check-label" for="dropdownCheck">
+                    2019-2020
+                    </label></p>
+                    <p><input type="radio" class="form-check-input   m-1" id="year" name="filter" value="2018-2019" data-id="div 4" value="2022-2023">
+                    <label class="form-check-label" for="dropdownCheck">
+                    2018-2019
+                    </label></p>
+                    
                
                 </div>
           
@@ -345,10 +358,7 @@ spinner.style.display='none';
     }, 100);
 });
 
-
-
-
-    $("a#year-select").on("click", function() {
+    $("input#year").on("click", function() {
     console.log("Anchor clicked!");
     let selectedYear = $(this).val();
     console.log("Selected year: " + selectedYear);
