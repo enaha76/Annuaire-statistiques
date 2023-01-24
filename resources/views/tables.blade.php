@@ -43,7 +43,7 @@
 <!-- end page title -->
 <div class="row mb-2">
     <div class="col-sm-4">
-    <h5>Année scolaire <span id="selected" class="badge rounded-pill p-1 px-2 badge-success-lighten" >2021-2022</span></h5>
+    <h5>Année scolaire <span id="selected" class="badge rounded-pill p-1 px-2 badge-success-lighten" >{{ date('Y')-1 }}-{{ date('Y') }}</span></h5>
     </div>
     <div class="col-sm-8">
         <div class="text-sm-end">
