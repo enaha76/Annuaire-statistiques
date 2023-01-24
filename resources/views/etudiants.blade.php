@@ -205,10 +205,10 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h2> 
+                                <h4> 
 
                                     Effectifs des étudiants par institution, par âge et par genre
-                                                                    </h2>
+                                                                    </h4>
                                
                                 
                                 <div class="tab-content">

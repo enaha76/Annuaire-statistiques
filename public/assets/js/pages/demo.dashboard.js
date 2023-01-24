@@ -1,5 +1,11 @@
 console.log(j);
-
+let ar=[];
+let nombr=[];
+for (let index3 = 0; index3 < list_et.length; index3++) {
+   ar.push(list_et[index3].abrev)
+   nombr.push(Number(list_et[index3].total)) 
+}
+// nombr[1]=156;
 const cars = [Number(j[0].Université),Number(j[0].institut),Number(j[0].Ecole),Number(j[0].Academie),Number(j[0].Faculté)];
 console.log(cars)
 !function(o){"use strict";function e(){this.$body=o("body"),this.charts=[]}e.prototype.initCharts=function(){window.Apex={chart:{parentHeightOffset:0,toolbar:{show:!1}},grid:{padding:{left:0,right:0}},colors:["#727cf5","#0acf97","#fa5c7c","#ffbc00"]};
@@ -9,7 +15,7 @@ var r={chart:{height:364,type:"line",dropShadow:{enabled:!0,opacity:.2,blur:7,le
 new ApexCharts(document.querySelector("#revenue-chart"),r).render();e=["#727cf5","#e3eaef"];
 
 (t=o("#high-performing-product").data("colors"))&&(e=t.split(","));
-r={chart:{height:257,type:"bar",stacked:!0},plotOptions:{bar:{horizontal:!1,columnWidth:"20%"}},dataLabels:{enabled:!1},stroke:{show:!0,width:2,colors:["transparent"]},series:[{name:"Actual",data:[65,59,80,81,56,89,40,32,65,59,80,81]},{name:"Projection",data:[89,40,32,65,59,80,81,56,89,40,65,59]}],zoom:{enabled:!1},legend:{show:!1},colors:e,xaxis:{categories:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],axisBorder:{show:!1}},yaxis:{labels:{formatter:function(e){return e+"k"},offsetX:-15}},fill:{opacity:1},tooltip:{y:{formatter:function(e){return"$"+e+"k"}}}};
+r={chart:{height:257,type:"bar",stacked:!0},plotOptions:{bar:{horizontal:!1,columnWidth:"20%"}},dataLabels:{enabled:!1},stroke:{show:!0,width:2,colors:["transparent"]},series:[{name:"Actual",data:nombr},{name:"Projection",data:[0,0,0,0,0,0,0,0,0,0,0,0]}],zoom:{enabled:!1},legend:{show:!1},colors:e,xaxis:{categories:ar,axisBorder:{show:!1}},yaxis:{labels:{formatter:function(e){return e+" E"},offsetX:-15}},fill:{opacity:1},tooltip:{y:{formatter:function(e){return"$"+e+"k"}}}};
 new ApexCharts(document.querySelector("#high-performing-product"),r).render();
 e=["#a2a3a0","#727cf5","#0acf97","#fa5c7c","#ffbc00"];
 //pie

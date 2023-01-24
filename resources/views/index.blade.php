@@ -351,9 +351,13 @@
                                                        $s = $s + intval($one->total) ;
                                                       
                                                     }
-                                                    
+                                                    // print_r($nbr_etudient);
+                                                    $nbr=0;
+                                                    foreach ($nbr_etudient as  $value) {
+                                                       $nbr=$value->nbr;
+                                                    }
                                                     @endphp
-                                                    <h3 class="mt-3 mb-3 ">{{ $s }}</h3>
+                                                    <h3 class="mt-3 mb-3 ">{{  $nbr }}</h3>
 
                                                     <p class="mb-0 ">
                                                         {{-- <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>--}}
@@ -485,7 +489,8 @@
                                 </div> <!-- end col -->
                             </div>
                             <!-- end row -->
-    
+                            {{-- <button  type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#fill-warning-modal">Warning Filled</button> --}}
+                            
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="card">
@@ -564,7 +569,7 @@
                                             <div class="mb-4 mt-4">
                                                 <div id="world-map-markers" style="height: 224px"></div>
                                             </div> --}}
-                                            <h4 class="header-title">Total Sales</h4>
+                                            <h4 class="header-title">Etablissements</h4>
                                             {{-- "Université","Instit","Ecole","Academie","Faculté" --}}
 
 
@@ -599,10 +604,11 @@
                             </div>
                             <!-- end row -->
     <script>
-        j = @json($List4);
+      let  list_et=@json($List2);
+      let  j = @json($List4);
         window.j=j;
-       
-        // console.log(j);
+      
+        // console.log(list_et);
     </script>
     
     

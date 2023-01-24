@@ -22,7 +22,7 @@
     </div><!-- /.modal -->
   </div>
   @endif
-  
+
   <div class="row">
     <div class="col-12">
         <div class="page-title-box">
@@ -265,9 +265,41 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
         <span class="visually-hidden">Loading...</span>
       </div>
   </div>                                         --}}
+  <div id="fill-warning-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fill-warning-modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-filled bg-warning">
+            <div class="modal-header">
+                <h4 class="modal-title text-dark" id="fill-warning-modalLabel">Warning</h4>
+                <br>
+                
+                <!-- <h1 id="ahmedou"></h1> -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+            </div>
+            <div class="modal-body">
+                <h4 class="text-dark">in this file u have <span class="text-light" id="ahmedou"></span> students that alredy existe </h4>
+            </div>
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button> -->
+                <button type="button" id="exist_student" class="btn btn-outline-light" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 </section>                     
   </div>
+<script>
+   chek_list=@json($chek);
 
+// if(Number(k[0].nomber)>1){
+//         $("#fill-warning-modal").modal("show");
+//         setTimeout(function(){
+//             window.location.href = '/';
+//       },3000)
+        
+     
+//        }
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.core.min.js"></script>
 <!-- end demo js-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
