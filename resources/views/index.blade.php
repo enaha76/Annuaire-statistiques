@@ -425,8 +425,8 @@
                                     <div class="card card-h-100">
                                         <div class="card-body">
                                             
-                                            <h4 class="header-title mb-3">Effectifs des étudiants par établissement du public</h4>
-                                            <div  data-simplebar="" style="max-height: 200px;">
+                                            <h4 class="header-title mb-3">Effectifs des étudiants par établissement public</h4>
+                                            <div  data-simplebar="" style="max-height: 200px;"  >
                                             
                                                     
                                                 @php
@@ -454,7 +454,7 @@
                                         
                                                                <h4 class="header-title mb-3"></h4>
                                                                <div class="table-responsive">
-                                                                   <table class="table mb-0">
+                                                                   <table class="table mb-0 overflow-visible">
                                                                        <thead >
                                                                        <tr>
                                                                            <th>Les etablisment</th>
