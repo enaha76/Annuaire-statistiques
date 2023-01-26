@@ -448,6 +448,7 @@
                                                    
                                                    
                                                 //    print_r($array_eteblissment);
+
                                                 @endphp
                                         
                                                                <h4 class="header-title mb-3"></h4>
@@ -461,7 +462,7 @@
                                                                        </tr>
                                                                        </thead>
                                                                        <tbody id="tab">
-                                                                           @foreach ( $List2 as $list=>$one )
+                                                                           @foreach ( $List as $list=>$one )
                                                                               <tr>
                                                                                <td >
                                                                                    {{ $one->abrev }}
@@ -492,7 +493,7 @@
                             {{-- <button  type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#fill-warning-modal">Warning Filled</button> --}}
                             
                             <div class="row">
-                                <div class="col-lg-8">
+                                <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
                                            
@@ -547,7 +548,7 @@
                             {{-- location place     --}}
 
 
-                                <div class="col-lg-4">
+                                <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="dropdown float-end">
@@ -604,10 +605,10 @@
                             </div>
                             <!-- end row -->
     <script>
-      let  list_et=@json($List2);
+      let  list_et=@json($List);
       let  j = @json($List4);
         window.j=j;
-      
+      let list_g=@json($array_eteblissment)
         // console.log(list_et);
     </script>
     
