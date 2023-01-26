@@ -231,7 +231,7 @@ function f(dataJSON){
  if(ab.indexOf(number) !== -1){
     to=true;
 }
-if (to && date_ins.indexOf(year_d) != -1) {
+if (to && date_ins.indexOf(year_d) == -1) {
     $("#info-header-modal").modal("show");
    setTimeout(function(){
     window.location.href = '/tables';
