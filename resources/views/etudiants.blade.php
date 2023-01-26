@@ -25,7 +25,7 @@
     <div class="col-sm-8">
         <div class="text-sm-end">
             <div class="dropdown"  aria-placeholder="Change it">
-                <button type="button" class="btn btn-info mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <button type="button" class="btn btn-primary mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                     <i class="uil-calender"></i>changer  l'année 
                 </button>
               
