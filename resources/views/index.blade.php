@@ -448,6 +448,7 @@
                                                    
                                                    
                                                 //    print_r($array_eteblissment);
+                                               
 
                                                 @endphp
                                         
@@ -457,12 +458,15 @@
                                                                        <thead >
                                                                        <tr>
                                                                            <th>Les etablisment</th>
-               
+                                              
                                                                            <th>Total</th>
                                                                        </tr>
                                                                        </thead>
                                                                        <tbody id="tab">
                                                                            @foreach ( $List as $list=>$one )
+                                                                           @if ($one->abrev!="UNA" && $one->abrev!="AN" && $one->abrev!="ENS" && $one->abrev!="ESP" && $one->abrev!="USIA")
+                                                                               
+                                                                           
                                                                               <tr>
                                                                                <td >
                                                                                    {{ $one->abrev }}
@@ -475,7 +479,7 @@
                                                                                {{-- <td>{{ $one['total'] - $one['Filles'] }}</td>
                                                                                <td>{{ $one['total']}}</td>--}}
                                                                            </tr>
-
+                                                                           @endif
                                                                            @endforeach
                                                                        </tbody>
                                                                    </table>
