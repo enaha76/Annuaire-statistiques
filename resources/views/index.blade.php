@@ -425,8 +425,8 @@
                                     <div class="card card-h-100">
                                         <div class="card-body">
                                             
-                                            <h4 class="header-title mb-3">Effectifs des étudiants par établissement du public</h4>
-                                            <div  data-simplebar="" style="max-height: 200px;">
+                                            <h4 class="header-title mb-3">Effectifs des étudiants par établissement public</h4>
+                                            <div  data-simplebar="" style="max-height: 200px;"  >
                                             
                                                     
                                                 @php
@@ -453,7 +453,7 @@
                                         
                                                                <h4 class="header-title mb-3"></h4>
                                                                <div class="table-responsive">
-                                                                   <table class="table mb-0">
+                                                                   <table class="table mb-0 overflow-visible">
                                                                        <thead >
                                                                        <tr>
                                                                            <th>Les etablisment</th>
@@ -512,7 +512,7 @@
                                                     <a href="javascript:void(0);" class="dropdown-item"></a>
                                                 </div>
                                             </div>
-                                            <h4 class="header-title mb-4">Bar Chart</h4>
+                                            <h4 class="header-title mb-4">Bar </h4>
 
                                             <div dir="ltr">
                                                 <div id="high-performing-product" class="apex-charts" data-colors="#727cf5,#e3eaef"></div>
