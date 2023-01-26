@@ -512,7 +512,7 @@
                                                     <a href="javascript:void(0);" class="dropdown-item"></a>
                                                 </div>
                                             </div>
-                                            <h4 class="header-title mb-4">Bar Chart</h4>
+                                            <h4 class="header-title mb-4">Répartition des étudiants par établissement</h4>
 
                                             <div dir="ltr">
                                                 <div id="high-performing-product" class="apex-charts" data-colors="#727cf5,#e3eaef"></div>
