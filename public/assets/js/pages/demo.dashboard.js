@@ -1,11 +1,15 @@
 // console.log(j);
+// $one->abrev!="UNA" && $one->abrev!="AN" && $one->abrev!="ENS" && $one->abrev!="ESP" && $one->abrev!="USIA"
+
 let ar=[];
 let nombr=[];
 let zer=[];
 for (let index3 = 0; index3 < list_et.length; index3++) {
+    if(list_et[index3].abrev!="UNA" && list_et[index3].abrev!="AN" && list_et[index3].abrev!="ENS" && list_et[index3].abrev!="ESP" && list_et[index3].abrev!="USIA"){
    ar.push(list_et[index3].abrev)
    nombr.push(Number(list_et[index3].total)) 
    zer.push(0);
+    }
 }
 // nombr[1]=156;
 const cars = [Number(j[0].Université),Number(j[0].institut),Number(j[0].Ecole),Number(j[0].Academie),Number(j[0].Faculté)];
