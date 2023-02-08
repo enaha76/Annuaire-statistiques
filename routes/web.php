@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\all_studentsController;
 use App\Http\Controllers\EtablissementsController;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,23 +19,18 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::controller(all_studentsController::class)->group(function(){
-    Route::get('/', 'index')->name('index');
-    Route::get('/etudiants/{year?}', 'etu')->name('etudiants');
+    Route::get('/home', 'index')->name('index')->middleware('auth');
+    Route::get('/etudiants/{year?}', 'etu')->name('etudiants')->middleware('auth');
 
-    Route::post('/excel','import')->name('test');
-    Route::post('/excel2', 'redr')->name('insert');
-    Route::get('/tables/{year?}/{years?}', 'tables')->name('tables');
-
-
-   
+    Route::post('/excel','import')->name('test')->middleware('auth');
+    Route::post('/excel2', 'redr')->name('insert')->middleware('auth');
+    Route::get('/tables/{year?}/{years?}', 'tables')->name('tables')->middleware('auth');
 });
 Route::controller(EtablissementsController::class)->group(function(){
-    Route::post('/etablissements', 'store')->name('store');
-    Route::get('/etablissements', 'index')->name('etablissements');
-    Route::get('/import/etudiants', 'import')->name('import_etudiant');
-    Route::get('/etablissements/{id?}', 'show')->name('one');
-
-
+    Route::post('/etablissements', 'store')->name('store')->middleware('auth');
+    Route::get('/etablissements', 'index')->name('etablissements')->middleware('auth');
+    Route::get('/import/etudiants', 'import')->name('import_etudiant')->middleware('auth');
+    Route::get('/etablissements/{id?}', 'show')->name('one')->middleware('auth');
 });
 
 
@@ -44,16 +39,16 @@ Route::controller(EtablissementsController::class)->group(function(){
 
 
     Route::get('/layout-static', function () {
-    return view('layout-static'); })->name('layout-static');
+    return view('layout-static'); })->name('layout-static')->middleware('auth');
     Route::get('/layout-sidenav-light', function () {
-        return view('layout-sidenav-light'); })->name('Export');
+        return view('layout-sidenav-light'); })->name('Export')->middleware('auth');
 
-  
+
 
 
     Route::get('/charts', function () {
     return view('charts');
-})->name('charts');
+})->name('charts')->middleware('auth');
 
 
 // Route::controller(ESPController::class)->group(function(){
@@ -64,7 +59,12 @@ Route::controller(EtablissementsController::class)->group(function(){
 
 Route::get('/conf',function(){
     return view('confirm_import');
+})->middleware('auth');
+
+Route::get('/',function(){
+    return view('auth.login');
 });
+
 
 
 

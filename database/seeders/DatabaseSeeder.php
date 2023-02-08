@@ -7,6 +7,8 @@ namespace Database\Seeders;
 use App\Models\Cycle;
 use App\Models\Etablissement;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 use function PHPSTORM_META\type;
 
@@ -240,6 +242,21 @@ class DatabaseSeeder extends Seeder
             'type' => 'Institut',
             'identifiant' => 4,
             'id_cycle' =>1
+        ]);
+        User::create([
+            'name'=>'Ahmedou enaha',
+            'email'=>'21076@supnum.mr',
+            'password'=>Hash::make('12345678')
+        ]);
+        User::create([
+            'name'=>'Ahmed Sejad',
+            'email'=>'21020@supnum.mr',
+            'password'=>Hash::make('12345678')
+        ]);
+        User::create([
+            'name'=>'Djilit Ahmedou',
+            'email'=>'21047@supnum.mr',
+            'password'=>Hash::make('12345678')
         ]);
     }
 }

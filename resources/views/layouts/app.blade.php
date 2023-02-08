@@ -29,7 +29,7 @@
       <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
       <!-- third party css end -->
 <style>
-   
+
 
 .file-input {
   display: inline-block;
@@ -92,15 +92,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition:all 0.4s ; 
+    transition:all 0.4s ;
 }
-   
+
 .spinner-border{
     height: 60px;
     width: 60px;
 }
 </style>
-       
+
 
          <!-- third party css -->
          <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
@@ -114,21 +114,21 @@
             {{-- <meta content="Coderthemes" name="author"> --}}
             <!-- App favicon -->
             {{-- <link rel="shortcut icon" href="assets/images/favicon.ico"> --}}
-    
+
             <!-- third party css -->
             {{-- <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css"> --}}
             {{-- <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css"> --}}
             <link href="assets/css/vendor/buttons.bootstrap5.css" rel="stylesheet" type="text/css">
             <link href="assets/css/vendor/select.bootstrap5.css" rel="stylesheet" type="text/css">
             <!-- third party css end -->
-    
+
             <!-- App css -->
             {{-- <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css"> --}}
             {{-- <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style"> --}}
             {{-- <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style"> --}}
     {{-- end new --}}
-        
-       
+
+
     </head>
 
     <body data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
@@ -136,7 +136,7 @@
         <div class="wrapper">
             <!-- ========== Left Sidebar Start ========== -->
             <div class="leftside-menu">
-    
+
                 <!-- LOGO -->
                 <a href="{{route('index')}}" class="logo text-center logo-light">
                     <span class="logo-lg">
@@ -147,7 +147,7 @@
                         <img src="assets/images/logo.png" alt="" height="16">
                         <span class="text-light">Annuaire Statistique</span>
                     </span>
-                    
+
                 </a>
 
                 <!-- LOGO -->
@@ -160,9 +160,9 @@
                         <img src="assets/images/logo.png" alt="" height="16">
 
                     </span>
-                  
+
                 </a>
-    
+
                 <div class="h-100" id="leftside-menu-container" data-simplebar="">
 
                     <!--- Sidemenu -->
@@ -190,8 +190,8 @@
                                     <li>
                                         <a href="{{route('etablissements')}}">Etablissement</a>
                                     </li>
-                                   
-                                   
+
+
                                 </ul>
                             </div>
                         </li>
@@ -200,7 +200,7 @@
                                 <span class="visually-hidden">Loading...</span>
                               </div>
                           </div>
-                       
+
 
                         <li class="side-nav-item">
                             <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
@@ -226,7 +226,7 @@
                                                 <li>
                                                     <a href="#">Etablissements</a>
                                                 </li>
-                                                
+
                                             </ul>
                                         </div>
                                     </li>
@@ -268,7 +268,7 @@
                             </li>
                             <li class="dropdown notification-list topbar-dropdown">
                                 <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                    <img src="assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12"> 
+                                    <img src="assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12">
                                     <span class="align-middle d-none d-sm-inline-block">English</span> <i class="mdi mdi-chevron-down d-none d-sm-inline-block align-middle"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu">
@@ -282,7 +282,7 @@
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
                                     </a>
-                
+
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
@@ -295,7 +295,7 @@
 
                                 </div>
                             </li>
-{{-- 
+{{--
                             <li class="dropdown notification-list">
                                 <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                     <i class="dripicons-bell noti-icon"></i>
@@ -385,7 +385,7 @@
                                 </div>
                             </li> --}}
 
-                           
+
 
                             <li class="notification-list">
                                 <a class="nav-link end-bar-toggle" href="javascript: void(0);">
@@ -395,11 +395,11 @@
 
                             <li class="dropdown notification-list">
                                 <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                    <span class="account-user-avatar"> 
+                                    <span class="account-user-avatar">
                                         <img src="assets/images/users/ahm.jpg" alt="user-image" class="rounded-circle">
                                     </span>
                                     <span>
-                                        <span class="account-user-name">Ahmedou Enaha</span>
+                                        <span class="account-user-name">{{ Auth::user()->name }}</span>
                                         <span class="account-position">Admin</span>
                                     </span>
                                 </a>
@@ -416,11 +416,11 @@
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <i class="mdi mdi-account-circle me-1"></i>
-                                        <span>Mon count</span>
+                                        <span>{{ Auth::user()->name }}</span>
                                     </a>
 
                                     <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <i class="mdi mdi-account-edit me-1"></i>
                                         <span>Settings</span>
                                     </a>
@@ -435,13 +435,17 @@
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <i class="mdi mdi-lock-outline me-1"></i>
                                         <span>Lock Screen</span>
-                                    </a>
+                                    </a> --}}
 
                                     <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <a href="{{ route('logout') }}" class="dropdown-item notify-item" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
                                         <i class="mdi mdi-logout me-1"></i>
                                         <span>Logout</span>
                                     </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                                 </div>
                             </li>
 
@@ -500,16 +504,16 @@
                                     </a>
 
                                     <!-- item-->
-                                    
+
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- end Topbar -->
-                    
+
                     <!-- Start Content-->
 
-                   
+
                 <!-- content -->
 
                 @yield('content')
@@ -573,7 +577,7 @@
                         <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="dark" id="dark-mode-check">
                         <label class="form-check-label" for="dark-mode-check">Dark Mode</label>
                     </div>
-       
+
 
                     <!-- Width -->
                     <h5 class="mt-4">Width</h5>
@@ -587,7 +591,7 @@
                         <input class="form-check-input" type="checkbox" name="width" value="boxed" id="boxed-check">
                         <label class="form-check-label" for="boxed-check">Boxed</label>
                     </div>
-        
+
 
                     <!-- Left Sidebar-->
                     <h5 class="mt-4">Left Sidebar</h5>
@@ -624,7 +628,7 @@
 
                     <div class="d-grid mt-4">
                         <button class="btn btn-primary" id="resetBtn">Reset to Default</button>
-            
+
                         <a href="../../product/hyper-responsive-admin-dashboard-template/index.html" class="btn btn-danger mt-3" target="_blank"><i class="mdi mdi-basket me-1"></i> Purchase Now</a>
                     </div>
                 </div> <!-- end padding-->
@@ -643,7 +647,7 @@
                   })
               });
         </script>
-   
+
         <!-- bundle -->
         <script src="assets/js/vendor.min.js"></script>
         <script src="assets/js/app.min.js"></script>

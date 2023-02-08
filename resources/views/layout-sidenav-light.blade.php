@@ -4,12 +4,12 @@
 {{-- <script type="text/javascript" src="{{ asset('js/xlsx.full.min.js')}}"></script>
     <style>
     table{
-      
+
         width: -webkit-fill-available;
     }
         table tr th,
         table tr td {
-        
+
            border:2px solid Black;
             text-align: center;
 
@@ -49,10 +49,10 @@
             <ol class="breadcrumb mb-4">
 
             </ol>
-           
 
 
-               
+
+
                 <select class="p-2 text-light bg-success float-center" name="annee" id="annee">
                     <option value="" selected disabled>Specifie l'annee scolaire</option>
                     <option value="2020-2021">2020-2021</option>
@@ -119,10 +119,10 @@
 
 
 
-          
+
             <div class="card-body">
                 <table id="datatables">
-                    
+
                     <thead id="datatables-head">
                     </thead>
                     <tbody id="datatables-body">
@@ -130,12 +130,12 @@
                     </tbody>
                 </table>
             </div>
-          
+
             <button class="btn btn-danger float-end p-2" type="submit" id="exp" onclick="ExportToExcel('xlsx')" style="display: none">Exporter les Etudiants</button>
 
   </div>
   <table id="datatables">
-                    
+
     <thead id="datatables-head">
     </thead>
     <tbody id="datatables-body">
@@ -152,7 +152,7 @@
         //   }
         // }
     </script>
-    
+
     <script>
       var ins = @json($alldata);
       var etats =@json($ins);
@@ -166,13 +166,13 @@
                 Object.keys(obj).forEach(key => {
                     try {
                         if (typeof obj[key] === 'object' && obj[key] !== null) throw "exit";
-                    } 
+                    }
                     catch (e) {
                         headeres.push(key)
                         iterate(obj[key])
                       }}) }}
 
-        
+
   lists = {}
 
 
@@ -189,8 +189,8 @@
             tbody = document.getElementById('datatables-body');
             t.replaceChild(body, tbody);
             t.replaceChild(head, theader)
-         
-            
+
+
             event.preventDefault();
             var groups = new FormData(event.target).getAll("etudiant[]");
             headeres = []
@@ -208,14 +208,14 @@
                 lists[key] = numbers
 
                 console.log(lists);
-              
+
                 lists[key] .forEach(num => {
-                   
+
                          t = document.createElement('td')
                     t.innerHTML = num
                     tr.appendChild(t)
-               
-                   
+
+
                 })
                 body.appendChild(tr)
             })
@@ -247,7 +247,7 @@
 
                     var th = document.createElement('th');
                     th.innerHTML = key
-  
+
                     trh.appendChild(th)
                     ret.push(a[key])
                 })
@@ -368,7 +368,7 @@ function filter(ins ,groups ) {
                     </li>
                     <li class="dropdown notification-list topbar-dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12"> 
+                            <img src="assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12">
                             <span class="align-middle d-none d-sm-inline-block">English</span> <i class="mdi mdi-chevron-down d-none d-sm-inline-block align-middle"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu">
@@ -382,7 +382,7 @@ function filter(ins ,groups ) {
                             {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
                             </a> --}}
-        
+
                             <!-- item-->
                             {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
@@ -546,12 +546,12 @@ function filter(ins ,groups ) {
 
                     <li class="dropdown notification-list">
                         <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <span class="account-user-avatar"> 
+                            <span class="account-user-avatar">
                                 <img src="assets/images/users/ahm.jpg" alt="user-image" class="rounded-circle">
                             </span>
                             <span>
-                                <span class="account-user-name">Ahmedou Enaha</span>
-                                <span class="account-position">Founder</span>
+                                <span class="account-user-name">{{ Auth::user()->name }}</span>
+                                <span class="account-position">Admin</span>
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -563,11 +563,11 @@ function filter(ins ,groups ) {
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <i class="mdi mdi-account-circle me-1"></i>
-                                <span>My Account</span>
+                                <span>{{ Auth::user()->name }}</span>
                             </a>
 
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <i class="mdi mdi-account-edit me-1"></i>
                                 <span>Settings</span>
                             </a>
@@ -582,13 +582,17 @@ function filter(ins ,groups ) {
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <i class="mdi mdi-lock-outline me-1"></i>
                                 <span>Lock Screen</span>
-                            </a>
+                            </a> --}}
 
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="{{ route('logout') }}" class="dropdown-item notify-item" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
                                 <i class="mdi mdi-logout me-1"></i>
                                 <span>Logout</span>
                             </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </li>
 
@@ -664,7 +668,7 @@ function filter(ins ,groups ) {
 
             <!-- Start Content-->
             <div class="container-fluid">
-                
+
                 <!-- start page email-title -->
                 <div class="row">
                     <div class="col-12">
@@ -679,8 +683,8 @@ function filter(ins ,groups ) {
                             <h4 class="page-title"></h4>
                         </div>
                     </div>
-                </div>     
-                <!-- end page email-title --> 
+                </div>
+                <!-- end page email-title -->
 
                 <div class="row">
 
@@ -886,7 +890,7 @@ function filter(ins ,groups ) {
                                             </div> <!-- end col -->
                                         </div>
                                         <!-- end row-->
-                                        
+
                                         <div class="mt-5">
                                             <a href="" class="btn btn-secondary me-2"><i class="mdi mdi-reply me-1"></i> Reply</a>
                                             <a href="" class="btn btn-light">Forward <i class="mdi mdi-forward ms-1"></i></a>
@@ -895,7 +899,7 @@ function filter(ins ,groups ) {
                                     </div> --}}
                                     <!-- end .mt-4 -->
 
-                                </div> 
+                                </div>
                                 <!-- end inbox-rightbar-->
                             </div>
 
@@ -904,7 +908,7 @@ function filter(ins ,groups ) {
 
                     </div> <!-- end Col -->
                 </div><!-- End row -->
-                
+
             </div> <!-- container -->
 
         </div> <!-- content -->
