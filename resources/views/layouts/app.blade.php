@@ -8,7 +8,7 @@
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
         <meta content="Coderthemes" name="author">
         <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
@@ -28,6 +28,8 @@
       <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
       <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
       <!-- third party css end -->
+    
+
 <style>
 
 
@@ -676,6 +678,6 @@
          <script src="assets/js/pages/demo.products.js"></script>
          <script src="assets/js/pages/demo.datatable-init.js"></script>
          <!-- end demo js-->
-         <script src="assets/js/pages/indexchars.js"></script>
+         <script src="assets/js/pages/indexchars.js"></script>        
     </body>
 </html>
