@@ -1,4 +1,4 @@
- @extends('layouts.app')
+@extends('layouts.app')
 
 @section('content')
 
@@ -78,135 +78,103 @@
         </div>
     </div><!-- end col-->
 </div> 
-<script>
-   
-</script>
-<section class="d-flex">
 
-<div class="col-xxl-3 col-lg-4 p-2">
-    <div class="pe-xl-3">
-        <!-- start search box -->
-        <div class="app-search">
-            <form>
-                <div class="mb-1 position-relative">
-                    <input type="search" class="form-control m-1 " id="search" placeholder="Choisir l'institution ...">
-                    <span class="mdi mdi-magnify search-icon p-1 "></span>
-                </div>
-            </form>
-        </div>
-        <!-- end search box -->
-
-        <div class="row">
-            <div class="col">
-                <div data-simplebar="" style="max-height: 350px;">
-                    <div class="p-2">
-                        <div class="row " >
-                            <div class="col bt-3 ">
-                                <ul  class="list-unstyled " id="list">
-                                    @foreach($List3 as $e)
-                                     <li class="border-bottom m-2 p-2"><input type="radio" id="customRadiocolor1" name="myCheckboxes" value="{{ $e->id }}" class="form-check-input ml-2  "  > {{ $e->abrev  }}</li> 
-                                    @endforeach
-                                </ul>
-
-                            </div>
-
-
-                        </div> <!-- end row-->
- </div>
- </div>
-
-                  </div>
-
-<!-- end projects -->
-<form action="">
-<div class="fallback">
-    {{-- <input name="file" type="file" id="fileInput" multiple /> --}}
-{{-- <input type="file"  id="fileInput"/> --}}
-
+{{-- select option --}}
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">upload ur student file here</h4>
+    
+                <div class="tab-content">
+                    <div class="tab-pane show active" id="select2-preview">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                    <p class="mb-1 fw-bold text-muted"></p>
+                                    <select class="form-control select2" id="mySelect" data-toggle="select2">
+                                      <option value="0"><b> Choisir l'institution ...</b></option>
+                                         @foreach($List3 as $e)
+                                           <option value="{{ $e->id }}"><b> {{ $e->abrev }} </b>  ({{ $e->nom }})</option>
+                                         @endforeach
+                                     </select>
+                            </div> <!-- end col -->
+                            
+                            <div class="">
+                                <br>
+                                <form action="">
+                                  <div class="fallback"></div>    
+                                  <br>
+                                  <div class='file-input ' id='cache_file'>
+                                      <input type='file' id="fileInput">
+                                      <span class=' btn btn-primary'> <i class="mdi mdi-file-import"></i></span>
+                                      <span class='label' data-js-label>Aucun fichier sélectionné</label>
+                                  </div>
+                                </form>
+                            </div> <!-- end col -->
+                        </div> <!-- end row -->                                           
+                    </div> <!-- end preview-->             
+                </div> <!-- end tab-content-->
+            </div> <!-- end card-body-->
+        </div> <!-- end card-->
+    </div> <!-- end col-->
 </div>
-{{-- </form> --}}
-<br>
-<div class='file-input ' id='cache_file'>
-    <input type='file' id="fileInput">
-  <span class=' btn btn-primary'> <i class="mdi mdi-file-import"></i></span>
-    <span class='label' data-js-label>Aucun fichier sélectionné</label>
-</div>
-</form>
-{{-- <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
-data-upload-preview-template="#uploadPreviewTemplate"> --}}
-{{-- <div class="fallback"> --}}
-    {{-- <input name="file" type="file" id="fileInput" multiple /> --}}
-    {{-- <input type="file" id="fileInput"/> --}}
-{{-- </div> --}}
 
-{{-- <div class="dz-message needsclick">
-    <i class="h1 text-muted dripicons-cloud-upload"></i>
-    <h3 class="text-muted font-13">Déposez les fichiers ici ou cliquez pour télécharger.</h3> --}}
-    {{-- <span class="text-muted font-13">(This is just a demo dropzone. Selected files are
-        <strong>not</strong> actually uploaded.)</span> --}}
-{{-- </div> --}}
-{{-- </form> --}}
+{{-- houn --}}
+<div class="col-xl-12 col-lg-10">
+    <div class="card">
+        <div class="card-body">
+            <a href="" class="p-0 float-end"><i class="mdi mdi-download ms-1"></i></a>
+            <h4 class="header-title mt-1 mb-3">historic</h4>
+
+            <div class="table-responsive">
+                <table class="table table-sm table-centered mb-0 font-14">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Name of file</th>
+                            
+                            <th>Name of Etablisment</th>
+                            <th>Number of student</th>
+                            <th>Etat</th>
+                            <th>Date</th>
+                            <th style="width: 30%;">Treatment</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr >
+                            <td>SUPNUM.xlsx</td>
+                            <td>SUPNUM</td>
+                            <td>250</td>
+                            <td ><span >uploaded</span></td>
+                            <td>12/02/2023</td>
+                            <td>
+                                <div class="progress" style="height: 10px;">
+                                    {{-- <div class="progress"> --}}
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">50%</div>
+                                        <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                                    </div>
+                                    {{-- <div class="progress-bar" role="progressbar" style="width: 100%; height: 20px;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div> --}}
+                                {{-- </div> --}}
+                            </td>
+                            <td><a href="javascript: void(0);" class="icon-link"><i class="mdi mdi-delete email-action-icons-item"></i></a>
+                                <a href="javascript: void(0);" class="icon-link"><i class="mdi mdi-book-edit-outline"></i></a>
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div> <!-- end table-responsive-->
+        </div> <!-- end card-body-->
+    </div> <!-- end card-->
+</div> <!-- end col-->
+ {{-- end houn --}}
 
 <!-- Preview -->
 <div class="dropzone-previews mt-3" id="file-previews"></div>
-
-<!-- file preview template -->
-<div class="d-none" id="uploadPreviewTemplate">
-<div class="card mt-1 mb-0 shadow-none border">
-    <div class="p-2">
-        <div class="row align-items-center">
-            <div class="col-auto">
-                <img data-dz-thumbnail src="#" class="avatar-sm rounded bg-light" alt="">
-            </div>
-            <div class="col ps-0">
-                <a href="javascript:void(0);" class="text-muted fw-bold" data-dz-name></a>
-                <p class="mb-0" data-dz-size></p>
-            </div>
-            <div class="col-auto">
-                <!-- Button -->
-                <a href="" class="btn btn-link btn-lg text-muted" data-dz-remove>
-                    <i class="dripicons-cross"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="dropdown float-end">
-        <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="mdi mdi-dots-vertical"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-end">
-            <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item">Export</a>
-            <!-- item-->
-            {{-- <a href="javascript:void(0);" class="dropdown-item"></a>
-            <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item"></a>
-            <!-- item-->
-            <a href="javascript:void(0);" class="dropdown-item"></a> --}}
-        </div>
-    </div>
-    <h4 class="header-title m-3">Traitement du fichier avant l'import</h4>
-    <div id="tableContainer"></div>
-    <div id="average-sales1" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
+      
+<div id="sub2"></div>
 
 
-    <div class="chart-widget-list " id="labelse">
-    </div>
-    <div id="aler" ></div>
-    <form action="{{ route('test') }}" method="POST" id="formId">
-      @csrf
-        <div id="sub">
-    </div>
-</form>
-<div id="sub2">
-</div>
-</div>
 
 
 <!-- Danger Header Modal -->
@@ -219,14 +187,9 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
             </div>
             <div class="modal-body">
                 <h5 class="mt-0">Fichier non-valide ??</h5>
-                {{-- <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p> --}}
                 <p>  Ce fichier ne correspond au format valide</p>
             </div>
-            {{-- <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger">Save changes</button>
-            </div> --}}
+           
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
@@ -270,20 +233,89 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
             <div class="modal-body">
                 <h5 class="mt-0">Info</h5>
                 <p>Les Etudiants de ce Etablissement sont deja enregistrer</p>
-                {{-- <p>Seul </p> --}}
+               
             </div>
-            {{-- <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-info">Save changes</button>
-            </div> --}}
+           
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->                                             
-{{-- <div class="spinner-wrapper">
-    <div class="spinner-border text-primary" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-  </div>                                         --}}
+  
+{{-- new modal --}}
+<div class="modal fade" id="scrollable-modal" tabindex="-1" role="dialog" aria-labelledby="scrollableModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="scrollableModalTitle">Traitement du fichier avant l'import</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- col-xl-3 col-lg-6 order-lg-1 -->
+            <div class="modal-body">
+                <div class="row">
+                <div class="col-lg-6">
+                    <div class="">
+                        <div class="card-body">
+                           
+                            <h4 class="header-title"> sur la colone genre</h4>
+                
+                            {{-- <div id="average-sales" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c"></div> --}}
+                            <div id="average-sales1" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
+
+                            
+                        </div> <!-- end card-body-->
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+               
+                <div class="col-lg-6">
+                    <br><br><br>
+                <table class="table table-hover table-centered mb-0">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Nomber</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><i class="mdi mdi-circle text-danger"></i> Non renseigné</th>
+                            <td id="nor"></td>
+                        
+                        </tr>
+                        <tr>
+                            <th><i class="mdi mdi-circle text-info"></i> Mal renseigné</th>
+                            <td id="mar"></td>
+                        
+                        </tr>
+                        <tr>
+                            <th><i class="mdi mdi-circle text-success"></i> Correcte</th>
+                            <td id="cor"></td>
+                        
+                        </tr>
+                        <tr>
+                            <th>Total</th>
+                            <td id="tot"></td>
+                        
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+        </div> 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <form action="{{ route('test') }}" method="POST" id="formId">
+                    @csrf
+                      <div id="sub"> </div>
+                </form>
+                {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+{{-- end new modal --}}
+
+
+
+
   <div id="fill-warning-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fill-warning-modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content modal-filled bg-warning">
@@ -305,20 +337,11 @@ data-upload-preview-template="#uploadPreviewTemplate"> --}}
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-</section>                     
+                    
   </div>
 <script type="text/javascript" src="{{ asset('js/xlsx.full.min.js')}}"></script>
 <script>
    chek_list=@json($chek);
-
-// if(Number(k[0].nomber)>1){
-//         $("#fill-warning-modal").modal("show");
-//         setTimeout(function(){
-//             window.location.href = '/';
-//       },3000)
-        
-     
-//        }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.core.min.js"></script>
 <!-- end demo js-->
@@ -388,4 +411,4 @@ function customInput (el) {
 }
 </script>
 
-       @endsection
+@endsection

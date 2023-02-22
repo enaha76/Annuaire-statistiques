@@ -12,7 +12,18 @@ for (var i = 0; i < checkboxes.length; i++) {
         handleCheckboxClick(this);
     });
 }
+// option js
 
+const select = document.querySelector('#mySelect');
+    select.onchange = function() {
+      const selectedOption = select.options[select.selectedIndex];
+      const value = selectedOption.value;
+      id_rtablisment=Number(value);
+      // do something with the value
+      window.id_chk=id_rtablisment;
+
+    };
+// end
 let year_d=String(new Date().getFullYear()-1)+ "-" +String(new Date().getFullYear());
 $("input#year").on("click", function() {
   console.log("Anchor clicked!");
@@ -34,13 +45,7 @@ function display_inpute(){
     document.getElementById("cache_file").innerHTML = y;
 }
 
-function handleCheckboxClick(checkbox) {
-    if (checkbox.checked) {
-       id_rtablisment = checkbox.value;
-    } 
 
-    window.id_chk=id_rtablisment;
-}
  
  // const v=[];
   var fileInput = document.getElementById('fileInput');
@@ -77,9 +82,7 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
      
       console.log(is_cor);
       if (is_cor) {
-        
         for (var i = 0; i < dataJSON.length; i++) {
-      
           if (dataJSON[i].GENRE==null) {
              null_count++;
              dataJSON[i].GENRE='NR';
@@ -112,29 +115,34 @@ document.getElementById("fileInput").addEventListener('change', function(event) 
   });
 };
 
-console.log(year_d);
+
+
+function displayinfo(null_count,err_count,cor_count){
+  $("#warning-alert-modal").modal("show");
+}
+
   function displayTable(null_count,err_count,cor_count) {
-     
-  
-      var table = ` <table class=\"table table-hover table-centered mb-0\">
+
+      var table = `<h5>Traitement du fichier avant l'import sur la colone genre</h5>
+       <table class=\"table table-hover table-centered mb-0\">
                     <thead>
-                    <tr>
-                    <th>Non renseigné</th>
-                    <th>Mal renseigné</th>
-                    <th>Correcte</th>
-                    <th>Totale</th>
-                    </tr>
+                       <tr>
+                          <th>Non renseigné</th>
+                          <th>Mal renseigné</th>
+                          <th>Correcte</th>
+                          <th>Totale</th>
+                       </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                    <td>${null_count}</td>
-                    <td>${err_count}</td>
-                    <td>${cor_count}</td>
-                    <td>${cor_count + err_count + null_count}</td>
-                    </tr>
+                       <tr>
+                         <td>${null_count}</td>
+                         <td>${err_count}</td>
+                         <td>${cor_count}</td>
+                         <td>${cor_count + err_count + null_count}</td>
+                      </tr>
                     </tbody>
                   </table>`;
-      document.getElementById("tableContainer").innerHTML = table;
+      // document.getElementById("tableContainer").innerHTML = table;
   var x =    `
              <p>
             <i class="mdi mdi-square text-success"></i>Correcte
@@ -151,7 +159,7 @@ console.log(year_d);
             
              
               ` 
-  document.getElementById("labelse").innerHTML = x;
+  // document.getElementById("labelse").innerHTML = x;
  var button="Quand même";
  if(err_count==0 && null_count==0){
      button="";
@@ -176,16 +184,13 @@ var sub = `
     <input type="hidden" name="establishment" value="${id_rtablisment}">
     <input type="hidden" name="year" value="${year_d}">
 
-    <button type="submit" class="btn btn-primary float-end" >Importer ${button}</button>  
+    <button type="submit" class="btn btn-primary" >Importer ${button}</button>  
 `
-
-
     document.getElementById("sub").innerHTML = sub; 
 
               }
 
              
-
 
 function error(){
   var alert=`
@@ -291,6 +296,15 @@ if(compareLists(data_nni,list_nni)!=0 && list_date_nni.indexOf(year_d) != -1){
 
     
 function av(null_count,err_count,cor_count){
+  document.getElementById("nor").innerHTML = null_count; 
+  document.getElementById("mar").innerHTML = err_count; 
+  document.getElementById("cor").innerHTML = cor_count; 
+  document.getElementById("tot").innerHTML = null_count + err_count + cor_count; 
+
+
+  setTimeout(function(){
+    $("#scrollable-modal").modal("show");
+   },500)
 const cars = [err_count,cor_count,null_count];
 !function(o){"use strict";function e(){this.$body=o("body"),this.charts=[]}e.prototype.initCharts=function(){window.Apex={chart:{parentHeightOffset:0,toolbar:{show:!1}},grid:{padding:{left:0,right:0}},colors:["#727cf5","#0acf97","#fa5c7c","#ffbc00"]};
 var e=["#727cf5","#0acf97","#fa5c7c"],t=o("#revenue-chart").data("colors");
@@ -321,4 +335,9 @@ e.prototype.init=function(){o("#dash-daterange").daterangepicker({singleDatePick
 t(document).ready(function(e){t.Dashboard.init()})}(window.jQuery);
 // console.log(chartOptions);
 e.prototype.initMaps = function() { 0<o("#world-map-markers").vectorMap({map: "mr_mill_en",normalizeFunction: "polynomial",hoverOpacity: 0.7,hoverColor: false,regionStyle: {initial: {fill: "#e3eaef" }},markerStyle: {initial: {r: 9,fill: "#727cf5","fill-opacity": 0.9,stroke: "#fff","stroke-width": 7,"stroke-opacity": 0.4},hover: {stroke: "#fff","fill-opacity": 1, "stroke-width": 1.5}},backgroundColor: "transparent",markers: [{latLng:[18.0973,-15.9785], name: "Nouakchott"},{latLng:[20.9292,-17.0326], name: "Nouadhibou"},{latLng:[15.5951,-0.1462], name: "Ayoun el Atrous"} ],zoomOnScroll: false});};
+
+
+
+
+
 }
