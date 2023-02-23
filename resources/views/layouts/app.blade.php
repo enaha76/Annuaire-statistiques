@@ -678,6 +678,7 @@
          <script src="assets/js/pages/demo.products.js"></script>
          <script src="assets/js/pages/demo.datatable-init.js"></script>
          <!-- end demo js-->
-         <script src="assets/js/pages/indexchars.js"></script>        
+         <script src="assets/js/pages/indexchars.js"></script>
+          
     </body>
 </html>

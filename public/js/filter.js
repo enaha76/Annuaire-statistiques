@@ -2,7 +2,7 @@
 
   
   
-function fill(data,etats) {
+function fill(data,etats){
 tables=[];
 for (let index = 1; index <=7; index++) {
     tables.push(createtbody(etats,data,index));
@@ -152,7 +152,7 @@ for (var i = 0; i < headers.length; i++) {
 
     
 
-function createtbody(etablissements, data,j) {
+function createtbody(etablissements,data,j) {
 
 
 switch (j) {
