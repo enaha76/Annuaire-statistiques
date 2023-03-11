@@ -28,7 +28,7 @@
       <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
       <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
       <!-- third party css end -->
-    
+
 
 <style>
 
@@ -226,7 +226,7 @@
                                                     <a href="#">Professeurs</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Etablissements</a>
+                                                    <a href="{{ route('helo') }}">Archives</a>
                                                 </li>
 
                                             </ul>
@@ -679,6 +679,6 @@
          <script src="assets/js/pages/demo.datatable-init.js"></script>
          <!-- end demo js-->
          <script src="assets/js/pages/indexchars.js"></script>
-          
+
     </body>
 </html>

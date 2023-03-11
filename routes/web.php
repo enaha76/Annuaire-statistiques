@@ -34,6 +34,9 @@ Route::controller(EtablissementsController::class)->group(function(){
 });
 
 
+Route::get('/helo', function () {
+    return view('helo');
+})->name('helo')->middleware('auth');
 
 
 
@@ -64,6 +67,7 @@ Route::get('/conf',function(){
 Route::get('/',function(){
     return view('auth.login');
 });
+
 
 
 
