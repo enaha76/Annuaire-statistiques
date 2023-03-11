@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- <script type="text/javascript" src="{{ asset('js/xlsx.full.min.js')}}"></script>
+{{--
+     <script type="text/javascript" src="{{ asset('js/xlsx.full.min.js')}}"></script>
     <style>
     table{
 
