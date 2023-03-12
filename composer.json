@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.1",
         "maatwebsite/excel": "^3.1",
+        "phpoffice/phpspreadsheet": "^1.28",
         "psr/simple-cache": "1.0"
     },
     "require-dev": {
@@ -32,6 +33,11 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }
+        
+        ,
+        "files": [
+            "app/Http/my_functions/funs.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
