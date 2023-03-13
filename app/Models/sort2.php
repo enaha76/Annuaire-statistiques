@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $domaine_specilise
  * @property int    $nb1
  */
-class SortantsDsp extends Model
+class sort2 extends Model
 {
     /**
      * The database table used by the model.
@@ -40,7 +40,7 @@ class SortantsDsp extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -58,7 +58,7 @@ class SortantsDsp extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

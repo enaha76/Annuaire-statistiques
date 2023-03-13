@@ -5,24 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $annee_scolaire
- * @property int    $nb1
- * @property int    $nb2
- * @property int    $nb3
- * @property int    $nb4
- * @property int    $nb5
- * @property int    $nb6
- * @property int    $nb7
- * @property int    $nb8
+ * @property string $institutions
+ * @property string $genre
+ * @property string $niveaux
+ * @property string $domaine
+ * @property int    $effectifs
  */
-class EffectifMInstNGENS extends Model
+class EffectifmInstDNG extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'effectifM_inst_n_g_ENS';
+    protected $table = 'effectifM_inst_d_n_g';
 
     /**
      * The primary key for the model.
@@ -37,7 +33,7 @@ class EffectifMInstNGENS extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5', 'nb6', 'nb7', 'nb8'
+        'institutions', 'effectifs', 'genre', 'niveaux', 'domaine'
     ];
 
     /**
@@ -46,7 +42,7 @@ class EffectifMInstNGENS extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -55,7 +51,7 @@ class EffectifMInstNGENS extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int', 'nb6' => 'int', 'nb7' => 'int', 'nb8' => 'int'
+        'institutions' => 'string', 'effectifs' => 'int', 'genre' => 'string', 'niveaux' => 'string', 'domaine' => 'string'
     ];
 
     /**
@@ -64,7 +60,7 @@ class EffectifMInstNGENS extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

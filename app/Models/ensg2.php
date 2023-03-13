@@ -6,18 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $annee_scolaire
- * @property string $institutions
+ * @property string $tranche_age
  * @property int    $nb1
- * @property int    $nb2
  */
-class RepartitionBourcBenf extends Model
+class ensg2 extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'repartition_bourc_benf';
+    protected $table = 'ensg_perm_trage';
 
     /**
      * The primary key for the model.
@@ -32,7 +31,7 @@ class RepartitionBourcBenf extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'institutions', 'nb1', 'nb2'
+        'annee_scolaire', 'tranche_age', 'nb1'
     ];
 
     /**
@@ -41,7 +40,7 @@ class RepartitionBourcBenf extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -50,7 +49,7 @@ class RepartitionBourcBenf extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'institutions' => 'string', 'nb1' => 'int', 'nb2' => 'int'
+        'annee_scolaire' => 'string', 'tranche_age' => 'string', 'nb1' => 'int'
     ];
 
     /**
@@ -59,7 +58,7 @@ class RepartitionBourcBenf extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

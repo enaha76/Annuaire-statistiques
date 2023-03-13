@@ -6,20 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $annee_scolaire
- * @property string $etablissements
+ * @property string $institutions
  * @property int    $nb1
- * @property int    $nb2
- * @property int    $nb3
- * @property int    $nb4
  */
-class EffectifEtbGMEt extends Model
+class etu9 extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'effectif_etb_g_m_et';
+    protected $table = 'Montants_bource';
 
     /**
      * The primary key for the model.
@@ -34,7 +31,7 @@ class EffectifEtbGMEt extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'etablissements', 'nb1', 'nb2', 'nb3', 'nb4'
+        'annee_scolaire', 'institutions', 'nb1'
     ];
 
     /**
@@ -43,7 +40,7 @@ class EffectifEtbGMEt extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -52,7 +49,7 @@ class EffectifEtbGMEt extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'etablissements' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int'
+        'annee_scolaire' => 'string', 'institutions' => 'string', 'nb1' => 'int'
     ];
 
     /**
@@ -61,7 +58,7 @@ class EffectifEtbGMEt extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

@@ -5,21 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $filiere
+ * @property string $annee_scolaire
+ * @property string $institutions
  * @property int    $nb1
  * @property int    $nb2
- * @property int    $nb3
- * @property int    $nb4
- * @property int    $nb5
  */
-class RepartitionOrEtg extends Model
+class etu8 extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'repartition_or_etg';
+    protected $table = 'repartition_bourc_benf';
 
     /**
      * The primary key for the model.
@@ -34,7 +32,7 @@ class RepartitionOrEtg extends Model
      * @var array
      */
     protected $fillable = [
-        'filiere', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5'
+        'annee_scolaire', 'institutions', 'nb1', 'nb2'
     ];
 
     /**
@@ -43,7 +41,7 @@ class RepartitionOrEtg extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -52,7 +50,7 @@ class RepartitionOrEtg extends Model
      * @var array
      */
     protected $casts = [
-        'filiere' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int'
+        'annee_scolaire' => 'string', 'institutions' => 'string', 'nb1' => 'int', 'nb2' => 'int'
     ];
 
     /**
@@ -61,7 +59,7 @@ class RepartitionOrEtg extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

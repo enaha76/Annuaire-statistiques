@@ -6,17 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $annee_scolaire
- * @property string $domaine
+ * @property string $etablissements
  * @property int    $nb1
+ * @property int    $nb2
+ * @property int    $nb3
+ * @property int    $nb4
+ * @property int    $nb5
+ * @property int    $nb6
+ * @property int    $nb7
  */
-class EnsgPermDoGEtb extends Model
+class ensg3 extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'ensg_perm_do_g_etb';
+    protected $table = 'repartition_ensg_grade';
 
     /**
      * The primary key for the model.
@@ -31,7 +37,7 @@ class EnsgPermDoGEtb extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'domaine', 'nb1'
+        'annee_scolaire', 'etablissements', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5', 'nb6', 'nb7'
     ];
 
     /**
@@ -40,7 +46,7 @@ class EnsgPermDoGEtb extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -49,7 +55,7 @@ class EnsgPermDoGEtb extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'domaine' => 'string', 'nb1' => 'int'
+        'annee_scolaire' => 'string', 'etablissements' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int', 'nb6' => 'int', 'nb7' => 'int'
     ];
 
     /**
@@ -58,7 +64,7 @@ class EnsgPermDoGEtb extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

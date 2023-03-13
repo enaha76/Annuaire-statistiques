@@ -6,18 +6,27 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $annee_scolaire
+ * @property string $institutions
  * @property string $domaine
  * @property int    $nb1
  * @property int    $nb2
+ * @property int    $nb3
+ * @property int    $nb4
+ * @property int    $nb5
+ * @property int    $nb6
+ * @property int    $nb7
+ * @property int    $nb8
+ * @property int    $nb9
+ * @property int    $nb10
  */
-class EffectifMDG extends Model
+class ensg6 extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'effectifM_d_g';
+    protected $table = 'ensg_perm_inst_do_di';
 
     /**
      * The primary key for the model.
@@ -32,7 +41,7 @@ class EffectifMDG extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'domaine', 'nb1', 'nb2'
+        'annee_scolaire', 'institutions', 'domaine', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5', 'nb6', 'nb7', 'nb8', 'nb9', 'nb10'
     ];
 
     /**
@@ -41,7 +50,7 @@ class EffectifMDG extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -50,7 +59,7 @@ class EffectifMDG extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'domaine' => 'string', 'nb1' => 'int', 'nb2' => 'int'
+        'annee_scolaire' => 'string', 'institutions' => 'string', 'domaine' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int', 'nb6' => 'int', 'nb7' => 'int', 'nb8' => 'int', 'nb9' => 'int', 'nb10' => 'int'
     ];
 
     /**
@@ -59,7 +68,7 @@ class EffectifMDG extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

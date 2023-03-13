@@ -5,9 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $annee_scolaire
  * @property string $institutions
- * @property string $domaine
+ * @property string $annee_scolaire
  * @property int    $nb1
  * @property int    $nb2
  * @property int    $nb3
@@ -18,15 +17,25 @@ use Illuminate\Database\Eloquent\Model;
  * @property int    $nb8
  * @property int    $nb9
  * @property int    $nb10
+ * @property int    $nb11
+ * @property int    $nb12
+ * @property int    $nb13
+ * @property int    $nb14
+ * @property int    $nb15
+ * @property int    $nb16
+ * @property int    $nb17
+ * @property int    $nb18
+ * @property int    $nb19
+ * @property int    $nb20
  */
-class EnsgPermInstDoDi extends Model
+class etu3 extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'ensg_perm_inst_do_di';
+    protected $table = 'effectifM_inst_n_g_FM';
 
     /**
      * The primary key for the model.
@@ -41,7 +50,7 @@ class EnsgPermInstDoDi extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'institutions', 'domaine', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5', 'nb6', 'nb7', 'nb8', 'nb9', 'nb10'
+        'institutions', 'annee_scolaire', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5', 'nb6', 'nb7', 'nb8', 'nb9', 'nb10', 'nb11', 'nb12', 'nb13', 'nb14', 'nb15', 'nb16', 'nb17', 'nb18', 'nb19', 'nb20'
     ];
 
     /**
@@ -50,7 +59,7 @@ class EnsgPermInstDoDi extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -59,7 +68,7 @@ class EnsgPermInstDoDi extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'institutions' => 'string', 'domaine' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int', 'nb6' => 'int', 'nb7' => 'int', 'nb8' => 'int', 'nb9' => 'int', 'nb10' => 'int'
+        'institutions' => 'string', 'annee_scolaire' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int', 'nb6' => 'int', 'nb7' => 'int', 'nb8' => 'int', 'nb9' => 'int', 'nb10' => 'int', 'nb11' => 'int', 'nb12' => 'int', 'nb13' => 'int', 'nb14' => 'int', 'nb15' => 'int', 'nb16' => 'int', 'nb17' => 'int', 'nb18' => 'int', 'nb19' => 'int', 'nb20' => 'int'
     ];
 
     /**
@@ -68,7 +77,7 @@ class EnsgPermInstDoDi extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

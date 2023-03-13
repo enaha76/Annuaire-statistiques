@@ -6,23 +6,27 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $annee_scolaire
- * @property string $etablissements
- * @property int    $nb1
- * @property int    $nb2
- * @property int    $nb3
- * @property int    $nb4
- * @property int    $nb5
- * @property int    $nb6
- * @property int    $nb7
+ * @property string $genre
+ * @property string $niveaux
+ * @property int    $ALGERIE
+ * @property int    $ALLEMAGNE
+ * @property int    $CANADA
+ * @property int    $COTE_D_IVOIRE
+ * @property int    $EGYPTE
+ * @property int    $FRANCE
+ * @property int    $MALI
+ * @property int    $MAROC
+ * @property int    $SENEGAL
+ * @property int    $TUNISIE
  */
-class RepartitionEnsgGrade extends Model
+class bour1 extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'repartition_ensg_grade';
+    protected $table = 'etudiants_boursiers_etg_n_g_pa';
 
     /**
      * The primary key for the model.
@@ -37,7 +41,7 @@ class RepartitionEnsgGrade extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'etablissements', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5', 'nb6', 'nb7'
+        'annee_scolaire', 'genre', 'niveaux', 'ALGERIE', 'ALLEMAGNE', 'CANADA', 'COTE_D_IVOIRE', 'EGYPTE', 'FRANCE', 'MALI', 'MAROC', 'SENEGAL', 'TUNISIE'
     ];
 
     /**
@@ -46,7 +50,7 @@ class RepartitionEnsgGrade extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -55,7 +59,7 @@ class RepartitionEnsgGrade extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'etablissements' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int', 'nb6' => 'int', 'nb7' => 'int'
+        'annee_scolaire' => 'string', 'genre' => 'string', 'niveaux' => 'string', 'ALGERIE' => 'int', 'ALLEMAGNE' => 'int', 'CANADA' => 'int', 'COTE_D_IVOIRE' => 'int', 'EGYPTE' => 'int', 'FRANCE' => 'int', 'MALI' => 'int', 'MAROC' => 'int', 'SENEGAL' => 'int', 'TUNISIE' => 'int'
     ];
 
     /**
@@ -64,7 +68,7 @@ class RepartitionEnsgGrade extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

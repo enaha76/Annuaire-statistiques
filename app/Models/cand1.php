@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $wilaya
  * @property int    $effectif
  */
-class CandidatsEffectif extends Model
+class cand1 extends Model
 {
     /**
      * The database table used by the model.
@@ -40,7 +40,7 @@ class CandidatsEffectif extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -58,7 +58,7 @@ class CandidatsEffectif extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

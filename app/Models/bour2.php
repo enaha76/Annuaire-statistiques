@@ -5,18 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $etablissements
  * @property string $annee_scolaire
+ * @property string $pays
  * @property int    $nb1
+ * @property int    $nb2
+ * @property int    $nb3
+ * @property int    $nb4
+ * @property int    $nb5
+ * @property int    $nb6
+ * @property int    $nb7
  */
-class RepartitionEnsgEtb extends Model
+class bour2 extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'repartition_ensg_etb';
+    protected $table = 'etudiants_boursiers_etg_cyc_pa';
 
     /**
      * The primary key for the model.
@@ -31,7 +37,7 @@ class RepartitionEnsgEtb extends Model
      * @var array
      */
     protected $fillable = [
-        'etablissements', 'annee_scolaire', 'nb1'
+        'annee_scolaire', 'pays', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5', 'nb6', 'nb7'
     ];
 
     /**
@@ -40,7 +46,7 @@ class RepartitionEnsgEtb extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -49,7 +55,7 @@ class RepartitionEnsgEtb extends Model
      * @var array
      */
     protected $casts = [
-        'etablissements' => 'string', 'annee_scolaire' => 'string', 'nb1' => 'int'
+        'annee_scolaire' => 'string', 'pays' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int', 'nb6' => 'int', 'nb7' => 'int'
     ];
 
     /**
@@ -58,7 +64,7 @@ class RepartitionEnsgEtb extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

@@ -28,7 +28,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int    $nb19
  * @property int    $nb20
  */
-class EffectifMDGNFM extends Model
+class etu6 extends Model
 {
     /**
      * The database table used by the model.
@@ -59,7 +59,7 @@ class EffectifMDGNFM extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -77,7 +77,7 @@ class EffectifMDGNFM extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

@@ -6,27 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $annee_scolaire
- * @property string $genre
- * @property string $niveaux
- * @property int    $ALGERIE
- * @property int    $ALLEMAGNE
- * @property int    $CANADA
- * @property int    $COTE_D_IVOIRE
- * @property int    $EGYPTE
- * @property int    $FRANCE
- * @property int    $MALI
- * @property int    $MAROC
- * @property int    $SENEGAL
- * @property int    $TUNISIE
+ * @property string $domaine
+ * @property int    $nb1
  */
-class EtudiantsBoursiersEtgNGPa extends Model
+class ensg5 extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'etudiants_boursiers_etg_n_g_pa';
+    protected $table = 'ensg_perm_do_g_etb';
 
     /**
      * The primary key for the model.
@@ -41,7 +31,7 @@ class EtudiantsBoursiersEtgNGPa extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'genre', 'niveaux', 'ALGERIE', 'ALLEMAGNE', 'CANADA', 'COTE_D_IVOIRE', 'EGYPTE', 'FRANCE', 'MALI', 'MAROC', 'SENEGAL', 'TUNISIE'
+        'annee_scolaire', 'domaine', 'nb1'
     ];
 
     /**
@@ -50,7 +40,7 @@ class EtudiantsBoursiersEtgNGPa extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -59,7 +49,7 @@ class EtudiantsBoursiersEtgNGPa extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'genre' => 'string', 'niveaux' => 'string', 'ALGERIE' => 'int', 'ALLEMAGNE' => 'int', 'CANADA' => 'int', 'COTE_D_IVOIRE' => 'int', 'EGYPTE' => 'int', 'FRANCE' => 'int', 'MALI' => 'int', 'MAROC' => 'int', 'SENEGAL' => 'int', 'TUNISIE' => 'int'
+        'annee_scolaire' => 'string', 'domaine' => 'string', 'nb1' => 'int'
     ];
 
     /**
@@ -68,7 +58,7 @@ class EtudiantsBoursiersEtgNGPa extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

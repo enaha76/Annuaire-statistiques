@@ -5,19 +5,33 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
+ * @property string $institutions
  * @property string $annee_scolaire
- * @property string $fonction
  * @property int    $nb1
  * @property int    $nb2
+ * @property int    $nb3
+ * @property int    $nb4
+ * @property int    $nb5
+ * @property int    $nb6
+ * @property int    $nb7
+ * @property int    $nb8
+ * @property int    $nb9
+ * @property int    $nb10
+ * @property int    $nb11
+ * @property int    $nb12
+ * @property int    $nb13
+ * @property int    $nb14
+ * @property int    $nb15
+ * @property int    $nb16
  */
-class RepartitionPersCnou extends Model
+class sort1 extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'repartition_pers_cnou';
+    protected $table = 'sortants_d_i_g';
 
     /**
      * The primary key for the model.
@@ -32,7 +46,7 @@ class RepartitionPersCnou extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'fonction', 'nb1', 'nb2'
+        'institutions', 'annee_scolaire', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5', 'nb6', 'nb7', 'nb8', 'nb9', 'nb10', 'nb11', 'nb12', 'nb13', 'nb14', 'nb15', 'nb16'
     ];
 
     /**
@@ -41,7 +55,7 @@ class RepartitionPersCnou extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -50,7 +64,7 @@ class RepartitionPersCnou extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'fonction' => 'string', 'nb1' => 'int', 'nb2' => 'int'
+        'institutions' => 'string', 'annee_scolaire' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int', 'nb6' => 'int', 'nb7' => 'int', 'nb8' => 'int', 'nb9' => 'int', 'nb10' => 'int', 'nb11' => 'int', 'nb12' => 'int', 'nb13' => 'int', 'nb14' => 'int', 'nb15' => 'int', 'nb16' => 'int'
     ];
 
     /**
@@ -59,7 +73,7 @@ class RepartitionPersCnou extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**

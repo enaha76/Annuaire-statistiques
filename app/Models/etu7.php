@@ -6,17 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $annee_scolaire
- * @property string $institutions
+ * @property string $domaine
  * @property int    $nb1
+ * @property int    $nb2
  */
-class MontantsBource extends Model
+class etu7 extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'Montants_bource';
+    protected $table = 'effectifM_d_g';
 
     /**
      * The primary key for the model.
@@ -31,7 +32,7 @@ class MontantsBource extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'institutions', 'nb1'
+        'annee_scolaire', 'domaine', 'nb1', 'nb2'
     ];
 
     /**
@@ -40,7 +41,7 @@ class MontantsBource extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -49,7 +50,7 @@ class MontantsBource extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'institutions' => 'string', 'nb1' => 'int'
+        'annee_scolaire' => 'string', 'domaine' => 'string', 'nb1' => 'int', 'nb2' => 'int'
     ];
 
     /**
@@ -58,7 +59,7 @@ class MontantsBource extends Model
      * @var array
      */
     protected $dates = [
-        
+
     ];
 
     /**
