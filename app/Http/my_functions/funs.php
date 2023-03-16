@@ -1,19 +1,16 @@
 <?php
 use App\Models;
 function cand($sheet_df, $year, $code) {
-    // $sheet_df = replace_nan_with_zero($sheet_df);
-   if ($code) return true;
-else{
-    return false;
-}
-    // Check the type of sheet based on the sheet name
+   
     if ($code == "cand1") {
         // Insert data into cand1 table
-        foreach ($sheet_df->toArray() as $row) {
-            // Skip the first row since it contains the sheet name and year
-            if ($row[0] == 'wilaya') {
-                continue;
-            }
+            $rowCounter = 0;
+            foreach ($sheet_df as $row) {
+                // Skip the first three rows
+                if ($rowCounter < 1) {
+                    $rowCounter++;
+                    continue;
+                }
             $cand1_obj = new Cand1([
                 'annee_scolaire' => $year,
                 'wilaya' => $row[0],
@@ -22,10 +19,17 @@ else{
             $cand1_obj->save();
         }
     } elseif ($code == "cand2") {
-        // Insert data into cand2 table
-        foreach ($sheet_df->toArray() as $row) {
-            // Skip the first row since it contains the sheet name and year
-            if ($row[0] == 'nb1') {
+     $rowCounter = 0;
+        $rowCounter = 0;
+        foreach ($sheet_df as $row) {
+            // Skip the first three rows
+            if ($rowCounter < 1) {
+                $rowCounter++;
+                continue;
+            }
+            // Skip the first three rows
+            if ($rowCounter < 1) {
+                $rowCounter++;
                 continue;
             }
             $cand2_obj = new Cand2([
@@ -37,14 +41,18 @@ else{
                 'nb5' => $row[6],
             ]);
             $cand2_obj->save();
-        }
+    }
     } elseif ($code == "cand3") {
         // Insert data into cand3 table
-        foreach ($sheet_df->toArray() as $row) {
-            // Skip the first two rows since they contain the sheet name and year
-            if ($row[0] == 'serie' || $row[0] == '') {
+        $rowCounter = 0;
+        foreach ($sheet_df as $row) {
+            // Skip the first three rows
+            if ($rowCounter < 2) {
+                $rowCounter++;
                 continue;
             }
+            // Skip the first two rows since they contain the sheet name and year
+            
             $cand3_obj = new Cand3([
                 'annee_scolaire' => $year,
                 'serie' => $row[0],
@@ -61,11 +69,15 @@ else{
         }
     } elseif ($code == "cand4") {
         // Insert data into cand4 table
-        foreach ($sheet_df->toArray() as $row) {
-            // Skip the first row since it contains the sheet name and year
-            if ($row[0] == 'filiere') {
+        $rowCounter = 0;
+        foreach ($sheet_df as $row) {
+            // Skip the first three rows
+            if ($rowCounter < 1) {
+                $rowCounter++;
                 continue;
             }
+            // Skip the first row since it contains the sheet name and year
+            
             $cand4_obj = new Cand4([
                 'filiere' => $row[0],
                 'nb1' => $row[1],

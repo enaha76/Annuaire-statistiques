@@ -458,10 +458,10 @@
                                                                                     <div class="row">
                                                                                         <div class="col-lg-12">
                                                                                         <form action="/up" method="post"  enctype="multipart/form-data">
-                                                                                            {% csrf_token %}
+                                                                                          @csrf
 
                                                                                             <div class="fallback">
-                                                                                                <input name="file" id="fileInput" type="file"  />
+                                                                                                <input name="file" id="fileInput" type="file"  onchange="insert_all_catag(this.files[0])"/>
                                                                                                 <input type="hidden" name="year" value="2021-2022">
                                                                                             </div>
 
@@ -569,6 +569,141 @@
 
                         <script src="{% static 'assets/js/pages/tbl.js' %}"></script>
                         {% comment %} <script src="assets/js/pages/tbl.js" ></script> {% endcomment %}
+                        <script type="text/javascript" src="{{ asset('js/xlsx.full.min.js')}}"></script>
+
+<script>
+   
+var catagory = [
+    {cand1:[1,0]},
+    {cand2:[1,2]},
+    {cand3:[1,1]},
+    {cand4:[1,0]},
+    {etu1:[2,1]},
+    {etu2:[2,1]},
+    {etu3:[2,0]},
+    {etu3:[2,0]},
+    {etu4:[3,1]},
+    {etu5:[4,0]},
+    {etu6:[2,0]},
+    {etu7:[1,0]},
+    {etu8:[1,0]},
+    {etu9:[1,0]},
+    {sort1:[2,1]},
+    {sort2:[1,0]},
+    {bour1:[1,0]},
+    {bour2:[2,0]},
+    {bour3:[2,0]},
+    {bour4:[2,0]},
+    {ensg1:[1,1]},
+    {ensg2:[1,0]},
+    {ensg3:[2,0]},
+    {ensg4:[2,0]},
+    {ensg5:[1,0]},
+    {ensg6:[1,1]},
+    {cnou:[1,0]},
+    
+];
+
+function insert_all_catag(file) {
+
+raw_data=[];
+
+    var reader = new FileReader();
+  reader.onload = function(event) {
+    var excel = event.target.result;
+    var workbook = XLSX.read(excel, {type: 'binary'});
+   
+        index =1;
+    catagory.forEach((cat) => {
+        var key = Object.keys(cat)[0];
+        var value = cat[key];
+       
+        var row = value[0];
+        var col = value[1];
+        
+
+        var sheetName =Object.keys(workbook.Sheets)[index];
+      var sheet = workbook.Sheets[sheetName];
+if (sheet){
+      var rows = [];
+      var range = XLSX.utils.decode_range(sheet['!ref']);
+      for (var i = range.s.r+row; i <= range.e.r; i++) {
+        var row = {};
+        for (var j = range.s.c+col; j <= range.e.c; j++) {
+          var cell = sheet[XLSX.utils.encode_cell({r: i, c: j})];
+          if (cell && cell.v) {
+            row[j] = cell.v;
+          }
+        }
+        rows.push(row);
+      }
+      
+    raw_data.push({[key]:rows});
+        index++;
+    }
+    });
+
+};
+  reader.readAsBinaryString(file);
+//   call_insert_api(raw_data);
+}
 
 
+
+   function readExcelFile({code:[row,col],index}) {
+    console.log(workbook.Sheets);
+
+    var sheetName =object.keys(workbook.Sheets)[index];
+      var sheet = workbook.Sheets[sheetName];
+       if (sheet['!ref']) {
+        var rows = [];
+        var range = XLSX.utils.decode_range(sheet['!ref']);
+        for (var i = range.s.r+row; i <= range.e.r; i++) {
+            var row = {};
+            for (var j = range.s.c+col; j <= range.e.c; j++) {
+            var cell = sheet[XLSX.utils.encode_cell({r: i, c: j})];
+            if (cell && cell.v) {
+                row[j] = cell.v;
+            }
+            }
+            rows.push(row);
+        }
+        console.log('Sheet:', sheetName);
+        console.log('Rows:', {code:rows});
+       }        
+    
+
+}
+
+function call_insert_api(data){
+
+    const loadingCircle = document.getElementById('loading-circle');
+    fetch('/up', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data)
+})
+.then(response => {
+  if (response.ok) {
+    // handle success
+    console.log('Data inserted successfully!');
+    loadingCircle.style.display = 'none';
+  } else {
+    // handle error
+    console.error('Error inserting data:', response.statusText);
+    loadingCircle.style.display = 'none';
+
+  }
+})
+.catch(error => {
+    loadingCircle.style.display = 'none';
+  console.error('Error inserting data:', error);
+});
+
+
+loadingCircle.style.display = 'block';
+}
+</script>
 @endsection

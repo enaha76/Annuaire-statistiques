@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\all_studentsController;
 use App\Http\Controllers\EtablissementsController;
+use App\Http\Controllers\ArchiveController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -34,12 +35,16 @@ Route::controller(EtablissementsController::class)->group(function(){
 });
 
 
-Route::get('/helo', function () {
-    return view('helo');
-})->name('helo')->middleware('auth');
 
 
 
+Route::controller(ArchiveController::class)->group(function(){
+    Route::get('/helo', function () {
+        return view('helo');
+    })->name('helo')->middleware('auth');
+Route::post('/up',"up")->name("up");
+
+});
 
     Route::get('/layout-static', function () {
     return view('layout-static'); })->name('layout-static')->middleware('auth');
