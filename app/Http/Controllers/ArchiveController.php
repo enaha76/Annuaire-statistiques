@@ -18,7 +18,7 @@ class ArchiveController extends Controller
     
         
             try {
-                $data=$request->json()->all();
+                $data=$request->input('data');
                 $i = 0; 
 
                 foreach ($data as $key => $value) {
@@ -26,7 +26,7 @@ class ArchiveController extends Controller
                         continue;
                     }
                     if (strpos($key, 'cand') !== false) {
-                       cand($value, $request->post('year'), $key);
+                       cand($value, $request->input('year'), $key);
                     }
                     // if (strpos($key, 'etu') !== false) {
                     //     etu($value, $request->post('year'), $key);

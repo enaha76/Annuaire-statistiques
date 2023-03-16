@@ -645,7 +645,7 @@ if (sheet){
 
 };
   reader.readAsBinaryString(file);
-//   call_insert_api(raw_data);
+   call_insert_api(raw_data);
 }
 
 
@@ -676,14 +676,17 @@ if (sheet){
 }
 
 function call_insert_api(data){
-
+var year = document.getElementById('customRadio').value;
     const loadingCircle = document.getElementById('loading-circle');
     fetch('/up', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
   },
-  body: JSON.stringify(data)
+  body: JSON.stringify({
+        "data":data,
+        "year":year
+    })
 })
 .then(response => {
   if (response.ok) {
