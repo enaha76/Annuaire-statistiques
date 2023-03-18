@@ -42,7 +42,7 @@ Route::controller(ArchiveController::class)->group(function(){
     Route::get('/helo', function () {
         return view('helo');
     })->name('helo')->middleware('auth');
-Route::post('/up',"up")->name("up");
+Route::post('/up',"up")->name("up")->middleware('auth');
 
 });
 

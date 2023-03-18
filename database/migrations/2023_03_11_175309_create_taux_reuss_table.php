@@ -25,6 +25,10 @@ return new class extends Migration
             $table->integer('nb6');
             $table->integer('nb7');
             $table->integer('nb8');
+            $table->string('nb9');
+            $table->string('nb10');
+            $table->string('nb11');
+            $table->string('nb12');
         });
     }
 

@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int    $nb4
  * @property int    $nb5
  * @property int    $nb6
+ * @property int    $TOTAL
  */
 class bour3 extends Model
 {
@@ -36,7 +37,7 @@ class bour3 extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'pays', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5', 'nb6'
+        'annee_scolaire', 'pays', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5', 'nb6', 'TOTAL'
     ];
 
     /**
@@ -54,7 +55,7 @@ class bour3 extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'pays' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int', 'nb6' => 'int'
+        'annee_scolaire' => 'string', 'pays' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int', 'nb6' => 'int', 'TOTAL' => 'int'
     ];
 
     /**

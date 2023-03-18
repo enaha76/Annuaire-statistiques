@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $institutions
  * @property int    $nb1
  * @property int    $nb2
+ * @property string    $nb3
  */
 class etu8 extends Model
 {
@@ -32,7 +33,7 @@ class etu8 extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'institutions', 'nb1', 'nb2'
+        'annee_scolaire', 'institutions', 'nb1', 'nb2' , 'nb3'
     ];
 
     /**
@@ -50,7 +51,7 @@ class etu8 extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'institutions' => 'string', 'nb1' => 'int', 'nb2' => 'int'
+        'annee_scolaire' => 'string', 'institutions' => 'string', 'nb1' => 'int', 'nb2' => 'int' , 'nb3' => 'string'
     ];
 
     /**

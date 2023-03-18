@@ -15,6 +15,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property int    $nb6
  * @property int    $nb7
  * @property int    $nb8
+ * @property string    $nb9
+ * @property string    $nb10
+ * @property string    $nb11
+ * @property string    $nb12
+ * 
+ * 
  */
 class cand3 extends Model
 {
@@ -38,7 +44,7 @@ class cand3 extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'serie', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5', 'nb6', 'nb7', 'nb8'
+        'annee_scolaire', 'serie', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5', 'nb6', 'nb7', 'nb8' , 'nb9' , 'nb10' , 'nb11' , 'nb12'
     ];
 
     /**
@@ -56,7 +62,7 @@ class cand3 extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'serie' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int', 'nb6' => 'int', 'nb7' => 'int', 'nb8' => 'int'
+        'annee_scolaire' => 'string', 'serie' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int', 'nb6' => 'int', 'nb7' => 'int', 'nb8' => 'int' , 'nb9' => 'string' , 'nb10' => 'string' , 'nb11' => 'string' , 'nb12' => 'string'
     ];
 
     /**

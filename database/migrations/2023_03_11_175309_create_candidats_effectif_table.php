@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigInteger('id', true);
             $table->string('annee_scolaire');
             $table->string('wilaya');
-            $table->integer('effectif');
+            $table->integer('nb1');
         });
     }
 

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('institutions');
             $table->integer('nb1');
             $table->integer('nb2');
+            $table->string('nb3');
         });
     }
 
