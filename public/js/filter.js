@@ -58,7 +58,9 @@ for (var i = 0; i < headers.length; i++) {
     labels.push(headers[i].textContent);
 }
    let colorin=generateRandomColor()
-    console.log(colorin,"fffff");
+    // console.log(colorin,"fffff");
+
+
     var data = {
         labels: [],
         datasets: []
@@ -533,7 +535,7 @@ for (var i = 0; i < subEtablissments.length; i++) {
     }
    }
 }
-console.log(bigEtablissmentsCounts);
+// console.log(bigEtablissmentsCounts);
 Object.values(bigEtablissmentsCounts).forEach((bigEtablissment) => {
     var row = document.createElement("tr");
     cell = document.createElement("td");
@@ -551,7 +553,7 @@ Object.values(bigEtablissmentsCounts).forEach((bigEtablissment) => {
         }
         row.appendChild(cell);
     });
-console.log(row);
+// console.log(row);
     tbody.appendChild(row);
 });
 
@@ -601,7 +603,7 @@ for (var i = 0; i < instituts.length; i++) {
         mergetbody(tbody);
         tbody.appendChild(Totale)
         table.appendChild(tbody);
-        console.log(chrt(table));
+        // console.log(chrt(table));
         return table;
     case 2:
         var instituts = etablissements.filter(
@@ -761,7 +763,7 @@ for (var i = 0; i < subEtablissments.length; i++) {
     }
    }
 }
-console.log(bigEtablissmentsCounts);
+// console.log(bigEtablissmentsCounts);
 Object.values(bigEtablissmentsCounts).forEach((bigEtablissment) => {
     var row = document.createElement("tr");
     cell = document.createElement("td");
@@ -779,7 +781,7 @@ Object.values(bigEtablissmentsCounts).forEach((bigEtablissment) => {
         }
         row.appendChild(cell);
     });
-console.log(row);
+// console.log(row);
     tbody.appendChild(row);
 });
 
@@ -964,12 +966,12 @@ function createhead(objArray ,t=0) {
             td.innerHTML = objArray[j][objKeys[i]]
             td.className="bg-dark text-light"
             td.id = j
-            console.log(td);
+            // console.log(td);
             trs[i].appendChild(td)
         }
 
     }
-console.log(objArray);
+// console.log(objArray);
     let thead = document.createElement('thead');
     thead.id = "thead";
     for (let i = 0; i < trs.length; i++) {
@@ -1084,7 +1086,7 @@ function mergeCells(thead,t=0) {
                 thead.rows[i].removeChild(thead.rows[i].cells[j]);
             } else {
                 if (colspanCount > 1) {
-                    console.log(j,thead.rows[i]);
+                    // console.log(j,thead.rows[i]);
                     thead.rows[i].cells[j + 1].setAttribute(
                         "colspan",
                         colspanCount
