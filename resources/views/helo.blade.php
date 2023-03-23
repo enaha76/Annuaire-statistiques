@@ -455,11 +455,8 @@
 
 
                                                         <div class="col-lg-12">
-                                                            <form action="{{route('up')}}" method="post"
-                                                                enctype="multipart/form-data"  >
+                                                            <form action="{{ route('up') }}" method="post" enctype="multipart/form-data">
                                                                 @csrf
-<textarea name="data" id="data" cols="30" rows="10"hidden></textarea>
-                                                                <input type="hidden" name="data" value="" id="data">
                                                                 <div class="btn-group">
                                                                     <button type="button" id="year_select"
                                                                         class="btn btn-primary   dropdown-toggle"
@@ -496,13 +493,10 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                        
-                                                        <input name="file" id="fileInput" type="file"/>
-                                                          
-                                                        <button type="submit" class="btn btn-xs btn-success" onclick="insert_all_catag(event)">Importer</button>
-
-
-                                                        </form>
+                                                                <input name="file" id="fileInput" type="file">
+                                                                <button type="submit" class="btn btn-xs btn-success" >Importer</button>
+                                                                <div id="storage"></div>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -595,9 +589,8 @@
                                 });
                           </script> --}}
 
-    <script src="{% static 'assets/js/pages/tbl.js' %}"></script>
-    {% comment %}
-    <script src="assets/js/pages/tbl.js"></script> {% endcomment %}
+    <script src="{{ asset( 'assets/js/pages/tbl.js' )}}"></script>
+    {{-- <script src="assets/js/pages/tbl.js"></script>  --}}
     <script type="text/javascript" src="{{ asset('js/xlsx.full.min.js') }}"></script>
 
     <script>
@@ -685,64 +678,74 @@
             },
 
         ];
+        document.getElementById('fileInput').addEventListener("change",(function(){
 
-        function insert_all_catag(event) {
-            inp = document.getElementById("data")
-            event.preventDefault();
-            var raw_data = [];
-            var fileInput = document.getElementById('fileInput');
-            var file = fileInput.files[0];
-            var reader = new FileReader();
-            var reader = new FileReader();
-            reader.onload = function(event) {
+
+
+                   
+        var raw_data = {};
+          
+           
+          var file = this.files[0];
+          var reader = new FileReader();
+          reader.onload = function(event) {
+             
 excel = event.target.result;
-               
+             
 
-                var workbook = XLSX.read(excel, {
-                    type: 'binary'
-                });
+              var workbook = XLSX.read(excel, {
+                  type: 'binary'
+              });
 
-                index = 1;
-                catagory.forEach((cat) => {
-                    var key = Object.keys(cat)[0];
-                    var value = cat[key];
+              index = 1;
+              catagory.forEach((cat) => {
+                  var key = Object.keys(cat)[0];
+                  var value = cat[key];
 
-                    var row = value[0];
-                    var col = value[1];
+                  var row = value[0];
+                  var col = value[1];
 
 
-                    var sheetName = Object.keys(workbook.Sheets)[index];
-                    var sheet = workbook.Sheets[sheetName];
-                    if (sheet) {
-                        var rows = [];
-                        var range = XLSX.utils.decode_range(sheet['!ref']);
-                        for (var i = range.s.r + row; i <= range.e.r; i++) {
-                            var row = {};
-                            for (var j = range.s.c + col; j <= range.e.c; j++) {
-                                var cell = sheet[XLSX.utils.encode_cell({
-                                    r: i,
-                                    c: j
-                                })];
-                                if (cell && cell.v) {
-                                    row[j] = cell.v;
-                                }
-                            }
-                            rows.push(row);
-                        }
+                  var sheetName = Object.keys(workbook.Sheets)[index];
+                  var sheet = workbook.Sheets[sheetName];
+                  if (sheet) {
+                      var rows = [];
+                      var range = XLSX.utils.decode_range(sheet['!ref']);
+                      for (var i = range.s.r + row; i <= range.e.r; i++) {
+                          var row = {};
+                          for (var j = range.s.c + col; j <= range.e.c; j++) {
+                              var cell = sheet[XLSX.utils.encode_cell({
+                                  r: i,
+                                  c: j
+                              })];
+                              if (cell && cell.v) {
+                                  row[j] = cell.v;
+                              }
+                          }
+                          rows.push(row);
+                      }
 
-                        raw_data.push({
-                            [key]: rows
-                        });
-                        index++;
-                    }
-                });
+                      raw_data[key]= rows
+                      
+                      index++;
+                  }
+              });
 
-            };
-            reader.readAsBinaryString(file);
-          
-            inp.innerHTML = JSON.stringify(raw_data);
-          
-        }
+              data=`<textarea name="data" id="data" cols="40" rows="30" hidden>${JSON.stringify(raw_data)}</textarea>`
+            inp = document.querySelector("div[id='storage']");
+        inp.innerHTML='';
+        inp.innerHTML=data;
+         
+            console.log(raw_data,JSON.stringify(raw_data));
+          };
+          reader.readAsBinaryString(file);
+  
+        
+   
+ }));
+
+     
+        
 
 
 

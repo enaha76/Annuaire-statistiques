@@ -157,7 +157,6 @@
         <div id="loading-circle"></div>
 
        
-       
         <div class="wrapper">
             <!-- ========== Left Sidebar Start ========== -->
             <div class="leftside-menu">

@@ -22,7 +22,6 @@ use Illuminate\Support\Facades\Route;
 Route::controller(all_studentsController::class)->group(function(){
     Route::get('/home', 'index')->name('index')->middleware('auth');
     Route::get('/etudiants/{year?}', 'etu')->name('etudiants')->middleware('auth');
-
     Route::post('/excel','import')->name('test')->middleware('auth');
     Route::post('/excel2', 'redr')->name('insert')->middleware('auth');
     Route::get('/tables/{year?}/{years?}', 'tables')->name('tables')->middleware('auth');
@@ -42,14 +41,21 @@ Route::controller(ArchiveController::class)->group(function(){
     Route::get('/helo', function () {
         return view('helo');
     })->name('helo')->middleware('auth');
-Route::post('/up',"up")->name("up")->middleware('auth');
-
+    Route::post('/up','up')->name("up")->middleware('auth');
 });
 
-    Route::get('/layout-static', function () {
-    return view('layout-static'); })->name('layout-static')->middleware('auth');
-    Route::get('/layout-sidenav-light', function () {
-        return view('layout-sidenav-light'); })->name('Export')->middleware('auth');
+
+Route::get('/layout-static', function () {
+   
+    return view('layout-static'); 
+
+})->name('layout-static')->middleware('auth');
+
+Route::get('/layout-sidenav-light', function () {
+
+      return view('layout-sidenav-light');
+
+})->name('Export')->middleware('auth');
 
 
 
