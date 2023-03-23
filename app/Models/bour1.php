@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int    $MAROC
  * @property int    $SENEGAL
  * @property int    $TUNISIE
+ * @property int    $TOTAL
  */
 class bour1 extends Model
 {
@@ -41,7 +42,7 @@ class bour1 extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'genre', 'niveaux', 'ALGERIE', 'ALLEMAGNE', 'CANADA', 'COTE_D_IVOIRE', 'EGYPTE', 'FRANCE', 'MALI', 'MAROC', 'SENEGAL', 'TUNISIE'
+        'annee_scolaire', 'genre', 'niveaux', 'ALGERIE', 'ALLEMAGNE', 'CANADA', 'COTE_D_IVOIRE', 'EGYPTE', 'FRANCE', 'MALI', 'MAROC', 'SENEGAL', 'TUNISIE', 'TOTAL'
     ];
 
     /**
@@ -59,7 +60,7 @@ class bour1 extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'genre' => 'string', 'niveaux' => 'string', 'ALGERIE' => 'int', 'ALLEMAGNE' => 'int', 'CANADA' => 'int', 'COTE_D_IVOIRE' => 'int', 'EGYPTE' => 'int', 'FRANCE' => 'int', 'MALI' => 'int', 'MAROC' => 'int', 'SENEGAL' => 'int', 'TUNISIE' => 'int'
+        'annee_scolaire' => 'string', 'genre' => 'string', 'niveaux' => 'string', 'ALGERIE' => 'int', 'ALLEMAGNE' => 'int', 'CANADA' => 'int', 'COTE_D_IVOIRE' => 'int', 'EGYPTE' => 'int', 'FRANCE' => 'int', 'MALI' => 'int', 'MAROC' => 'int', 'SENEGAL' => 'int', 'TUNISIE' => 'int', 'TOTAL' => 'int'
     ];
 
     /**

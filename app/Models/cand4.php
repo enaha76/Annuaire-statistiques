@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int    $nb3
  * @property int    $nb4
  * @property int    $nb5
+ * @property int    $nb6
  */
 class cand4 extends Model
 {
@@ -34,7 +35,7 @@ class cand4 extends Model
      * @var array
      */
     protected $fillable = [
-        'filiere', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5'
+        'filiere', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5' , 'nb6'
     ];
 
     /**
@@ -52,7 +53,7 @@ class cand4 extends Model
      * @var array
      */
     protected $casts = [
-        'filiere' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int'
+        'filiere' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int' , 'nb6' => 'int'
     ];
 
     /**

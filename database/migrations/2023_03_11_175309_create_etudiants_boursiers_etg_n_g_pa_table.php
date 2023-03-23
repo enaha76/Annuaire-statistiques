@@ -28,6 +28,7 @@ return new class extends Migration
             $table->integer('MAROC')->nullable();
             $table->integer('SENEGAL')->nullable();
             $table->integer('TUNISIE')->nullable();
+            $table->integer('TOTAL')->nullable();
         });
     }
 

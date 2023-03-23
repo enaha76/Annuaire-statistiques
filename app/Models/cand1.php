@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property string $annee_scolaire
  * @property string $wilaya
- * @property int    $effectif
+ * @property int    $nb1
  */
 class cand1 extends Model
 {
@@ -16,7 +16,7 @@ class cand1 extends Model
      *
      * @var string
      */
-    protected $table = 'candidats_effectif';
+    protected $table = 'candidats_nb1';
 
     /**
      * The primary key for the model.
@@ -31,7 +31,7 @@ class cand1 extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'wilaya', 'effectif'
+        'annee_scolaire', 'wilaya', 'nb1'
     ];
 
     /**
@@ -49,7 +49,7 @@ class cand1 extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'wilaya' => 'string', 'effectif' => 'int'
+        'annee_scolaire' => 'string', 'wilaya' => 'string', 'nb1' => 'int'
     ];
 
     /**

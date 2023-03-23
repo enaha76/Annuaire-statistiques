@@ -26,6 +26,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int    $nb17
  * @property int    $nb18
  * @property int    $nb19
+ * @property int    $nb20
+ * @property int    $nb21
  */
 class ensg4 extends Model
 {
@@ -49,7 +51,7 @@ class ensg4 extends Model
      * @var array
      */
     protected $fillable = [
-        'annee_scolaire', 'etablissements', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5', 'nb6', 'nb7', 'nb8', 'nb9', 'nb10', 'nb11', 'nb12', 'nb13', 'nb14', 'nb15', 'nb16', 'nb17', 'nb18', 'nb19'
+        'annee_scolaire', 'etablissements', 'nb1', 'nb2', 'nb3', 'nb4', 'nb5', 'nb6', 'nb7', 'nb8', 'nb9', 'nb10', 'nb11', 'nb12', 'nb13', 'nb14', 'nb15', 'nb16', 'nb17', 'nb18', 'nb19' , 'nb20', 'nb21'
     ];
 
     /**
@@ -67,7 +69,7 @@ class ensg4 extends Model
      * @var array
      */
     protected $casts = [
-        'annee_scolaire' => 'string', 'etablissements' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int', 'nb6' => 'int', 'nb7' => 'int', 'nb8' => 'int', 'nb9' => 'int', 'nb10' => 'int', 'nb11' => 'int', 'nb12' => 'int', 'nb13' => 'int', 'nb14' => 'int', 'nb15' => 'int', 'nb16' => 'int', 'nb17' => 'int', 'nb18' => 'int', 'nb19' => 'int'
+        'annee_scolaire' => 'string', 'etablissements' => 'string', 'nb1' => 'int', 'nb2' => 'int', 'nb3' => 'int', 'nb4' => 'int', 'nb5' => 'int', 'nb6' => 'int', 'nb7' => 'int', 'nb8' => 'int', 'nb9' => 'int', 'nb10' => 'int', 'nb11' => 'int', 'nb12' => 'int', 'nb13' => 'int', 'nb14' => 'int', 'nb15' => 'int', 'nb16' => 'int', 'nb17' => 'int', 'nb18' => 'int', 'nb19' => 'int' , 'nb20' => 'int', 'nb21' => 'int'
     ];
 
     /**

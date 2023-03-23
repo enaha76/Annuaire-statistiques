@@ -36,6 +36,8 @@ return new class extends Migration
             $table->integer('nb17');
             $table->integer('nb18');
             $table->integer('nb19');
+            $table->integer('nb20');
+            $table->integer('nb21');
         });
     }
 
