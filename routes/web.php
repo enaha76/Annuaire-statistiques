@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\all_studentsController;
 use App\Http\Controllers\EtablissementsController;
+use App\Http\Controllers\HistiriqueController;
+use App\Models\Histirique;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +33,11 @@ Route::controller(EtablissementsController::class)->group(function(){
     Route::get('/etablissements', 'index')->name('etablissements')->middleware('auth');
     Route::get('/import/etudiants', 'import')->name('import_etudiant')->middleware('auth');
     Route::get('/etablissements/{id?}', 'show')->name('one')->middleware('auth');
+});
+
+Route::controller(HistiriqueController::class)->group(function(){
+    Route::get('/tables','historique')->middleware('auth');
+    Route::get('/tables','inserthist')->middleware('auth');
 });
 
 

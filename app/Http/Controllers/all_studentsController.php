@@ -22,41 +22,41 @@ class all_studentsController extends Controller
     $year = $lastYear . '-' . $currentYear;
 
 
-    
+
     $List = DB::select('SELECT
      abrev,
      etablissements.nom,
      etablissements.id,
      etablissements.identifiant,
-     COUNT(id_etablissement) as total 
+     COUNT(id_etablissement) as total
      FROM
-      inscrire 
+      inscrire
       RIGHT JOIN
        etablissements
-       on 
-       etablissements.id=inscrire.id_etablissement 
+       on
+       etablissements.id=inscrire.id_etablissement
     GROUP BY
      abrev,
      etablissements.nom,id,identifiant;
-     
+
     ');
     $List = (array) $List;
 
     $List2=DB::select('SELECT etablissements.id,
     etablissements.nom,
     etablissements.type,
-    etablissements.abrev, 
+    etablissements.abrev,
     COUNT(inscrire.id_etablissement) as total
     FROM etablissements
-    LEFT JOIN etablissements 
+    LEFT JOIN etablissements
     as identifiantEtablissement
      ON identifiantEtablissement.id = etablissements.identifiant
     LEFT JOIN
-     inscrire 
+     inscrire
      ON inscrire.id_etablissement = etablissements.id
-    WHERE 
-    identifiantEtablissement.identifiant 
-    IS NULL AND 
+    WHERE
+    identifiantEtablissement.identifiant
+    IS NULL AND
     etablissements.identifiant IS NULL
     GROUP BY etablissements.id,
         nom,
@@ -69,21 +69,21 @@ class all_studentsController extends Controller
      etablissements.id,
      etablissements.nom,
      etablissements.abrev,
-     etablissements.identifiant 
-     FROM 
-     etablissements 
-     WHERE (identifiant is not null) 
+     etablissements.identifiant
+     FROM
+     etablissements
+     WHERE (identifiant is not null)
      or
       (identifiant is null AND type=\'institut\');');
       $List3 = (array) $List3;
 
-      $List4=DB::select('SELECT 
-      SUM(CASE WHEN type=\'Université\' THEN 1 ELSE 0 END) as \'Université\', 
+      $List4=DB::select('SELECT
+      SUM(CASE WHEN type=\'Université\' THEN 1 ELSE 0 END) as \'Université\',
       SUM(CASE WHEN type=\'Ecole\' THEN 1 ELSE 0 END) as \'Ecole\',
       SUM(CASE WHEN type=\'Academie\' THEN 1 ELSE 0 END) as \'Academie\',
       SUM(CASE WHEN type=\'institut\' THEN 1 ELSE 0 END) as \'institut\',
       SUM(CASE WHEN type=\'Faculté\' THEN 1 ELSE 0 END) as \'Faculté\'
-      
+
         FROM etablissements;');
 
         $List4 = (array) $List4;
@@ -91,7 +91,7 @@ class all_studentsController extends Controller
         $List5=DB::select('SELECT COUNT(*) as nbr from etudiants');
         $nbr_etudient = (array) $List5;
     return view('index', compact('List','List2','List3','List4','nbr_etudient'));
-    
+
   }
   public function etu($year = null) {
     if (!$year) {
@@ -99,7 +99,7 @@ class all_studentsController extends Controller
         $lastYear = $currentYear -1;
         $year = $lastYear . '-' . $currentYear;
     }
-    
+
     $enrollments = DB::table('inscrire')
     ->selectRaw('inscrire.*, etudiants.*, inscrire.année_scolaire , inscrire.id ')
     ->where('année_scolaire','=',$year)
@@ -117,28 +117,28 @@ class all_studentsController extends Controller
   public function tables($year = null)
   {
       $etats = Etablissement::all();
-   
+
       $List3=DB::select('SELECT
       etablissements.id,
       etablissements.nom,
       etablissements.abrev,
-      etablissements.identifiant 
-      FROM 
-      etablissements 
-      WHERE (identifiant is not null) 
+      etablissements.identifiant
+      FROM
+      etablissements
+      WHERE (identifiant is not null)
       or
        (identifiant is null AND type=\'institut\');');
        $List3 = (array) $List3;
-      
-       $List4=DB::select('SELECT 
+
+       $List4=DB::select('SELECT
        DISTINCT
        (id_etudiant) as idc,
        id_etablissement,
-       année_scolaire 
-       FROM 
+       année_scolaire
+       FROM
        inscrire;');
        $List4 = (array) $List4;
-    
+
       if (!$year) {
           $currentYear = date('Y');
           $lastYear = $currentYear -1;
@@ -156,7 +156,7 @@ class all_studentsController extends Controller
         'chek'=>$chek
     ]);
   }
-  
+
   public function import(Request $request)
   {
 
@@ -172,11 +172,11 @@ class all_studentsController extends Controller
     $establishment = $request->input('establishment');
 
     //check if the file has already been imported
-    
-    
+
+
 
       //ask for permission to overwrite the data
-     
+
       //proceed with import
 
       $data = json_decode($request->input('file'), true);
@@ -187,12 +187,12 @@ class all_studentsController extends Controller
       return redirect()->route('tables')->with('danger', 'Les données non été pas importées ');
 
 
-    
+
   }
   public function insert( $data, $establishment, $year)
   {
 
-   
+
       foreach ($data as $value) {
         $student = Etudiant::firstOrCreate([
           'NNI' => $value['NNI'],
@@ -222,7 +222,7 @@ class all_studentsController extends Controller
         ]);
       }
       return redirect()->route('tables')->with('success', 'Les données ont été importées avec succès!');
-    
+
   }
   public function redr(Request $request)
   {
@@ -231,7 +231,7 @@ class all_studentsController extends Controller
       $establishment = $request->input('establishment');
      return $this->insert( $data, $establishment, $year);
   }
-  
+
 }
 
 
