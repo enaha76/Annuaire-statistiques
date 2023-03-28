@@ -25,7 +25,7 @@
     <div class="col-sm-8">
         <div class="text-sm-end">
             <div class="dropdown"  aria-placeholder="Change it">
-                <button type="button" class="btn btn-primary mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <button type="button" class="btn btn-primary mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="year_change">
                     <i class="uil-calender"></i>changer  l'année 
                 </button>
               
@@ -57,8 +57,8 @@
 </div> 
 <div class="container-fluid">
                   <script>
-                    
-                    document.getElementById("year-select").addEventListener("change", function() {
+       var button=document.querySelector('#year_change');
+button.addEventListener("change", function() {
   let selectedYear = this.value;
   // Update the route with the selected year as the optional variable
   window.location.href = `/etudiants/${selectedYear}`;
@@ -74,52 +74,46 @@
         <div class="col-xl-12">  
             <div class="card">
                 <div class="card-body">
-                    <div class="dropdown btn-group dropend">
-                        <button class="btn btn-info dropdown-toggle  m-2" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class=" uil-graph-bar m-1"></i>Repartitions Personalisé
+                    <button id="repart" class="btn btn-info   m-2" type="button"
+                        >
+                        <i class=" uil-graph-bar m-1"></i>Repartitions Personalisé
                         </button>
-                        <div class="dropdown-menu dropdown-menu-animated">
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Genre
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Formation
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Niveau
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Redoublant
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Transfere
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Tronc/Filiere
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Nationalité
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Langue formation
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                    Boursier
-                                </li>
-                                
-                            </ul>
+                        <div id="search-options" class=" d-none">
+                        <div class="row">
+                            <span>Repartitions par Institution par </span>
+                            <div class="col-md-4">
+
+                            <select class="form-control  select2" id="select1" >
+                                <option value="kaka">select ur option</option>
+                                <option value="formation">FORMATION</option>
+                                <option value="Genre">Genre</option>
+                                <option value="boursier">BOURSIER</option>
+                                <option value="Redoublant">Redoublant</option>
+                                <option value="transfere">TRANSFERE</option>
+                                <option value="Nationalité">NATIONALITE</option>
+                                <option value="Langue">LANGUE DE FORMATION</option>
+                                <option value="Age">Age</option>
+                                <option value="Niveau">Niveau</option>
+                            </select>
+                            </div>
+                            <span>et par </span>
+                            <div class="col-md-4">
+                            <select class="form-control select2" id="select2" >
+                                <option value="kak">select ur option</option>
+                                <option value="formation">FORMATION</option>
+                                <option value="Genre">Genre</option>
+                                <option value="boursier">BOURSIER</option>
+                                <option value="Redoublant">Redoublant</option>
+                                <option value="transfere">TRANSFERE</option>
+                                <option value="Nationalité">NATIONALITE</option>
+                                <option value="Langue">LANGUE DE FORMATION</option>
+                                <option value="Age">Age</option>
+                                <option value="Niveau">Niveau</option>
+                            </select>
+
+                            </div>
                         </div>
-                    </div>
+                        </div>
                     <p class="text-muted font-14  header-title">
                         Vous devez choisir les criteres dont vous vouliez repartir les etudiants
                     
@@ -139,26 +133,12 @@
                     </ul> <!-- end nav-->
                     <div class="tab-content">
                         <div class="tab-pane show active" id="simple-bre-preview">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb mb-0">
-                                    <li class="breadcrumb-item active" aria-current="page">Home</li>
-                                </ol>
-                            </nav>
-                                
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb mb-0">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Library</li>
-                                </ol>
-                            </nav>
-                                
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb mb-0">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#">Library</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Data</li>
-                                </ol>
-                            </nav>
+                            <div class="table-responsive-sm">
+                               
+                            <div id="tables" class="  overflow-auto">
+                               
+                            </div>
+                            </div>
                         </div> <!-- end preview-->
                     
                         <div class="tab-pane" id="simple-bre-code">
@@ -478,7 +458,7 @@
 </div> <!-- end col -->
  {{-- fin Repartitions non-personnalisé --}}
             
-
+       
         <script src="assets/js/vendor/dropzone.min.js"></script>
         <!-- init js -->
         <script src="assets/js/ui/component.fileupload.js"></script>
@@ -504,23 +484,23 @@
 
         <!-- demo app -->
         
- <script src="assets/js/vendor.min.js"></script>
- <script src="assets/js/app.min.js"></script>
+        <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
 
- <!-- third party:js -->
- <script src="assets/js/vendor/apexcharts.min.js"></script>
- <!-- third party end -->
+        <!-- third party:js -->
+        {{-- <script src="assets/js/vendor/apexcharts.min.js"></script> --}}
+        <!-- third party end -->
 
- <!-- demo:js -->
- <script src="assets/js/pages/demo.apex-pie.js"></script>
- <!-- demo end -->
-<!-- demo:js -->
-<script src="assets/js/pages/demo.apex-bar.js"></script>
-<!-- demo end -->
- <!-- demo:js -->
- <script src="assets/js/pages/demo.apex-column.js"></script>
- <!-- demo end -->
- <script src={{asset('cdn/Chart.min.js')}}></script>
+        <!-- demo:js -->
+        {{-- <script src="assets/js/pages/demo.apex-pie.js"></script> --}}
+        <!-- demo end -->
+        <!-- demo:js -->
+        {{-- <script src="assets/js/pages/demo.apex-bar.js"></script> --}}
+        <!-- demo end -->
+        <!-- demo:js -->
+        {{-- <script src="assets/js/pages/demo.apex-column.js"></script> --}}
+        <!-- demo end -->
+        <script src={{asset('cdn/Chart.min.js')}}></script>
 
 <script defer>
     let data = @json($enrollments);
@@ -556,4 +536,14 @@
 
 
 </script>
+  <script>
+      const searchBtn = document.getElementById('repart');
+      const searchOptions = document.getElementById('search-options');
+
+      searchBtn.addEventListener('click', () => {
+        searchOptions.classList.toggle('d-none');
+      });
+  </script>
+    
+<script src="assets/js/pages/rep_per.js"></script>
        @endsection

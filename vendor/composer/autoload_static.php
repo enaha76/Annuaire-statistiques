@@ -655,6 +655,7 @@ class ComposerStaticInitcb24f38b72bb0ef81e90eb5f7352a6df
         'App\\Models\\Etablissement' => __DIR__ . '/../..' . '/app/Models/Etablissement.php',
         'App\\Models\\Etudiant' => __DIR__ . '/../..' . '/app/Models/Etudiant.php',
         'App\\Models\\Headertablemap' => __DIR__ . '/../..' . '/app/Models/Headertablemap.php',
+        'App\\Models\\Histirique' => __DIR__ . '/../..' . '/app/Models/Histirique.php',
         'App\\Models\\Inscrire' => __DIR__ . '/../..' . '/app/Models/Inscrire.php',
         'App\\Models\\Students' => __DIR__ . '/../..' . '/app/Models/Students.php',
         'App\\Models\\TbArchives' => __DIR__ . '/../..' . '/app/Models/TbArchives.php',

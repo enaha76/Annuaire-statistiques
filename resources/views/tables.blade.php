@@ -49,11 +49,11 @@
         <div class="text-sm-end">
             <div class="dropdown"  aria-placeholder="Change it">
                 <button type="button" class="btn btn-info mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                    <i class="uil-calender"></i>changer  l'année 
+                    <i class="uil-calender"></i>changer  l'année
                 </button>
-              
+
                 <div class="dropdown-menu dropdown-menu-end">
-                    
+
                     <p><input type="radio" class="form-check-input  m-1" id="year" name="filter" data-id="div 2" value="2021-2022">
                     <label class="form-check-label " for="dropdownCheck">
                     2021-2022
@@ -70,14 +70,14 @@
                     <label class="form-check-label" for="dropdownCheck">
                     2018-2019
                     </label></p>
-                    
-               
+
+
                 </div>
-          
+
             </div>
         </div>
     </div><!-- end col-->
-</div> 
+</div>
 
 {{-- select option --}}
 <div class="row">
@@ -85,7 +85,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="header-title">upload ur student file here</h4>
-    
+
                 <div class="tab-content">
                     <div class="tab-pane show active" id="select2-preview">
                         <div class="row">
@@ -98,11 +98,11 @@
                                          @endforeach
                                      </select>
                             </div> <!-- end col -->
-                            
+
                             <div class="">
                                 <br>
                                 <form action="">
-                                  <div class="fallback"></div>    
+                                  <div class="fallback"></div>
                                   <br>
                                   <div class='file-input ' id='cache_file'>
                                       <input type='file' id="fileInput">
@@ -111,8 +111,8 @@
                                   </div>
                                 </form>
                             </div> <!-- end col -->
-                        </div> <!-- end row -->                                           
-                    </div> <!-- end preview-->             
+                        </div> <!-- end row -->
+                    </div> <!-- end preview-->
                 </div> <!-- end tab-content-->
             </div> <!-- end card-body-->
         </div> <!-- end card-->
@@ -131,7 +131,7 @@
                     <thead class="table-light">
                         <tr>
                             <th>Name of file</th>
-                            
+
                             <th>Name of Etablisment</th>
                             <th>Number of student</th>
                             <th>Etat</th>
@@ -160,7 +160,7 @@
                             <td><a href="javascript: void(0);" class="icon-link"><i class="mdi mdi-delete email-action-icons-item"></i></a>
                                 <a href="javascript: void(0);" class="icon-link"><i class="mdi mdi-book-edit-outline"></i></a>
                             </td>
-                        </tr> 
+                        </tr>
                     </tbody>
                 </table>
             </div> <!-- end table-responsive-->
@@ -171,7 +171,7 @@
 
 <!-- Preview -->
 <div class="dropzone-previews mt-3" id="file-previews"></div>
-      
+
 <div id="sub2"></div>
 
 
@@ -189,7 +189,7 @@
                 <h5 class="mt-0">Fichier non-valide ??</h5>
                 <p>  Ce fichier ne correspond au format valide</p>
             </div>
-           
+
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
@@ -233,13 +233,13 @@
             <div class="modal-body">
                 <h5 class="mt-0">Info</h5>
                 <p>Les Etudiants de ce Etablissement sont deja enregistrer</p>
-               
+
             </div>
-           
+
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->                                             
-  
+</div><!-- /.modal -->
+
 {{-- new modal --}}
 <div class="modal fade" id="scrollable-modal" tabindex="-1" role="dialog" aria-labelledby="scrollableModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
@@ -254,17 +254,17 @@
                 <div class="col-lg-6">
                     <div class="">
                         <div class="card-body">
-                           
+
                             <h4 class="header-title"> sur la colone genre</h4>
-                
+
                             {{-- <div id="average-sales" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c"></div> --}}
                             <div id="average-sales1" class="apex-charts mb-4 mt-4" data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
 
-                            
+
                         </div> <!-- end card-body-->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
-               
+
                 <div class="col-lg-6">
                     <br><br><br>
                 <table class="table table-hover table-centered mb-0">
@@ -278,27 +278,27 @@
                         <tr>
                             <th><i class="mdi mdi-circle text-danger"></i> Non renseigné</th>
                             <td id="nor"></td>
-                        
+
                         </tr>
                         <tr>
                             <th><i class="mdi mdi-circle text-info"></i> Mal renseigné</th>
                             <td id="mar"></td>
-                        
+
                         </tr>
                         <tr>
                             <th><i class="mdi mdi-circle text-success"></i> Correcte</th>
                             <td id="cor"></td>
-                        
+
                         </tr>
                         <tr>
                             <th>Total</th>
                             <td id="tot"></td>
-                        
+
                         </tr>
                     </tbody>
                 </table>
-            </div> 
-        </div> 
+            </div>
+        </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -322,7 +322,7 @@
             <div class="modal-header">
                 <h4 class="modal-title text-dark" id="fill-warning-modalLabel">Warning</h4>
                 <br>
-                
+
                 <!-- <h1 id="ahmedou"></h1> -->
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
@@ -337,7 +337,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-                    
+
   </div>
 <script type="text/javascript" src="{{ asset('js/xlsx.full.min.js')}}"></script>
 <script>
@@ -382,7 +382,7 @@ spinner.style.display='none';
     }, 100);
 });
 
-   
+
 
 
 </script>
@@ -399,11 +399,11 @@ for (var i = 0, len = inputs.length; i < len; i++) {
 function customInput (el) {
   const fileInput = el.querySelector('[type="file"]')
   const label = el.querySelector('[data-js-label]')
-  
+
   fileInput.onchange =
   fileInput.onmouseout = function () {
     if (!fileInput.value) return
-    
+
     var value = fileInput.value.replace(/^.*[\\\/]/, '')
     el.className += ' -chosen'
     label.innerText = value
