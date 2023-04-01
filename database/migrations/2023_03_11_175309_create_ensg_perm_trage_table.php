@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('annee_scolaire');
             $table->string('tranche_age');
             $table->integer('nb1');
+            $table->timestamps();
+
         });
     }
 

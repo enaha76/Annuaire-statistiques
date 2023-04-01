@@ -455,7 +455,8 @@
 
 
                                                         <div class="col-lg-12">
-                                                            <form action="{{ route('up') }}" method="post" enctype="multipart/form-data">
+                                                            <form action="{{ route('up') }}" method="post"
+                                                                enctype="multipart/form-data">
                                                                 @csrf
                                                                 <div class="btn-group">
                                                                     <button type="button" id="year_select"
@@ -494,7 +495,8 @@
                                                                     </div>
                                                                 </div>
                                                                 <input name="file" id="fileInput" type="file">
-                                                                <button type="submit" class="btn btn-xs btn-success" >Importer</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-xs btn-success">Importer</button>
                                                                 <div id="storage"></div>
                                                             </form>
                                                         </div>
@@ -519,7 +521,6 @@
             </div>
         </div>
         <script></script>
-
 
         <script>
             // const box = document.getElementById('tab');
@@ -589,7 +590,7 @@
                                 });
                           </script> --}}
 
-    <script src="{{ asset( 'assets/js/pages/tbl.js' )}}"></script>
+    <script src="{{ asset('assets/js/pages/tbl.js') }}"></script>
     {{-- <script src="assets/js/pages/tbl.js"></script>  --}}
     <script type="text/javascript" src="{{ asset('js/xlsx.full.min.js') }}"></script>
 
@@ -601,10 +602,10 @@
                 cand2: [1, 2]
             },
             {
-                cand3: [1, 1]
+                cand3: [1, 2]
             },
             {
-                cand4: [1, 0]
+                cand4: [1, 0]  // 
             },
             {
                 etu1: [2, 1]
@@ -678,80 +679,97 @@
             },
 
         ];
-        document.getElementById('fileInput').addEventListener("change",(function(){
+        document.getElementById('fileInput').addEventListener("change", (function() {
 
 
 
-                   
-        var raw_data = {};
-          
-           
-          var file = this.files[0];
-          var reader = new FileReader();
-          reader.onload = function(event) {
-             
-excel = event.target.result;
-             
 
-              var workbook = XLSX.read(excel, {
-                  type: 'binary'
-              });
-
-              index = 1;
-              catagory.forEach((cat) => {
-                  var key = Object.keys(cat)[0];
-                  var value = cat[key];
-
-                  var row = value[0];
-                  var col = value[1];
+            var raw_data = {};
 
 
-                  var sheetName = Object.keys(workbook.Sheets)[index];
-                  var sheet = workbook.Sheets[sheetName];
-                  if (sheet) {
-                      var rows = [];
-                      var range = XLSX.utils.decode_range(sheet['!ref']);
-                      for (var i = range.s.r + row; i <= range.e.r; i++) {
-                          var row = {};
-                          for (var j = range.s.c + col; j <= range.e.c; j++) {
-                              var cell = sheet[XLSX.utils.encode_cell({
-                                  r: i,
-                                  c: j
-                              })];
-                              if (cell && cell.v) {
-                                  row[j] = cell.v;
-                              }
-                          }
-                          rows.push(row);
-                      }
+            var file = this.files[0];
+            var reader = new FileReader();
+            reader.onload = function(event) {
 
-                      raw_data[key]= rows
-                      
-                      index++;
-                  }
-              });
+                excel = event.target.result;
 
-              data=`<textarea name="data" id="data" cols="40" rows="30" hidden>${JSON.stringify(raw_data)}</textarea>`
-            inp = document.querySelector("div[id='storage']");
-        inp.innerHTML='';
-        inp.innerHTML=data;
-         
-            console.log(raw_data,JSON.stringify(raw_data));
-          };
-          reader.readAsBinaryString(file);
-  
-        
-   
- }));
 
-     
-        
+                var workbook = XLSX.read(excel, {
+                    type: 'binary'
+                });
+
+                index = 1;
+                catagory.forEach((cat) => {
+                    var key = Object.keys(cat)[0];
+                    var value = cat[key];
+
+                    var row = value[0];
+                    var col = value[1];
+
+
+                    var sheetName = Object.keys(workbook.Sheets)[index];
+                    var sheet = workbook.Sheets[sheetName];
+                    if (sheet) {
+                        var rows = [];
+                        var range = XLSX.utils.decode_range(sheet['!ref']);
+                        for (var i = range.s.r + row; i <= range.e.r; i++) {
+                            var row = {};
+                            for (var j = range.s.c + col; j <= range.e.c; j++) {
+                                var cell = sheet[XLSX.utils.encode_cell({
+                                    r: i,
+                                    c: j
+                                })];
+                                if (cell && cell.v) {
+                                    if (isNaN(cell.v)) {
+                                        row[j] = 0;
+                                    }else{
+                                        row[j] = cell.v;
+                                    }
+                                 
+                                } else if( sheet[XLSX.utils.encode_cell({r: i, c: j-1})] && sheet[XLSX.utils.encode_cell({r: i, c: j-1})].v){
+                                    row[j] = sheet[XLSX.utils.encode_cell({
+                                    r: i,
+                                    c: j-1 })].v;
+                            }
+                            rows.push(row);
+                        }
+
+                        raw_data[key] = rows
+
+                        index++;
+                    }}
+                });
+
+                
+                const checkbox = document.getElementById("customRadio1");
+const v= checkbox.checked ? checkbox.value : null;
+console.log(v);
+
+year=`<input type="hidden" name="year" value="${v}">`
+console.log(year);
+                data =
+                    `<textarea name="data" id="data" cols="40" rows="30" hidden>${JSON.stringify(raw_data)}</textarea>`
+                inp = document.querySelector("div[id='storage']");
+                inp.innerHTML = '';
+                inp.innerHTML = data + year;
+
+                 console.log(raw_data, JSON.stringify(raw_data));
+            };
+            reader.readAsBinaryString(file);
+
+
+
+        }));
+
+
+
 
 
 
         function readExcelFile({
             code: [row, col],
-            index }) {
+            index
+        }) {
             console.log(workbook.Sheets);
 
             var sheetName = object.keys(workbook.Sheets)[index];

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('genre');
             $table->string('niveaux');
             $table->string('domaine');
+            $table->timestamps();
+
         });
     }
 

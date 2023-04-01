@@ -16,7 +16,7 @@ class cand1 extends Model
      *
      * @var string
      */
-    protected $table = 'candidats_nb1';
+    protected $table = 'candidats_effectif';
 
     /**
      * The primary key for the model.

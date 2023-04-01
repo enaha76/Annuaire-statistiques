@@ -35,6 +35,8 @@ return new class extends Migration
             $table->integer('nb16');
             $table->integer('nb17');
             $table->integer('nb18');
+            $table->timestamps();
+
         });
     }
 

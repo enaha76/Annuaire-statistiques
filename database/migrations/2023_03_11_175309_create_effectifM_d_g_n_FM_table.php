@@ -39,6 +39,8 @@ return new class extends Migration
             $table->integer('nb21');
             $table->integer('nb22');
             $table->string('domaine');
+            $table->timestamps();
+
         });
     }
 
