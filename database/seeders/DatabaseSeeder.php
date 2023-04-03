@@ -244,6 +244,11 @@ class DatabaseSeeder extends Seeder
             'id_cycle' =>1
         ]);
         User::create([
+            'name'=>'Cheikh hadrami begnoug',
+            'email'=>'21024@supnum.mr',
+            'password'=>Hash::make('12345678')
+        ]);
+        User::create([
             'name'=>'Ahmedou enaha',
             'email'=>'21076@supnum.mr',
             'password'=>Hash::make('12345678')
