@@ -110,6 +110,9 @@ class all_studentsController extends Controller
     $Etablissements = Etablissement::all();
     $Etablissements=$Etablissements->toArray();
     $enrollments=$enrollments->toArray();
+
+
+    
     return View('etudiants',compact('Etablissements','enrollments','years','year'));
   }
 
@@ -147,6 +150,13 @@ class all_studentsController extends Controller
       $years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
       $chek=DB::select('SELECT NNI,année_scolaire from inscrire JOIN etudiants on inscrire.id_etudiant=etudiants.id;');
         $chek = (array) $chek;
+
+        $tb=DB::select('SELECT 
+        *
+        FROM 
+        tb_archive;');
+        $tb = (array) $tb;  
+
       return view('tables', [
         'etats' => $etats,
         'List3' => $List3,
@@ -170,7 +180,7 @@ class all_studentsController extends Controller
 
     $year = $request->input('year');
     $establishment = $request->input('establishment');
-
+    $nr=
     //check if the file has already been imported
     
     
@@ -189,10 +199,10 @@ class all_studentsController extends Controller
 
     
   }
-  public function insert( $data, $establishment, $year)
+  public function insert( $data, $establishment, $year,)
   {
 
-   
+  
       foreach ($data as $value) {
         $student = Etudiant::firstOrCreate([
           'NNI' => $value['NNI'],
@@ -229,7 +239,7 @@ class all_studentsController extends Controller
     $data = json_decode($request->input('file'), true);
       $year = $request->input('year');
       $establishment = $request->input('establishment');
-     return $this->insert( $data, $establishment, $year);
+      return $this->insert( $data, $establishment, $year);
   }
   
 }
