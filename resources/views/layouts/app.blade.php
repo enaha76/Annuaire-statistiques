@@ -65,19 +65,19 @@
 }
 
 .file-input:hover > .button {
-  color: #fff;
-  background-color: #0b5ed7;
-  border-color: #0a58ca;
+color: #fff;
+background-color: #0b5ed7;
+border-color: #0a58ca;
 }
 
 .file-input > .label {
-  color: #333;
-  white-space: nowrap;
-  opacity: .3;
+color: #333;
+white-space: nowrap;
+opacity: .3;
 }
 
 .file-input.-chosen > .label {
-  opacity: 1;
+opacity: 1;
 }
 
 
@@ -123,11 +123,11 @@
 </style>
 
 
-         <!-- third party css -->
-         <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
-         <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
-         <!-- third party css end -->
-         {{-- new --}}
+        <!-- third party css -->
+        <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
+        <!-- third party css end -->
+        {{-- new --}}
             {{-- <meta charset="utf-8"> --}}
             {{-- <title>Datatables | Hyper - Responsive Bootstrap 5 Admin Dashboard</title> --}}
             {{-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
@@ -222,8 +222,8 @@
                         <div class="spinner-wrapper">
                             <div class="spinner-border text-primary" role="status">
                                 <span class="visually-hidden">Loading...</span>
-                              </div>
-                          </div>
+                            </div>
+                        </div>
 
 
                         <li class="side-nav-item">
@@ -665,11 +665,11 @@
         <script>
             const spinner=document.querySelector('.spinner-wrapper')
             window.addEventListener('load',() => {
-                  spinner.style.opacity='0';
-              setTimeout(()=>{
-              spinner.style.display='none';
-                  })
-              });
+                spinner.style.opacity='0';
+                setTimeout(()=>{
+                spinner.style.display='none';
+                })
+            });
         </script>
 
         <!-- bundle -->
@@ -687,20 +687,19 @@
         <!-- end demo js-->
 
         {{-- -=--- --}}
-         <!-- third party js -->
-         <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
-         <script src="assets/js/vendor/dataTables.bootstrap5.js"></script>
-         <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
-         <script src="assets/js/vendor/responsive.bootstrap5.min.js"></script>
-         <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
-         <!-- third party js ends -->
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.core.min.js"></script>
+        <!-- third party js -->
+        <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+        <script src="assets/js/vendor/dataTables.bootstrap5.js"></script>
+        <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+        <script src="assets/js/vendor/responsive.bootstrap5.min.js"></script>
+        <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+        <!-- third party js ends -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.core.min.js"></script>
 
-         <!-- demo app -->
-         <script src="assets/js/pages/demo.products.js"></script>
-         <script src="assets/js/pages/demo.datatable-init.js"></script>
-         <!-- end demo js-->
-         <script src="assets/js/pages/indexchars.js"></script>
-
+        <!-- demo app -->
+        <script src="assets/js/pages/demo.products.js"></script>
+        <script src="assets/js/pages/demo.datatable-init.js"></script>
+        <!-- end demo js-->
+        <script src="assets/js/pages/indexchars.js"></script>        
     </body>
 </html>
