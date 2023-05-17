@@ -8,13 +8,15 @@ use App\Models\Inscrire;
 use Illuminate\Http\Request;
 use App\Models\Etablissement;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
+
 
 
 class all_studentsController extends Controller
 {
 
   private $imported_data;
-
+      
   public function index()
   {
     $currentYear = date('Y');
@@ -76,14 +78,13 @@ class all_studentsController extends Controller
      or
       (identifiant is null AND type=\'institut\');');
       $List3 = (array) $List3;
-
+      
       $List4=DB::select('SELECT 
       SUM(CASE WHEN type=\'Université\' THEN 1 ELSE 0 END) as \'Université\', 
       SUM(CASE WHEN type=\'Ecole\' THEN 1 ELSE 0 END) as \'Ecole\',
       SUM(CASE WHEN type=\'Academie\' THEN 1 ELSE 0 END) as \'Academie\',
       SUM(CASE WHEN type=\'institut\' THEN 1 ELSE 0 END) as \'institut\',
       SUM(CASE WHEN type=\'Faculté\' THEN 1 ELSE 0 END) as \'Faculté\'
-      
         FROM etablissements;');
 
         $List4 = (array) $List4;
@@ -93,7 +94,20 @@ class all_studentsController extends Controller
     return view('index', compact('List','List2','List3','List4','nbr_etudient'));
     
   }
+
   public function etu($year = null) {
+    $criteriaList = [
+      'GENRE',
+      'Niveau',
+      'NOM_DU_(TRONC/FILIRERE)',
+      'FORMATION',
+      'Redoublant',
+      'BOURSIER_OU_BENEFICIANTS_D\'AIDE',
+      'TRANSFERE',
+      'NATIONALITE',
+      'LANGUE_DE_FORMATION',
+      'date_DE_NAISSANCE',
+  ];
     if (!$year) {
         $currentYear = date('Y');
         $lastYear = $currentYear -1;
@@ -106,18 +120,20 @@ class all_studentsController extends Controller
     ->join('etudiants', 'inscrire.id_etudiant', '=', 'etudiants.id')
     ->get();
      $years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
-
+     $genre_formation=DB::select('SELECT * FROM `etudiants` inner join inscrire using(id);');
+     $genre_formation=json_encode( $genre_formation);
     $Etablissements = Etablissement::all();
     $Etablissements=$Etablissements->toArray();
     $enrollments=$enrollments->toArray();
-    return View('etudiants',compact('Etablissements','enrollments','years','year'));
+    return View('etudiants',compact('Etablissements','enrollments','years','year','genre_formation','criteriaList'));
   }
 
 
   public function tables($year = null)
   {
       $etats = Etablissement::all();
-   
+     
+
       $List3=DB::select('SELECT
       etablissements.id,
       etablissements.nom,
@@ -153,7 +169,8 @@ class all_studentsController extends Controller
         'data' => $List4,
         'year' => $year,
         'years' => $years,
-        'chek'=>$chek
+        'chek'=>$chek,
+      
     ]);
   }
   
@@ -191,7 +208,7 @@ class all_studentsController extends Controller
   }
   public function insert( $data, $establishment, $year)
   {
-
+ 
    
       foreach ($data as $value) {
         $student = Etudiant::firstOrCreate([
@@ -224,6 +241,7 @@ class all_studentsController extends Controller
       return redirect()->route('tables')->with('success', 'Les données ont été importées avec succès!');
     
   }
+
   public function redr(Request $request)
   {
     $data = json_decode($request->input('file'), true);
@@ -231,10 +249,146 @@ class all_studentsController extends Controller
       $establishment = $request->input('establishment');
      return $this->insert( $data, $establishment, $year);
   }
+
+
+
+
+  public function showStatistics(Request $request,$year = null)
+{
+    $criteria1 = $request->input('criteria1');
+    $criteria2 = $request->input('criteria2');
+    $selectedYear = $request->input('filter');
+    $criteriaList = [
+      'GENRE',
+      'Niveau',
+      'NOM_DU_(TRONC/FILIRERE)',
+      'FORMATION',
+      'Redoublant',
+      'BOURSIER_OU_BENEFICIANTS_D\'AIDE',
+      'TRANSFERE',
+      'NATIONALITE',
+      'LANGUE_DE_FORMATION',
+      'date_DE_NAISSANCE',
+  ];
+  
+
+    if (!$year) {
+      $currentYear = date('Y');
+      $lastYear = $currentYear -1;
+      $year = $lastYear . '-' . $currentYear;
+  }
+    $years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
+
+    $enrollments = $this->etu($year);
+    $Etablissements = Etablissement::all();
+
+    
+    // Retrieve column names from 'etudiants' table
+$etudiantsColumns = Schema::getColumnListing('etudiants');
+
+// Retrieve column names from 'inscrire' table
+$inscrireColumns = Schema::getColumnListing('inscrire');
+    
+    // Assuming the selected criteria are stored in variables: $criteria1 and $criteria2
+
+    // Define the base query
+    $query = DB::table('inscrire');
+    
+    if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $inscrireColumns)) {
+      $query->join('etudiants AS etudiants1', 'inscrire.id_etudiant', '=', 'etudiants1.id');
+      $query->select(
+          'inscrire.'.$criteria2.' AS inscrire_'.$criteria2,
+          'etudiants1.'.$criteria1.' AS etudiants_'.$criteria1,
+          DB::raw('COUNT(*) AS count')
+      );
+      $query->groupBy('inscrire_'.$criteria2, 'etudiants_'.$criteria1);
+  } elseif (in_array($criteria2, $etudiantsColumns) && in_array($criteria1, $inscrireColumns)) {
+      $query->join('etudiants AS etudiants2', 'inscrire.id_etudiant', '=', 'etudiants2.id');
+      $query->select(
+          'inscrire.'.$criteria1.' AS inscrire_'.$criteria1,
+          'etudiants2.'.$criteria2.' AS etudiants_'.$criteria2,
+          DB::raw('COUNT(*) AS count')
+      );
+      $query->groupBy('inscrire_'.$criteria1, 'etudiants_'.$criteria2);
+  }
+ // Check if both criteria belong to the 'inscrire' table
+if (in_array($criteria1, $inscrireColumns) && in_array($criteria2, $inscrireColumns)) {
+  $query->select(
+      'inscrire.'.$criteria1.' AS inscrire_'.$criteria1,
+      'inscrire.'.$criteria2.' AS inscrire_'.$criteria2,
+      DB::raw('COUNT(*) AS count')
+  );
+
+  // Group the results by the selected criteria
+  $query->groupBy('inscrire_'.$criteria1, 'inscrire_'.$criteria2);
   
 }
 
+// Check if both criteria belong to the 'etudiants' table
+if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $etudiantsColumns)) {
+  $query->join('etudiants AS etudiants1', 'inscrire.id_etudiant', '=', 'etudiants1.id');
+  $query->join('etudiants AS etudiants2', 'inscrire.id_etudiant', '=', 'etudiants2.id');
+  $query->select(
+      'etudiants1.'.$criteria1.' AS etudiants_'.$criteria1,
+      'etudiants2.'.$criteria2.' AS etudiants_'.$criteria2,
+      DB::raw('COUNT(*) AS count')
+  );
 
+  // Group the results by the selected criteria
+  $query->groupBy('etudiants_'.$criteria1, 'etudiants_'.$criteria2);
+}
+// ...
+
+     // Add the WHERE condition for the selected year
+    $query->whereRaw("CAST(inscrire.année_scolaire AS CHAR) = '{$selectedYear}'");
+
+    
+    // Execute the query and retrieve the results
+    $results = $query->get();
+    // dd($query->toSql(), $results);
+        // Prepare the data for the chart
+    $chartData = [
+        'labels' => [],
+        'datasets' => [
+            [
+                'label' => 'Count',
+                'data' => [],
+                'backgroundColor' => 'rgba(0, 123, 255, 0.5)' // Customize the chart color
+            ]
+        ]];
+      // dd($chartData );
+    foreach ($results as $result) {
+      $criteria1Label = '';
+      $criteria2Label = '';
+  
+      if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $inscrireColumns)) {
+          $criteria1Label = isset($result->{'etudiants_'.$criteria1}) ? 'etudiants_'.$criteria1 : 'inscrire_'.$criteria1;
+          $criteria2Label = isset($result->{'inscrire_'.$criteria2}) ? 'inscrire_'.$criteria2 : 'etudiants_'.$criteria2;
+      } elseif (in_array($criteria2, $etudiantsColumns) && in_array($criteria1, $inscrireColumns)) {
+          $criteria1Label = isset($result->{'inscrire_'.$criteria1}) ? 'inscrire_'.$criteria1 : 'etudiants_'.$criteria1;
+          $criteria2Label = isset($result->{'etudiants_'.$criteria2}) ? 'etudiants_'.$criteria2 : 'inscrire_'.$criteria2;
+      } elseif (in_array($criteria1, $inscrireColumns) && in_array($criteria2, $inscrireColumns)) {
+          $criteria1Label = 'inscrire_'.$criteria1;
+          $criteria2Label = 'inscrire_'.$criteria2;
+      } elseif (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $etudiantsColumns)) {
+          $criteria1Label = 'etudiants_'.$criteria1;
+          $criteria2Label = 'etudiants_'.$criteria2;
+      }
+  
+      $chartData['labels'][] = $result->{$criteria1Label} . ' - ' . $result->{$criteria2Label};
+      $chartData['datasets'][0]['data'][] = $result->count;
+  }
+  
+  // dd($criteria1, $criteria2, $results);  
+    
+    return view('etudiants', compact('results', 'criteria1','criteria2'  ,'chartData','years','criteriaList','enrollments','Etablissements'));
+}
+
+    
+
+
+  
+}
 
 
 

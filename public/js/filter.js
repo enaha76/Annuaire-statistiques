@@ -1007,7 +1007,9 @@ function getAllCombinations(criteria) {
     }
 
     generateCombinations({}, keys);
+    
     return combinations;
+    
 }
 
 function countByCombination(combinations, data) {
@@ -1187,7 +1189,7 @@ function generateRandomLetter() {
   letters.splice(randomIndex, 1);
   return randomLetter;
 }
- function ExportToExcel(id, type, fn, dl ) {
+ function ExportToExcel(id, type) {
             var elt = document.getElementById(id);
             var wb = XLSX.utils.table_to_book(elt, {
                 sheet: "sheet1"

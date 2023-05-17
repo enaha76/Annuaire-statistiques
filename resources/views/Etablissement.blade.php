@@ -125,16 +125,16 @@
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
 
-            @if($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-<br> <br>
+                            @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <br> <br>
             @if ($Etablissements)
             <div class="row">
                 <div class="col-12">

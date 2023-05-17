@@ -207,7 +207,7 @@
                                         <a href="{{route('index')}}">Acceuil</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('etudiants') }}">Etudiants</a>
+                                        <a href="{{ route('etu') }}">Etudiants</a>
                                     </li>
                                     <li>
                                         <a href="#">Professeurs</a>

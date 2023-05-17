@@ -30,25 +30,11 @@
                 </button>
               
                 <div class="dropdown-menu dropdown-menu-end">
-                    
-                    <p><input type="radio" class="form-check-input  m-1" id="year" name="filter" data-id="div 2" value="2021-2022">
-                    <label class="form-check-label " for="dropdownCheck">
-                    2021-2022
-                    </label></p>
-                    <p><input type="radio" class="form-check-input    m-1" id="year" name="filter" value="2020-2021" data-id="div 3" value="2022-2023">
-                    <label class="form-check-label" for="dropdownCheck">
-                    2020-2021
-                    </label></p>
-                    <p><input type="radio" class="form-check-input    m-1" id="year" name="filter" value="2019-2020"data-id="div 4" value="2022-2023">
-                    <label class="form-check-label" for="dropdownCheck">
-                    2019-2020
-                    </label></p>
-                    <p><input type="radio" class="form-check-input   m-1" id="year" name="filter" value="2018-2019" data-id="div 4" value="2022-2023">
-                    <label class="form-check-label" for="dropdownCheck">
-                    2018-2019
-                    </label></p>
-                    
-               
+                    @foreach($years as $year)
+                    <p><input type="radio" class="form-check-input  m-1" id="year" name="filter" data-id="div 2" value={{$year}}>
+                        {{ $year }}
+                   </p>
+                    @endforeach
                 </div>
           
             </div>
@@ -58,7 +44,7 @@
 <div class="container-fluid">
                   <script>
        var button=document.querySelector('#year_change');
-button.addEventListener("change", function() {
+button.addEventListener("click", function() {
   let selectedYear = this.value;
   // Update the route with the selected year as the optional variable
   window.location.href = `/etudiants/${selectedYear}`;
@@ -74,45 +60,34 @@ button.addEventListener("change", function() {
         <div class="col-xl-12">  
             <div class="card">
                 <div class="card-body">
-                    <button id="repart" class="btn btn-info   m-2" type="button"
-                        >
-                        <i class=" uil-graph-bar m-1"></i>Repartitions Personalisé
-                        </button>
+                    <button id="repart" class="btn btn-info   m-2" type="button"><i class=" uil-graph-bar m-1"></i>Repartitions Personalisé</button>
                         <div id="search-options" class=" d-none">
                         <div class="row">
                             <span>Repartitions par Institution par </span>
-                            <div class="col-md-4">
-
-                            <select class="form-control  select2" id="select1" >
-                                <option value="kaka">select ur option</option>
-                                <option value="formation">FORMATION</option>
-                                <option value="Genre">Genre</option>
-                                <option value="boursier">BOURSIER</option>
-                                <option value="Redoublant">Redoublant</option>
-                                <option value="transfere">TRANSFERE</option>
-                                <option value="Nationalité">NATIONALITE</option>
-                                <option value="Langue">LANGUE DE FORMATION</option>
-                                <option value="Age">Age</option>
-                                <option value="Niveau">Niveau</option>
+                            
+                            <form action="{{ route('etudiants') }}" method="GET">
+                                <input type="hidden" name="filter" value={{$year}}>
+                                <div class="col-md-4">
+                            <select class="form-control" name="criteria2" id="criteria2">
+                                @foreach ($criteriaList as $criteria)
+                                    <option value="{{ $criteria }}">{{ $criteria }}</option>
+                                @endforeach
                             </select>
                             </div>
                             <span>et par </span>
                             <div class="col-md-4">
-                            <select class="form-control select2" id="select2" >
-                                <option value="kak">select ur option</option>
-                                <option value="formation">FORMATION</option>
-                                <option value="Genre">Genre</option>
-                                <option value="boursier">BOURSIER</option>
-                                <option value="Redoublant">Redoublant</option>
-                                <option value="transfere">TRANSFERE</option>
-                                <option value="Nationalité">NATIONALITE</option>
-                                <option value="Langue">LANGUE DE FORMATION</option>
-                                <option value="Age">Age</option>
-                                <option value="Niveau">Niveau</option>
+                            <select class="form-control select2"  name="criteria1" id="criteria1">
+                                @foreach ($criteriaList as $criteria)
+                                <option value="{{ $criteria }}">{{ $criteria }}</option>
+                            @endforeach
                             </select>
 
                             </div>
+                            <button type="submit">Submit</button>
+
+                        </form>
                         </div>
+                    
                         </div>
                     <p class="text-muted font-14  header-title">
                         Vous devez choisir les criteres dont vous vouliez repartir les etudiants
@@ -126,28 +101,56 @@ button.addEventListener("change", function() {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#simple-bre-code" data-bs-toggle="tab" aria-expanded="true" class="nav-link">
+                            <a href="#simple-bre-code" data-bs-toggle="tab" aria-expanded="true" class="nav-link ">
                                 Graphe
                             </a>
                         </li>
                     </ul> <!-- end nav-->
+                       
                     <div class="tab-content">
+                        @if(isset($results)) 
+                             
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>{{ $criteria1 }}</th>
+                                    <th>{{ $criteria2 }}</th>
+                                    <th>Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($results as $result)
+                                <tr>
+                                {{dd($results)}}
+                                    <td>{{ $result->{'inscrire_'.$criteria1} ?? $result->{'etudiants_'.$criteria1} }}</td>
+                                    <td>{{ $result->{'inscrire_'.$criteria2} ?? $result->{'etudiants_'.$criteria2} }}</td>
+                                    <td>{{ $result->count }}</td>
+                                </tr>
+                            @endforeach
+                            
+                            
+                            </tbody>
+                        </table>
+                    @endif
+                    
+                    
                         <div class="tab-pane show active" id="simple-bre-preview">
+                           
                             <div class="table-responsive-sm">
-                               
-                            <div id="tables" class="  overflow-auto">
-                               
-                            </div>
-                            </div>
+                            
+                              
+                        
+                           </div>
+                            
                         </div> <!-- end preview-->
                     
                         <div class="tab-pane" id="simple-bre-code">
-                            <pre class="mb-0">
+                         
                             
-                                <span class="html escape">
-                                heyy
-                                </span>
-                            </pre> <!-- end highlight-->
+                                <div>
+                                <canvas id="chart"></canvas>
+                                </div>
+                           
                         </div> <!-- end preview code-->
                     </div> <!-- end tab-content-->
 
@@ -155,6 +158,11 @@ button.addEventListener("change", function() {
             </div> <!-- end card-->
         </div> <!-- end col -->
       {{-- fin   Repartitions Personalisé --}}
+      <div>
+
+       
+    
+      </div>
       {{-- Repartitions non-personnalisé --}}
       <div class="col-xl-12">  
         <div class="card">
@@ -363,27 +371,8 @@ button.addEventListener("change", function() {
             
                 <div class="tab-pane" id="icon-bre-code4">
                     <pre class="mb-0">
-                        <span class="html escape">
-                            &lt;nav aria-label=&quot;breadcrumb&quot;&gt;
-                                &lt;ol class=&quot;breadcrumb bg-light-lighten p-2&quot;&gt;
-                                    &lt;li class=&quot;breadcrumb-item active&quot; aria-current=&quot;page&quot;&gt;&lt;i class=&quot;uil-home-alt me-1&quot;&gt;&lt;/i&gt; Home&lt;/li&gt;
-                                &lt;/ol&gt;
-                            &lt;/nav&gt;
-                                
-                            &lt;nav aria-label=&quot;breadcrumb&quot;&gt;
-                                &lt;ol class=&quot;breadcrumb bg-light-lighten p-2&quot;&gt;
-                                    &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;uil-home-alt&quot;&gt;&lt;/i&gt; Home&lt;/a&gt;&lt;/li&gt;
-                                    &lt;li class=&quot;breadcrumb-item active&quot; aria-current=&quot;page&quot;&gt;Library&lt;/li&gt;
-                                &lt;/ol&gt;
-                            &lt;/nav&gt;
-                                
-                            &lt;nav aria-label=&quot;breadcrumb&quot;&gt;
-                                &lt;ol class=&quot;breadcrumb bg-light-lighten p-2 mb-0&quot;&gt;
-                                    &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;uil-home-alt&quot;&gt;&lt;/i&gt; Home&lt;/a&gt;&lt;/li&gt;
-                                    &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Library&lt;/a&gt;&lt;/li&gt;
-                                    &lt;li class=&quot;breadcrumb-item active&quot; aria-current=&quot;page&quot;&gt;Data&lt;/li&gt;
-                                &lt;/ol&gt;
-                            &lt;/nav&gt;
+                        <span class="">
+                           loloo
                         </span>
                     </pre> <!-- end highlight-->
                 </div> <!-- end preview code-->
@@ -427,27 +416,8 @@ button.addEventListener("change", function() {
             
                 <div class="tab-pane" id="icon-bre-code5">
                     <pre class="mb-0">
-                        <span class="html escape">
-                            &lt;nav aria-label=&quot;breadcrumb&quot;&gt;
-                                &lt;ol class=&quot;breadcrumb bg-light-lighten p-2&quot;&gt;
-                                    &lt;li class=&quot;breadcrumb-item active&quot; aria-current=&quot;page&quot;&gt;&lt;i class=&quot;uil-home-alt me-1&quot;&gt;&lt;/i&gt; Home&lt;/li&gt;
-                                &lt;/ol&gt;
-                            &lt;/nav&gt;
-                                
-                            &lt;nav aria-label=&quot;breadcrumb&quot;&gt;
-                                &lt;ol class=&quot;breadcrumb bg-light-lighten p-2&quot;&gt;
-                                    &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;uil-home-alt&quot;&gt;&lt;/i&gt; Home&lt;/a&gt;&lt;/li&gt;
-                                    &lt;li class=&quot;breadcrumb-item active&quot; aria-current=&quot;page&quot;&gt;Library&lt;/li&gt;
-                                &lt;/ol&gt;
-                            &lt;/nav&gt;
-                                
-                            &lt;nav aria-label=&quot;breadcrumb&quot;&gt;
-                                &lt;ol class=&quot;breadcrumb bg-light-lighten p-2 mb-0&quot;&gt;
-                                    &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;uil-home-alt&quot;&gt;&lt;/i&gt; Home&lt;/a&gt;&lt;/li&gt;
-                                    &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Library&lt;/a&gt;&lt;/li&gt;
-                                    &lt;li class=&quot;breadcrumb-item active&quot; aria-current=&quot;page&quot;&gt;Data&lt;/li&gt;
-                                &lt;/ol&gt;
-                            &lt;/nav&gt;
+                        <span class="">
+                           hello
                         </span>
                     </pre> <!-- end highlight-->
                 </div> <!-- end preview code-->
@@ -487,19 +457,7 @@ button.addEventListener("change", function() {
         <script src="assets/js/vendor.min.js"></script>
         <script src="assets/js/app.min.js"></script>
 
-        <!-- third party:js -->
-        {{-- <script src="assets/js/vendor/apexcharts.min.js"></script> --}}
-        <!-- third party end -->
-
-        <!-- demo:js -->
-        {{-- <script src="assets/js/pages/demo.apex-pie.js"></script> --}}
-        <!-- demo end -->
-        <!-- demo:js -->
-        {{-- <script src="assets/js/pages/demo.apex-bar.js"></script> --}}
-        <!-- demo end -->
-        <!-- demo:js -->
-        {{-- <script src="assets/js/pages/demo.apex-column.js"></script> --}}
-        <!-- demo end -->
+       
         <script src={{asset('cdn/Chart.min.js')}}></script>
 
 <script defer>
@@ -510,9 +468,7 @@ button.addEventListener("change", function() {
         fill(data,etats);
         
 });
-
-
-    
+ 
     $('input[name="filter"]').on('change',function(){
         var divId = $(this).attr('data-id');
         if($(this).is(':checked')) {
@@ -525,15 +481,12 @@ button.addEventListener("change", function() {
 
 </script>
 <script>
-//    
     $("input#year").on("click", function() {
     console.log("Anchor clicked!");
     let selectedYear = $(this).val();
     console.log("Selected year: " + selectedYear);
     $("#selected").text(selectedYear);
   });
-
-
 
 </script>
   <script>
@@ -544,6 +497,28 @@ button.addEventListener("change", function() {
         searchOptions.classList.toggle('d-none');
       });
   </script>
+  
+  @if(isset($chartData))
+  <script>
+    console.log("kiki ")
+      // Get the data for the chart from the PHP variable
+      var chartData = {!! json_encode($chartData) !!};
+
+  
+      // Get the canvas element
+      var ctx = document.getElementById('chart').getContext('2d');
+  
+      // Create the chart
+      var chart = new Chart(ctx, {
+          type: 'bar', // Choose the desired chart type (e.g., bar, line, pie)
+          data: chartData,
+          options: {
+              // Configure additional chart options (e.g., labels, colors, tooltips)
+          }
+      });
+  </script>
+  @endif
     
-<script src="assets/js/pages/rep_per.js"></script>
-       @endsection
+ {{-- <script src="assets/js/pages/rep_per.js data="></script> --}}
+
+ @endsection
