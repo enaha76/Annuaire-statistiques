@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+
     <div class="content">
         <!-- Topbar Start -->
         <div class="navbar-custom">
@@ -436,88 +438,182 @@
 
                                 <div class="col-lg-1">
                                     <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-                                        data-bs-target="#right-modal">Import</button>
+                                        data-bs-target="#right-modal" on="click()">Import</button>
                                     <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#right-modal">Rightbar Modal</button> -->
+                                </div>
+                                        <h4>here u r ganna choose ur file</h4> <br><br>
 
-                                    <div id="right-modal" class="modal fade" tabindex="-1" role="dialog"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog modal-sm modal-right w-25">
-                                            <div class="modal-content">
-                                                <div class="modal-header border-0">
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <h4>here u r ganna choose ur file</h4> <br><br>
-
-                                                    <div class="row">
-                                                        <!-- end uplod -->
+                                        <div class="row">
+                                            <!-- end uplod -->
 
 
-                                                        <div class="col-lg-12">
-                                                            <form action="{{route('up')}}" method="post"
-                                                                enctype="multipart/form-data"  >
-                                                                @csrf
-<textarea name="data" id="data" cols="30" rows="10"hidden></textarea>
-                                                                <input type="hidden" name="data" value="" id="data">
-                                                                <div class="btn-group">
-                                                                    <button type="button" id="year_select"
-                                                                        class="btn btn-primary   dropdown-toggle"
-                                                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                        aria-expanded="false">
-                                                                        Year
-                                                                    </button>
-                                                                    <div class="dropdown-menu">
-                                                                        <!-- <div class="card"> -->
-                                                                        <div class="card-body">
+                                            <div class="col-lg-12">
+                                                <form action="{{ route('up') }}" method="post"
+                                                    enctype="multipart/form-data">
+                                                    @csrf
+                                                    <div class="btn-group">
+                                                        <button type="button" id="year_select"
+                                                            class="btn btn-primary   dropdown-toggle"
+                                                            data-bs-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                            Year
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                            <!-- <div class="card"> -->
+                                                            <div class="card-body">
 
-                                                                            <div class="form-check">
-                                                                                <input type="radio" id="customRadio1"
-                                                                                    name="customRadio" value="2018-2019"
-                                                                                    class="form-check-input">
-                                                                                <label class="form-check-label"
-                                                                                    for="customRadio1"><b>2018-2019</b>
-                                                                                </label>
-                                                                            </div>
-                                                                            <div class="form-check">
-                                                                                <input type="radio" id="customRadio1"
-                                                                                    name="customRadio" value="2019-2020"
-                                                                                    class="form-check-input">
-                                                                                <label class="form-check-label"
-                                                                                    for="customRadio1"><b>2019-2020</b></label>
-                                                                            </div>
-                                                                            <div class="form-check">
-                                                                                <input type="radio" id="customRadio1"
-                                                                                    name="customRadio" value="2020-2021"
-                                                                                    class="form-check-input">
-                                                                                <label class="form-check-label"
-                                                                                    for="customRadio1"><b>2020-2021</b></label>
-                                                                            </div>
+                                                                <div class="form-check">
+                                                                    <input type="radio" id="customRadio1"
+                                                                        name="customRadio" value="2018-2019"
+                                                                        class="form-check-input">
+                                                                    <label class="form-check-label"
+                                                                        for="customRadio1"><b>2018-2019</b>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input type="radio" id="customRadio1"
+                                                                        name="customRadio" value="2019-2020"
+                                                                        class="form-check-input">
+                                                                    <label class="form-check-label"
+                                                                        for="customRadio1"><b>2019-2020</b></label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input type="radio" id="customRadio1"
+                                                                        name="customRadio" value="2020-2021"
+                                                                        class="form-check-input">
+                                                                    <label class="form-check-label"
+                                                                        for="customRadio1"><b>2020-2021</b></label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input name="file" id="fileInput" type="file">
+                                                    <button type="submit"
+                                                        class="btn btn-xs btn-success">Importer</button>
+                                                    <div id="storage"></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    
+                               
+                                        <div class="card">
+                                            <div class="card-body">
+                                              <i class="uil-signal-alt-3"></i>
+                                              
+                                              <ul class="nav nav-tabs nav-bordered mb-3" id="tabs-list" style="overflow-x: auto; white-space: nowrap; display: block ruby; ">
+                                                <li class="nav-item" style="display: inline">
+                                                  <a href="#icon-bre-preview" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
+                                                    Tableau
+                                                  </a>
+                                                </li>
+                                                <li class="nav-item"style="display: inline">
+                                                  <a href="#icon-bre-code" data-bs-toggle="tab" aria-expanded="true" class="nav-link">
+                                                    Graphe
+                                                  </a>
+                                                </li>
+                                                <!-- Add more list items here as needed -->
+                                              </ul> <!-- end nav-->
+                                        <div class="tab-content">
+                                            <div class="tab-pane show active" id="icon-bre-preview">
+                                                <div class="col-md-5 table-responsive" id="buttons-table-preview 3">
+
+                                                </div> <!-- end preview-->
+                                            </div> <!-- end preview-->
+
+                                            <div class="tab-pane" id="icon-bre-code">
+                                                <pre class="mb-0">
+                                                    <div class="col-md-6 "  dir="ltr">
+                                                        <h4 class="header-title"> Repartution des étudiants par institution et par genre </h4>
+                            
+                                                                     <div id="myChart 3" ></div>
+                                                                 </div>
+                                                </pre> <!-- end highlight-->
+                                            </div> <!-- end preview code-->
+                                        </div> <!-- end tab-content-->
+
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card-->
+
+
+                                <!-- /.modal -->
+                                <div id="right-modal" class="modal fade" tabindex="-1" role="dialog"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-sm modal-right w-25">
+                                        <div class="modal-content">
+                                            <div class="modal-header border-0">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h4>here u r ganna choose ur file</h4> <br><br>
+
+                                                <div class="row">
+                                                    <!-- end uplod -->
+
+
+                                                    <div class="col-lg-12">
+                                                        <form action="{{ route('up') }}" method="post"
+                                                            enctype="multipart/form-data">
+                                                            @csrf
+                                                            <div class="btn-group">
+                                                                <button type="button" id="year_select"
+                                                                    class="btn btn-primary   dropdown-toggle"
+                                                                    data-bs-toggle="dropdown" aria-haspopup="true"
+                                                                    aria-expanded="false">
+                                                                    Year
+                                                                </button>
+                                                                <div class="dropdown-menu">
+                                                                    <!-- <div class="card"> -->
+                                                                    <div class="card-body">
+
+                                                                        <div class="form-check">
+                                                                            <input type="radio" id="customRadio1"
+                                                                                name="customRadio" value="2018-2019"
+                                                                                class="form-check-input">
+                                                                            <label class="form-check-label"
+                                                                                for="customRadio1"><b>2018-2019</b>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input type="radio" id="customRadio1"
+                                                                                name="customRadio" value="2019-2020"
+                                                                                class="form-check-input">
+                                                                            <label class="form-check-label"
+                                                                                for="customRadio1"><b>2019-2020</b></label>
+                                                                        </div>
+                                                                        <div class="form-check">
+                                                                            <input type="radio" id="customRadio1"
+                                                                                name="customRadio" value="2020-2021"
+                                                                                class="form-check-input">
+                                                                            <label class="form-check-label"
+                                                                                for="customRadio1"><b>2020-2021</b></label>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                        
-                                                        <input name="file" id="fileInput" type="file"/>
-                                                          
-                                                        <button type="submit" class="btn btn-xs btn-success" onclick="insert_all_catag(event)">Importer</button>
-
-
+                                                            </div>
+                                                            <input name="file" id="fileInput" type="file">
+                                                            <button type="submit"
+                                                                class="btn btn-xs btn-success">Importer</button>
+                                                            <div id="storage"></div>
                                                         </form>
-                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div id="Eff_can_wilaya"></div>
-                                                <div id="tr_s_g"></div>
-                                                <div id="tr_s_c"></div>
-                                                <div id="r_e_p_p"></div>
-                                                <div id="eff_m_i_lmd"></div>
-
-                                                <br>
-
                                             </div>
-                                        </div><!-- /.modal-content -->
-                                    </div><!-- /.modal-dialog -->
-                                </div><!-- /.modal -->
+                                            <div id="Eff_can_wilaya"></div>
+                                            <div id="tr_s_g"></div>
+                                            <div id="tr_s_c"></div>
+                                            <div id="r_e_p_p"></div>
+                                            <div id="eff_m_i_lmd"></div>
+
+                                            <br>
+
+                                        </div>
+                                    </div><!-- /.modal-content -->
+
+                                </div><!-- /.modal-dialog -->
+                                <div id="output">
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -525,7 +621,6 @@
             </div>
         </div>
         <script></script>
-
 
         <script>
             // const box = document.getElementById('tab');
@@ -595,10 +690,10 @@
                                 });
                           </script> --}}
 
-    <script src="{% static 'assets/js/pages/tbl.js' %}"></script>
-    {% comment %}
-    <script src="assets/js/pages/tbl.js"></script> {% endcomment %}
+    <script src="{{ asset('assets/js/pages/tbl.js') }}"></script>
+    {{-- <script src="assets/js/pages/tbl.js"></script>  --}}
     <script type="text/javascript" src="{{ asset('js/xlsx.full.min.js') }}"></script>
+    <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
 
     <script>
         var catagory = [{
@@ -608,7 +703,7 @@
                 cand2: [1, 2]
             },
             {
-                cand3: [1, 1]
+                cand3: [1, 2]
             },
             {
                 cand4: [1, 0]
@@ -618,12 +713,6 @@
             },
             {
                 etu2: [2, 1]
-            },
-            {
-                etu3: [2, 0]
-            },
-            {
-                etu3: [2, 0]
             },
             {
                 etu4: [3, 1]
@@ -650,7 +739,7 @@
                 sort2: [1, 0]
             },
             {
-                bour1: [1, 0]
+                bour1: [1, 1]
             },
             {
                 bour2: [2, 0]
@@ -685,98 +774,192 @@
             },
 
         ];
+        document.getElementById('fileInput').addEventListener("change", (function() {
+            //clear the console
+            console.clear();
+            var raw_data = {};
+           
 
-        function insert_all_catag(event) {
-            inp = document.getElementById("data")
-            event.preventDefault();
-            var raw_data = [];
-            var fileInput = document.getElementById('fileInput');
-            var file = fileInput.files[0];
+            var file = this.files[0];
             var reader = new FileReader();
-            var reader = new FileReader();
+            var tabslist = document.getElementById("tabs-list");
+            
+
+
+            
+            
             reader.onload = function(event) {
-excel = event.target.result;
-               
+
+                excel = event.target.result;
+
 
                 var workbook = XLSX.read(excel, {
                     type: 'binary'
                 });
 
-                index = 1;
-                catagory.forEach((cat) => {
+                index = 0;
+                workbook.SheetNames.forEach(function(sheetName) {
+                    if (sheetName == "Feuil1") {
+                        return;
+                    }
+                    var sheet = workbook.Sheets[sheetName];
+                    console.log(sheet);
+                    cat = catagory[index];
                     var key = Object.keys(cat)[0];
                     var value = cat[key];
-
                     var row = value[0];
                     var col = value[1];
+                    var rows = [];
+                    // tables.innerHTML += JSON.stringify(tableToJson(htmlToElement(
+                    //     createHtmlFromSheet(sheet, key, row, col))));
 
 
-                    var sheetName = Object.keys(workbook.Sheets)[index];
-                    var sheet = workbook.Sheets[sheetName];
-                    if (sheet) {
-                        var rows = [];
-                        var range = XLSX.utils.decode_range(sheet['!ref']);
-                        for (var i = range.s.r + row; i <= range.e.r; i++) {
-                            var row = {};
-                            for (var j = range.s.c + col; j <= range.e.c; j++) {
-                                var cell = sheet[XLSX.utils.encode_cell({
-                                    r: i,
-                                    c: j
-                                })];
-                                if (cell && cell.v) {
-                                    row[j] = cell.v;
-                                }
-                            }
-                            rows.push(row);
-                        }
+                    raw_data[key] = tableToJson(htmlToElement(createHtmlFromSheet(sheet, key, row,col)));
+                    var link =`<li class="nav-item">
+                                                <a href="#${key}" data-bs-toggle="tab" aria-expanded="true"
+                                                    class="nav-link">
+                                                    ${sheetName}
+                                                </a>
+                                            </li>`;
+                    tab=` <div class="tab-pane table-reponsive" id="${key}">
+                                                ${createHtmlFromSheet(sheet)}
+                                            </div>`
+                    link = htmlToElement(link);
+                    link.style.display = "inline";
+                    tabslist.appendChild(link);
+                    document.querySelector('div.tab-content').appendChild(htmlToElement(tab));
+ 
 
-                        raw_data.push({
-                            [key]: rows
-                        });
-                        index++;
-                    }
+                    index++;
                 });
 
+
+                
+
+
+                const checkbox = document.getElementById("customRadio1");
+                const v = checkbox.checked ? checkbox.value : null;
+                console.log(v);
+
+                year = `<input type="hidden" name="year" value="${v}">`
+                console.log(year);
+                data =
+                    `<textarea name="data" id="data" cols="40" rows="30" hidden>${JSON.stringify(raw_data)}</textarea>`
+                inp = document.querySelector("div[id='storage']");
+                inp.innerHTML = '';
+                inp.innerHTML = data + year;
+
+                console.log(raw_data);
             };
             reader.readAsBinaryString(file);
-          
-            inp.innerHTML = JSON.stringify(raw_data);
-          
+
+
+
+        }));
+
+
+
+        // function that turn a headerless html table to array of arrays with the empty td replace with 0
+        function tableToJson(table) {
+            var data = [];
+            var rows = table.querySelectorAll("tr");
+            for (var i = 0; i < rows.length - 1; i++) {
+                var row = [],
+                    cols = rows[i].querySelectorAll("td");
+                for (var j = 0; j < cols.length; j++)
+                    row.push(cols[j].innerText);
+                data.push(row);
+            }
+            return data;
         }
 
 
 
-        function readExcelFile({
-            code: [row, col],
-            index }) {
-            console.log(workbook.Sheets);
+        // turn html table from string to element
+        function htmlToElement(html) {
+            var template = document.createElement('template');
+            html = html.trim();
+            template.innerHTML = html;
+            return template.content.firstChild;
+        }
+        // function that create an html from each sheet of the excel file
+        function createHtmlFromSheet(sheet, key = null, row = null, col = null) {
+            var html = "<table class=\"table table-centered mb-0 \" border=\" 1px solid black\" style =\"width: --webkit-fill-available;\">";
+            var range = XLSX.utils.decode_range(sheet['!ref']);
+            if (key != null) {
 
-            var sheetName = object.keys(workbook.Sheets)[index];
-            var sheet = workbook.Sheets[sheetName];
-            if (sheet['!ref']) {
-                var rows = [];
-                var range = XLSX.utils.decode_range(sheet['!ref']);
                 for (var i = range.s.r + row; i <= range.e.r; i++) {
-                    var row = {};
+
+                    html += "<tr>";
                     for (var j = range.s.c + col; j <= range.e.c; j++) {
                         var cell = sheet[XLSX.utils.encode_cell({
                             r: i,
                             c: j
                         })];
                         if (cell && cell.v) {
-                            row[j] = cell.v;
+                            html += "<td>" + cell.v + "</td>";
+                        } else {
+                            var previous = sheet[XLSX.utils.encode_cell({
+                                r: i,
+                                c: j - 1
+                            })];
+                            var above = sheet[XLSX.utils.encode_cell({
+                                r: i - 1,
+                                c: j
+                            })];
+                            if (j == range.s.c + col) {
+                                //check if the previous cell is empty if so check if the cell above is empty if above isn't empty then add the value of the cell above to the current cell else add nan if previous cell isn't empty then add it to the current cell
+
+                                if (previous === undefined && above !== undefined) {
+                                    continue;
+
+                                } else if (previous === undefined && above === undefined) {
+                                    html += "<th></th>";
+
+                                } else if (previous === undefined) {
+                                    html += "<th>nan</th>";
+                                } else {
+                                    html += "<td>" + previous.v + "</td>";
+                                }
+
+
+                                // html += "<th>nan</th>";
+                            } else if (previous === undefined && above !== undefined) {
+                                html += "<td>" + above.v + "</td>";
+                            }
                         }
                     }
-                    rows.push(row);
+                    html += "</tr>";
                 }
-                console.log('Sheet:', sheetName);
-                console.log('Rows:', {
-                    code: rows
-                });
+            } else {
+                for (var i = range.s.r; i <= range.e.r; i++) {
+                    html += "<tr>";
+                    for (var j = range.s.c; j <= range.e.c; j++) {
+                        var cell = sheet[XLSX.utils.encode_cell({
+                            r: i,
+                            c: j
+                        })];
+                        if (cell && cell.v) {
+                            html += "<td>" + cell.v + "</td>";
+                        } else if(j>range.s.c +col && i>range.s.r+row) {
+                            html += "<td>0</td>";
+                        }else{
+                            html += "<th></th>";
+                        }
+                    }
+                }
+
             }
-
-
+            html += "</table>";
+            return html;
         }
+
+
+
+        // function that read the excel file and return the sheet
+
+
+
 
         function call_insert_api(data) {
 
@@ -814,4 +997,35 @@ excel = event.target.result;
             loadingCircle.style.display = 'block';
         }
     </script>
+
+
+
+
+
+    {{-- <script>
+        let v = [];
+        window.onload = function () {
+          // Add an event listener to the file input
+          document
+            .getElementById("fileInput")
+            .addEventListener("change", function (event) {
+              var file = fileInput.files[0];
+              var reader = new FileReader();
+              reader.onload = function (e) {
+                var data = new Uint8Array(reader.result);
+                var workbook = XLSX.read(data, { type: "array" });
+                console.log(workbook); // Loop through each sheet in the workbook
+                workbook.SheetNames.forEach(function (sheetName) {
+                  var sheet = workbook.Sheets[sheetName];
+                  var dataJSON = XLSX.utils.sheet_to_json(sheet); // Print the data to the output element
+                  var output = document.getElementById("output");
+                  output.innerHTML += "<h3>" + sheetName + "</h3>";
+                  output.innerHTML += JSON.stringify(dataJSON) + "<br>";
+                  v.push(dataJSON);
+                });
+              };
+              reader.readAsArrayBuffer(file);
+            });
+        };
+      </script> --}}
 @endsection

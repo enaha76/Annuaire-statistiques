@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('fonction');
             $table->integer('nb1');
             $table->integer('nb2');
+            $table->timestamps();
+
         });
     }
 

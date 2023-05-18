@@ -13,17 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('candidats_admin', function (Blueprint $table) {
-            $table->bigInteger('id', true);
-            $table->string('annee_scolaire');
-            $table->integer('nb1');
-            $table->integer('nb2');
-            $table->integer('nb3');
-            $table->integer('nb4');
-            $table->integer('nb5');
-            $table->integer('nb6');
+        Schema::create('histiriques', function (Blueprint $table) {
+            $table->id();
+            $table->string('name_file');
+            $table->string('name_etab');
+            $table->integer('numb_student');
+            $table->string('etat');
+            $table->string('traitement');
             $table->timestamps();
-
         });
     }
 
@@ -34,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('candidats_admin');
+        Schema::dropIfExists('histiriques');
     }
 };

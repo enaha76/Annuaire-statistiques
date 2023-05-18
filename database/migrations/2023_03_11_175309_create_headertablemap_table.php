@@ -17,6 +17,8 @@ return new class extends Migration
             $table->bigInteger('id', true);
             $table->longText('header');
             $table->string('table_name');
+            $table->timestamps();
+
         });
     }
 

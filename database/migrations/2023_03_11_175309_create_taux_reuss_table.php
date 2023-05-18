@@ -29,6 +29,8 @@ return new class extends Migration
             $table->string('nb10');
             $table->string('nb11');
             $table->string('nb12');
+            $table->timestamps();
+
         });
     }
 

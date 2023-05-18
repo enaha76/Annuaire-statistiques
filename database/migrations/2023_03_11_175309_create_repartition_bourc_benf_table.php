@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer('nb1');
             $table->integer('nb2');
             $table->string('nb3');
+            $table->timestamps();
+
         });
     }
 

@@ -34,7 +34,6 @@ class ComposerStaticInitec42755cf670e84e5ad8b5c1966e038a
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
-        'aeba1897e6d49fddefacf0432f1dd122' => __DIR__ . '/../..' . '/app/Http/my_functions/funs.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -656,6 +655,7 @@ class ComposerStaticInitec42755cf670e84e5ad8b5c1966e038a
         'App\\Models\\Etablissement' => __DIR__ . '/../..' . '/app/Models/Etablissement.php',
         'App\\Models\\Etudiant' => __DIR__ . '/../..' . '/app/Models/Etudiant.php',
         'App\\Models\\Headertablemap' => __DIR__ . '/../..' . '/app/Models/Headertablemap.php',
+        'App\\Models\\Histirique' => __DIR__ . '/../..' . '/app/Models/Histirique.php',
         'App\\Models\\Inscrire' => __DIR__ . '/../..' . '/app/Models/Inscrire.php',
         'App\\Models\\Students' => __DIR__ . '/../..' . '/app/Models/Students.php',
         'App\\Models\\TbArchives' => __DIR__ . '/../..' . '/app/Models/TbArchives.php',

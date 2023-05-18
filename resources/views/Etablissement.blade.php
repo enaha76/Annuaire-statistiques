@@ -4,8 +4,8 @@
 
 @php
                                         $n= ['LMD','PCME','ANNEE'];
-                                        
-                                        $prive=['public','prive'];         
+
+                                        $prive=['public','prive'];
 
                                         @endphp
 
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        
+
         <a href="#" data-bs-toggle="modal" data-bs-target="#add-new-task-modal" class="btn btn-success btn-sm ms-3 m-2"><i class=" dripicons-plus">Ajouter un Etablissement </i></a>
             <!--  Add new task modal -->
             <div class="modal fade task-modal-content" id="add-new-task-modal" tabindex="-1" role="dialog" aria-labelledby="NewTaskModalLabel" aria-hidden="true">
@@ -52,14 +52,14 @@
                                                 @foreach ($cycles as $one )
                                                     <option value={{$one->id}}>{{$one->nom}}</option>
                                                 @endforeach
-                                             
-                                               
+
+
                                             </select>
-                                           
+
                                         </div>
                                     </div>
                                 </div>
-    
+
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="mb-3">
@@ -67,7 +67,7 @@
                                             <input type="text" class="form-control form-control-light" id="task-title" name="type" >
                                         </div>
                                     </div>
-    
+
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label for="task-priority2" class="form-label">Tutuelle</label>
@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                 </div>
-    
+
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="mb-3">
@@ -89,9 +89,9 @@
                                             <input type="text" class="form-control form-control-light" id="task-title" name="abrev">
                                         </div>
                                     </div>
-                                    
+
                                 </div>
-    
+
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="mb-3">
@@ -114,7 +114,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="text-end">
                                     {{-- <input type="submit" class="btn btn-light"  value="Annuler" data-dismiss="modal"> --}}
                                     <input type="submit" class="btn btn-primary" value="Enregistrer">
@@ -144,7 +144,7 @@
                             <div class="tab-content">
                                 <div class="tab-pane show active" id="buttons-table-preview 1">
                                     <table class="table table-striped dt-responsive nowrap w-100" >
-                                        
+
                                         <thead>
                                             <tr style="font-weight:bold">
                                             {{-- <td>id</td> --}}
@@ -157,48 +157,48 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach ($Etablissements as $eta) 
-                                        
+                                        @foreach ($Etablissements as $eta)
+
                                         <tr>
 
                                         {{-- <td>  {{$eta->id }} </td> --}}
-                                       <td><a href="{{url('etablissements/'.$eta->id)}}"> {{$eta->abrev }} </a></td> 
+                                       <td><a href="{{url('etablissements/'.$eta->id)}}"> {{$eta->abrev }} </a></td>
                                        <td><a href="{{url('etablissements/'.$eta->id)}}"> {{$eta->nom }} </a></td>
                                         <td>  {{$eta->tutelle }} </td>
                                         <td>  {{$eta->cotutelle }} </td>
                                         <td>  {{$prive[$eta->privee]}} </td>
-                                        <td> 
+                                        <td>
                                          @foreach($Etablissements as $institution)
                                             @if($institution['id'] == $eta->identifiant)
                                                 {{ $institution['nom'] }}
-                                                
-                                          
+
+
                                             @else  <p>Autonome</p>
                                             @break
                                             @endif
-                                         
-                                        @endforeach 
+
+                                        @endforeach
                                         </td>
                                         <td>  {{$n[$eta->id_cycle-1]}} </td>
                                     </tr>
-                                        
-                                
+
+
                                         @endforeach
                                         </tbody>
                                     </table>
 
-                                    
+
 
                                 </div> <!-- end preview-->
-                             
-                               
+
+
                             </div> <!-- end tab-content-->
-                            
+
                         </div> <!-- end card body-->
                     </div> <!-- end card -->
                 </div><!-- end col-->
             </div>
-                
+
             @endif
 </div>
 

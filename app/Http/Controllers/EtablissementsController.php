@@ -15,8 +15,8 @@ class EtablissementsController extends Controller
         $Etablissements = Etablissement::all();
         $cycles = Cycle::all();
         $origin = Etablissement::whereNull('identifiant')->get();
-     
-        
+
+
         return view('Etablissement', compact('Etablissements','cycles','origin'));
     }
     public function store(Request $request)
@@ -78,9 +78,9 @@ class EtablissementsController extends Controller
             $its = false;
             return view('single', compact('etablissement','data','its'));
         }
-        
-        
-       
+
+
+
        
     }
 

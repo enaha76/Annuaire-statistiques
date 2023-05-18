@@ -33,6 +33,7 @@ return array(
     'App\\Models\\Etablissement' => $baseDir . '/app/Models/Etablissement.php',
     'App\\Models\\Etudiant' => $baseDir . '/app/Models/Etudiant.php',
     'App\\Models\\Headertablemap' => $baseDir . '/app/Models/Headertablemap.php',
+    'App\\Models\\Histirique' => $baseDir . '/app/Models/Histirique.php',
     'App\\Models\\Inscrire' => $baseDir . '/app/Models/Inscrire.php',
     'App\\Models\\Students' => $baseDir . '/app/Models/Students.php',
     'App\\Models\\TbArchives' => $baseDir . '/app/Models/TbArchives.php',
