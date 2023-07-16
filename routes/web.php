@@ -28,13 +28,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/excel', [all_studentsController::class, 'import'])->name('test');
     Route::post('/excel2', [all_studentsController::class, 'redr'])->name('insert');
     Route::get('/tables/{year?}/{years?}', [all_studentsController::class, 'tables'])->name('tables');
-    Route::get('/test', [all_studentsController::class, 'showTestView'])->name('test');
+    // Route::get('/test', [all_studentsController::class, 'showTestView'])->name('test');
 
 });
 
+
 Route::controller(all_studentsController::class)->group(function(){
     Route::get('/home', 'index')->name('index')->middleware('auth');
-    Route::get('/etudiants/{year?}', 'etu')->name('etu')->middleware('auth');
+    // Route::get('/etudiants/{year?}', 'etu')->name('etu')->middleware('auth');
+    Route::get('/etu/{year?}/{criteria1?}/{criteria2?}/{selectedYear?}/{results?}/{chartData?}', 'etu')->name('etu')->middleware('auth');
     Route::get('/etudiant', 'showStatistics')->name('etudiants')->middleware('auth');
     Route::post('/excel','import')->name('test')->middleware('auth');
     Route::post('/excel2', 'redr')->name('insert')->middleware('auth');

@@ -1,7 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-            
+ 
+@if (!empty($results))
+    {{-- {{ dd(gettype($results)) }} --}}
+        {{-- <h1>ane 4e nsseg3t alooooooooo selam</h1> --}}
+
+        {{-- {{ $results["age"] }} --}}
+    @endif
+
+
 <div class="row">
     <div class="col-12">
         <div class="page-title-box">
@@ -15,6 +23,11 @@
         </div>
     </div>
 </div>    
+
+
+
+
+
 
 <script src={{asset('js/filter.js')}} defer>
   </script>          
@@ -44,7 +57,7 @@
 <div class="container-fluid">
                   <script>
        var button=document.querySelector('#year_change');
-button.addEventListener("click", function() {
+button.addEventListener("change", function() {
   let selectedYear = this.value;
   // Update the route with the selected year as the optional variable
   window.location.href = `/etudiants/${selectedYear}`;
@@ -65,7 +78,7 @@ button.addEventListener("click", function() {
                         <div class="row">
                             <span>Repartitions par Institution par </span>
                             
-                            <form action="{{ route('etudiants') }}" method="GET">
+                            <form id="Formrep" method="get" action="{{ route('etudiants') }}" >
                                 <input type="hidden" name="filter" value={{$year}}>
                                 <div class="col-md-4">
                             <select class="form-control" name="criteria2" id="criteria2">
@@ -86,6 +99,32 @@ button.addEventListener("click", function() {
                             <button type="submit">Submit</button>
 
                         </form>
+                        {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script>
+                            $('form').submit(function(event) {
+                                event.preventDefault(); // Prevent default form submission
+                        
+                                // Get the form data
+                                var formData = $(this).serialize();
+                        
+                                // Send an AJAX request to the server
+                                $.ajax({
+                                    url: this.action,
+                                    method: 'GET',
+                                    data: formData,
+                                    success: function(response) {
+                                        // Handle the success response
+                                        console.log(response);
+                                        // You can update the page content or show a success message here
+                                    },
+                                    error: function(xhr, status, error) {
+                                        // Handle the error response
+                                        console.error(error);
+                                    }
+                                });
+                            });
+                        </script> --}}
+                        
                         </div>
                     
                         </div>
@@ -108,35 +147,35 @@ button.addEventListener("click", function() {
                     </ul> <!-- end nav-->
                        
                     <div class="tab-content">
-                        @if(isset($results)) 
-                             
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>{{ $criteria1 }}</th>
-                                    <th>{{ $criteria2 }}</th>
-                                    <th>Count</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($results as $result)
-                                <tr>
-                                {{dd($results)}}
-                                    <td>{{ $result->{'inscrire_'.$criteria1} ?? $result->{'etudiants_'.$criteria1} }}</td>
-                                    <td>{{ $result->{'inscrire_'.$criteria2} ?? $result->{'etudiants_'.$criteria2} }}</td>
-                                    <td>{{ $result->count }}</td>
-                                </tr>
-                            @endforeach
-                            
-                            
-                            </tbody>
-                        </table>
-                    @endif
-                    
+                       
                     
                         <div class="tab-pane show active" id="simple-bre-preview">
                            
                             <div class="table-responsive-sm">
+                                @if(!empty($results)) 
+                             
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>{{ $criteria1 }}</th>
+                                            <th>{{ $criteria2 }}</th>
+                                            <th>Count</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($results as $result)
+                                        <tr>
+                                        {{-- {{dd($results)}} --}}
+                                            <td>{{ $result->{'inscrire_'.$criteria1} ?? $result->{'etudiants_'.$criteria1} }}</td>
+                                            <td>{{ $result->{'inscrire_'.$criteria2} ?? $result->{'etudiants_'.$criteria2} }}</td>
+                                            <td>{{ $result->count }}</td>
+                                        </tr>
+                                    @endforeach
+                                    
+                                    
+                                    </tbody>
+                                </table>
+                            @endif
                             
                               
                         
@@ -518,7 +557,67 @@ button.addEventListener("click", function() {
       });
   </script>
   @endif
-    
+ 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          $('#myForm').submit(function(event) {
+              event.preventDefault(); // Prevent default form submission
+
+              // Get the form data
+              var formData = $(this).serialize();
+
+              // Send an AJAX request to the server
+              $.ajax({
+                  url: $(this).attr('action'),
+                  method: 'GET',
+                  data: formData,
+                  success: function(response) {
+                      // Handle the success response
+                      console.log(response);
+                      // You can update the page content or show a success message here
+                  },
+                  error: function(xhr, status, error) {
+                      // Handle the error response
+                      console.error(error);
+                  }
+              });
+          });
+      });
+  </script>
  {{-- <script src="assets/js/pages/rep_per.js data="></script> --}}
+ <script>
+ document.getElementById('Formrep').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get the form data
+    var formData = new FormData(this);
+
+    // Send an AJAX request to the server
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', this.action + '?' + new URLSearchParams(formData).toString(), true);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            // Handle the success response
+            console.log(xhr.responseText);
+            // You can update the page content or show a success message here
+        } else if (xhr.status === 302) {
+            // Handle the redirect response
+            var redirectUrl = xhr.getResponseHeader('Location');
+            if (redirectUrl) {
+                window.location.href = redirectUrl; // Redirect to the specified URL
+            }
+        } else {
+            // Handle other error responses
+            console.error(xhr.responseText);
+        }
+    };
+    xhr.onerror = function() {
+        // Handle request error
+        console.error('Request failed.');
+    };
+    xhr.send();
+});
 
  @endsection
+ 

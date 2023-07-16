@@ -11,6 +11,8 @@
        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
+         {{-- CSRF --}}
+         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- third party css -->
         <link href="assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
@@ -319,7 +321,11 @@ opacity: 1;
 
                                 </div>
                             </li>
+
+                            
 {{--
+
+
                             <li class="dropdown notification-list">
                                 <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                     <i class="dripicons-bell noti-icon"></i>

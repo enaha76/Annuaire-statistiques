@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Etablissement;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-
+use Illuminate\Support\Facades\Redirect;
 
 
 class all_studentsController extends Controller
@@ -94,8 +94,14 @@ class all_studentsController extends Controller
     return view('index', compact('List','List2','List3','List4','nbr_etudient'));
     
   }
+  public function etu(Request $request,$year = null, $criteria1 = null, $criteria2 = null, $selectedYear = null, $results = null, $chartData = null)
+  {
 
-  public function etu($year = null) {
+    $results = $request->session()->get('results');
+    $criteria1 = $request->session()->get('criteria1');
+    $criteria2 = $request->session()->get('criteria2');
+    $chartData = $request->session()->get('chartData');
+
     $criteriaList = [
       'GENRE',
       'Niveau',
@@ -125,7 +131,11 @@ class all_studentsController extends Controller
     $Etablissements = Etablissement::all();
     $Etablissements=$Etablissements->toArray();
     $enrollments=$enrollments->toArray();
-    return View('etudiants',compact('Etablissements','enrollments','years','year','genre_formation','criteriaList'));
+
+
+   
+
+    return View('etudiants',compact('results','criteria1','criteria2','chartData','Etablissements','enrollments','years','year','genre_formation','criteriaList'));
   }
 
 
@@ -253,36 +263,12 @@ class all_studentsController extends Controller
 
 
 
-  public function showStatistics(Request $request,$year = null)
+  public function showStatistics(Request $request)
 {
     $criteria1 = $request->input('criteria1');
     $criteria2 = $request->input('criteria2');
     $selectedYear = $request->input('filter');
-    $criteriaList = [
-      'GENRE',
-      'Niveau',
-      'NOM_DU_(TRONC/FILIRERE)',
-      'FORMATION',
-      'Redoublant',
-      'BOURSIER_OU_BENEFICIANTS_D\'AIDE',
-      'TRANSFERE',
-      'NATIONALITE',
-      'LANGUE_DE_FORMATION',
-      'date_DE_NAISSANCE',
-  ];
-  
-
-    if (!$year) {
-      $currentYear = date('Y');
-      $lastYear = $currentYear -1;
-      $year = $lastYear . '-' . $currentYear;
-  }
-    $years=DB::table('inscrire')->pluck('année_scolaire')->unique()->except($year);
-
-    $enrollments = $this->etu($year);
-    $Etablissements = Etablissement::all();
-
-    
+ 
     // Retrieve column names from 'etudiants' table
 $etudiantsColumns = Schema::getColumnListing('etudiants');
 
@@ -381,14 +367,19 @@ if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $etudiantsCo
   
   // dd($criteria1, $criteria2, $results);  
     
-    return view('etudiants', compact('results', 'criteria1','criteria2'  ,'chartData','years','criteriaList','enrollments','Etablissements'));
+  // $results = ["age" => 1234];
+
+  return Redirect::to('etu')
+        ->with('results', $results)
+        ->with('criteria1', $criteria1)
+        ->with('criteria2', $criteria2)
+        ->with('chartData', $chartData);
+
 }
-
-    
-
 
   
-}
 
+
+}
 
 
