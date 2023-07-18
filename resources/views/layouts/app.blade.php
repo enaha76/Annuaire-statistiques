@@ -158,7 +158,7 @@ opacity: 1;
         <!-- Begin page -->
         <div id="loading-circle"></div>
 
-       
+
         <div class="wrapper">
             <!-- ========== Left Sidebar Start ========== -->
             <div class="leftside-menu">
@@ -211,7 +211,7 @@ opacity: 1;
                                         <a href="{{ route('etu') }}">Etudiants</a>
                                     </li>
                                     <li>
-                                        <a href="#">Professeurs</a>
+                                        <a href="{{ route('professeurs') }}">Professeurs</a>
                                     </li>
                                     <li>
                                         <a href="{{route('etablissements')}}">Etablissement</a>
@@ -322,7 +322,7 @@ opacity: 1;
                                 </div>
                             </li>
 
-                            
+
 {{--
 
 
@@ -706,6 +706,6 @@ opacity: 1;
         <script src="assets/js/pages/demo.products.js"></script>
         <script src="assets/js/pages/demo.datatable-init.js"></script>
         <!-- end demo js-->
-        <script src="assets/js/pages/indexchars.js"></script>        
+        <script src="assets/js/pages/indexchars.js"></script>
     </body>
 </html>
