@@ -216,8 +216,9 @@ opacity: 1;
                                     <li>
                                         <a href="{{route('etablissements')}}">Etablissement</a>
                                     </li>
-
-
+                                    <li>
+                                        <a href="{{route('cnou')}}">Cnou</a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>

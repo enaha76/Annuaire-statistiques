@@ -104,6 +104,10 @@ Route::get('/professeurs', function () {
     return view('professeur');
 })->name('professeurs')->middleware('auth');
 
+Route::get('/cnou', function () {
+    return view('cnou');
+})->name('cnou')->middleware('auth');
+
 
 Route::get('/',function(){
     return view('auth.login');
