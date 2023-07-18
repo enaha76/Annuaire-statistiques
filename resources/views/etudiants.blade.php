@@ -82,7 +82,7 @@ window.location.href = `/etudiants/${selectedYear}`;
                         Vous devez choisir les criteres dont vous vouliez repartir les etudiants
                     
                     </p>
-                        <div id="search-options" class=" d-flex">
+                        <div id="search-options" class=" d-none">
                          <div class="row ">
                             <span class="col-md-auto m-1" style="font-family: 'Arial', sans-serif; font-weight: bold;">Repartitions par Institution par </span>
                             
