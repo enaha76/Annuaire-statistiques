@@ -211,6 +211,9 @@ opacity: 1;
                                         <a href="{{ route('etu') }}">Etudiants</a>
                                     </li>
                                     <li>
+                                        <a href="{{ route('cand') }}">Candidats</a>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('professeurs') }}">Professeurs</a>
                                     </li>
                                     <li>
