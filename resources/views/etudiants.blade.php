@@ -83,8 +83,8 @@ window.location.href = `/etudiants/${selectedYear}`;
                          <div class="row ">
                             <span>Repartitions par Institution par </span>
                             
-                            <form id="Formrep" method="get" action="{{ route('etudiants') }}" >
-                                <input type="hidden" name="filter" value={{$year}}>
+                            {{-- <form> --}}
+                                <input type="hidden" id="filter" name="filter" value={{$year}}>
                                 <div class="col-md-4">
                             <select class="form-control" name="criteria2" id="criteria2">
                                 @foreach ($criteriaList as $criteria)
@@ -103,7 +103,7 @@ window.location.href = `/etudiants/${selectedYear}`;
                             </div>
                             <button id="submitfultrage" type="submit" class="btn btn-info m-2">Info</button>
 
-                        </form>
+                        {{-- </form> --}}
                         
                         
                         </div>
@@ -128,48 +128,22 @@ window.location.href = `/etudiants/${selectedYear}`;
                     </ul> <!-- end nav-->
                     
                     <div class="tab-content">
-                    
-                    
                         <div class="tab-pane show active" id="simple-bre-preview">
                         
-                            <div class="table-responsive-sm">
-                                @if(!empty($results)) 
-                            
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>{{ $criteria1 }}</th>
-                                            <th>{{ $criteria2 }}</th>
-                                            <th>Count</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($results as $result)
-                                        <tr>
-                                        {{-- {{dd($results)}} --}}
-                                            <td>{{ $result->{'inscrire_'.$criteria1} ?? $result->{'etudiants_'.$criteria1} }}</td>
-                                            <td>{{ $result->{'inscrire_'.$criteria2} ?? $result->{'etudiants_'.$criteria2} }}</td>
-                                            <td>{{ $result->count }}</td>
-                                        </tr>
-                                    @endforeach
-                                    
-                                    
-                                    </tbody>
-                                </table>
-                            @endif
-                            
-                            
+                            {{--  --}}
                         
-                        </div>
+                            <div class="table-responsive-sm" id="table-container">
+                            </div>
+
                             
                         </div> <!-- end preview-->
                     
                         <div class="tab-pane" id="simple-bre-code">
                         
                             
-                                <div>
-                                <canvas id="chart"></canvas>
-                                </div>
+                            <div dir="ltr">
+                                <div id="high-performing-product" class="apex-charts" ></div>
+                            </div>
                     
                         </div> <!-- end preview code-->
                     </div> <!-- end tab-content-->
@@ -514,26 +488,7 @@ window.location.href = `/etudiants/${selectedYear}`;
       });
 </script>
 
-@if(isset($chartData))
-<script>
-    console.log("kiki ")
-      // Get the data for the chart from the PHP variable
-      var chartData = {!! json_encode($chartData) !!};
 
-  
-      // Get the canvas element
-      var ctx = document.getElementById('chart').getContext('2d');
-  
-      // Create the chart
-      var chart = new Chart(ctx, {
-          type: 'bar', // Choose the desired chart type (e.g., bar, line, pie)
-          data: chartData,
-          options: {
-              // Configure additional chart options (e.g., labels, colors, tooltips)
-          }
-      });
-</script>
-@endif
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

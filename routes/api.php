@@ -14,6 +14,8 @@ use App\Http\Controllers\all_studentsController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::post('/per', [all_studentsController::class, 'per']);
+
 Route::get('/archiveStudent', [all_studentsController::class, 'datafromStudent']);
 
 Route::post('/insertArchivedata', [all_studentsController::class, 'insertArchivedata']);
