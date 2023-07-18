@@ -4,6 +4,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\cand1;
 use App\Models\cand2;
 use App\Models\cand3;
@@ -28,6 +29,7 @@ use App\Models\sort2;
 use App\Models\cnou;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class ArchiveController extends Controller
 {
@@ -72,11 +74,6 @@ class ArchiveController extends Controller
         }
 
     }
-
-
-
-
-
 
 
     function cand($sheet_df, $year, $code)
@@ -169,12 +166,12 @@ class ArchiveController extends Controller
     }
 
 
-
-
     function replace_nan_with_zero($sheet_df)
     {
         return $sheet_df->fillna(0);
     }
+
+
     function ensg($sheet_df, $year, $code)
     {
         try {
@@ -313,8 +310,6 @@ class ArchiveController extends Controller
 
 
     }
-
-
 
 
     function etu($sheet_df, $year, $code)
@@ -551,7 +546,6 @@ class ArchiveController extends Controller
 
     }
 
-
     // another function sort() like the ones above only for models sort1 and sort2 
     function sort($sheet_df, $year, $code)
     {
@@ -687,6 +681,20 @@ class ArchiveController extends Controller
         } catch (\Throwable $th) {
             //throw $th;
         }
+    }
+
+    function insertArchive(){
+        $dataToSend = [
+            'criteria1' => 'value1',
+            'criteria2' => 'value2',
+            // Add other data here as needed
+        ];
+
+        // Make a POST request to the API endpoint
+        $response = Http::post('/api/per', $dataToSend);
+
+        // Get the response data
+        $responseData = $response->json();
     }
 
 }

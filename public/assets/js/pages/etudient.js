@@ -285,38 +285,42 @@ function graph(labels,data) {
   
 };
 
-
 document.getElementById('submitfultrage').addEventListener('click', per);
 
 
 
+const f = () => {
+
+    console.log('f called');
+
+    const apiUrl = ''; // Replace with your Laravel API endpoint for fetching archives
+    
+    data={
+        criteria1:"gdhg",
+        criteria2:"hdgshj",
+        filter:"gayf"
+    }
 
 
-
-
-
-
-
-
-
-
-
-const archiveStudent = () => {
-    console.log('archiveStudent called');
-
-    const apiUrl = '/api/archiveStudent'; // Replace with your Laravel API endpoint for fetching archives
-
-    fetch(apiUrl)
+     fetch('/api/b', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
         .then(response => response.json())
         .then(data => {
-            console.log("Retrieved data from Laravel API", data);
-            
+            if(data){
+            $("#successm").modal("show");
+            }
         })
         .catch(error => {
             console.error('Error:', error);
         });
 
+
 };
 
 
-document.getElementById('archivage').addEventListener('click', archiveStudent);
+document.getElementById('archivage').addEventListener('click', f);
