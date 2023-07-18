@@ -148,7 +148,7 @@ window.location.href = `/etudiants/${selectedYear}`;
                     
                         </div> <!-- end preview code-->
                     </div> <!-- end tab-content-->
-
+ 
                 </div> <!-- end card-body -->
             </div> <!-- end card-->
         </div> <!-- end col -->
