@@ -19,7 +19,6 @@
                     <li class="breadcrumb-item active">Etudiants</li>
                 </ol>
             </div>
-            <h4 class="page-title">Tableau</h4>
         </div>
     </div>
 </div>    
@@ -133,7 +132,7 @@ window.location.href = `/etudiants/${selectedYear}`;
                         </div>
                     
                         </div>
-                    <p class="text-muted font-14  header-title">
+                    <p class="text-muted font-14 header-title" style="font-family: 'Arial', sans-serif; font-weight: bold;">
                         Vous devez choisir les criteres dont vous vouliez repartir les etudiants
                     
                     </p>
@@ -249,11 +248,11 @@ window.location.href = `/etudiants/${selectedYear}`;
                                 </div>
                 
                             </div>
-                            <p class="text-muted font-14 header-title">
+                            <p class="text-muted font-14 header-title" style="font-family: 'Arial', sans-serif; font-weight: bold;">
                                 Ces repartitions ont été mentionner dans l'annuaire statistique 
-                                            Please read the official <a target="_blank" href="../../docs/4.0/components/breadcrumb/index.htm">annuaire statistique </a> documentation for more options.
-                            
+                                Please read the official <a target="_blank" href="../../docs/4.0/components/breadcrumb/index.htm">annuaire statistique </a> documentation for more options.
                             </p>
+                            
         
                             <ul class="nav nav-tabs nav-bordered mb-3">
                                 <li class="nav-item">

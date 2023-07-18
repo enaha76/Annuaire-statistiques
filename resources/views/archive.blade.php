@@ -340,6 +340,10 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire statistique</a></li>
+                                <li class="breadcrumb-item active">Gestion</li>
+
+                                <li class="breadcrumb-item active">Archives</li>
+
                             </ol>
                         </div>
                         <h4 class="page-title">Archives</h4>
@@ -427,8 +431,8 @@
                                                 </div>
                                                 <div class="form-check">
                                                     <input type="radio" id="customRadio2" name="customRadio2"
-                                                        value="2021-2022" class="form-check-input" checked>
-                                                    <label class="form-check-label"
+                                                        value="2021-2022" class="form-check-input m-3" checked>
+                                                    <label class="form-check-label "
                                                         for="customRadio2"><b>2021-2022</b></label>
                                                 </div>
                                             </div>
@@ -437,11 +441,11 @@
                                 </div>
 
                                 <div class="col-lg-1">
-                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                    <button type="button" class="btn btn-outline-primary m-2" data-bs-toggle="modal"
                                         data-bs-target="#right-modal" on="click()">Import</button>
                                     <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#right-modal">Rightbar Modal</button> -->
                                 </div>
-                                        <h4>here u r ganna choose ur file</h4> <br><br>
+                                        
 
                                         <div class="row">
                                             <!-- end uplod -->
@@ -487,7 +491,11 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class='file-input ' id='cache_file'>
                                                     <input name="file" id="fileInput" type="file">
+                                                    <span class=' btn btn-primary'> <i class="mdi mdi-file-import"></i></span>
+                                                    <span class='label' data-js-label>Aucun fichier sélectionné</label>
+                                                    </div>
                                                     <button type="submit"
                                                         class="btn btn-xs btn-success">Importer</button>
                                                     <div id="storage"></div>
@@ -498,12 +506,13 @@
                                
                                         <div class="card">
                                             <div class="card-body">
-                                              <i class="uil-signal-alt-3"></i>
+                                              <i class="uil-signal-alt-3 m-3"></i>
                                               
                                               <ul class="nav nav-tabs nav-bordered mb-3" id="tabs-list" style="overflow-x: auto; white-space: nowrap; display: block ruby; ">
                                                 <li class="nav-item" style="display: inline">
                                                   <a href="#icon-bre-preview" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
                                                     Tableau
+
                                                   </a>
                                                 </li>
                                                 <li class="nav-item"style="display: inline">
@@ -516,6 +525,7 @@
                                         <div class="tab-content">
                                             <div class="tab-pane show active" id="icon-bre-preview">
                                                 <div class="col-md-5 table-responsive" id="buttons-table-preview 3">
+                                                    <img src="assets/images/data.png">
 
                                                 </div> <!-- end preview-->
                                             </div> <!-- end preview-->
@@ -523,9 +533,10 @@
                                             <div class="tab-pane" id="icon-bre-code">
                                                 <pre class="mb-0">
                                                     <div class="col-md-6 "  dir="ltr">
-                                                        <h4 class="header-title"> Repartution des étudiants par institution et par genre </h4>
                             
-                                                                     <div id="myChart 3" ></div>
+                                                                     <div id="myChart 3" >
+
+                                                                     </div>
                                                                  </div>
                                                 </pre> <!-- end highlight-->
                                             </div> <!-- end preview code-->

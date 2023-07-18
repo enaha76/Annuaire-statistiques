@@ -27,8 +27,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/etudiant', [all_studentsController::class, 'showStatistics'])->name('etudiants');
     Route::post('/excel', [all_studentsController::class, 'import'])->name('test');
     Route::post('/excel2', [all_studentsController::class, 'redr'])->name('insert');
+    Route::get('/professeur', function(){
+        return view("professeurs");
+    })->name('professeur');
+
     Route::get('/tables/{year?}/{years?}', [all_studentsController::class, 'tables'])->name('tables');
-    // Route::get('/test', [all_studentsController::class, 'showTestView'])->name('test');
 
 });
 
@@ -58,9 +61,9 @@ Route::controller(HistiriqueController::class)->group(function(){
 });
 
 Route::controller(ArchiveController::class)->group(function(){
-    Route::get('/helo', function () {
-        return view('helo');
-    })->name('helo')->middleware('auth');
+    Route::get('/archive', function () {
+        return view('archive');
+    })->name('archive')->middleware('auth');
     Route::post('/up','up')->name("up")->middleware('auth');
 });
 
