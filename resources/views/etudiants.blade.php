@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
- 
+
 @if (!empty($results))
     {{-- {{ dd(gettype($results)) }} --}}
         {{-- <h1>ane 4e nsseg3t alooooooooo selam</h1> --}}
@@ -30,42 +30,47 @@
 
 
 <script src={{asset('js/filter.js')}} defer>
-  </script>          
- <div class="row mb-2">
+</script>          
+<div class="row mb-2">
     <div class="col-sm-4">
     <h5>Année scolaire <span id="selected" class="badge rounded-pill p-1 px-2 badge-danger-lighten" >{{ date('Y')-1 }}-{{ date('Y') }}</span></h5>
     </div>
     <div class="col-sm-8">
         <div class="text-sm-end">
             <div class="dropdown"  aria-placeholder="Change it">
-                <button type="button" class="btn btn-primary mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="year_change">
-                    <i class="uil-calender"></i>changer  l'année 
+                <button id="archivage" type="button" class="btn btn-danger mb-2 " >
+                    <i class="uil-calender"></i> Archivee
                 </button>
-              
+                <button type="button" class="btn btn-primary mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="year_change">
+                    <i class="uil-signal-alt-3"></i> changer  l'année 
+                </button>
+            
                 <div class="dropdown-menu dropdown-menu-end">
                     @foreach($years as $year)
                     <p><input type="radio" class="form-check-input  m-1" id="year" name="filter" data-id="div 2" value={{$year}}>
                         {{ $year }}
-                   </p>
+                </p>
                     @endforeach
                 </div>
-          
+        
             </div>
         </div>
     </div><!-- end col-->
 </div> 
 <div class="container-fluid">
-                  <script>
-       var button=document.querySelector('#year_change');
+<script>
+var button=document.querySelector('#year_change');
 button.addEventListener("change", function() {
-  let selectedYear = this.value;
+let selectedYear = this.value;
   // Update the route with the selected year as the optional variable
-  window.location.href = `/etudiants/${selectedYear}`;
+
+window.location.href = `/etudiants/${selectedYear}`;
+
 });
 
-                  </script>
+</script>
 
-   <div class="row mb-2">
+<div class="row mb-2">
     <div class="col-sm-8">       
 
             </div> 
@@ -121,15 +126,15 @@ button.addEventListener("change", function() {
                             </a>
                         </li>
                     </ul> <!-- end nav-->
-                       
+                    
                     <div class="tab-content">
-                       
+                    
                     
                         <div class="tab-pane show active" id="simple-bre-preview">
-                           
+                        
                             <div class="table-responsive-sm">
                                 @if(!empty($results)) 
-                             
+                            
                                 <table>
                                     <thead>
                                         <tr>
@@ -153,33 +158,32 @@ button.addEventListener("change", function() {
                                 </table>
                             @endif
                             
-                              
+                            
                         
-                           </div>
+                        </div>
                             
                         </div> <!-- end preview-->
                     
                         <div class="tab-pane" id="simple-bre-code">
-                         
+                        
                             
                                 <div>
                                 <canvas id="chart"></canvas>
                                 </div>
-                           
+                    
                         </div> <!-- end preview code-->
                     </div> <!-- end tab-content-->
 
                 </div> <!-- end card-body -->
             </div> <!-- end card-->
         </div> <!-- end col -->
-      {{-- fin   Repartitions Personalisé --}}
-      <div>
+    {{-- fin   Repartitions Personalisé --}}
+    <div>
 
-       
     
-      </div>
-      {{-- Repartitions non-personnalisé --}}
-      <div class="col-xl-12">  
+    </div>
+    {{-- Repartitions non-personnalisé --}}
+    <div class="col-xl-12">  
         <div class="card">
             <div class="card-body">
                 <div class="dropdown m-4" >
@@ -189,11 +193,11 @@ button.addEventListener("change", function() {
                     <div class="dropdown-menu dropdown-menu-animated  ">
                     
                             <div class="m-3 ">
-                              
+                            
                                 <div class="form-check border-bottom  m-2 p-2">
                                     <input type="checkbox" class="form-check-input" id="dropdownCheck" name="filter" data-id="div 2">
                                     <label class="form-check-label" for="dropdownCheck">
-                                         par institution et par genre, mauritaniens et étrangers
+                                    par institution et par genre, mauritaniens et étrangers
                                     </label>
                                 </div>
                                 <div class="form-check border-bottom  m-2 p-2">
@@ -214,9 +218,8 @@ button.addEventListener("change", function() {
                                         Effectifs des étudiants par institution, par âge et par genre
                                     </label>
                                 </div>
-                             
+                            
                             </div>
-                          
                 
                                 
                                 </div>
@@ -244,7 +247,7 @@ button.addEventListener("change", function() {
                                 <div class="tab-pane show active" id="simple-bre-preview2">
                                     <h4 class="header-title">  Effectifs des étudiants par établissement du public</h4>
                                     <div class="col-md-5 table-responsive table-responsive" id="buttons-table-preview 1">
-                                                                                  
+                                        
                                     </div> <!-- end preview-->
                                 </div> <!-- end preview-->
                             
@@ -263,12 +266,12 @@ button.addEventListener("change", function() {
                     </div> <!-- end card-->
                 </div> <!-- end col -->
 
-  <div class="col-xl-12" id="div 2">  
+<div class="col-xl-12" id="div 2">  
     <div class="card">
         <div class="card-body">
-           
+        
             <i class="  uil-signal-alt-3"></i>
-          
+        
             <p class="text-muted font-14 header-title">
                 Effectifs par institution et par genre, mauritaniens et étrangers        </p>
 
@@ -287,13 +290,13 @@ button.addEventListener("change", function() {
             <div class="tab-content">
                 <div class="tab-pane show active" id="icon-bre-preview3">
                     <div class="table-responsive" id="buttons-table-preview 2">
-                                                                                  
+                
                     </div> <!-- end preview-->     
                 </div> <!-- end preview-->
             
                 <div class="tab-pane" id="icon-bre-code3">
                     <pre class="mb-0">
-                       graphee
+                graphee
                     </pre> <!-- end highlight-->
                 </div> <!-- end preview code-->
             </div> <!-- end tab-content-->
@@ -302,7 +305,7 @@ button.addEventListener("change", function() {
     </div> <!-- end card-->
 </div> <!-- end col -->
 
-  <div class="col-xl-12" id="div 3">  
+<div class="col-xl-12" id="div 3">  
     <div class="card">
         <div class="card-body">
             <i class="  uil-signal-alt-3"></i>
@@ -325,7 +328,7 @@ button.addEventListener("change", function() {
             <div class="tab-content">
                 <div class="tab-pane show active" id="icon-bre-preview">
                     <div class="col-md-5 table-responsive" id="buttons-table-preview 3">
-                                                                                  
+                
                     </div> <!-- end preview-->
                 </div> <!-- end preview-->
             
@@ -333,9 +336,8 @@ button.addEventListener("change", function() {
                     <pre class="mb-0">
                         <div class="col-md-6 "  dir="ltr">
                             <h4 class="header-title"> Repartution des étudiants par institution et par genre </h4>
-
-                                         <div id="myChart 3" ></div>
-                                     </div>
+                                    <div id="myChart 3" ></div>
+                                    </div>
                     </pre> <!-- end highlight-->
                 </div> <!-- end preview code-->
             </div> <!-- end tab-content-->
@@ -343,7 +345,7 @@ button.addEventListener("change", function() {
         </div> <!-- end card-body -->
     </div> <!-- end card-->
 </div> <!-- end col -->
-  <div class="col-xl-12 " id="div 4">  
+<div class="col-xl-12 " id="div 4">  
     <div class="card">
         <div class="card-body">
             <i class="  uil-signal-alt-3"></i>
@@ -368,19 +370,19 @@ button.addEventListener("change", function() {
                 <div class="tab-pane show active" id="icon-bre-preview4">
                     <div class="tab-content">
                         <div class="table-responsive" id="buttons-table-preview 4">
-                                                                      
+                        
                         </div> <!-- end preview-->
-                       
-                                
-                       
+                    
+                    
+                    
                     </div> <!-- end tab-content-->
                     <div class="tab-content">
                         <div class="table-responsive" id="buttons-table-preview 4">
-                                                                      
+                        
                         </div> <!-- end preview-->
-                       
-                                
-                       
+                    
+                    
+                    
                     </div> <!-- end tab-content-->
                 </div> <!-- end preview-->
             
@@ -441,9 +443,9 @@ button.addEventListener("change", function() {
         </div> <!-- end card-body -->
     </div> <!-- end card-->
 </div> <!-- end col -->
- {{-- fin Repartitions non-personnalisé --}}
+{{-- fin Repartitions non-personnalisé --}}
             
-       
+
         <script src="assets/js/vendor/dropzone.min.js"></script>
         <!-- init js -->
         <script src="assets/js/ui/component.fileupload.js"></script>
@@ -483,7 +485,7 @@ button.addEventListener("change", function() {
         fill(data,etats);
         
 });
- 
+
     $('input[name="filter"]').on('change',function(){
         var divId = $(this).attr('data-id');
         if($(this).is(':checked')) {
@@ -492,7 +494,6 @@ button.addEventListener("change", function() {
             $('div[id="'+divId+'"]').hide();
         }
     });
-
 
 </script>
 <script>
@@ -504,17 +505,17 @@ button.addEventListener("change", function() {
   });
 
 </script>
-  <script>
+<script>
       const searchBtn = document.getElementById('repart');
       const searchOptions = document.getElementById('search-options');
 
       searchBtn.addEventListener('click', () => {
         searchOptions.classList.toggle('d-none');
       });
-  </script>
-  
-  @if(isset($chartData))
-  <script>
+</script>
+
+@if(isset($chartData))
+<script>
     console.log("kiki ")
       // Get the data for the chart from the PHP variable
       var chartData = {!! json_encode($chartData) !!};
@@ -531,12 +532,12 @@ button.addEventListener("change", function() {
               // Configure additional chart options (e.g., labels, colors, tooltips)
           }
       });
-  </script>
-  @endif
- 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-      $(document).ready(function() {
+</script>
+@endif
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
           $('#myForm').submit(function(event) {
               event.preventDefault(); // Prevent default form submission
 
@@ -560,10 +561,10 @@ button.addEventListener("change", function() {
               });
           });
       });
-  </script>
- {{-- <script src="assets/js/pages/rep_per.js data="></script> --}}
- <script>
- document.getElementById('Formrep').addEventListener('submit', function(event) {
+</script>
+{{-- <script src="assets/js/pages/rep_per.js data="></script> --}}
+<script>
+document.getElementById('Formrep').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
     // Get the form data
@@ -594,6 +595,10 @@ button.addEventListener("change", function() {
     };
     xhr.send();
 });
+</script>
 
- @endsection
- 
+<script src="assets\js\pages\etudient.js">
+
+</script>
+
+@endsection

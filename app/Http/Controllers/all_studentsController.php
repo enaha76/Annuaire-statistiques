@@ -7,6 +7,7 @@ use App\Models\Etudiant;
 use App\Models\Inscrire;
 use Illuminate\Http\Request;
 use App\Models\Etablissement;
+use App\Models\TbArchives;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Redirect;
@@ -94,6 +95,8 @@ class all_studentsController extends Controller
     return view('index', compact('List','List2','List3','List4','nbr_etudient'));
     
   }
+
+
   public function etu(Request $request,$year = null, $criteria1 = null, $criteria2 = null, $selectedYear = null, $results = null, $chartData = null)
   {
 
@@ -216,10 +219,10 @@ class all_studentsController extends Controller
 
     
   }
+
   public function insert( $data, $establishment, $year)
   {
- 
-   
+
       foreach ($data as $value) {
         $student = Etudiant::firstOrCreate([
           'NNI' => $value['NNI'],
@@ -260,27 +263,22 @@ class all_studentsController extends Controller
      return $this->insert( $data, $establishment, $year);
   }
 
-
-
-
   public function showStatistics(Request $request)
 {
     $criteria1 = $request->input('criteria1');
     $criteria2 = $request->input('criteria2');
     $selectedYear = $request->input('filter');
- 
+
     // Retrieve column names from 'etudiants' table
-$etudiantsColumns = Schema::getColumnListing('etudiants');
+
+    $etudiantsColumns = Schema::getColumnListing('etudiants');
 
 // Retrieve column names from 'inscrire' table
 $inscrireColumns = Schema::getColumnListing('inscrire');
-    
-    // Assuming the selected criteria are stored in variables: $criteria1 and $criteria2
 
     // Define the base query
     $query = DB::table('inscrire');
-    
-    if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $inscrireColumns)) {
+if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $inscrireColumns)) {
       $query->join('etudiants AS etudiants1', 'inscrire.id_etudiant', '=', 'etudiants1.id');
       $query->select(
           'inscrire.'.$criteria2.' AS inscrire_'.$criteria2,
@@ -377,7 +375,45 @@ if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $etudiantsCo
 
 }
 
-  
+public function insertArchivedata(Request $request)
+{
+    // Validate the incoming request data if necessary
+    $validatedData = $request->validate([
+        'file_name' => 'required|string',
+        'establishment_name' => 'required|string',
+        'number_of_students' => 'required|integer',
+        'c_nbr' => 'required|integer',
+        'ml_nbr' => 'required|integer',
+        'nl_nbr' => 'required|integer',
+        'treatment' => 'required|string',
+    ]);
+
+    // Insert the data into the database
+    $archive = TbArchives::create($validatedData);
+
+    // Return the inserted data
+    return response()->json($archive, 201);
+}
+
+public function getArchives()
+{
+    $archives = TbArchives::all(); // Retrieve all records from the tb_archives table
+
+    return response()->json($archives);
+}
+
+public function datafromStudent()
+{
+    $inscrires = Inscrire::all();
+    $etudiants = Etudiant::all();
+
+    $data = [
+        'inscrires' => $inscrires,
+        'etudiants' => $etudiants,
+    ];
+
+    return response()->json($data);
+}
 
 
 }

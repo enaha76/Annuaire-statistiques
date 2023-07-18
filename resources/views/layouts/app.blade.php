@@ -8,11 +8,11 @@
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
         <meta content="Coderthemes" name="author">
         <!-- Material Icons -->
-       <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
-         {{-- CSRF --}}
-         <meta name="csrf-token" content="{{ csrf_token() }}">
+        {{-- CSRF --}}
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- third party css -->
         <link href="assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
@@ -26,44 +26,43 @@
         <link href="assets/css/vendor/buttons.bootstrap5.css" rel="stylesheet" type="text/css">
         <link href="assets/css/vendor/select.bootstrap5.css" rel="stylesheet" type="text/css">
         <!-- third party css end -->
-         <!-- third party css -->
-      <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
-      <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
-      <!-- third party css end -->
+        <!-- third party css -->
+        <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
+        <!-- third party css end -->
 
 
 <style>
 
-
 .file-input {
-  display: inline-block;
-  text-align: left;
-  background: #fff;
-  padding: 16px;
-  width: 450px;
-  position: relative;
-  border-radius: 3px;
-  margin-left: 30px;
+    display: inline-block;
+    text-align: left;
+    background: #fff;
+    padding: 16px;
+    width: 450px;
+    position: relative;
+    border-radius: 3px;
+    margin-left: 30px;
 }
 
 .file-input > [type='file'] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 10;
-  cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
 }
 
 .file-input > .button {
-  display: inline-block;
-  cursor: pointer;
-  background: #eee;
-  padding: 8px 16px;
-  border-radius: 2px;
-  margin-right: 8px;
+    display: inline-block;
+    cursor: pointer;
+    background: #eee;
+    padding: 8px 16px;
+    border-radius: 2px;
+    margin-right: 8px;
 }
 
 .file-input:hover > .button {
@@ -96,30 +95,31 @@ opacity: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition:all 0.4s ;
+    transition:all 0.4s;
 }
 
 .spinner-border{
     height: 60px;
     width: 60px;
 }
+
 #loading-circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 5px solid #f3f3f3;
-  border-top: 5px solid #3498db;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: spin 2s linear infinite;
-  display: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 2s linear infinite;
+    display: none;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 </style>
@@ -158,7 +158,7 @@ opacity: 1;
         <!-- Begin page -->
         <div id="loading-circle"></div>
 
-       
+
         <div class="wrapper">
             <!-- ========== Left Sidebar Start ========== -->
             <div class="leftside-menu">
@@ -211,13 +211,17 @@ opacity: 1;
                                         <a href="{{ route('etu') }}">Etudiants</a>
                                     </li>
                                     <li>
-                                        <a href="#">Professeurs</a>
+                                        <a href="{{ route('cand') }}">Candidats</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('professeurs') }}">Professeurs</a>
                                     </li>
                                     <li>
                                         <a href="{{route('etablissements')}}">Etablissement</a>
                                     </li>
-
-
+                                    <li>
+                                        <a href="{{route('cnou')}}">Cnou</a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -322,7 +326,7 @@ opacity: 1;
                                 </div>
                             </li>
 
-                            
+
 {{--
 
 
@@ -706,6 +710,6 @@ opacity: 1;
         <script src="assets/js/pages/demo.products.js"></script>
         <script src="assets/js/pages/demo.datatable-init.js"></script>
         <!-- end demo js-->
-        <script src="assets/js/pages/indexchars.js"></script>        
+        <script src="assets/js/pages/indexchars.js"></script>
     </body>
 </html>

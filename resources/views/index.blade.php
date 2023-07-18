@@ -352,13 +352,15 @@
                                                         $s=0;
                                                     foreach ( $List as $list=>$one ){
 
-                                                       $s = $s + intval($one->total) ;
+                                                    $s = $s + intval($one->total) ;
 
                                                     }
                                                     // print_r($nbr_etudient);
                                                     $nbr=0;
                                                     foreach ($nbr_etudient as  $value) {
-                                                       $nbr=$value->nbr;
+
+                                                    $nbr=$value->nbr;
+                                                    
                                                     }
                                                     @endphp
                                                     <h3 class="mt-3 mb-3 ">{{  $nbr }}</h3>
