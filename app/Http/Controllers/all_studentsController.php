@@ -263,22 +263,23 @@ class all_studentsController extends Controller
      return $this->insert( $data, $establishment, $year);
   }
 
+
+
+
   public function showStatistics(Request $request)
 {
     $criteria1 = $request->input('criteria1');
     $criteria2 = $request->input('criteria2');
     $selectedYear = $request->input('filter');
 
-    // Retrieve column names from 'etudiants' table
-
     $etudiantsColumns = Schema::getColumnListing('etudiants');
 
-// Retrieve column names from 'inscrire' table
-$inscrireColumns = Schema::getColumnListing('inscrire');
+    $inscrireColumns = Schema::getColumnListing('inscrire');
 
     // Define the base query
     $query = DB::table('inscrire');
-if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $inscrireColumns)) {
+
+    if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $inscrireColumns)) {
       $query->join('etudiants AS etudiants1', 'inscrire.id_etudiant', '=', 'etudiants1.id');
       $query->select(
           'inscrire.'.$criteria2.' AS inscrire_'.$criteria2,
@@ -286,7 +287,7 @@ if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $inscrireCol
           DB::raw('COUNT(*) AS count')
       );
       $query->groupBy('inscrire_'.$criteria2, 'etudiants_'.$criteria1);
-  } elseif (in_array($criteria2, $etudiantsColumns) && in_array($criteria1, $inscrireColumns)) {
+     } elseif (in_array($criteria2, $etudiantsColumns) && in_array($criteria1, $inscrireColumns)) {
       $query->join('etudiants AS etudiants2', 'inscrire.id_etudiant', '=', 'etudiants2.id');
       $query->select(
           'inscrire.'.$criteria1.' AS inscrire_'.$criteria1,
@@ -294,17 +295,17 @@ if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $inscrireCol
           DB::raw('COUNT(*) AS count')
       );
       $query->groupBy('inscrire_'.$criteria1, 'etudiants_'.$criteria2);
-  }
- // Check if both criteria belong to the 'inscrire' table
-if (in_array($criteria1, $inscrireColumns) && in_array($criteria2, $inscrireColumns)) {
-  $query->select(
+     }
+
+
+     if (in_array($criteria1, $inscrireColumns) && in_array($criteria2, $inscrireColumns)) {
+        $query->select(
       'inscrire.'.$criteria1.' AS inscrire_'.$criteria1,
       'inscrire.'.$criteria2.' AS inscrire_'.$criteria2,
       DB::raw('COUNT(*) AS count')
-  );
+       );
 
-  // Group the results by the selected criteria
-  $query->groupBy('inscrire_'.$criteria1, 'inscrire_'.$criteria2);
+       $query->groupBy('inscrire_'.$criteria1, 'inscrire_'.$criteria2);
   
 }
 
@@ -413,6 +414,123 @@ public function datafromStudent()
     ];
 
     return response()->json($data);
+}
+
+
+public function per(Request $request){
+
+  $criteria1 = $request->input('criteria1');
+  $criteria2 = $request->input('criteria2');
+  $selectedYear = $request->input('filter');
+ 
+
+
+$etudiantsColumns = Schema::getColumnListing('etudiants');
+
+    $inscrireColumns = Schema::getColumnListing('inscrire');
+
+    // Define the base query
+    $query = DB::table('inscrire');
+
+    if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $inscrireColumns)) {
+      $query->join('etudiants AS etudiants1', 'inscrire.id_etudiant', '=', 'etudiants1.id');
+      $query->select(
+          'inscrire.'.$criteria2.' AS inscrire_'.$criteria2,
+          'etudiants1.'.$criteria1.' AS etudiants_'.$criteria1,
+          DB::raw('COUNT(*) AS count')
+      );
+      $query->groupBy('inscrire_'.$criteria2, 'etudiants_'.$criteria1);
+     } elseif (in_array($criteria2, $etudiantsColumns) && in_array($criteria1, $inscrireColumns)) {
+      $query->join('etudiants AS etudiants2', 'inscrire.id_etudiant', '=', 'etudiants2.id');
+      $query->select(
+          'inscrire.'.$criteria1.' AS inscrire_'.$criteria1,
+          'etudiants2.'.$criteria2.' AS etudiants_'.$criteria2,
+          DB::raw('COUNT(*) AS count')
+      );
+      $query->groupBy('inscrire_'.$criteria1, 'etudiants_'.$criteria2);
+     }
+
+     
+     if (in_array($criteria1, $inscrireColumns) && in_array($criteria2, $inscrireColumns)) {
+        $query->select(
+      'inscrire.'.$criteria1.' AS inscrire_'.$criteria1,
+      'inscrire.'.$criteria2.' AS inscrire_'.$criteria2,
+      DB::raw('COUNT(*) AS count')
+       );
+
+       $query->groupBy('inscrire_'.$criteria1, 'inscrire_'.$criteria2);
+  
+}
+
+// Check if both criteria belong to the 'etudiants' table
+if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $etudiantsColumns)) {
+  $query->join('etudiants AS etudiants1', 'inscrire.id_etudiant', '=', 'etudiants1.id');
+  $query->join('etudiants AS etudiants2', 'inscrire.id_etudiant', '=', 'etudiants2.id');
+  $query->select(
+      'etudiants1.'.$criteria1.' AS etudiants_'.$criteria1,
+      'etudiants2.'.$criteria2.' AS etudiants_'.$criteria2,
+      DB::raw('COUNT(*) AS count')
+  );
+
+  // Group the results by the selected criteria
+  $query->groupBy('etudiants_'.$criteria1, 'etudiants_'.$criteria2);
+}
+// ...
+
+     // Add the WHERE condition for the selected year
+    $query->whereRaw("CAST(inscrire.année_scolaire AS CHAR) = '{$selectedYear}'");
+
+    
+    // Execute the query and retrieve the results
+    $results = $query->get();
+    // dd($query->toSql(), $results);
+        // Prepare the data for the chart
+    $chartData = [
+        'labels' => [],
+        'datasets' => [
+            [
+                'label' => 'Count',
+                'data' => [],
+                'backgroundColor' => 'rgba(0, 123, 255, 0.5)' // Customize the chart color
+            ]
+        ]];
+      // dd($chartData );
+    foreach ($results as $result) {
+      $criteria1Label = '';
+      $criteria2Label = '';
+  
+      if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $inscrireColumns)) {
+          $criteria1Label = isset($result->{'etudiants_'.$criteria1}) ? 'etudiants_'.$criteria1 : 'inscrire_'.$criteria1;
+          $criteria2Label = isset($result->{'inscrire_'.$criteria2}) ? 'inscrire_'.$criteria2 : 'etudiants_'.$criteria2;
+      } elseif (in_array($criteria2, $etudiantsColumns) && in_array($criteria1, $inscrireColumns)) {
+          $criteria1Label = isset($result->{'inscrire_'.$criteria1}) ? 'inscrire_'.$criteria1 : 'etudiants_'.$criteria1;
+          $criteria2Label = isset($result->{'etudiants_'.$criteria2}) ? 'etudiants_'.$criteria2 : 'inscrire_'.$criteria2;
+      } elseif (in_array($criteria1, $inscrireColumns) && in_array($criteria2, $inscrireColumns)) {
+          $criteria1Label = 'inscrire_'.$criteria1;
+          $criteria2Label = 'inscrire_'.$criteria2;
+      } elseif (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $etudiantsColumns)) {
+          $criteria1Label = 'etudiants_'.$criteria1;
+          $criteria2Label = 'etudiants_'.$criteria2;
+      }
+  
+      $chartData['labels'][] = $result->{$criteria1Label} . ' - ' . $result->{$criteria2Label};
+      $chartData['datasets'][0]['data'][] = $result->count;
+  }
+  
+  // dd($criteria1, $criteria2, $results);  
+    
+  // $results = ["age" => 1234];
+
+  
+
+  $data = [
+          'results' => $results,
+          'criteria1' => $criteria1,
+          'criteria2'=>  $criteria2,
+          'chartData'=>  $chartData
+      ];
+
+  return response()->json($data);
 }
 
 
