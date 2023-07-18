@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\etu1;
+use App\Models\etu2;
+use App\Models\etu3;
+use App\Models\etu4;
+use App\Models\etu5;
+use App\Models\etu6;
+use App\Models\etu7;
 use App\Models\Etudiant;
 use App\Models\Inscrire;
 use Illuminate\Http\Request;
@@ -11,7 +17,7 @@ use App\Models\TbArchives;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Redirect;
-
+use Illuminate\Support\Facades\Http;
 
 class all_studentsController extends Controller
 {
@@ -533,6 +539,33 @@ if (in_array($criteria1, $etudiantsColumns) && in_array($criteria2, $etudiantsCo
   return response()->json($data);
 }
 
+
+
+
+
+public function insertArchive(Request $request){
+
+
+
+    $dataToInsert = [
+      'annee_scolaire' => '2023-2024',
+      'domaine' => 'Computer Science',
+      'nb1' => 10,
+      'nb2' => 25,
+      'nb3'=> 45, 
+      'nb4'=>67 ,
+      'nb5'=>78 , 
+      'nb6'=>88
+  ];
+
+    // $archive = etu1::create($dataToInsert);
+
+    // Return the inserted data
+    return response()->json($dataToInsert);
+  
+
+
+}
 
 }
 

@@ -22,6 +22,7 @@ Route::post('/insertArchivedata', [all_studentsController::class, 'insertArchive
 
 Route::get('/getArchives', [all_studentsController::class, 'getArchives']);
 
+Route::post('/b', [all_studentsController::class, 'insertArchive']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
