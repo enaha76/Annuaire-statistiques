@@ -48,7 +48,7 @@
     <div class="col-sm-8">
         <div class="text-sm-end">
             <div class="dropdown"  aria-placeholder="Change it">
-                <button type="button" class="btn btn-info mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <button type="button" class="btn btn-primary mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                     <i class="uil-calender"></i>changer  l'année
                 </button>
 
@@ -128,11 +128,11 @@
 <div class="col-xl-12 col-lg-10 " >
     <div class="card" >
         <div class="card-body">
-            <a href="" class="p-0 float-end"><i class="mdi mdi-download ms-1"></i></a>
+            <a href="#"  onclick="downloadDivAsPng()" class="p-0 float-end"><i class="mdi mdi-download ms-1"></i></a>
             <h4 class="header-title mt-1 mb-3">historiques</h4>
 
             <div class="table-responsive" style="max-height: 200px;" >
-                <table class="table table-sm table-centered mb-0 font-14">
+                <table id="myDiv"class=" table table-sm table-centered mb-0 font-14">
                     <thead class="table-light">
                         <tr>
                             <th>Nom du fichier</th>
@@ -405,11 +405,27 @@ function customInput (el) {
     }
 }
 </script>
+<!-- canvg library -->
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 <script>
+   function downloadDivAsPng() {
+    const element = document.getElementById('myDiv');
 
+    html2canvas(element).then(function (canvas) {
+        // Convert canvas to base64 image
+        const imgData = canvas.toDataURL('image/png');
 
-    
+        // Create a temporary link element
+        const link = document.createElement('a');
+        link.href = imgData;
+        link.download = 'myDiv.png';
+
+        // Trigger the download by simulating a click event
+        link.dispatchEvent(new MouseEvent('click'));
+    });
+}
+
 </script>
 
 @endsection

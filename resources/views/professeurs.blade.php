@@ -48,7 +48,7 @@
     <div class="col-sm-8">
         <div class="text-sm-end">
             <div class="dropdown"  aria-placeholder="Change it">
-                <button type="button" class="btn btn-info mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <button type="button" class="btn btn-danger mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                     <i class="uil-calender"></i>changer  l'année
                 </button>
 
@@ -106,7 +106,7 @@
                                 <br>
                                 <div class='file-input ' id='cache_file'>
                                     <input type='file' id="fileInput">
-                                    <span class=' btn btn-primary'> <i class="mdi mdi-file-import"></i></span>
+                                    <span class=' btn btn-danger'> <i class="mdi mdi-file-import"></i></span>
                                     <span class='label' data-js-label>Aucun fichier sélectionné</label>
                                 </div>
                                 </form>
