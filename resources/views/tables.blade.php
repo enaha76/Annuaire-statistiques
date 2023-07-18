@@ -125,13 +125,13 @@
 </form>
 
 {{-- houn --}}
-<div class="col-xl-12 col-lg-10">
-    <div class="card">
+<div class="col-xl-12 col-lg-10 " >
+    <div class="card" >
         <div class="card-body">
             <a href="" class="p-0 float-end"><i class="mdi mdi-download ms-1"></i></a>
             <h4 class="header-title mt-1 mb-3">historic</h4>
 
-            <div class="table-responsive">
+            <div class="table-responsive" style="max-height: 200px;" >
                 <table class="table table-sm table-centered mb-0 font-14">
                     <thead class="table-light">
                         <tr>
@@ -145,27 +145,8 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr >
-                            <td>SUPNUM.xlsx</td>
-                            <td>SUPNUM</td>
-                            <td>250</td>
-                            <td ><span> uploaded </span></td>
-                            <td>12/02/2023</td>
-                            <td>
-                                <div class="progress" style="height: 10px;">
-                                    {{-- <div class="progress"> --}}
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">50%</div>
-                                        <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
-                                    </div>
-                                    {{-- <div class="progress-bar" role="progressbar" style="width: 100%; height: 20px;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div> --}}
-                                {{-- </div> --}}
-                            </td>
-                            <td><a href="javascript: void(0);" class="icon-link"><i class="mdi mdi-delete email-action-icons-item"></i></a>
-                                <a href="javascript: void(0);" class="icon-link"><i class="mdi mdi-book-edit-outline"></i></a>
-                            </td>
-                        </tr>
+                    <tbody id="table-body">
+                    
                     </tbody>
                 </table>
             </div> <!-- end table-responsive-->
@@ -199,6 +180,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+
 <div id="warning-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -213,6 +195,8 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
 <div id="danger-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content modal-filled bg-danger">
@@ -228,6 +212,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+
 <div id="info-header-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="info-header-modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -238,12 +223,13 @@
             <div class="modal-body">
                 <h5 class="mt-0">Info</h5>
                 <p>Les Etudiants de ce Etablissement sont deja enregistrer</p>
-               
+            
             </div>
-           
+        
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
 
 {{-- new modal --}}
 <div class="modal fade" id="scrollable-modal" tabindex="-1" role="dialog" aria-labelledby="scrollableModalTitle" aria-hidden="true">
@@ -319,7 +305,6 @@
     </div><!-- /.modal-dialog -->
 </div>
 {{-- end new modal --}}
-
 
 
 
@@ -403,21 +388,21 @@ spinnerah.style.display='none';
 var inputs = document.querySelectorAll('.file-input')
 
 for (var i = 0, len = inputs.length; i < len; i++) {
-  customInput(inputs[i])
+    customInput(inputs[i])
 }
 
 function customInput (el) {
-  const fileInput = el.querySelector('[type="file"]')
-  const label = el.querySelector('[data-js-label]')
+    const fileInput = el.querySelector('[type="file"]')
+    const label = el.querySelector('[data-js-label]')
 
-  fileInput.onchange =
-  fileInput.onmouseout = function () {
+    fileInput.onchange =
+    fileInput.onmouseout = function () {
     if (!fileInput.value) return
 
     var value = fileInput.value.replace(/^.*[\\\/]/, '')
     el.className += ' -chosen'
     label.innerText = value
-  }
+    }
 }
 </script>
 

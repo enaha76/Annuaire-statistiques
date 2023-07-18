@@ -15,8 +15,13 @@ return new class extends Migration
     {
         Schema::create('tb_archives', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->binary('data')->longText();
+            $table->string('file_name');
+            $table->string('establishment_name');
+            $table->unsignedInteger('number_of_students');
+            $table->unsignedInteger('c_nbr');
+            $table->unsignedInteger('ml_nbr');
+            $table->unsignedInteger('nl_nbr');
+            $table->string('treatment');
             $table->timestamps();
         });
     }

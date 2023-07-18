@@ -57,10 +57,6 @@ Route::controller(HistiriqueController::class)->group(function(){
     Route::get('/tables','inserthist')->middleware('auth');
 });
 
-
-
-
-
 Route::controller(ArchiveController::class)->group(function(){
     Route::get('/helo', function () {
         return view('helo');
@@ -70,14 +66,14 @@ Route::controller(ArchiveController::class)->group(function(){
 
 
 Route::get('/layout-static', function () {
-   
+
     return view('layout-static'); 
 
 })->name('layout-static')->middleware('auth');
 
 Route::get('/layout-sidenav-light', function () {
 
-      return view('layout-sidenav-light');
+    return view('layout-sidenav-light');
 
 })->name('Export')->middleware('auth');
 
