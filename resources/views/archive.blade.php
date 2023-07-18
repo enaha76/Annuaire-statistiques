@@ -340,6 +340,10 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire statistique</a></li>
+                                <li class="breadcrumb-item active">Gestion</li>
+
+                                <li class="breadcrumb-item active">Archives</li>
+
                             </ol>
                         </div>
                         <h4 class="page-title">Archives</h4>
@@ -352,96 +356,10 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-lg-9">
-                                    <select id="my-select" class="select2 form-control select2-multiple"
-                                        data-toggle="select2" multiple="multiple" data-placeholder="Choose ...">
-                                        <optgroup label="Candidats">
-                                            <option value="ef_e_w">Effectifs des candidats au bac par wilaya</option>
-                                            <option value="tr_s_g">Taux de réussite par genre et par série</option>
-                                            <!-- <option value="HI">Taux de réussite par genre et par série</option> -->
-                                            <option value="tr_s_c">Taux de réussite par session et par type de
-                                                candidature</option>
-                                            <option value="r_e_p_p">Répartition des orientés à l’étranger par pays et
-                                                par filière</option>
-                                        </optgroup>
-                                        <optgroup label="Etudiuants">
-
-                                            <option value="CA">Effectifs par établissement et par genre, mauritaniens
-                                                et
-                                                étrangers</option>
-                                            <option value="ef_m_i_lmd">Effectifs des étudiants mauritaniens par
-                                                institution, par niveau et par genre (LMD)</option>
-                                            <option value="NV4">Effectifs des étudiants mauritaniens par institution,
-                                                par niveau et par genre (FM)</option>
-                                            <option value="NV5">Effectifs des étudiants mauritaniens par institution,
-                                                par niveau et par genre (ESP & AN)</option>
-                                            <option value="NV6">Effectifs des étudiants mauritaniens par institution,
-                                                par niveau et par genre (ENS)</option>
-                                            <option value="NV7">Effectifs des étudiants mauritaniens par institution,
-                                                par domaine d'étude par niveau et par genre (FM)</option>
-                                            <option value="NV8">Effectifs des étudiants par domaine d'étude et par genre
-                                            </option>
-                                        </optgroup>
-                                        <optgroup label="Bources">
-                                            <option value="AZ">Répartition des Boursiers et Bénéficiaires d'aides par
-                                                Institution</option>
-                                            <option value="CO8">Montants de Bourse (MRU)</option>
-                                        </optgroup>
-                                        <optgroup label="Sortants">
-                                            <option value="AZ7" id="sortants_option">Sortants <span></span>
-                                                <p></p> par diplôme, par institution et par genre
-                                            </option>
-                                            <option value="CO">Sortants <span id="sort_yeahr"></span> par domaine
-                                                d'étude spécialisé (CITE 2013)</option>
-                                        </optgroup>
-                                        <optgroup label="Les gens bourciers">
-                                            <option value="A76Z">Etudiants mauritaniens boursiers à l'étranger par
-                                                niveau, par genre et par pays d'accueil</option>
-                                            <option value="CO12">Etudiants mauritaniens boursiers à l'étranger par cycle
-                                                et par pays d'accueil </option>
-                                        </optgroup>
-
-                                    </select>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="btn-group">
-                                        <button type="button" id="year_select2"
-                                            class="btn btn-primary   dropdown-toggle" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            2021-2022
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <!-- <div class="card"> -->
-                                            <div class="card-body">
-                                                <div class="form-check">
-                                                    <input type="radio" id="customRadio2" name="customRadio2"
-                                                        value="2019-2020" class="form-check-input">
-                                                    <label class="form-check-label" for="customRadio2"><b>2019-2020</b>
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input type="radio" id="customRadio2" name="customRadio2"
-                                                        value="2020-2021" class="form-check-input">
-                                                    <label class="form-check-label"
-                                                        for="customRadio2"><b>2020-2021</b></label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input type="radio" id="customRadio2" name="customRadio2"
-                                                        value="2021-2022" class="form-check-input" checked>
-                                                    <label class="form-check-label"
-                                                        for="customRadio2"><b>2021-2022</b></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-1">
-                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-                                        data-bs-target="#right-modal" on="click()">Import</button>
-                                    <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#right-modal">Rightbar Modal</button> -->
-                                </div>
-                                        <h4>here u r ganna choose ur file</h4> <br><br>
+                           
+                                
+                                
+                                        
 
                                         <div class="row">
                                             <!-- end uplod -->
@@ -487,7 +405,11 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class='file-input ' id='cache_file'>
                                                     <input name="file" id="fileInput" type="file">
+                                                    <span class=' btn btn-primary'> <i class="mdi mdi-file-import"></i></span>
+                                                    <span class='label' data-js-label>Aucun fichier sélectionné</label>
+                                                    </div>
                                                     <button type="submit"
                                                         class="btn btn-xs btn-success">Importer</button>
                                                     <div id="storage"></div>
@@ -498,12 +420,13 @@
                                
                                         <div class="card">
                                             <div class="card-body">
-                                              <i class="uil-signal-alt-3"></i>
+                                              <i class="uil-signal-alt-3 m-3"></i>
                                               
                                               <ul class="nav nav-tabs nav-bordered mb-3" id="tabs-list" style="overflow-x: auto; white-space: nowrap; display: block ruby; ">
                                                 <li class="nav-item" style="display: inline">
                                                   <a href="#icon-bre-preview" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
                                                     Tableau
+
                                                   </a>
                                                 </li>
                                                 <li class="nav-item"style="display: inline">
@@ -516,6 +439,7 @@
                                         <div class="tab-content">
                                             <div class="tab-pane show active" id="icon-bre-preview">
                                                 <div class="col-md-5 table-responsive" id="buttons-table-preview 3">
+                                                    <img src="assets/images/data.png">
 
                                                 </div> <!-- end preview-->
                                             </div> <!-- end preview-->
@@ -523,9 +447,10 @@
                                             <div class="tab-pane" id="icon-bre-code">
                                                 <pre class="mb-0">
                                                     <div class="col-md-6 "  dir="ltr">
-                                                        <h4 class="header-title"> Repartution des étudiants par institution et par genre </h4>
                             
-                                                                     <div id="myChart 3" ></div>
+                                                                     <div id="myChart 3" >
+
+                                                                     </div>
                                                                  </div>
                                                 </pre> <!-- end highlight-->
                                             </div> <!-- end preview code-->

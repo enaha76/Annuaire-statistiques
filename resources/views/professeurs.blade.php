@@ -31,11 +31,11 @@
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Annuaire Statistique</a></li>
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Getion</a></li>
                     <li class="breadcrumb-item "><a href="javascript: void(0);">import</a></li>
-                    <li class="breadcrumb-item active">Etudiants</a></li>
+                    <li class="breadcrumb-item active">Professeurs</a></li>
 
                 </ol>
             </div>
-            <h4 class="page-title">Etudiants</h4>
+            <h4 class="page-title">Professeurs</h4>
         </div>
     </div>
 </div>
@@ -48,7 +48,7 @@
     <div class="col-sm-8">
         <div class="text-sm-end">
             <div class="dropdown"  aria-placeholder="Change it">
-                <button type="button" class="btn btn-primary mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <button type="button" class="btn btn-danger mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                     <i class="uil-calender"></i>changer  l'année
                 </button>
 
@@ -84,19 +84,19 @@
     <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title">TÉLÉCHARGEZ VOTRE DOSSIER ÉTUDIANT ICI</h4>
+                <h4 class="header-title">TÉLÉCHARGEZ VOTRE DOSSIER PROFFESSEUR ICI</h4>
 
                 <div class="tab-content">
                     <div class="tab-pane show active" id="select2-preview">
                         <div class="row">
                             <div class="col-lg-9">
                                     <p class="mb-1 fw-bold text-muted"></p>
-                                    <select class="form-control select2" id="mySelect" data-toggle="select2">
+                                    {{-- <select class="form-control select2" id="mySelect" data-toggle="select2">
                                     <option value="0"><b> Choisir l'institution ...</b></option>
                                         @foreach($List3 as $e)
                                         <option value="{{ $e->id }}"><b> {{ $e->abrev }} </b>  ({{ $e->nom }})</option>
                                         @endforeach
-                                    </select>
+                                    </select> --}}
                             </div> <!-- end col -->
 
                             <div class="">
@@ -106,7 +106,7 @@
                                 <br>
                                 <div class='file-input ' id='cache_file'>
                                     <input type='file' id="fileInput">
-                                    <span class=' btn btn-primary'> <i class="mdi mdi-file-import"></i></span>
+                                    <span class=' btn btn-danger'> <i class="mdi mdi-file-import"></i></span>
                                     <span class='label' data-js-label>Aucun fichier sélectionné</label>
                                 </div>
                                 </form>
@@ -128,11 +128,11 @@
 <div class="col-xl-12 col-lg-10 " >
     <div class="card" >
         <div class="card-body">
-            <a href="#"  onclick="downloadDivAsPng()" class="p-0 float-end"><i class="mdi mdi-download ms-1"></i></a>
+            <a href="" class="p-0 float-end"><i class="mdi mdi-download ms-1"></i></a>
             <h4 class="header-title mt-1 mb-3">historiques</h4>
 
             <div class="table-responsive" style="max-height: 200px;" >
-                <table id="myDiv"class=" table table-sm table-centered mb-0 font-14">
+                <table class="table table-sm table-centered mb-0 font-14">
                     <thead class="table-light">
                         <tr>
                             <th>Nom du fichier</th>
@@ -333,8 +333,7 @@
 </div>
 <script type="text/javascript" src="{{ asset('js/xlsx.full.min.js')}}"></script>
 <script>
-chek_list=@json($chek);
-</script>
+// </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.1/xlsx.core.min.js"></script>
 <!-- end demo js-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -364,20 +363,7 @@ spinnerah.style.display='none';
     })
 });
 </script>
-<script>
-    jsonData = @json($data);
-    window.jsonData=jsonData;
-    // console.log(jsonData);
-    $(document).ready(function(){
-    setTimeout(function(){
-        $("#success-alert-modal").modal("show");
-    }, 100);
-});
 
-
-
-
-</script>
 <script src="assets/js/pages/rens.js">
 
 
@@ -405,27 +391,11 @@ function customInput (el) {
     }
 }
 </script>
-<!-- canvg library -->
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 <script>
-   function downloadDivAsPng() {
-    const element = document.getElementById('myDiv');
 
-    html2canvas(element).then(function (canvas) {
-        // Convert canvas to base64 image
-        const imgData = canvas.toDataURL('image/png');
 
-        // Create a temporary link element
-        const link = document.createElement('a');
-        link.href = imgData;
-        link.download = 'myDiv.png';
-
-        // Trigger the download by simulating a click event
-        link.dispatchEvent(new MouseEvent('click'));
-    });
-}
-
+    
 </script>
 
 @endsection

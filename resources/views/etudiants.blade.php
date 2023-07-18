@@ -36,7 +36,6 @@
                     <li class="breadcrumb-item active">Etudiants</li>
                 </ol>
             </div>
-            <h4 class="page-title">Tableau</h4>
         </div>
     </div>
 </div>    
@@ -58,7 +57,7 @@
                 <button id="archivage" type="button" class="btn btn-danger mb-2 " >
                     <i class="uil-calender"></i> Archivee
                 </button>
-                <button type="button" class="btn btn-primary mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="year_change">
+                <button type="button" class="btn btn-info mb-2 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="year_change">
                     <i class="uil-signal-alt-3"></i> changer  l'année 
                 </button>
             
@@ -96,40 +95,42 @@ window.location.href = `/etudiants/${selectedYear}`;
             <div class="card">
                 <div class="card-body">
                     <button id="repart" class="btn btn-info   m-2" type="button"><i class=" uil-graph-bar m-1"></i>Repartitions Personalisé</button>
-                        <div id="search-options" class=" d-flex">
+                    <p class="text-muted font-14 header-title" style="font-family: 'Arial', sans-serif; font-weight: bold;">
+                        Vous devez choisir les criteres dont vous vouliez repartir les etudiants
+                    
+                    </p>
+                        <div id="search-options" class=" d-none">
                          <div class="row ">
-                            <span>Repartitions par Institution par </span>
+                            <span class="col-md-auto m-1" style="font-family: 'Arial', sans-serif; font-weight: bold;">Repartitions par Institution par </span>
                             
                             {{-- <form> --}}
                                 <input type="hidden" id="filter" name="filter" value={{$year}}>
                                 <div class="col-md-4">
-                            <select class="form-control" name="criteria2" id="criteria2">
+                            <select class="form-control col-md-4 d-flex justify-content-end" name="criteria2" id="criteria2">
                                 @foreach ($criteriaList as $criteria)
                                     <option value="{{ $criteria }}">{{ $criteria }}</option>
                                 @endforeach
                             </select>
                             </div>
-                            <span>et par </span>
+                            <span class="col-md-auto m-1" style="font-family: 'Arial', sans-serif; font-weight: bold;">et par </span>
                             <div class="col-md-4">
-                            <select class="form-control select2"  name="criteria1" id="criteria1">
+                            <select class="form-control  col-md-4 d-flex justify-content-end"   name="criteria1" id="criteria1">
                                 @foreach ($criteriaList as $criteria)
                                 <option value="{{ $criteria }}">{{ $criteria }}</option>
                             @endforeach
                             </select>
 
                             </div>
-                            <button id="submitfultrage" type="submit" class="btn btn-info m-2">Info</button>
-
+                            <div class="col-md-auto">
+                            <button id="submitfultrage" type="submit" class="btn btn-info m-2 float-end">Repartir</button>
+                            </div>
                         {{-- </form> --}}
                         
                         
                         </div>
                     
                         </div>
-                    <p class="text-muted font-14  header-title">
-                        Vous devez choisir les criteres dont vous vouliez repartir les etudiants
                     
-                    </p>
 
                     <ul class="nav nav-tabs nav-bordered mb-3">
                         <li class="nav-item">
@@ -216,11 +217,11 @@ window.location.href = `/etudiants/${selectedYear}`;
                                 </div>
                 
                             </div>
-                            <p class="text-muted font-14 header-title">
+                            <p class="text-muted font-14 header-title" style="font-family: 'Arial', sans-serif; font-weight: bold;">
                                 Ces repartitions ont été mentionner dans l'annuaire statistique 
-                                            Please read the official <a target="_blank" href="../../docs/4.0/components/breadcrumb/index.htm">annuaire statistique </a> documentation for more options.
-                            
+                                Please read the official <a target="_blank" href="../../docs/4.0/components/breadcrumb/index.htm">annuaire statistique </a> documentation for more options.
                             </p>
+                            
         
                             <ul class="nav nav-tabs nav-bordered mb-3">
                                 <li class="nav-item">
