@@ -74,8 +74,8 @@ button.addEventListener("change", function() {
             <div class="card">
                 <div class="card-body">
                     <button id="repart" class="btn btn-info   m-2" type="button"><i class=" uil-graph-bar m-1"></i>Repartitions Personalisé</button>
-                        <div id="search-options" class=" d-none">
-                        <div class="row">
+                        <div id="search-options" class=" d-flex">
+                         <div class="row ">
                             <span>Repartitions par Institution par </span>
                             
                             <form id="Formrep" method="get" action="{{ route('etudiants') }}" >
@@ -96,34 +96,10 @@ button.addEventListener("change", function() {
                             </select>
 
                             </div>
-                            <button type="submit">Submit</button>
+                            <button id="submitfultrage" type="submit" class="btn btn-info m-2">Info</button>
 
                         </form>
-                        {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                        <script>
-                            $('form').submit(function(event) {
-                                event.preventDefault(); // Prevent default form submission
                         
-                                // Get the form data
-                                var formData = $(this).serialize();
-                        
-                                // Send an AJAX request to the server
-                                $.ajax({
-                                    url: this.action,
-                                    method: 'GET',
-                                    data: formData,
-                                    success: function(response) {
-                                        // Handle the success response
-                                        console.log(response);
-                                        // You can update the page content or show a success message here
-                                    },
-                                    error: function(xhr, status, error) {
-                                        // Handle the error response
-                                        console.error(error);
-                                    }
-                                });
-                            });
-                        </script> --}}
                         
                         </div>
                     
@@ -496,7 +472,7 @@ button.addEventListener("change", function() {
         <script src="assets/js/vendor.min.js"></script>
         <script src="assets/js/app.min.js"></script>
 
-       
+       <script src="assets/js/repper.js"></script>
         <script src={{asset('cdn/Chart.min.js')}}></script>
 
 <script defer>
