@@ -70,8 +70,8 @@ Route::controller(ArchiveController::class)->group(function(){
 
 
 Route::get('/layout-static', function () {
-   
-    return view('layout-static'); 
+
+    return view('layout-static');
 
 })->name('layout-static')->middleware('auth');
 
@@ -98,6 +98,12 @@ Route::get('/layout-sidenav-light', function () {
 Route::get('/conf',function(){
     return view('confirm_import');
 })->middleware('auth');
+
+
+Route::get('/professeurs', function () {
+    return view('professeur');
+})->name('professeurs')->middleware('auth');
+
 
 Route::get('/',function(){
     return view('auth.login');
